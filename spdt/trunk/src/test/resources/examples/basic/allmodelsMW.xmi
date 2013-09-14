@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mw:MediaWikiDatabase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mw="http://spi-fm.uca.es/spde/tools/mw/1.0">
+  <contents xsi:type="mw:Article" title="Ejemplos" categories="//@contents.1">
+    <sections title="Modelos">
+      <embeddedSections title="Logical">
+        <contents xsi:type="mw:Image" order="1" uri="http://localhost/mediawiki-1.15.5/images/spde/Logical.png" alternative="Model: Logical"/>
+        <contents xsi:type="mw:ItemList" order="3">
+          <items text="Default Class for Logical"/>
+        </contents>
+      </embeddedSections>
+      <embeddedSections title="Use Case">
+        <contents xsi:type="mw:Image" order="11" uri="http://localhost/mediawiki-1.15.5/images/spde/UseCase.png" alternative="Model: Use Case"/>
+        <contents xsi:type="mw:ItemList" order="13">
+          <items text="Default Use Case for Use Case"/>
+        </contents>
+      </embeddedSections>
+      <embeddedSections title="Activity">
+        <contents xsi:type="mw:Image" order="21" uri="http://localhost/mediawiki-1.15.5/images/spde/Activity.png" alternative="Model: Activity"/>
+        <contents xsi:type="mw:ItemList" order="23">
+          <items text="Default Activity for Activity"/>
+        </contents>
+      </embeddedSections>
+      <embeddedSections title="Component">
+        <contents xsi:type="mw:Image" order="31" uri="http://localhost/mediawiki-1.15.5/images/spde/Component.png" alternative="Model: Component"/>
+        <contents xsi:type="mw:ItemList" order="33">
+          <items text="Default Component for Component"/>
+        </contents>
+      </embeddedSections>
+      <embeddedSections title="Deployment">
+        <contents xsi:type="mw:Image" order="41" uri="http://localhost/mediawiki-1.15.5/images/spde/Deployment.png" alternative="Model: Deployment"/>
+        <contents xsi:type="mw:ItemList" order="43">
+          <items text="Default Node for Deployment"/>
+        </contents>
+      </embeddedSections>
+      <embeddedSections title="Sequence">
+        <contents xsi:type="mw:Image" order="51" uri="http://localhost/mediawiki-1.15.5/images/spde/Sequence.png" alternative="Model: Sequence"/>
+        <contents xsi:type="mw:ItemList" order="53">
+          <items text="Default Class for Sequence"/>
+        </contents>
+      </embeddedSections>
+      <embeddedSections title="Statechart">
+        <contents xsi:type="mw:Image" order="61" uri="http://localhost/mediawiki-1.15.5/images/spde/Statechart.png" alternative="Model: Statechart"/>
+        <contents xsi:type="mw:ItemList" order="63">
+          <items text="Default State for Statechart"/>
+        </contents>
+      </embeddedSections>
+      <embeddedSections title="Collaboration">
+        <contents xsi:type="mw:Image" order="71" uri="http://localhost/mediawiki-1.15.5/images/spde/Collaboration.png" alternative="Model: Collaboration"/>
+        <contents xsi:type="mw:ItemList" order="73">
+          <items text="Default Class for Collaboration"/>
+        </contents>
+      </embeddedSections>
+    </sections>
+  </contents>
+  <contents xsi:type="mw:Category" title="DEMO"/>
+</mw:MediaWikiDatabase>

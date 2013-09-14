@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ea:EADatabase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ea="http://spi-fm.uca.es/spde/tools/ea/1.0">
+  <packages name="Ejemplos">
+    <packages name="Modelos">
+      <diagrams name="Logical" type="LOGICAL">
+        <objects element="//@packages.0/@packages.0/@elements.0"/>
+      </diagrams>
+      <diagrams name="Use Case" type="USECASE">
+        <objects element="//@packages.0/@packages.0/@elements.1"/>
+      </diagrams>
+      <diagrams name="Activity" type="ACTIVITY">
+        <objects element="//@packages.0/@packages.0/@elements.2"/>
+      </diagrams>
+      <diagrams name="Component" type="COMPONENT">
+        <objects element="//@packages.0/@packages.0/@elements.3"/>
+      </diagrams>
+      <diagrams name="Deployment" type="DEPLOYMENT">
+        <objects element="//@packages.0/@packages.0/@elements.4"/>
+      </diagrams>
+      <diagrams name="Sequence" type="SEQUENCE">
+        <objects element="//@packages.0/@packages.0/@elements.5"/>
+      </diagrams>
+      <diagrams name="Statechart" type="STATECHART">
+        <objects element="//@packages.0/@packages.0/@elements.6"/>
+      </diagrams>
+      <diagrams name="Collaboration" type="COLLABORATION">
+        <objects element="//@packages.0/@packages.0/@elements.7"/>
+      </diagrams>
+      <elements name="Default Class for Logical" type="Class" notes="Example notes of the Class"/>
+      <elements name="Default Use Case for Use Case" type="Use Case" notes="Example notes of the Use Case"/>
+      <elements name="Default Activity for Activity" type="Activity" notes="Example notes of the Activity"/>
+      <elements name="Default Component for Component" type="Component" notes="Example notes of the Component"/>
+      <elements name="Default Node for Deployment" type="Node" notes="Example notes of the Node"/>
+      <elements name="Default Class for Sequence" type="Class" notes="Example notes of the Class"/>
+      <elements name="Default State for Statechart" type="State" notes="Example notes of the State"/>
+      <elements name="Default Class for Collaboration" type="Class" notes="Example notes of the Class"/>
+    </packages>
+  </packages>
+</ea:EADatabase>
