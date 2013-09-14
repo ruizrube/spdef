@@ -1,0 +1,62 @@
+-- @path SWPM=/spdt/src/main/resources/es/uca/spifm/spdt/deployment/swpm/SoftwareWorkProductModel.ecore
+-- @path UMA=/spdt/src/main/resources/es/uca/spifm/spdt/process/uma/uma106.ecore
+
+
+module uma2wspm;
+create output: SWPM from input: UMA;
+
+--- Matching ProcessPlanningTemplate with Project
+rule Process2Project {
+	from
+		mp: UMA!MethodPlugin
+	to
+		proj: SWPM!Project (
+			name <- mp.name,
+			description <- mp.briefDescription,
+			workproducts <- UMA!Domain.allInstances()
+		)
+}
+
+--- Matching Deliverable with DeliverableProduct/Codebase
+--- Pending: embeddedDeliverables
+rule Deliverable2DeliverableProduct {
+	from
+		del: UMA!Deliverable
+	to
+		dp: SWPM!DeliverableProduct (
+			title <- del.presentationName,
+			description <- del.briefDescription
+		)
+}
+
+--- Matching Domain with DocumentaryWorkProduct and Section
+rule Domain2WorkProduct {
+	from
+		domain: UMA!Domain
+	to
+		dwp: SWPM!DocumentaryWorkProduct (
+			title <- domain.presentationName,
+			description <- domain.briefDescription,
+			sections <- sec
+		),
+		sec: SWPM!Section (
+			title <- 'Default Section',
+			order <- 0,
+			description <- 'Container of models',
+			models <- domain.workProducts
+		)
+}
+
+--- Matching Artifact with Model/Specification/Package
+rule Artifact2Model {
+	from
+		art: UMA!Artifact (
+			art.presentationName.size() > 0
+		)
+	to
+		model: SWPM!Model (
+			name <- art.presentationName,
+			description <- art.briefDescription,
+			type <- #LOGICAL
+		)
+}

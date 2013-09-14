@@ -1,0 +1,6 @@
+-- @path SPCM=/spdt/src/main/resources/es/uca/spifm/spdt/deployment/spcm/SoftwareProjectControlModel.ecore
+-- @path UMA=/spdt/src/main/resources/es/uca/spifm/spdt/process/uma/uma106.ecore
+
+
+module uma2spcm;
+create output: SPCM from input: UMA;

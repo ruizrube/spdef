@@ -1,0 +1,144 @@
+-- @path WIKIM=/spdt/src/main/resources/es/uca/spifm/spdt/genericTools/wikim/WikitoolModel.ecore
+-- @path SWPM=/spdt/src/main/resources/es/uca/spifm/spdt/deployment/swpm/SoftwareWorkProductModel.ecore
+
+
+module swpm2wikim;
+create output: WIKIM from input: SWPM;
+
+--- Matching Project with WikiDatabase and Category
+rule Project2WikiDatabase {
+	from
+		proj: SWPM!Project
+	to
+		db: WIKIM!WikiDatabase (
+			contents <- proj.workproducts,
+			contents <- thisModule.obtainCategory(proj)
+		)
+}
+
+unique lazy rule obtainCategory {
+	from
+		project: SWPM!Project
+	to
+		cat: WIKIM!Category (
+			title <- project.name
+		)
+}
+
+--- Matching DocumentaryWorkProduct with Article
+rule DocumentaryWorkProduct2Article {
+	from
+		doc: SWPM!DocumentaryWorkProduct
+	to
+		article: WIKIM!Article (
+			title <- doc.title,
+			sections <- doc.sections,
+			categories <- thisModule.obtainCategory(doc.refImmediateComposite())
+		)
+}
+
+--- Matching Section with Section
+rule Section2Section {
+	from
+		sourceSection: SWPM!Section
+	to
+		targetSection: WIKIM!Section (
+			title <- sourceSection.title,
+			text <- sourceSection.description,
+			embeddedSections <- sourceSection.embeddedSections,
+			embeddedSections <- sourceSection.models -> collect(model | thisModule.resolveTemp(model, 'sec')).
+					append(sourceSection.specifications -> collect(spec | thisModule.resolveTemp(spec, 'sec')))
+		)
+}
+
+
+--- To do:matching deliverables
+rule Model2Image {
+	from
+		model: SWPM!Model 
+	to
+		img: WIKIM!Image (
+			uri <- thisModule.obtainElementType(model.type).img,
+			alternative <- 'Model: '.concat(model.name),
+			order <- thisModule.id
+		),
+		item: WIKIM!Item (
+			text <- 'Default '.concat(thisModule.obtainElementType(model.type).name).concat(' for ').concat(model.name)
+		),
+		items: WIKIM!ItemList (
+			items <- item,
+			title <- model.description,
+			order <- img.order+2
+		), 
+		sec: WIKIM!Section (
+			title <-model.name,
+			contents <- img,
+			contents <- items
+		)
+		do{
+			thisModule.id<-thisModule.id+10;
+		}
+		
+}
+
+
+--- Matching ItemList with ItemList
+rule ItemListSpecification2ItemList{
+	from
+		spec: SWPM!Specification(spec.type=#ITEMLIST)
+	to
+		item: WIKIM!Item (
+			text <- spec.name.concat(' Default Item ')
+		),
+		items: WIKIM!ItemList (
+			items <- item,
+			title <- spec.details
+		),
+		sec: WIKIM!Section (
+			title <-spec.name,
+			contents <- items
+		)
+}
+
+
+--- Matching ItemList with Paragraph
+rule TextualSpecification2Artifact{
+	from
+		spec: SWPM!Specification(spec.type=#TEXTUAL)
+	to
+		par: WIKIM!Paragraph (
+			text <- spec.details
+		),
+		sec: WIKIM!Section (
+			title <-spec.name,
+			contents <- par
+		)
+		
+		
+}
+
+
+helper def : id : Integer = 1;
+
+
+--- Auxiliary function
+helper def: obtainElementType(diagram: String): TupleType(img: String, name:String) =
+	Map{
+				(#CLASS,
+				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Logical.png',name='Class'}),
+				(#USECASE,
+				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/UseCase.png',name='Use Case'}),
+				(#COMPONENT,
+				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Component.png',name='Component'}),
+				(#DEPLOYMENT,
+				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Deployment.png',name='Node'}),
+				(#SEQUENCE,
+				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Sequence.png',name='Class'}),
+				(#STATECHART,
+				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Statechart.png',name='State'}),
+				(#COLLABORATION,
+				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Collaboration.png',name='Class'}),
+				(#ACTIVITY,
+				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Activity.png',name='Activity'})
+				}.get(diagram);
+

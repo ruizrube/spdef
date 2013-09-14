@@ -1,0 +1,6 @@
+-- @path SPCM=/spdt/src/main/resources/es/uca/spifm/spdt/deployment/spcm/SoftwareProjectControlModel.ecore
+-- @path ITM=/spdt/src/main/resources/es/uca/spifm/spdt/genericTools/itm/IssueTrackingtoolModel.ecore
+
+
+module spcm2itm;
+create output: ITM from input: SPCM;
