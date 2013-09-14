@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eam:EnterpriseArchitectDatabase
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:eam="http://spi-fm.uca.es/spdef/models/specificTools/eam/1.0.ecore"
+    xsi:schemaLocation="http://spi-fm.uca.es/spdef/models/specificTools/eam/1.0.ecore ../../../../../main/resources/es/uca/spifm/spdt/specificTools/eam/EnterpriseArchitectModel.ecore">
+  <modelRepository
+      href="vmm.xmi#/"/>
+</eam:EnterpriseArchitectDatabase>

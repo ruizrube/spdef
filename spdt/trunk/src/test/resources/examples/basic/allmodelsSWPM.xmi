@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<swpm:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:swpm="http://spi-fm.uca.es/spde/core/swpm/1.0"
+    name="DEMO"
+    description="Dummy project">
+  <workproducts
+      xsi:type="swpm:DocumentaryWorkProduct"
+      title="Ejemplos">
+    <sections
+        title="Modelos">
+      <models
+          name="Logical"/>
+      <models
+          type="USECASE"
+          name="Use Case"/>
+      <models
+          type="ACTIVITY"
+          name="Activity"/>
+      <models
+          type="COMPONENT"
+          name="Component"/>
+      <models
+          type="DEPLOYMENT"
+          name="Deployment"/>
+      <models
+          type="SEQUENCE"
+          name="Sequence"/>
+      <models
+          type="STATECHART"
+          name="Statechart"/>
+      <models
+          type="COLLABORATION"
+          name="Collaboration"/>
+    </sections>
+  </workproducts>
+</swpm:Project>
