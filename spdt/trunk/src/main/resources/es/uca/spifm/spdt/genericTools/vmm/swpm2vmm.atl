@@ -1,0 +1,126 @@
+-- @path SWPM=/spdt/src/main/resources/es/uca/spifm/spdt/deployment/swpm/SoftwareWorkProductModel.ecore
+-- @path VMM=/spdt/src/main/resources/es/uca/spifm/spdt/genericTools/vmm/VisualModelingtoolModel.ecore
+
+
+module swpm2vmm;
+create output: VMM from input: SWPM;
+
+--- Matching Project with Database
+rule Project2Database {
+	from
+		proj: SWPM!Project
+	to
+		db: VMM!ModelRepository(
+			projects <- thisModule.Project2Project(proj)
+		)
+}
+
+
+--- Matching Project with Project
+lazy rule Project2Project {
+	from
+		proj: SWPM!Project
+	to
+		db: VMM!Project (
+			packages <- proj.workproducts,
+			name <- proj.name,
+			description <- proj.description
+			
+		)
+}
+
+--- Matching DocumentaryWorkProducts with Package
+rule DocumentaryWorkProduct2Package {
+	from
+		doc: SWPM!DocumentaryWorkProduct
+	to
+		pack: VMM!Package (
+			name <- doc.title,
+			description <- doc.description,
+			embeddedPackages <- doc.sections
+		)
+}
+
+--- Matching Section with Package
+rule Section2Package {
+	from
+		sec: SWPM!Section
+	to
+		pack: VMM!Package (
+			name <- sec.title,
+			description <- sec.description,
+			embeddedPackages <- sec.embeddedSections,
+			diagrams <- sec.models -> collect(model | thisModule.resolveTemp(model,'diag')),
+			elements <- sec.models -> collect(model | thisModule.resolveTemp(model,'element')),
+			elements <- sec.specifications -> collect(model | thisModule.resolveTemp(model,'element'))
+		)
+}
+
+--- Matching Model with Diagram and Element
+rule Model2Diagram {
+	from
+		model: SWPM!Model
+	to
+		element: VMM!Element (
+			name <- 'Default '.concat(thisModule.obtainElementType(model.type)).concat(' for ').concat(model.name),
+			description <- 'Example description of the '.concat(thisModule.obtainElementType(model.type)),
+			type <- thisModule.obtainElementType(model.type)
+		),
+		diag: VMM!Diagram (
+			name <- model.name,
+			description <- model.description,
+			type <- model.type,
+			containedElements <- element
+		)
+}
+
+
+--- Matching ItemList with Requirement
+rule ItemListSpecification2Requirement{
+	from
+		spec: SWPM!Specification(spec.type=#ITEMLIST)
+	to
+		element: VMM!Element (
+			name <- spec.name.concat(' Default Item '),
+			description <- spec.details,
+			type <- #REQUIREMENT
+		)
+}  -- ,			
+
+
+--- Matching ItemList with Artifact
+rule TextualSpecification2Artifact{
+	from
+		spec: SWPM!Specification(spec.type=#TEXTUAL)
+	to
+		element: VMM!Element (
+			name <- spec.name,
+			description <- spec.details,
+			type <- #ARTIFACT
+		)
+} --,			
+
+
+
+--- Auxiliary function
+helper def: obtainElementType(diagram: String): String =
+	Map{
+				(#CLASS,
+				'CLASS'),
+				(#USECASE,
+				'USECASE'),
+				(#COMPONENT,
+				'COMPONENT'),
+				(#DEPLOYMENT,
+				'NODE'),
+				(#SEQUENCE,
+				'CLASS'),
+				(#STATECHART,
+				'STATE'),
+				(#COLLABORATION,
+				'CLASS'),
+				(#ACTIVITY,
+				'ACTIVITY')}.get(diagram);
+
+
+--- To do:matching deliverables

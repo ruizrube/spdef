@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Designed by Ivan Ruiz" modelDirectory="/spdt/src/main/java"
+    modelPluginID="spde" modelName="SoftwareWorkProductModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SoftwareWorkProductModel.ecore</foreignModel>
+  <genPackages prefix="Swpm" basePackage="es.uca.spifm.spdt.deployment" disposableProviderFactory="true"
+      ecorePackage="SoftwareWorkProductModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SoftwareWorkProductModel.ecore#//ModelType">
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//ModelType/USECASE"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//ModelType/CLASS"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//ModelType/ACTIVITY"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//ModelType/COMPONENT"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//ModelType/DEPLOYMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//ModelType/SEQUENCE"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//ModelType/STATECHART"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//ModelType/COLLABORATION"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//ModelType/OTHER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SoftwareWorkProductModel.ecore#//DeliverableType">
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//DeliverableType/DOC"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//DeliverableType/SOURCE"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//DeliverableType/ARCHIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//DeliverableType/INSTALLER"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//DeliverableType/PACKAGE"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//DeliverableType/OTHER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SoftwareWorkProductModel.ecore#//Archetype">
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//Archetype/J2EE"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//Archetype/STRUTS2"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//Archetype/SPRING_OSGI"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//Archetype/JSF"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SoftwareWorkProductModel.ecore#//SpecificationType">
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//SpecificationType/TEXTUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//SpecificationType/EXTERNALCONTENT"/>
+      <genEnumLiterals ecoreEnumLiteral="SoftwareWorkProductModel.ecore#//SpecificationType/ITEMLIST"/>
+    </genEnums>
+    <genClasses ecoreClass="SoftwareWorkProductModel.ecore#//Project">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareWorkProductModel.ecore#//Project/workproducts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Project/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Project/description"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SoftwareWorkProductModel.ecore#//WorkProduct">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//WorkProduct/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//WorkProduct/description"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareWorkProductModel.ecore#//Section">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Section/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Section/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Section/order"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareWorkProductModel.ecore#//Section/embeddedSections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareWorkProductModel.ecore#//Section/models"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareWorkProductModel.ecore#//Section/specifications"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareWorkProductModel.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Model/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Model/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Model/description"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareWorkProductModel.ecore#//Specification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Specification/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Specification/details"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//Specification/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareWorkProductModel.ecore#//CodeWorkProduct">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareWorkProductModel.ecore#//CodeWorkProduct/packages"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareWorkProductModel.ecore#//DocumentaryWorkProduct">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareWorkProductModel.ecore#//DocumentaryWorkProduct/sections"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareWorkProductModel.ecore#//DeliverableProduct">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareWorkProductModel.ecore#//DeliverableProduct/embeddedWorkproducts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//DeliverableProduct/type"/>
+    </genClasses>
+    <genClasses ecoreClass="SoftwareWorkProductModel.ecore#//InternalProduct"/>
+    <genClasses ecoreClass="SoftwareWorkProductModel.ecore#//SourcePackage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//SourcePackage/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//SourcePackage/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareWorkProductModel.ecore#//SourcePackage/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
