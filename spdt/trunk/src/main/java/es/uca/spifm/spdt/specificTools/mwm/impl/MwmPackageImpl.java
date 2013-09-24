@@ -9,6 +9,7 @@ import es.uca.spifm.spdt.specificTools.mwm.MediaWikiDatabase;
 import es.uca.spifm.spdt.specificTools.mwm.MwmFactory;
 import es.uca.spifm.spdt.specificTools.mwm.MwmPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -116,6 +117,33 @@ public class MwmPackageImpl extends EPackageImpl implements MwmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMediaWikiDatabase_Url() {
+		return (EAttribute)mediaWikiDatabaseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMediaWikiDatabase_Login() {
+		return (EAttribute)mediaWikiDatabaseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMediaWikiDatabase_Password() {
+		return (EAttribute)mediaWikiDatabaseEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MwmFactory getMwmFactory() {
 		return (MwmFactory)getEFactoryInstance();
 	}
@@ -141,6 +169,9 @@ public class MwmPackageImpl extends EPackageImpl implements MwmPackage {
 		// Create classes and their features
 		mediaWikiDatabaseEClass = createEClass(MEDIA_WIKI_DATABASE);
 		createEReference(mediaWikiDatabaseEClass, MEDIA_WIKI_DATABASE__WIKI_DATABASE);
+		createEAttribute(mediaWikiDatabaseEClass, MEDIA_WIKI_DATABASE__URL);
+		createEAttribute(mediaWikiDatabaseEClass, MEDIA_WIKI_DATABASE__LOGIN);
+		createEAttribute(mediaWikiDatabaseEClass, MEDIA_WIKI_DATABASE__PASSWORD);
 	}
 
 	/**
@@ -178,6 +209,9 @@ public class MwmPackageImpl extends EPackageImpl implements MwmPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(mediaWikiDatabaseEClass, MediaWikiDatabase.class, "MediaWikiDatabase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMediaWikiDatabase_WikiDatabase(), theWikimPackage.getWikiDatabase(), null, "wikiDatabase", null, 0, 1, MediaWikiDatabase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMediaWikiDatabase_Url(), ecorePackage.getEString(), "url", null, 0, 1, MediaWikiDatabase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMediaWikiDatabase_Login(), ecorePackage.getEString(), "login", null, 0, 1, MediaWikiDatabase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMediaWikiDatabase_Password(), ecorePackage.getEString(), "password", null, 0, 1, MediaWikiDatabase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

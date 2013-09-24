@@ -8,8 +8,11 @@
   <foreignModel>MediaWikiModel.ecore</foreignModel>
   <genPackages prefix="Mwm" basePackage="es.uca.spifm.spdt.specificTools" disposableProviderFactory="true"
       ecorePackage="MediaWikiModel.ecore#/">
-    <genClasses ecoreClass="MediaWikiModel.ecore#//MediaWikiaDatabase">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MediaWikiModel.ecore#//MediaWikiaDatabase/wikiDatabase"/>
+    <genClasses ecoreClass="MediaWikiModel.ecore#//MediaWikiDatabase">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MediaWikiModel.ecore#//MediaWikiDatabase/wikiDatabase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MediaWikiModel.ecore#//MediaWikiDatabase/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MediaWikiModel.ecore#//MediaWikiDatabase/login"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MediaWikiModel.ecore#//MediaWikiDatabase/password"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

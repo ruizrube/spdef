@@ -3,6 +3,7 @@
  */
 package es.uca.spifm.spdt.specificTools.eam;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -76,13 +77,22 @@ public interface EamPackage extends EPackage {
 	int ENTERPRISE_ARCHITECT_DATABASE__MODEL_REPOSITORY = 0;
 
 	/**
+	 * The feature id for the '<em><b>File Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTERPRISE_ARCHITECT_DATABASE__FILE_NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Enterprise Architect Database</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTERPRISE_ARCHITECT_DATABASE_FEATURE_COUNT = 1;
+	int ENTERPRISE_ARCHITECT_DATABASE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Enterprise Architect Database</em>' class.
@@ -114,6 +124,17 @@ public interface EamPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEnterpriseArchitectDatabase_ModelRepository();
+
+	/**
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.specificTools.eam.EnterpriseArchitectDatabase#getFileName <em>File Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>File Name</em>'.
+	 * @see es.uca.spifm.spdt.specificTools.eam.EnterpriseArchitectDatabase#getFileName()
+	 * @see #getEnterpriseArchitectDatabase()
+	 * @generated
+	 */
+	EAttribute getEnterpriseArchitectDatabase_FileName();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -155,6 +176,14 @@ public interface EamPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTERPRISE_ARCHITECT_DATABASE__MODEL_REPOSITORY = eINSTANCE.getEnterpriseArchitectDatabase_ModelRepository();
+
+		/**
+		 * The meta object literal for the '<em><b>File Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTERPRISE_ARCHITECT_DATABASE__FILE_NAME = eINSTANCE.getEnterpriseArchitectDatabase_FileName();
 
 	}
 

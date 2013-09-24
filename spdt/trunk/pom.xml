@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>es.uca.spi-fm</groupId>
-  <artifactId>spdt</artifactId>
-  <version>1.0</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>es.uca.spi-fm</groupId>
+	<artifactId>spdt</artifactId>
+	<version>1.0</version>
 	<name>Software Process Deployment Toolkit</name>
 	<description>Toolkit for deployment of software process on supporting tools</description>
-	<url>http://spi-fm.uca.es/spdef</url>
-	
+	<url>http://spi-fm.uca.es/spdef/tools/spdet</url>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
@@ -15,7 +16,7 @@
 			<type>jar</type>
 			<optional>false</optional>
 		</dependency>
-			<dependency>
+		<dependency>
 			<groupId>org.eclipse.emf</groupId>
 			<artifactId>ecore</artifactId>
 			<version>2.9.0.v20130528-0742</version>
@@ -35,6 +36,13 @@
 			<version>1.0</version>
 		</dependency>
 		<dependency>
+			<groupId>SSJavaCOM</groupId>
+			<artifactId>SSJavaCOM</artifactId>
+			<version>1.0</version>
+			<scope>runtime</scope>
+			<type>dll</type>
+		</dependency>
+		<dependency>
 			<groupId>net.sourceforge</groupId>
 			<artifactId>jwbf</artifactId>
 			<version>1.3.3</version>
@@ -49,18 +57,37 @@
 			<optional>false</optional>
 		</dependency>
 
-		
+
 	</dependencies>
 	<developers>
-		<developer><id>ivan.ruiz</id>
-		<name>Ivan Ruiz</name>
-		<email>ivan.ruiz@uca.es</email>
-		<roles><role>Desarrollador</role></roles>
-	</developer>
+		<developer>
+			<id>ivan.ruiz</id>
+			<name>Ivan Ruiz</name>
+			<email>ivan.ruiz@uca.es</email>
+			<roles>
+				<role>Desarrollador</role>
+			</roles>
+		</developer>
 	</developers>
-	<organization><name>Universidad de Cádiz</name><url>http://www.uca.es</url></organization>
+	<organization>
+		<name>Universidad de Cádiz</name>
+		<url>http://www.uca.es</url>
+	</organization>
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>com.googlecode.mavennatives</groupId>
+				<artifactId>maven-nativedependencies-plugin</artifactId>
+				<version>0.0.7</version>
+				<executions>
+					<execution>
+						<id>unpacknatives</id>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.0</version>
@@ -101,12 +128,12 @@
 				</executions>
 
 
-			</plugin>	
+			</plugin>
 		</plugins>
 	</build>
 	<reporting>
 		<plugins>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -122,9 +149,9 @@
 					</links>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</reporting>
 
-	
+
 </project>

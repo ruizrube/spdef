@@ -33,6 +33,7 @@ import es.uca.spifm.spdt.specificTools.eam.EnterpriseArchitectDatabase;
  */
 public class EAGenerator {
 
+	/* SOLO FUNCIONA EN MS WINDOWS */
 	
 	private static Map<String,String> mapElements = new HashMap<String,String>();
 	
@@ -45,7 +46,6 @@ public class EAGenerator {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		
 		String inputFileName=args[0];
-		String outputFileName=args[1];
 		
 		// Register the appropriate resource factory to handle all file extensions.
 		//
@@ -74,7 +74,7 @@ public class EAGenerator {
 		}
 		EnterpriseArchitectDatabase database = (EnterpriseArchitectDatabase) resource.getContents().get(0);
 		
-		processRepository(database,outputFileName);
+		processRepository(database,database.getFileName());
 		
 		
 			

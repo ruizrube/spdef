@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link es.uca.spifm.spdt.specificTools.eam.EnterpriseArchitectDatabase#getModelRepository <em>Model Repository</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.specificTools.eam.EnterpriseArchitectDatabase#getFileName <em>File Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,5 +50,31 @@ public interface EnterpriseArchitectDatabase extends EObject {
 	 * @generated
 	 */
 	void setModelRepository(ModelRepository value);
+
+	/**
+	 * Returns the value of the '<em><b>File Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>File Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>File Name</em>' attribute.
+	 * @see #setFileName(String)
+	 * @see es.uca.spifm.spdt.specificTools.eam.EamPackage#getEnterpriseArchitectDatabase_FileName()
+	 * @model
+	 * @generated
+	 */
+	String getFileName();
+
+	/**
+	 * Sets the value of the '{@link es.uca.spifm.spdt.specificTools.eam.EnterpriseArchitectDatabase#getFileName <em>File Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>File Name</em>' attribute.
+	 * @see #getFileName()
+	 * @generated
+	 */
+	void setFileName(String value);
 
 } // EnterpriseArchitectDatabase

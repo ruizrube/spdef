@@ -48,7 +48,6 @@ public class MWGenerator {
 
 		
 		String inputFileName=args[0];
-		String outputWikiConfigFile=args[1];
 		
 		// Register the appropriate resource factory to handle all file
 		// extensions.
@@ -80,11 +79,11 @@ public class MWGenerator {
 		}
 		MediaWikiDatabase myDatabase = (MediaWikiDatabase) resource.getContents().get(0);
 
-		processDatabase(myDatabase, outputWikiConfigFile);
+		processDatabase(myDatabase);
 
 	}
 
-	public static void processDatabase(MediaWikiDatabase myDatabase, String outputWikiConfigFile) {
+	public static void processDatabase(MediaWikiDatabase myDatabase) {
 
 		// Local variables
 		net.sourceforge.jwbf.mediawiki.bots.MediaWikiBot bot=null;
@@ -92,26 +91,16 @@ public class MWGenerator {
 				
 		// Connect to wiki
 		try {
-			FileInputStream fis = new FileInputStream(outputWikiConfigFile);
-			ResourceBundle properties = new PropertyResourceBundle(fis);
 			
-			bot = new MediaWikiBot(properties.getString("[URL]"));
-			bot.login(properties.getString("[LOGIN]"),
-					properties.getString("[PASSWORD]"));
+			bot = new MediaWikiBot(myDatabase.getUrl());
+			bot.login(myDatabase.getLogin(),myDatabase.getPassword());
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (ActionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		} 
 		// Writting in wiki
 
 		// Obtains the pages list
