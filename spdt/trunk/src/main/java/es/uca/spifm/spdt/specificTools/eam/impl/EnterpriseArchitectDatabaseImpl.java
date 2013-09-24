@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link es.uca.spifm.spdt.specificTools.eam.impl.EnterpriseArchitectDatabaseImpl#getModelRepository <em>Model Repository</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.specificTools.eam.impl.EnterpriseArchitectDatabaseImpl#getFileName <em>File Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +40,25 @@ public class EnterpriseArchitectDatabaseImpl extends MinimalEObjectImpl.Containe
 	 * @ordered
 	 */
 	protected ModelRepository modelRepository;
+
+	/**
+	 * The default value of the '{@link #getFileName() <em>File Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFileName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FILE_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getFileName() <em>File Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFileName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String fileName = FILE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,12 +122,35 @@ public class EnterpriseArchitectDatabaseImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getFileName() {
+		return fileName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFileName(String newFileName) {
+		String oldFileName = fileName;
+		fileName = newFileName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EamPackage.ENTERPRISE_ARCHITECT_DATABASE__FILE_NAME, oldFileName, fileName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EamPackage.ENTERPRISE_ARCHITECT_DATABASE__MODEL_REPOSITORY:
 				if (resolve) return getModelRepository();
 				return basicGetModelRepository();
+			case EamPackage.ENTERPRISE_ARCHITECT_DATABASE__FILE_NAME:
+				return getFileName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -122,6 +165,9 @@ public class EnterpriseArchitectDatabaseImpl extends MinimalEObjectImpl.Containe
 		switch (featureID) {
 			case EamPackage.ENTERPRISE_ARCHITECT_DATABASE__MODEL_REPOSITORY:
 				setModelRepository((ModelRepository)newValue);
+				return;
+			case EamPackage.ENTERPRISE_ARCHITECT_DATABASE__FILE_NAME:
+				setFileName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,6 +184,9 @@ public class EnterpriseArchitectDatabaseImpl extends MinimalEObjectImpl.Containe
 			case EamPackage.ENTERPRISE_ARCHITECT_DATABASE__MODEL_REPOSITORY:
 				setModelRepository((ModelRepository)null);
 				return;
+			case EamPackage.ENTERPRISE_ARCHITECT_DATABASE__FILE_NAME:
+				setFileName(FILE_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -152,8 +201,26 @@ public class EnterpriseArchitectDatabaseImpl extends MinimalEObjectImpl.Containe
 		switch (featureID) {
 			case EamPackage.ENTERPRISE_ARCHITECT_DATABASE__MODEL_REPOSITORY:
 				return modelRepository != null;
+			case EamPackage.ENTERPRISE_ARCHITECT_DATABASE__FILE_NAME:
+				return FILE_NAME_EDEFAULT == null ? fileName != null : !FILE_NAME_EDEFAULT.equals(fileName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (fileName: ");
+		result.append(fileName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EnterpriseArchitectDatabaseImpl

@@ -9,6 +9,7 @@ import es.uca.spifm.spdt.specificTools.eam.EamFactory;
 import es.uca.spifm.spdt.specificTools.eam.EamPackage;
 import es.uca.spifm.spdt.specificTools.eam.EnterpriseArchitectDatabase;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -116,6 +117,15 @@ public class EamPackageImpl extends EPackageImpl implements EamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEnterpriseArchitectDatabase_FileName() {
+		return (EAttribute)enterpriseArchitectDatabaseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EamFactory getEamFactory() {
 		return (EamFactory)getEFactoryInstance();
 	}
@@ -141,6 +151,7 @@ public class EamPackageImpl extends EPackageImpl implements EamPackage {
 		// Create classes and their features
 		enterpriseArchitectDatabaseEClass = createEClass(ENTERPRISE_ARCHITECT_DATABASE);
 		createEReference(enterpriseArchitectDatabaseEClass, ENTERPRISE_ARCHITECT_DATABASE__MODEL_REPOSITORY);
+		createEAttribute(enterpriseArchitectDatabaseEClass, ENTERPRISE_ARCHITECT_DATABASE__FILE_NAME);
 	}
 
 	/**
@@ -178,6 +189,7 @@ public class EamPackageImpl extends EPackageImpl implements EamPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(enterpriseArchitectDatabaseEClass, EnterpriseArchitectDatabase.class, "EnterpriseArchitectDatabase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnterpriseArchitectDatabase_ModelRepository(), theVmmPackage.getModelRepository(), null, "modelRepository", null, 0, 1, EnterpriseArchitectDatabase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnterpriseArchitectDatabase_FileName(), ecorePackage.getEString(), "fileName", null, 0, 1, EnterpriseArchitectDatabase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -1,24 +1,26 @@
-Modificaciones en ficheros .genmodel:
+-- INSTRUCCIONES DE INSTALACIÓN --
+
+1. Instalar las siguientes dependencias desde la consola (cambiar ruta del workspace por la apropiada)
+
+mvn install:install-file -Dfile=E:\workspace\spdt\lib\common-2.9.0.v20130528-0742.jar -DgroupId=org.eclipse.emf -DartifactId=common -Dversion=2.9.0.v20130528-0742 -Dpackaging=jar
+
+mvn install:install-file -Dfile=E:\workspace\spdt\lib\ecore-2.9.0.v20130528-0742.jar -DgroupId=org.eclipse.emf -DartifactId=ecore -Dversion=2.9.0.v20130528-0742 -Dpackaging=jar
+
+mvn install:install-file -Dfile=E:\workspace\spdt\lib\xmi-2.9.0.v20130528-0742.jar -DgroupId=org.eclipse.emf.ecore -DartifactId=xmi -Dversion=2.9.0.v20130528-0742 -Dpackaging=jar
+
+mvn install:install-file -Dfile=E:\workspace\spdt\lib\eaapi-1.0.jar -DgroupId=org.sparx -DartifactId=eaapi -Dversion=1.0 -Dpackaging=jar
+
+mvn install:install-file -Dfile=E:\workspace\spdt\lib\SSJavaCOM.dll -DgroupId=SSJavaCOM -DartifactId=SSJavaCOM -Dversion=1.0 -Dpackaging=dll -DgeneratePom=true
+
+
+2. Añadir en las propiedades del proyecto, pestaña Libraries, Maven Dependences/Native Library location "spdt/lib"
+
+
+-- RECOMENDACIONES --
+
+1. En los ficheros .genmodel hay que modificar:
 
 - copyright text
 - base package
 - model directory 
 
-
-Enterprise Architect Java API Readme
-
-- Copy the file SSJavaCOM.dll into any location within the Windows PATH. For example, the windows\system32 directory. 
-
-
-Instalar las siguientes bibliotecas en repositorio maven con el comando mvn install:install-file
-			<groupId>org.eclipse.emf</groupId>
-			<artifactId>common</artifactId>
-
-			<groupId>org.eclipse.emf</groupId>
-			<artifactId>ecore</artifactId>
-
-			<groupId>org.eclipse.emf.ecore</groupId>
-			<artifactId>xmi</artifactId>
-
-			<groupId>org.sparx</groupId>
-			<artifactId>eaapi</artifactId>

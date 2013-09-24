@@ -3,6 +3,7 @@
  */
 package es.uca.spifm.spdt.specificTools.mwm;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -76,13 +77,40 @@ public interface MwmPackage extends EPackage {
 	int MEDIA_WIKI_DATABASE__WIKI_DATABASE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIA_WIKI_DATABASE__URL = 1;
+
+	/**
+	 * The feature id for the '<em><b>Login</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIA_WIKI_DATABASE__LOGIN = 2;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIA_WIKI_DATABASE__PASSWORD = 3;
+
+	/**
 	 * The number of structural features of the '<em>Media Wiki Database</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDIA_WIKI_DATABASE_FEATURE_COUNT = 1;
+	int MEDIA_WIKI_DATABASE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Media Wiki Database</em>' class.
@@ -114,6 +142,39 @@ public interface MwmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMediaWikiDatabase_WikiDatabase();
+
+	/**
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.specificTools.mwm.MediaWikiDatabase#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see es.uca.spifm.spdt.specificTools.mwm.MediaWikiDatabase#getUrl()
+	 * @see #getMediaWikiDatabase()
+	 * @generated
+	 */
+	EAttribute getMediaWikiDatabase_Url();
+
+	/**
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.specificTools.mwm.MediaWikiDatabase#getLogin <em>Login</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Login</em>'.
+	 * @see es.uca.spifm.spdt.specificTools.mwm.MediaWikiDatabase#getLogin()
+	 * @see #getMediaWikiDatabase()
+	 * @generated
+	 */
+	EAttribute getMediaWikiDatabase_Login();
+
+	/**
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.specificTools.mwm.MediaWikiDatabase#getPassword <em>Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password</em>'.
+	 * @see es.uca.spifm.spdt.specificTools.mwm.MediaWikiDatabase#getPassword()
+	 * @see #getMediaWikiDatabase()
+	 * @generated
+	 */
+	EAttribute getMediaWikiDatabase_Password();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -155,6 +216,30 @@ public interface MwmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MEDIA_WIKI_DATABASE__WIKI_DATABASE = eINSTANCE.getMediaWikiDatabase_WikiDatabase();
+
+		/**
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEDIA_WIKI_DATABASE__URL = eINSTANCE.getMediaWikiDatabase_Url();
+
+		/**
+		 * The meta object literal for the '<em><b>Login</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEDIA_WIKI_DATABASE__LOGIN = eINSTANCE.getMediaWikiDatabase_Login();
+
+		/**
+		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEDIA_WIKI_DATABASE__PASSWORD = eINSTANCE.getMediaWikiDatabase_Password();
 
 	}
 
