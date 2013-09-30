@@ -1,0 +1,608 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/GenericWrapper/Project Data Downloader.ktr"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/GenericWrapper/Project Data Downloader.ktr"
+            file: 1
+            document: 1
+            document-element: transformation
+            name: 
+            relative-path: "/GenericWrapper"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: transformation ""</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/transformation.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Steps">Steps</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Transformation: "Project Data Downloader"</h1>
+      <p>
+         This transformation does not have a description.
+         
+      </p>
+      <h2>High Level Data Flow Diagram</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Input (0)</th>
+               <th>Transform</th>
+               <th>Output (1)</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td></td>
+               <td></td>
+               <td>
+                  <div>Write file</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 946px;&#xA;            height: 558px;&#xA;        "><a name="Check valid response-icon"></a><div id="Check valid response" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:600px;&#xA;                    top:257px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Dummy (do nothing)"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Write file"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Check valid response-text" style="&#xA;                    top:289px;&#xA;                    left:573.3333333333334px;                    &#xA;                ">Check valid response</a><a name="Content-Type Validation-icon"></a><div id="Content-Type Validation" class="&#xA;                    step-icon&#xA;                    step-icon-SwitchCase" style="&#xA;                    left:375px;&#xA;                    top:124px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Replace in string"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#ERROR"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Content-Type Validation-text" style="&#xA;                    top:156px;&#xA;                    left:344.3333333333333px;                    &#xA;                ">Content-Type Validation</a><a name="Copy rows to result-icon"></a><div id="Copy rows to result" class="&#xA;                    step-icon&#xA;                    step-icon-RowsToResult" style="&#xA;                    left:262px;&#xA;                    top:447px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Copy rows to result-text" style="&#xA;                    top:479px;&#xA;                    left:236.66666666666666px;                    &#xA;                ">Copy rows to result</a><a name="Define target file path-icon"></a><div id="Define target file path" class="&#xA;                    step-icon&#xA;                    step-icon-ScriptValueMod" style="&#xA;                    left:613px;&#xA;                    top:106px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Check valid response"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Define target file path-text" style="&#xA;                    top:138px;&#xA;                    left:582.3333333333334px;                    &#xA;                ">Define target file path</a><a name="Dummy (do nothing)-icon"></a><div id="Dummy (do nothing)" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:883px;&#xA;                    top:258px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Dummy (do nothing)-text" style="&#xA;                    top:290px;&#xA;                    left:859px;                    &#xA;                ">Dummy (do nothing)</a><a name="ERROR-icon"></a><div id="ERROR" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:372px;&#xA;                    top:17px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Error recuperando datos de "></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#ERROR-text" style="&#xA;                    top:49px;&#xA;                    left:365.3333333333333px;                    &#xA;                ">ERROR</a><a name="Error recuperando datos de -icon"></a><div id="Error recuperando datos de " class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:557px;&#xA;                    top:18px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Error recuperando datos de -text" style="&#xA;                    top:50px;&#xA;                    left:521px;                    &#xA;                ">Error recuperando datos de </a><a name="Generando fichero-icon"></a><div id="Generando fichero" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:609px;&#xA;                    top:438px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Select values"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Generando fichero-text" style="&#xA;                    top:470px;&#xA;                    left:586.3333333333334px;                    &#xA;                ">Generando fichero</a><a name="Get rows from result-icon"></a><div id="Get rows from result" class="&#xA;                    step-icon&#xA;                    step-icon-RowsFromResult" style="&#xA;                    left:65px;&#xA;                    top:123px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#HTTP Request"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get rows from result-text" style="&#xA;                    top:155px;&#xA;                    left:38.33333333333333px;                    &#xA;                ">Get rows from result</a><a name="HTTP Request-icon"></a><div id="HTTP Request" class="&#xA;                    step-icon&#xA;                    step-icon-ScriptValueMod" style="&#xA;                    left:215px;&#xA;                    top:121px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Content-Type Validation"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#HTTP Request-text" style="&#xA;                    top:153px;&#xA;                    left:199px;                    &#xA;                ">HTTP Request</a><a name="Replace in string-icon"></a><div id="Replace in string" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:504px;&#xA;                    top:120px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Define target file path"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Replace in string-text" style="&#xA;                    top:152px;&#xA;                    left:481.3333333333333px;                    &#xA;                ">Replace in string</a><a name="Select values-icon"></a><div id="Select values" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:405px;&#xA;                    top:446px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Copy rows to result"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Select values-text" style="&#xA;                    top:478px;&#xA;                    left:387.6666666666667px;                    &#xA;                ">Select values</a><a name="Write file-icon"></a><div id="Write file" class="&#xA;                    step-icon&#xA;                    step-icon-TextFileOutput" style="&#xA;                    left:604px;&#xA;                    top:346px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Generando fichero"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write file-text" style="&#xA;                    top:378px;&#xA;                    left:590.6666666666666px;                    &#xA;                ">Write file</a>
+         
+      </div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This transformation does not read any variables.</p>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This transformation defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Steps
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2>Flat Files</h2>
+      <p>
+         t.b.d.
+         
+      </p>
+      <h2><a name="Steps">Steps</a></h2><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Check valid response-text" href="#Check valid response-icon">Check valid response</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SwitchCase"></div>
+      <h3 class="step-heading"><a name="Content-Type Validation-text" href="#Content-Type Validation-icon">Content-Type Validation</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-RowsToResult"></div>
+      <h3 class="step-heading"><a name="Copy rows to result-text" href="#Copy rows to result-icon">Copy rows to result</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ScriptValueMod"></div>
+      <h3 class="step-heading"><a name="Define target file path-text" href="#Define target file path-icon">Define target file path</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h5>Script 1</h5><pre class="brush: js;">//Script here
+//RDF_FILENAME="file:///C://DataIntegration//harvested//" + getVariable('FORGE_ID','Unknown')+"-"+PROJECT_NAME;
+//COUNTER = parseInt(getVariable('COUNTER',0));
+//TYPE = 'GENERAL';
+//if (getVariable('TYPE','GENERAL')=='PRIMERA')
+//{
+//	TYPE='GENERAL';
+//	COUNTER=0;
+//}
+//else
+ if (getVariable('TYPE','GENERAL')!=TYPE || PROJECT_NAME!=getVariable('PROJECT_NAME','Unknown') )
+{
+	COUNTER=0;
+	//TYPE=getVariable('TYPE','GENERAL');
+}
+else
+{
+	COUNTER = parseInt(getVariable('COUNTER',0));
+}
+//RDF_FILENAME="/home/itraveribon/Escritorio/RES/DataIntegration//harvested//" + getVariable('FORGE_ID','Unknown')+"-"+PROJECT_NAME+"-"+TYPE+"-"+getVariable('COUNTER',0);
+RDF_FILENAME="file:///home/abreforjas/Desktop/RES/harvested/" + getVariable('FORGE_ID','Unknown')+"-"+PROJECT_NAME+"-"+TYPE+"-"+COUNTER;
+COUNTER = COUNTER + 1;
+setVariable('COUNTER',COUNTER.toString(),"s");
+setVariable('TYPE',TYPE,"s");
+setVariable('PROJECT_NAME',PROJECT_NAME,"s");
+//RDF_FILENAME="C:\\DataIntegration\\harvested\\" + getVariable('FORGE_ID','Unknown') + "\\" + getVariable('FORGE_ID','Unknown')+"-"+PROJECT_NAME;</pre><h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>type</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>replace</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>RDF_FILENAME</td>
+               <td>RDF_FILENAME</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Dummy (do nothing)-text" href="#Dummy (do nothing)-icon">Dummy (do nothing)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="ERROR-text" href="#ERROR-icon">ERROR</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Error recuperando datos de -text" href="#Error recuperando datos de -icon">Error recuperando datos de </a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>REAL_REQUEST_URI</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Generando fichero-text" href="#Generando fichero-icon">Generando fichero</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>RDF_FILENAME</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>PROJECT_NAME</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>TYPE</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-RowsFromResult"></div>
+      <h3 class="step-heading"><a name="Get rows from result-text" href="#Get rows from result-icon">Get rows from result</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>      <br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ScriptValueMod"></div>
+      <h3 class="step-heading"><a name="HTTP Request-text" href="#HTTP Request-icon">HTTP Request</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h5>Script 1</h5><pre class="brush: js;">//Script here
+var httpclient = new Packages.org.apache.commons.httpclient.HttpClient(); 
+var method = new Packages.org.apache.commons.httpclient.methods.GetMethod(REAL_REQUEST_URI);
+var creds = new Packages.org.apache.commons.httpclient.UsernamePasswordCredentials("abreforjas", "fregoneta");
+httpclient.getState().setCredentials(null, null,creds);
+method.setDoAuthentication(true);
+REQUEST_ACCEPT_HEADER="application/xml"
+//if(REQUEST_ACCEPT_HEADER!=null){
+	method.addRequestHeader("Accept",REQUEST_ACCEPT_HEADER);
+//}
+var http_status_code = httpclient.executeMethod( method );
+var http_status_text = method.getStatusText();
+var HTTP_RESPONSE = method.getResponseBodyAsString();
+var CONTENT_TYPE = method.getResponseHeader("Content-type");
+method.releaseConnection();
+</pre><h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>type</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>replace</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>HTTP_RESPONSE</td>
+               <td>HTTP_RESPONSE</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>CONTENT_TYPE</td>
+               <td>CONTENT_TYPE</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Replace in string-text" href="#Replace in string-icon">Replace in string</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>HTTP_RESPONSE</td>
+               <td>HTTP_RESPONSE1</td>
+               <td>yes</td>
+               <td>UTF-8</td>
+               <td>ISO-8859-1</td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Select values-text" href="#Select values-icon">Select values</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>PROJECT_NAME</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>TYPE</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>ID</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>RDF_FILENAME</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TextFileOutput"></div>
+      <h3 class="step-heading"><a name="Write file-text" href="#Write file-icon">Write file</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>nullif</th>
+               <th>trim_type</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>HTTP_RESPONSE1</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>none</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+         </tbody>
+      </table><script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>
