@@ -1,0 +1,887 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/GenericWrapper/SF Tickets Downloader.ktr"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/GenericWrapper/SF Tickets Downloader.ktr"
+            file: 1
+            document: 1
+            document-element: transformation
+            name: 
+            relative-path: "/GenericWrapper"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: transformation ""</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/transformation.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Steps">Steps</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Transformation: "SF Tickets Downloader"</h1>
+      <p>
+         This transformation does not have a description.
+         
+      </p>
+      <h2>High Level Data Flow Diagram</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Input (1)</th>
+               <th>Transform</th>
+               <th>Output (1)</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>
+                  <div>Get Tickets URIS</div>
+               </td>
+               <td></td>
+               <td>
+                  <div>Write RDF file</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 887px;&#xA;            height: 564px;&#xA;        "><a name="Change TYPE value-icon"></a><div id="Change TYPE value" class="&#xA;                    step-icon&#xA;                    step-icon-SetValueConstant" style="&#xA;                    left:820px;&#xA;                    top:104px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Write to log"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Change TYPE value-text" style="&#xA;                    top:136px;&#xA;                    left:797.3333333333334px;                    &#xA;                ">Change TYPE value</a><a name="Check response is valid-icon"></a><div id="Check response is valid" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:515px;&#xA;                    top:216px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Write to log No Tickets"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Write to log Tickets"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Check response is valid-text" style="&#xA;                    top:248px;&#xA;                    left:484.3333333333333px;                    &#xA;                ">Check response is valid</a><a name="Content-Type Validation-icon"></a><div id="Content-Type Validation" class="&#xA;                    step-icon&#xA;                    step-icon-SwitchCase" style="&#xA;                    left:69px;&#xA;                    top:211px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Define target file path"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#ERROR"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Content-Type Validation-text" style="&#xA;                    top:243px;&#xA;                    left:38.33333333333333px;                    &#xA;                ">Content-Type Validation</a><a name="Copy rows to result-icon"></a><div id="Copy rows to result" class="&#xA;                    step-icon&#xA;                    step-icon-RowsToResult" style="&#xA;                    left:585px;&#xA;                    top:445px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Copy rows to result-text" style="&#xA;                    top:477px;&#xA;                    left:559.6666666666666px;                    &#xA;                ">Copy rows to result</a><a name="Define target file path-icon"></a><div id="Define target file path" class="&#xA;                    step-icon&#xA;                    step-icon-ScriptValueMod" style="&#xA;                    left:262px;&#xA;                    top:332px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Write RDF file"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Define target file path-text" style="&#xA;                    top:364px;&#xA;                    left:231.33333333333334px;                    &#xA;                ">Define target file path</a><a name="ERROR-icon"></a><div id="ERROR" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:67px;&#xA;                    top:348px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Error recuperando datos de "></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#ERROR-text" style="&#xA;                    top:380px;&#xA;                    left:60.333333333333336px;                    &#xA;                ">ERROR</a><a name="Error recuperando datos de -icon"></a><div id="Error recuperando datos de " class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:110px;&#xA;                    top:449px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Error recuperando datos de -text" style="&#xA;                    top:481px;&#xA;                    left:74px;                    &#xA;                ">Error recuperando datos de </a><a name="Filter GENERAL-SOURCEFORGE-icon"></a><div id="Filter GENERAL-SOURCEFORGE" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:350px;&#xA;                    top:105px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Get Tickets URIS"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Select NAME and ID"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Filter GENERAL-SOURCEFORGE-text" style="&#xA;                    top:137px;&#xA;                    left:315.3333333333333px;                    &#xA;                ">Filter GENERAL-SOURCEFORGE</a><a name="Get Forge-icon"></a><div id="Get Forge" class="&#xA;                    step-icon&#xA;                    step-icon-GetVariable" style="&#xA;                    left:188px;&#xA;                    top:107px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Write to log 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Forge-text" style="&#xA;                    top:139px;&#xA;                    left:176px;                    &#xA;                ">Get Forge</a><a name="Get Tickets URIS-icon"></a><div id="Get Tickets URIS" class="&#xA;                    step-icon&#xA;                    step-icon-getXMLData" style="&#xA;                    left:520px;&#xA;                    top:106px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Rename URL field"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                step-hop-error&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Transformaci%C3%B3n Simulada (no hace nada)"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Tickets URIS-text" style="&#xA;                    top:138px;&#xA;                    left:498.6666666666667px;                    &#xA;                ">Get Tickets URIS</a><a name="Get rows from result-icon"></a><div id="Get rows from result" class="&#xA;                    step-icon&#xA;                    step-icon-RowsFromResult" style="&#xA;                    left:63px;&#xA;                    top:91px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get Forge"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get rows from result-text" style="&#xA;                    top:123px;&#xA;                    left:36.33333333333333px;                    &#xA;                ">Get rows from result</a><a name="HTTP Request-icon"></a><div id="HTTP Request" class="&#xA;                    step-icon&#xA;                    step-icon-ScriptValueMod" style="&#xA;                    left:656px;&#xA;                    top:215px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Check response is valid"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#HTTP Request-text" style="&#xA;                    top:247px;&#xA;                    left:640px;                    &#xA;                ">HTTP Request</a><a name="Rename URL field-icon"></a><div id="Rename URL field" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:646px;&#xA;                    top:107px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Change TYPE value"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Rename URL field-text" style="&#xA;                    top:139px;&#xA;                    left:624.6666666666666px;                    &#xA;                ">Rename URL field</a><a name="Select ID and NAME-icon"></a><div id="Select ID and NAME" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:442px;&#xA;                    top:440px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Copy rows to result"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Select ID and NAME-text" style="&#xA;                    top:472px;&#xA;                    left:418px;                    &#xA;                ">Select ID and NAME</a><a name="Select NAME and ID-icon"></a><div id="Select NAME and ID" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:424px;&#xA;                    top:375px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Copy rows to result"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Select NAME and ID-text" style="&#xA;                    top:407px;&#xA;                    left:400px;                    &#xA;                ">Select NAME and ID</a><a name="Select NAME and ID 2-icon"></a><div id="Select NAME and ID 2" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:640px;&#xA;                    top:376px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Copy rows to result"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Select NAME and ID 2-text" style="&#xA;                    top:408px;&#xA;                    left:613.3333333333334px;                    &#xA;                ">Select NAME and ID 2</a><a name="Transformaci%C3%B3n Simulada (no hace nada)-icon"></a><div id="Transformación Simulada (no hace nada)" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy&#xA;                        step-error&#xA;                    " style="&#xA;                    left:512px;&#xA;                    top:19px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Transformaci%C3%B3n Simulada (no hace nada)-text" style="&#xA;                    top:51px;&#xA;                    left:461.3333333333333px;                    &#xA;                ">Transformación Simulada (no hace nada)</a><a name="Write RDF file-icon"></a><div id="Write RDF file" class="&#xA;                    step-icon&#xA;                    step-icon-TextFileOutput" style="&#xA;                    left:329px;&#xA;                    top:455px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Select ID and NAME"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write RDF file-text" style="&#xA;                    top:487px;&#xA;                    left:310.3333333333333px;                    &#xA;                ">Write RDF file</a><a name="Write to log-icon"></a><div id="Write to log" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:822px;&#xA;                    top:215px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#HTTP Request"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log-text" style="&#xA;                    top:247px;&#xA;                    left:806px;                    &#xA;                ">Write to log</a><a name="Write to log 2-icon"></a><div id="Write to log 2" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:273px;&#xA;                    top:58px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Filter GENERAL-SOURCEFORGE"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log 2-text" style="&#xA;                    top:90px;&#xA;                    left:254.33333333333334px;                    &#xA;                ">Write to log 2</a><a name="Write to log No Tickets-icon"></a><div id="Write to log No Tickets" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:524px;&#xA;                    top:332px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Select NAME and ID 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log No Tickets-text" style="&#xA;                    top:364px;&#xA;                    left:493.3333333333333px;                    &#xA;                ">Write to log No Tickets</a><a name="Write to log Tickets-icon"></a><div id="Write to log Tickets" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:327px;&#xA;                    top:217px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Content-Type Validation"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log Tickets-text" style="&#xA;                    top:249px;&#xA;                    left:300.3333333333333px;                    &#xA;                ">Write to log Tickets</a>
+         
+      </div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This transformation reads the following variables:</p>
+      <table>
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>Value</th>
+               <th>Connections</th>
+               <th>Steps</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>FORGE_ID</th>
+               <td></td>
+               <td></td>
+               <td><a href="#Get Forge">Get Forge</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This transformation defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Steps
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2>Flat Files</h2>
+      <p>
+         t.b.d.
+         
+      </p>
+      <h2><a name="Steps">Steps</a></h2><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SetValueConstant"></div>
+      <h3 class="step-heading"><a name="Change TYPE value-text" href="#Change TYPE value-icon">Change TYPE value</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>value</th>
+               <th>mask</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>TYPE</td>
+               <td>TICKETS</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Check response is valid-text" href="#Check response is valid-icon">Check response is valid</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SwitchCase"></div>
+      <h3 class="step-heading"><a name="Content-Type Validation-text" href="#Content-Type Validation-icon">Content-Type Validation</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-RowsToResult"></div>
+      <h3 class="step-heading"><a name="Copy rows to result-text" href="#Copy rows to result-icon">Copy rows to result</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ScriptValueMod"></div>
+      <h3 class="step-heading"><a name="Define target file path-text" href="#Define target file path-icon">Define target file path</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h5>Script 1</h5><pre class="brush: js;">//Script here
+//RDF_FILENAME="file:///C://DataIntegration//harvested//" + getVariable('FORGE_ID','Unknown')+"-"+PROJECT_NAME;
+if (PROJECT_NAME!=getVariable('PROJECT_NAME','Unknown') )
+{
+	COUNTER=0;
+	//TYPE=getVariable('TYPE','GENERAL');
+}
+else
+{
+	COUNTER = parseInt(getVariable('COUNTER',0));
+}//RDF_FILENAME="/home/itraveribon/Escritorio/RES/DataIntegration//harvested//" + getVariable('FORGE_ID','Unknown')+"-"+PROJECT_NAME+"-"+TYPE+"-"+getVariable('COUNTER',0);
+RDF_FILENAME="file:///C://DataIntegration//harvested//" + getVariable('FORGE_ID','Unknown')+"-"+PROJECT_NAME+"-"+TYPE+"-"+COUNTER;
+COUNTER = COUNTER + 1;
+setVariable('COUNTER',COUNTER.toString(),"s");
+setVariable('PROJECT_NAME',PROJECT_NAME,"s");
+//RDF_FILENAME="C:\\DataIntegration\\harvested\\" + getVariable('FORGE_ID','Unknown') + "\\" + getVariable('FORGE_ID','Unknown')+"-"+PROJECT_NAME;</pre><h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>type</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>replace</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>RDF_FILENAME</td>
+               <td>RDF_FILENAME</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="ERROR-text" href="#ERROR-icon">ERROR</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Error recuperando datos de -text" href="#Error recuperando datos de -icon">Error recuperando datos de </a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>REAL_REQUEST_URI</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Filter GENERAL-SOURCEFORGE-text" href="#Filter GENERAL-SOURCEFORGE-icon">Filter GENERAL-SOURCEFORGE</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-GetVariable"></div>
+      <h3 class="step-heading"><a name="Get Forge-text" href="#Get Forge-icon">Get Forge</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>variable</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>trim_type</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>FORGE</td>
+               <td>${FORGE_ID}</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>0</td>
+               <td>0</td>
+               <td>none</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-getXMLData"></div>
+      <h3 class="step-heading"><a name="Get Tickets URIS-text" href="#Get Tickets URIS-icon">Get Tickets URIS</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>xpath</th>
+               <th>element_type</th>
+               <th>result_type</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>trim_type</th>
+               <th>repeat</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>URL</td>
+               <td>sf:Tracker/rss:channel/@rdf:resource</td>
+               <td>attribut</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-RowsFromResult"></div>
+      <h3 class="step-heading"><a name="Get rows from result-text" href="#Get rows from result-icon">Get rows from result</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>      <br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ScriptValueMod"></div>
+      <h3 class="step-heading"><a name="HTTP Request-text" href="#HTTP Request-icon">HTTP Request</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h5>Script 1</h5><pre class="brush: js;">//Script here
+var httpclient = new Packages.org.apache.commons.httpclient.HttpClient(); 
+var method = new Packages.org.apache.commons.httpclient.methods.GetMethod(REAL_REQUEST_URI);
+var creds = new Packages.org.apache.commons.httpclient.UsernamePasswordCredentials("ruizrube", "thesis2010");
+httpclient.getState().setCredentials(null, null,creds);
+method.setDoAuthentication(true);
+//if(REQUEST_ACCEPT_HEADER!=null){
+//	method.addRequestHeader("Accept",REQUEST_ACCEPT_HEADER);
+//}
+var http_status_code = httpclient.executeMethod( method );
+var http_status_text = method.getStatusText();
+var HTTP_RESPONSE = method.getResponseBodyAsString();
+var CONTENT_TYPE = method.getResponseHeader("Content-type");
+method.releaseConnection();
+</pre><h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>type</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>replace</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>HTTP_RESPONSE</td>
+               <td>HTTP_RESPONSE</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>CONTENT_TYPE</td>
+               <td>CONTENT_TYPE</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Rename URL field-text" href="#Rename URL field-icon">Rename URL field</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>PROJECT_NAME</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>TYPE</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>URL</td>
+               <td>REAL_REQUEST_URI</td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>ID</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Select ID and NAME-text" href="#Select ID and NAME-icon">Select ID and NAME</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>PROJECT_NAME</td>
+               <td>NAME</td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>ID</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Select NAME and ID-text" href="#Select NAME and ID-icon">Select NAME and ID</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>PROJECT_NAME</td>
+               <td>NAME</td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>ID</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Select NAME and ID 2-text" href="#Select NAME and ID 2-icon">Select NAME and ID 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>PROJECT_NAME</td>
+               <td>NAME</td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>ID</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Transformaci%C3%B3n Simulada (no hace nada)-text" href="#Transformaci%C3%B3n Simulada (no hace nada)-icon">Transformación Simulada (no hace nada)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TextFileOutput"></div>
+      <h3 class="step-heading"><a name="Write RDF file-text" href="#Write RDF file-icon">Write RDF file</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>nullif</th>
+               <th>trim_type</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>HTTP_RESPONSE</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>none</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log-text" href="#Write to log-icon">Write to log</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>REAL_REQUEST_URI</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>PROJECT_NAME</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>TYPE</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log 2-text" href="#Write to log 2-icon">Write to log 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>TYPE</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>FORGE</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>RDF_FILENAME</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log No Tickets-text" href="#Write to log No Tickets-icon">Write to log No Tickets</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>REAL_REQUEST_URI</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>PROJECT_NAME</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log Tickets-text" href="#Write to log Tickets-icon">Write to log Tickets</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>REAL_REQUEST_URI</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>PROJECT_NAME</td>
+            </tr>
+         </tbody>
+      </table><script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>
