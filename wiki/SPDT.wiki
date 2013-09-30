@@ -2,7 +2,7 @@
 
 = Introduction =
 
-A complete toolkit for deploying software process in supporting tools
+A Java complete toolkit for deploying software process in supporting tools, such as, MediaWiki or Enterprise Architect
 
 = Details =
 
