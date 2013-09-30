@@ -1,0 +1,643 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/Rubrica/Planificacion.ktr"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/Rubrica/Planificacion.ktr"
+            file: 1
+            document: 1
+            document-element: transformation
+            name: 
+            relative-path: "/Rubrica"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: transformation ""</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/transformation.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Steps">Steps</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Transformation: "Planificacion"</h1>
+      <p>
+         This transformation does not have a description.
+         
+      </p>
+      <h2>High Level Data Flow Diagram</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Input (3)</th>
+               <th>Transform</th>
+               <th>Output (2)</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>
+                  <div>Get Metric Creations ID</div>
+                  <div>Get Metric Updates ID</div>
+                  <div>Get ticket's create and complete date</div>
+               </td>
+               <td></td>
+               <td>
+                  <div>Insert / Update planificacion_creation</div>
+                  <div>Insert / Update planificacion_updates</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 1011px;&#xA;            height: 466px;&#xA;        "><a name="Calculator-icon"></a><div id="Calculator" class="&#xA;                    step-icon&#xA;                    step-icon-Calculator" style="&#xA;                    left:262px;&#xA;                    top:92px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Filter rows"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Calculator-text" style="&#xA;                    top:124px;&#xA;                    left:248.66666666666666px;                    &#xA;                ">Calculator</a><a name="Calculator 2-icon"></a><div id="Calculator 2" class="&#xA;                    step-icon&#xA;                    step-icon-Calculator" style="&#xA;                    left:264px;&#xA;                    top:290px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Filter rows 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Calculator 2-text" style="&#xA;                    top:322px;&#xA;                    left:248px;                    &#xA;                ">Calculator 2</a><a name="Dummy (do nothing)-icon"></a><div id="Dummy (do nothing)" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:350px;&#xA;                    top:193px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Dummy (do nothing)-text" style="&#xA;                    top:225px;&#xA;                    left:326px;                    &#xA;                ">Dummy (do nothing)</a><a name="Dummy (do nothing) 2-icon"></a><div id="Dummy (do nothing) 2" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:352px;&#xA;                    top:391px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Dummy (do nothing) 2-text" style="&#xA;                    top:423px;&#xA;                    left:325.3333333333333px;                    &#xA;                ">Dummy (do nothing) 2</a><a name="Dummy (do nothing) 3-icon"></a><div id="Dummy (do nothing) 3" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:46px;&#xA;                    top:408px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Dummy (do nothing) 3-text" style="&#xA;                    top:440px;&#xA;                    left:19.333333333333332px;                    &#xA;                ">Dummy (do nothing) 3</a><a name="Filter rows-icon"></a><div id="Filter rows" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:352px;&#xA;                    top:98px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Max difference between creations"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Dummy (do nothing)"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Filter rows-text" style="&#xA;                    top:130px;&#xA;                    left:337.3333333333333px;                    &#xA;                ">Filter rows</a><a name="Filter rows 2-icon"></a><div id="Filter rows 2" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:354px;&#xA;                    top:296px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Max difference between completes"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Dummy (do nothing) 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Filter rows 2-text" style="&#xA;                    top:328px;&#xA;                    left:336.6666666666667px;                    &#xA;                ">Filter rows 2</a><a name="Filter rows 3-icon"></a><div id="Filter rows 3" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:67px;&#xA;                    top:323px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Dummy (do nothing) 3"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Row flattener 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Filter rows 3-text" style="&#xA;                    top:355px;&#xA;                    left:49.66666666666667px;                    &#xA;                ">Filter rows 3</a><a name="Get Metric Creations ID-icon"></a><div id="Get Metric Creations ID" class="&#xA;                    step-icon&#xA;                    step-icon-TableInput" style="&#xA;                    left:638px;&#xA;                    top:273px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Join Rows (cartesian product) 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Metric Creations ID-text" style="&#xA;                    top:305px;&#xA;                    left:607.3333333333334px;                    &#xA;                ">Get Metric Creations ID</a><a name="Get Metric Updates ID-icon"></a><div id="Get Metric Updates ID" class="&#xA;                    step-icon&#xA;                    step-icon-TableInput" style="&#xA;                    left:801px;&#xA;                    top:70px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Join Rows (cartesian product) 2 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Metric Updates ID-text" style="&#xA;                    top:102px;&#xA;                    left:773px;                    &#xA;                ">Get Metric Updates ID</a><a name="Get ticket's create and complete date-icon"></a><div id="Get ticket's create and complete date" class="&#xA;                    step-icon&#xA;                    step-icon-TableInput" style="&#xA;                    left:44px;&#xA;                    top:161px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Row flattener"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Row flattener 3"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get ticket's create and complete date-text" style="&#xA;                    top:193px;&#xA;                    left:-5.333333333333336px;                    &#xA;                ">Get ticket's create and complete date</a><a name="Insert / Update planificacion_creation-icon"></a><div id="Insert / Update planificacion_creation" class="&#xA;                    step-icon&#xA;                    step-icon-InsertUpdate" style="&#xA;                    left:750px;&#xA;                    top:386px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Insert / Update planificacion_creation-text" style="&#xA;                    top:418px;&#xA;                    left:699.3333333333334px;                    &#xA;                ">Insert / Update planificacion_creation</a><a name="Insert / Update planificacion_updates-icon"></a><div id="Insert / Update planificacion_updates" class="&#xA;                    step-icon&#xA;                    step-icon-InsertUpdate" style="&#xA;                    left:922px;&#xA;                    top:285px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Insert / Update planificacion_updates-text" style="&#xA;                    top:317px;&#xA;                    left:872.6666666666666px;                    &#xA;                ">Insert / Update planificacion_updates</a><a name="Join Rows (cartesian product)-icon"></a><div id="Join Rows (cartesian product)" class="&#xA;                    step-icon&#xA;                    step-icon-JoinRows" style="&#xA;                    left:582px;&#xA;                    top:201px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Write to log"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Join Rows (cartesian product)-text" style="&#xA;                    top:233px;&#xA;                    left:543.3333333333334px;                    &#xA;                ">Join Rows (cartesian product)</a><a name="Join Rows (cartesian product) 2-icon"></a><div id="Join Rows (cartesian product) 2" class="&#xA;                    step-icon&#xA;                    step-icon-JoinRows" style="&#xA;                    left:757px;&#xA;                    top:305px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Insert / Update planificacion_creation"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Join Rows (cartesian product) 2-text" style="&#xA;                    top:337px;&#xA;                    left:715.6666666666666px;                    &#xA;                ">Join Rows (cartesian product) 2</a><a name="Join Rows (cartesian product) 2 2-icon"></a><div id="Join Rows (cartesian product) 2 2" class="&#xA;                    step-icon&#xA;                    step-icon-JoinRows" style="&#xA;                    left:927px;&#xA;                    top:181px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Insert / Update planificacion_updates"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Join Rows (cartesian product) 2 2-text" style="&#xA;                    top:213px;&#xA;                    left:883px;                    &#xA;                ">Join Rows (cartesian product) 2 2</a><a name="Max difference between completes-icon"></a><div id="Max difference between completes" class="&#xA;                    step-icon&#xA;                    step-icon-GroupBy" style="&#xA;                    left:498px;&#xA;                    top:330px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Select values"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Max difference between completes-text" style="&#xA;                    top:362px;&#xA;                    left:455.3333333333333px;                    &#xA;                ">Max difference between completes</a><a name="Max difference between creations-icon"></a><div id="Max difference between creations" class="&#xA;                    step-icon&#xA;                    step-icon-GroupBy" style="&#xA;                    left:499px;&#xA;                    top:103px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Join Rows (cartesian product)"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Max difference between creations-text" style="&#xA;                    top:135px;&#xA;                    left:456.3333333333333px;                    &#xA;                ">Max difference between creations</a><a name="Row flattener-icon"></a><div id="Row flattener" class="&#xA;                    step-icon&#xA;                    step-icon-Flattener" style="&#xA;                    left:158px;&#xA;                    top:90px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Calculator"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Row flattener-text" style="&#xA;                    top:122px;&#xA;                    left:140.66666666666666px;                    &#xA;                ">Row flattener</a><a name="Row flattener 2-icon"></a><div id="Row flattener 2" class="&#xA;                    step-icon&#xA;                    step-icon-Flattener" style="&#xA;                    left:149px;&#xA;                    top:370px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Write to log 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Row flattener 2-text" style="&#xA;                    top:402px;&#xA;                    left:129px;                    &#xA;                ">Row flattener 2</a><a name="Row flattener 3-icon"></a><div id="Row flattener 3" class="&#xA;                    step-icon&#xA;                    step-icon-Flattener" style="&#xA;                    left:106px;&#xA;                    top:260px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Filter rows 3"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Row flattener 3-text" style="&#xA;                    top:292px;&#xA;                    left:86px;                    &#xA;                ">Row flattener 3</a><a name="Select values-icon"></a><div id="Select values" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:540px;&#xA;                    top:259px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Join Rows (cartesian product)"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Select values-text" style="&#xA;                    top:291px;&#xA;                    left:522.6666666666666px;                    &#xA;                ">Select values</a><a name="Write to log-icon"></a><div id="Write to log" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:673px;&#xA;                    top:152px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Join Rows (cartesian product) 2 2"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Join Rows (cartesian product) 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log-text" style="&#xA;                    top:184px;&#xA;                    left:657px;                    &#xA;                ">Write to log</a><a name="Write to log 2-icon"></a><div id="Write to log 2" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:178px;&#xA;                    top:292px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Calculator 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log 2-text" style="&#xA;                    top:324px;&#xA;                    left:159.33333333333334px;                    &#xA;                ">Write to log 2</a>
+         
+      </div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This transformation does not read any variables.</p>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This transformation defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Steps
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td><a href="#AbreforjasLocal">Get Metric Creations ID</a>, <a href="#AbreforjasLocal">Get Metric Updates ID</a>, <a href="#AbreforjasLocal">Get ticket's create and complete date</a>, <a href="#AbreforjasLocal">Insert / Update planificacion_creation</a>, <a href="#AbreforjasLocal">Insert / Update planificacion_updates</a></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2>Flat Files</h2>
+      <p>
+         t.b.d.
+         
+      </p>
+      <h2><a name="Steps">Steps</a></h2><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Calculator"></div>
+      <h3 class="step-heading"><a name="Calculator-text" href="#Calculator-icon">Calculator</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Calculator"></div>
+      <h3 class="step-heading"><a name="Calculator 2-text" href="#Calculator 2-icon">Calculator 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Dummy (do nothing)-text" href="#Dummy (do nothing)-icon">Dummy (do nothing)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Dummy (do nothing) 2-text" href="#Dummy (do nothing) 2-icon">Dummy (do nothing) 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Dummy (do nothing) 3-text" href="#Dummy (do nothing) 3-icon">Dummy (do nothing) 3</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Filter rows-text" href="#Filter rows-icon">Filter rows</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Filter rows 2-text" href="#Filter rows 2-icon">Filter rows 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Filter rows 3-text" href="#Filter rows 3-icon">Filter rows 3</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableInput"></div>
+      <h3 class="step-heading"><a name="Get Metric Creations ID-text" href="#Get Metric Creations ID-icon">Get Metric Creations ID</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">SELECT id, name as metric FROM metrics WHERE name='planificacion_creations'</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableInput"></div>
+      <h3 class="step-heading"><a name="Get Metric Updates ID-text" href="#Get Metric Updates ID-icon">Get Metric Updates ID</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">SELECT id, name as metric FROM metrics WHERE name='planificacion_updates'</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableInput"></div>
+      <h3 class="step-heading"><a name="Get ticket's create and complete date-text" href="#Get ticket's create and complete date-icon">Get ticket's create and complete date</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">select tickets.id,project,projects.name,tickets.created,completed from tickets,projects where tickets.status=3 and project=projects.id order by project asc, created asc, completed asc;</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-InsertUpdate"></div>
+      <h3 class="step-heading"><a name="Insert / Update planificacion_creation-text" href="#Insert / Update planificacion_creation-icon">Insert / Update planificacion_creation</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-InsertUpdate"></div>
+      <h3 class="step-heading"><a name="Insert / Update planificacion_updates-text" href="#Insert / Update planificacion_updates-icon">Insert / Update planificacion_updates</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-JoinRows"></div>
+      <h3 class="step-heading"><a name="Join Rows (cartesian product)-text" href="#Join Rows (cartesian product)-icon">Join Rows (cartesian product)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-JoinRows"></div>
+      <h3 class="step-heading"><a name="Join Rows (cartesian product) 2-text" href="#Join Rows (cartesian product) 2-icon">Join Rows (cartesian product) 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-JoinRows"></div>
+      <h3 class="step-heading"><a name="Join Rows (cartesian product) 2 2-text" href="#Join Rows (cartesian product) 2 2-icon">Join Rows (cartesian product) 2 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-GroupBy"></div>
+      <h3 class="step-heading"><a name="Max difference between completes-text" href="#Max difference between completes-icon">Max difference between completes</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>aggregate</th>
+               <th>subject</th>
+               <th>type</th>
+               <th>valuefield</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>maxdiffup</td>
+               <td>diff</td>
+               <td>MAX</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>name</td>
+               <td>name</td>
+               <td>FIRST_INCL_NULL</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-GroupBy"></div>
+      <h3 class="step-heading"><a name="Max difference between creations-text" href="#Max difference between creations-icon">Max difference between creations</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>aggregate</th>
+               <th>subject</th>
+               <th>type</th>
+               <th>valuefield</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>maxdiff</td>
+               <td>diff</td>
+               <td>MAX</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Flattener"></div>
+      <h3 class="step-heading"><a name="Row flattener-text" href="#Row flattener-icon">Row flattener</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>T1</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>T2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Flattener"></div>
+      <h3 class="step-heading"><a name="Row flattener 2-text" href="#Row flattener 2-icon">Row flattener 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>T1</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>T2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Flattener"></div>
+      <h3 class="step-heading"><a name="Row flattener 3-text" href="#Row flattener 3-icon">Row flattener 3</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>P1</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>P2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Select values-text" href="#Select values-icon">Select values</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>P1</td>
+               <td>project1</td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>maxdiffup</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>name</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log-text" href="#Write to log-icon">Write to log</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>project</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>maxdiffup</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>name</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log 2-text" href="#Write to log 2-icon">Write to log 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>T1</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>T2</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>P1</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>P2</td>
+            </tr>
+         </tbody>
+      </table><script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>

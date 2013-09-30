@@ -1,0 +1,2333 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/Assembla to Database.ktr"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/Assembla to Database.ktr"
+            file: 1
+            document: 1
+            document-element: transformation
+            name: 
+            relative-path: "/Integration Process"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: transformation ""</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/transformation.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Steps">Steps</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Transformation: "Assembla to Database"</h1>
+      <p>
+         This transformation does not have a description.
+         
+      </p>
+      <p>Esta transformación sólo es útil para Assembla, aunque utiliza subtransformaciones genéricas. En primer lugar extrae del nombre
+         del fichero el nombre del proyecto. Posteriormente obtiene el tipo del fichero (Tickets, Milestones, etc) y según sea ese
+         tipo llamará a una transformación u otra
+      </p>
+      <h2>High Level Data Flow Diagram</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Input (6)</th>
+               <th>Transform</th>
+               <th>Output (1)</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>
+                  <div>Get Project ID</div>
+                  <div>Get data from DOCUMENTS</div>
+                  <div>Get data from General</div>
+                  <div>Get data from Milestones</div>
+                  <div>Get data from Tickets</div>
+                  <div>Get data from Users</div>
+               </td>
+               <td></td>
+               <td>
+                  <div>Project Update</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 1054px;&#xA;            height: 620px;&#xA;        "><a name="Delete NAME-icon"></a><div id="Delete NAME" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:72px;&#xA;                    top:200px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Join Rows"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Delete NAME-text" style="&#xA;                    top:232px;&#xA;                    left:57.333333333333336px;                    &#xA;                ">Delete NAME</a><a name="Dummy (do nothing)-icon"></a><div id="Dummy (do nothing)" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:527px;&#xA;                    top:140px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Dummy (do nothing)-text" style="&#xA;                    top:172px;&#xA;                    left:503px;                    &#xA;                ">Dummy (do nothing)</a><a name="Extraer nombre forja-icon"></a><div id="Extraer nombre forja" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:69px;&#xA;                    top:344px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Extraer nombre proyecto"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Extraer nombre forja-text" style="&#xA;                    top:376px;&#xA;                    left:42.33333333333333px;                    &#xA;                ">Extraer nombre forja</a><a name="Extraer nombre proyecto-icon"></a><div id="Extraer nombre proyecto" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:72px;&#xA;                    top:269px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Select NAME_1 and FORGE_1"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Delete NAME"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Extraer nombre proyecto-text" style="&#xA;                    top:301px;&#xA;                    left:41.33333333333333px;                    &#xA;                ">Extraer nombre proyecto</a><a name="Get Filename-icon"></a><div id="Get Filename" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:68px;&#xA;                    top:424px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Extraer nombre forja"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Filename-text" style="&#xA;                    top:456px;&#xA;                    left:52px;                    &#xA;                ">Get Filename</a><a name="Get Project ID-icon"></a><div id="Get Project ID" class="&#xA;                    step-icon&#xA;                    step-icon-TableInput" style="&#xA;                    left:188px;&#xA;                    top:95px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Join Rows"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Project ID-text" style="&#xA;                    top:127px;&#xA;                    left:169.33333333333334px;                    &#xA;                ">Get Project ID</a><a name="Get Variables-icon"></a><div id="Get Variables" class="&#xA;                    step-icon&#xA;                    step-icon-GetVariable" style="&#xA;                    left:62px;&#xA;                    top:505px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get Filename"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Variables-text" style="&#xA;                    top:537px;&#xA;                    left:44.66666666666667px;                    &#xA;                ">Get Variables</a><a name="Get data from DOCUMENTS-icon"></a><div id="Get data from DOCUMENTS" class="&#xA;                    step-icon&#xA;                    step-icon-getXMLData" style="&#xA;                    left:963px;&#xA;                    top:135px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Prepare Download URL"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get data from DOCUMENTS-text" style="&#xA;                    top:167px;&#xA;                    left:932.3333333333334px;                    &#xA;                ">Get data from DOCUMENTS</a><a name="Get data from General-icon"></a><div id="Get data from General" class="&#xA;                    step-icon&#xA;                    step-icon-getXMLData" style="&#xA;                    left:329px;&#xA;                    top:227px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Project Update"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get data from General-text" style="&#xA;                    top:259px;&#xA;                    left:301px;                    &#xA;                ">Get data from General</a><a name="Get data from Milestones-icon"></a><div id="Get data from Milestones" class="&#xA;                    step-icon&#xA;                    step-icon-getXMLData" style="&#xA;                    left:798px;&#xA;                    top:140px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#InsertMilestones"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get data from Milestones-text" style="&#xA;                    top:172px;&#xA;                    left:766px;                    &#xA;                ">Get data from Milestones</a><a name="Get data from Tickets-icon"></a><div id="Get data from Tickets" class="&#xA;                    step-icon&#xA;                    step-icon-getXMLData" style="&#xA;                    left:464px;&#xA;                    top:231px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#InsertTickets"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get data from Tickets-text" style="&#xA;                    top:263px;&#xA;                    left:436px;                    &#xA;                ">Get data from Tickets</a><a name="Get data from Users-icon"></a><div id="Get data from Users" class="&#xA;                    step-icon&#xA;                    step-icon-getXMLData" style="&#xA;                    left:654px;&#xA;                    top:142px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#InsertUsers"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get data from Users-text" style="&#xA;                    top:174px;&#xA;                    left:628.6666666666666px;                    &#xA;                ">Get data from Users</a><a name="Get type file-icon"></a><div id="Get type file" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:167px;&#xA;                    top:17px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get type file 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get type file-text" style="&#xA;                    top:49px;&#xA;                    left:149.66666666666666px;                    &#xA;                ">Get type file</a><a name="Get type file 2-icon"></a><div id="Get type file 2" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:247px;&#xA;                    top:20px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Write to log 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get type file 2-text" style="&#xA;                    top:52px;&#xA;                    left:227px;                    &#xA;                ">Get type file 2</a><a name="InsertDocuments-icon"></a><div id="InsertDocuments" class="&#xA;                    step-icon&#xA;                    step-icon-Mapping" style="&#xA;                    left:988px;&#xA;                    top:319px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#InsertDocuments-text" style="&#xA;                    top:351px;&#xA;                    left:968px;                    &#xA;                ">InsertDocuments</a><a name="InsertMilestones-icon"></a><div id="InsertMilestones" class="&#xA;                    step-icon&#xA;                    step-icon-Mapping" style="&#xA;                    left:823px;&#xA;                    top:265px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#InsertMilestones-text" style="&#xA;                    top:297px;&#xA;                    left:801.6666666666666px;                    &#xA;                ">InsertMilestones</a><a name="InsertTickets-icon"></a><div id="InsertTickets" class="&#xA;                    step-icon&#xA;                    step-icon-Mapping" style="&#xA;                    left:462px;&#xA;                    top:400px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#InsertTickets-text" style="&#xA;                    top:432px;&#xA;                    left:444.6666666666667px;                    &#xA;                ">InsertTickets</a><a name="InsertUsers-icon"></a><div id="InsertUsers" class="&#xA;                    step-icon&#xA;                    step-icon-Mapping" style="&#xA;                    left:696px;&#xA;                    top:259px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#InsertUsers-text" style="&#xA;                    top:291px;&#xA;                    left:681.3333333333334px;                    &#xA;                ">InsertUsers</a><a name="Join Rows-icon"></a><div id="Join Rows" class="&#xA;                    step-icon&#xA;                    step-icon-JoinRows" style="&#xA;                    left:75px;&#xA;                    top:94px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Select values"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Join Rows-text" style="&#xA;                    top:126px;&#xA;                    left:63px;                    &#xA;                ">Join Rows</a><a name="Prepare Download URL-icon"></a><div id="Prepare Download URL" class="&#xA;                    step-icon&#xA;                    step-icon-ScriptValueMod" style="&#xA;                    left:982px;&#xA;                    top:210px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#InsertDocuments"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Prepare Download URL-text" style="&#xA;                    top:242px;&#xA;                    left:955.3333333333334px;                    &#xA;                ">Prepare Download URL</a><a name="Project Update-icon"></a><div id="Project Update" class="&#xA;                    step-icon&#xA;                    step-icon-Update" style="&#xA;                    left:329px;&#xA;                    top:337px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Project Update-text" style="&#xA;                    top:369px;&#xA;                    left:310.3333333333333px;                    &#xA;                ">Project Update</a><a name="Select NAME_1 and FORGE_1-icon"></a><div id="Select NAME_1 and FORGE_1" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:191px;&#xA;                    top:287px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Write to log 3"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Select NAME_1 and FORGE_1-text" style="&#xA;                    top:319px;&#xA;                    left:157.66666666666666px;                    &#xA;                ">Select NAME_1 and FORGE_1</a><a name="Select values-icon"></a><div id="Select values" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:84px;&#xA;                    top:18px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get type file"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Select values-text" style="&#xA;                    top:50px;&#xA;                    left:66.66666666666667px;                    &#xA;                ">Select values</a><a name="Switch / Case-icon"></a><div id="Switch / Case" class="&#xA;                    step-icon&#xA;                    step-icon-SwitchCase" style="&#xA;                    left:481px;&#xA;                    top:13px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Dummy (do nothing)"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get data from DOCUMENTS"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get data from Users"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get data from General"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get data from Milestones"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get data from Tickets"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Switch / Case-text" style="&#xA;                    top:45px;&#xA;                    left:463.6666666666667px;                    &#xA;                ">Switch / Case</a><a name="Write to log 2-icon"></a><div id="Write to log 2" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:319px;&#xA;                    top:41px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Switch / Case"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log 2-text" style="&#xA;                    top:73px;&#xA;                    left:300.3333333333333px;                    &#xA;                ">Write to log 2</a><a name="Write to log 3-icon"></a><div id="Write to log 3" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:191px;&#xA;                    top:198px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get Project ID"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log 3-text" style="&#xA;                    top:230px;&#xA;                    left:172.33333333333334px;                    &#xA;                ">Write to log 3</a>
+         
+      </div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This transformation reads the following variables:</p>
+      <table>
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>Value</th>
+               <th>Connections</th>
+               <th>Steps</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>PROCESSING_FILENAME</th>
+               <td></td>
+               <td></td>
+               <td><a href="#Get Variables">Get Variables</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This transformation defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Steps
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td><a href="#AbreforjasLocal">Get Project ID</a>, <a href="#AbreforjasLocal">Project Update</a></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2>Flat Files</h2>
+      <p>
+         t.b.d.
+         
+      </p>
+      <h2><a name="Steps">Steps</a></h2><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Delete NAME-text" href="#Delete NAME-icon">Delete NAME</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>        N
+              NAME
+          <br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Dummy (do nothing)-text" href="#Dummy (do nothing)-icon">Dummy (do nothing)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Extraer nombre forja-text" href="#Extraer nombre forja-icon">Extraer nombre forja</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>FILENAME</td>
+               <td>FORGE_1</td>
+               <td>yes</td>
+               <td>-.*</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>FILENAME</td>
+               <td>NAME</td>
+               <td>yes</td>
+               <td>-[^-]*-[0-9]+</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Extraer nombre proyecto-text" href="#Extraer nombre proyecto-icon">Extraer nombre proyecto</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>NAME</td>
+               <td>NAME</td>
+               <td>yes</td>
+               <td>^([^-]+)-</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Get Filename-text" href="#Get Filename-icon">Get Filename</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>file</td>
+               <td>FILENAME</td>
+               <td>yes</td>
+               <td>.*/</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableInput"></div>
+      <h3 class="step-heading"><a name="Get Project ID-text" href="#Get Project ID-icon">Get Project ID</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">SELECT
+  id
+, name
+, forge
+FROM projects WHERE name=? and forge=?
+</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-GetVariable"></div>
+      <h3 class="step-heading"><a name="Get Variables-text" href="#Get Variables-icon">Get Variables</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>variable</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>trim_type</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>file</td>
+               <td>${PROCESSING_FILENAME}</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-getXMLData"></div>
+      <h3 class="step-heading"><a name="Get data from DOCUMENTS-text" href="#Get data from DOCUMENTS-icon">Get data from DOCUMENTS</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>xpath</th>
+               <th>element_type</th>
+               <th>result_type</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>trim_type</th>
+               <th>repeat</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>attachable-guid</td>
+               <td>attachable-guid</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>cached-tag-list</td>
+               <td>cached-tag-list</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>name</td>
+               <td>name</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>position</td>
+               <td>position</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>5</th>
+               <td>created-at</td>
+               <td>created-at</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>6</th>
+               <td>content-type</td>
+               <td>content-type</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>7</th>
+               <td>external-document-id</td>
+               <td>external-document-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>8</th>
+               <td>external-download-uri</td>
+               <td>external-download-uri</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>9</th>
+               <td>updated-at</td>
+               <td>updated-at</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>10</th>
+               <td>created-by</td>
+               <td>created-by</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>11</th>
+               <td>id</td>
+               <td>id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>12</th>
+               <td>ticket-id</td>
+               <td>ticket-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>13</th>
+               <td>version</td>
+               <td>version</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>14</th>
+               <td>filename</td>
+               <td>filename</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>15</th>
+               <td>filesize</td>
+               <td>filesize</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>16</th>
+               <td>updated-by</td>
+               <td>updated-by</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>17</th>
+               <td>attachable-type</td>
+               <td>attachable-type</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>18</th>
+               <td>description</td>
+               <td>description</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>19</th>
+               <td>attachable-id</td>
+               <td>attachable-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>20</th>
+               <td>external-filesystem-id</td>
+               <td>external-filesystem-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>21</th>
+               <td>has-thumbnail</td>
+               <td>has-thumbnail</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>22</th>
+               <td>space-id</td>
+               <td>space-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>23</th>
+               <td>use-as</td>
+               <td>use-as</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-getXMLData"></div>
+      <h3 class="step-heading"><a name="Get data from General-text" href="#Get data from General-icon">Get data from General</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>xpath</th>
+               <th>element_type</th>
+               <th>result_type</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>trim_type</th>
+               <th>repeat</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>name</td>
+               <td>name</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>default-showpage</td>
+               <td>default-showpage</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>created-at</td>
+               <td>created-at</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>is-commercial</td>
+               <td>is-commercial</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>5</th>
+               <td>watcher-permissions</td>
+               <td>watcher-permissions</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>6</th>
+               <td>updated-at</td>
+               <td>updated-at</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>7</th>
+               <td>wiki-name</td>
+               <td>wiki-name</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>8</th>
+               <td>team-permissions</td>
+               <td>team-permissions</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>9</th>
+               <td>is-manager</td>
+               <td>is-manager</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>10</th>
+               <td>can-join</td>
+               <td>can-join</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>11</th>
+               <td>id</td>
+               <td>id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>12</th>
+               <td>parent-id</td>
+               <td>parent-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>13</th>
+               <td>public-permissions</td>
+               <td>public-permissions</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>14</th>
+               <td>description</td>
+               <td>description</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>15</th>
+               <td>is-volunteer</td>
+               <td>is-volunteer</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-getXMLData"></div>
+      <h3 class="step-heading"><a name="Get data from Milestones-text" href="#Get data from Milestones-icon">Get data from Milestones</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>xpath</th>
+               <th>element_type</th>
+               <th>result_type</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>trim_type</th>
+               <th>repeat</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>planner-type</td>
+               <td>planner-type</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>created-at</td>
+               <td>created-at</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>completed-date</td>
+               <td>completed-date</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>is-completed</td>
+               <td>is-completed</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>5</th>
+               <td>title</td>
+               <td>title</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>6</th>
+               <td>basecamp-milestone-id</td>
+               <td>basecamp-milestone-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>7</th>
+               <td>release-level</td>
+               <td>release-level</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>8</th>
+               <td>updated-at</td>
+               <td>updated-at</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>9</th>
+               <td>created-by</td>
+               <td>created-by</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>10</th>
+               <td>id</td>
+               <td>id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>11</th>
+               <td>user-id</td>
+               <td>user-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>12</th>
+               <td>due-date</td>
+               <td>due-date</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>13</th>
+               <td>from-basecamp</td>
+               <td>from-basecamp</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>14</th>
+               <td>updated-by</td>
+               <td>updated-by</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>15</th>
+               <td>description</td>
+               <td>description</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>16</th>
+               <td>release-notes</td>
+               <td>release-notes</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>17</th>
+               <td>space-id</td>
+               <td>space-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>18</th>
+               <td>pretty-release-level</td>
+               <td>pretty-release-level</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>19</th>
+               <td>documents</td>
+               <td>documents</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-getXMLData"></div>
+      <h3 class="step-heading"><a name="Get data from Tickets-text" href="#Get data from Tickets-icon">Get data from Tickets</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>xpath</th>
+               <th>element_type</th>
+               <th>result_type</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>trim_type</th>
+               <th>repeat</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>assigned-to-id</td>
+               <td>assigned-to-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>completed-date</td>
+               <td>completed-date</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>component-id</td>
+               <td>component-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>created-on</td>
+               <td>created-on</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>5</th>
+               <td>description</td>
+               <td>description</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>6</th>
+               <td>from-support</td>
+               <td>from-support</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>7</th>
+               <td>id</td>
+               <td>id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>8</th>
+               <td>importance</td>
+               <td>importance</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>9</th>
+               <td>importance-float</td>
+               <td>importance-float</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Number</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>10</th>
+               <td>is-story</td>
+               <td>is-story</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>11</th>
+               <td>milestone-id</td>
+               <td>milestone-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>12</th>
+               <td>notification-list</td>
+               <td>notification-list</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>13</th>
+               <td>number</td>
+               <td>number</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>14</th>
+               <td>priority</td>
+               <td>priority</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>15</th>
+               <td>reporter-id</td>
+               <td>reporter-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>16</th>
+               <td>space-id</td>
+               <td>space-id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>17</th>
+               <td>status</td>
+               <td>status</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>18</th>
+               <td>status-name</td>
+               <td>status-name</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>19</th>
+               <td>story-importance</td>
+               <td>story-importance</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Integer</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>20</th>
+               <td>summary</td>
+               <td>summary</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>21</th>
+               <td>updated-at</td>
+               <td>updated-at</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>22</th>
+               <td>working-hours</td>
+               <td>working-hours</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Number</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>23</th>
+               <td>working-hour</td>
+               <td>working-hour</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Number</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>24</th>
+               <td>estimate</td>
+               <td>estimate</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>25</th>
+               <td>total-estimate</td>
+               <td>total-estimate</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Number</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>26</th>
+               <td>invested-hours</td>
+               <td>invested-hours</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>Number</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-getXMLData"></div>
+      <h3 class="step-heading"><a name="Get data from Users-text" href="#Get data from Users-icon">Get data from Users</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>xpath</th>
+               <th>element_type</th>
+               <th>result_type</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>trim_type</th>
+               <th>repeat</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>id</td>
+               <td>id</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>login</td>
+               <td>login</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>login_name</td>
+               <td>login_name</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>name</td>
+               <td>name</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+            <tr>
+               <th>5</th>
+               <td>email</td>
+               <td>email</td>
+               <td>node</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Get type file-text" href="#Get type file-icon">Get type file</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>FILENAME</td>
+               <td>TYPE</td>
+               <td>yes</td>
+               <td>-[0-9]</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Get type file 2-text" href="#Get type file 2-icon">Get type file 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>TYPE</td>
+               <td>TYPE1</td>
+               <td>yes</td>
+               <td>^((.+)-)</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Mapping"></div>
+      <h3 class="step-heading"><a name="InsertDocuments-text" href="#InsertDocuments-icon">InsertDocuments</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Mapping"></div>
+      <h3 class="step-heading"><a name="InsertMilestones-text" href="#InsertMilestones-icon">InsertMilestones</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Mapping"></div>
+      <h3 class="step-heading"><a name="InsertTickets-text" href="#InsertTickets-icon">InsertTickets</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Mapping"></div>
+      <h3 class="step-heading"><a name="InsertUsers-text" href="#InsertUsers-icon">InsertUsers</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-JoinRows"></div>
+      <h3 class="step-heading"><a name="Join Rows-text" href="#Join Rows-icon">Join Rows</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ScriptValueMod"></div>
+      <h3 class="step-heading"><a name="Prepare Download URL-text" href="#Prepare Download URL-icon">Prepare Download URL</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h5>Script 1</h5><pre class="brush: js;">//Script here
+var URL;
+URL=replace('http://www.assembla.com/spaces/&lt;space_id&gt;/documents/&lt;document_id&gt;/download','&lt;space_id&gt;',NAME_1);
+URL=replace(URL,'&lt;document_id&gt;',id);
+</pre><h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>type</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>replace</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>URL</td>
+               <td>URL</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Update"></div>
+      <h3 class="step-heading"><a name="Project Update-text" href="#Project Update-icon">Project Update</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Select NAME_1 and FORGE_1-text" href="#Select NAME_1 and FORGE_1-icon">Select NAME_1 and FORGE_1</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>NAME_1</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>FORGE_1</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Select values-text" href="#Select values-icon">Select values</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>id</td>
+               <td>IDSPACE</td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>FORGE_1</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>NAME_1</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>FILENAME</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>5</th>
+               <td>file</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SwitchCase"></div>
+      <h3 class="step-heading"><a name="Switch / Case-text" href="#Switch / Case-icon">Switch / Case</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log 2-text" href="#Write to log 2-icon">Write to log 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>NAME_1</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>TYPE1</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log 3-text" href="#Write to log 3-icon">Write to log 3</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>

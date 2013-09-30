@@ -1,0 +1,362 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/Generic Loader.kjb"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/Generic Loader.kjb"
+            file: 1
+            document: 1
+            document-element: job
+            name: Generic Loader
+            relative-path: "/Integration Process"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: job "Generic Loader"</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/job.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Job Entries">Job Entries</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Job: "Generic Loader"</h1>
+      <table>
+         <thead>
+            <tr>
+               <th>What?</th>
+               <th>Who?</th>
+               <th>When?</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>Created</th>
+               <td>admin</td>
+               <td>2012/03/23 02:32:48.000</td>
+            </tr>
+            <tr>
+               <th>Modified</th>
+               <td>admin</td>
+               <td>2012/07/27 01:28:00.000</td>
+            </tr>
+         </tbody>
+      </table>
+      <p>Cargador de datos genéricos</p>
+      <p>En este momento está predeterminado para la forja Assembla. Para cambiar esto se debe sustituir la transformación "Assembla
+         to Database" por la desarrollada para la forja correspondiente
+      </p>
+      <h2><a name="parameters">Parameters</a></h2>
+      <p>
+         This job does not define any parameters.
+         
+      </p>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 901px;&#xA;            height: 310px;&#xA;        "><a name="Write To Log (FAIL)-icon"></a><div id="Write To Log (FAIL)" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-WRITE_TO_LOG" style="&#xA;                    left:580px;&#xA;                    top:352px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-unconditional" href="#Move File to Error Folder"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:384px;&#xA;                    left:554.6666666666666px;&#xA;                " href="#Write To Log (FAIL)-text">Write To Log (FAIL)</a><a name="Write To Log (OK)-icon"></a><div id="Write To Log (OK)" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-WRITE_TO_LOG" style="&#xA;                    left:610px;&#xA;                    top:176px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-unconditional" href="#Move File to Sucess Folder"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:208px;&#xA;                    left:587.3333333333334px;&#xA;                " href="#Write To Log (OK)-text">Write To Log (OK)</a><a name="Move File to Error Folder-icon"></a><div id="Move File to Error Folder" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-MOVE_FILES" style="&#xA;                    left:776px;&#xA;                    top:358px;&#xA;                ">
+            <div class="entry-hops"></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:390px;&#xA;                    left:742.6666666666666px;&#xA;                " href="#Move File to Error Folder-text">Move File to Error Folder</a><a name="Move File to Sucess Folder-icon"></a><div id="Move File to Sucess Folder" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-MOVE_FILES" style="&#xA;                    left:815px;&#xA;                    top:178px;&#xA;                ">
+            <div class="entry-hops"></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:210px;&#xA;                    left:780.3333333333334px;&#xA;                " href="#Move File to Sucess Folder-text">Move File to Sucess Folder</a><a name="Assembla to Database-icon"></a><div id="Assembla to Database" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-TRANS" style="&#xA;                    left:335px;&#xA;                    top:187px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-false" href="#Write To Log (FAIL)"></a><a class="&#xA;                                entry-hop&#xA;                                entry-hop-true" href="#Write To Log (OK)"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:219px;&#xA;                    left:308.3333333333333px;&#xA;                " href=".html">Assembla to Database</a><a name="START-icon"></a><div id="START" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-START" style="&#xA;                    left:42px;&#xA;                    top:184px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-unconditional" href="#Set Long Filenames"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:216px;&#xA;                    left:35.333333333333336px;&#xA;                " href="#START-text">START</a><a name="Set Long Filenames-icon"></a><div id="Set Long Filenames" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-TRANS" style="&#xA;                    left:193px;&#xA;                    top:185px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-true" href="#Assembla to Database"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:217px;&#xA;                    left:169px;&#xA;                " href=".html">Set Long Filenames</a></div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This job reads the following variables:</p>
+      <table>
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>Value</th>
+               <th>Connections</th>
+               <th>Job Entries</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>PROCESSING_FILENAME</th>
+               <td></td>
+               <td></td>
+               <td><a href="#Write To Log (FAIL)">Write To Log (FAIL)</a>, <a href="#Write To Log (OK)">Write To Log (OK)</a>, <a href="#Move File to Error Folder">Move File to Error Folder</a>, <a href="#Move File to Sucess Folder">Move File to Sucess Folder</a></td>
+            </tr>
+            <tr>
+               <th>ERROR_FILENAME</th>
+               <td></td>
+               <td></td>
+               <td><a href="#Move File to Error Folder">Move File to Error Folder</a></td>
+            </tr>
+            <tr>
+               <th>SUCCESS_FILENAME</th>
+               <td></td>
+               <td></td>
+               <td><a href="#Move File to Sucess Folder">Move File to Sucess Folder</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This job defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Job Entries
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="Job Entries">Job Entries</a></h2>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-WRITE_TO_LOG"></div>
+      <h3 class="entry-heading"><a name="Write To Log (FAIL)-text" href="#Write To Log (FAIL)-icon">Write To Log (FAIL)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-WRITE_TO_LOG"></div>
+      <h3 class="entry-heading"><a name="Write To Log (OK)-text" href="#Write To Log (OK)-icon">Write To Log (OK)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-MOVE_FILES"></div>
+      <h3 class="entry-heading"><a name="Move File to Error Folder-text" href="#Move File to Error Folder-icon">Move File to Error Folder</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-MOVE_FILES"></div>
+      <h3 class="entry-heading"><a name="Move File to Sucess Folder-text" href="#Move File to Sucess Folder-icon">Move File to Sucess Folder</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-TRANS"></div>
+      <h3 class="entry-heading"><a name="Assembla to Database-text" href="#Assembla to Database-icon">Assembla to Database</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-START"></div>
+      <h3 class="entry-heading"><a name="START-text" href="#START-icon">START</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-TRANS"></div>
+      <h3 class="entry-heading"><a name="Set Long Filenames-text" href="#Set Long Filenames-icon">Set Long Filenames</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>

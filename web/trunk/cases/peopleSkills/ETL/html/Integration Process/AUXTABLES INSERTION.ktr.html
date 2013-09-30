@@ -1,0 +1,592 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/AUXTABLES INSERTION.ktr"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/AUXTABLES INSERTION.ktr"
+            file: 1
+            document: 1
+            document-element: transformation
+            name: 
+            relative-path: "/Integration Process"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: transformation ""</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/transformation.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Steps">Steps</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Transformation: "AUXTABLES INSERTION"</h1>
+      <p>
+         This transformation does not have a description.
+         
+      </p>
+      <h2>High Level Data Flow Diagram</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Input (3)</th>
+               <th>Transform</th>
+               <th>Output (0)</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>
+                  <div>Obtener ID PROJECTS</div>
+                  <div>Obtener tabla y codigo</div>
+                  <div>Obtener uris</div>
+               </td>
+               <td></td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 1035px;&#xA;            height: 344px;&#xA;        "><a name="Direcci%C3%B3n absoluta fichero-icon"></a><div id="Dirección absoluta fichero" class="&#xA;                    step-icon&#xA;                    step-icon-ScriptValueMod" style="&#xA;                    left:424px;&#xA;                    top:172px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Seleccionar Nombre y Forja"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Obtener uris"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Direcci%C3%B3n absoluta fichero-text" style="&#xA;                    top:204px;&#xA;                    left:389.3333333333333px;                    &#xA;                ">Dirección absoluta fichero</a><a name="Extraer nombre forja-icon"></a><div id="Extraer nombre forja" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:175px;&#xA;                    top:197px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Extraer nombre proyecto"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Extraer nombre forja-text" style="&#xA;                    top:229px;&#xA;                    left:148.33333333333334px;                    &#xA;                ">Extraer nombre forja</a><a name="Extraer nombre proyecto-icon"></a><div id="Extraer nombre proyecto" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:302px;&#xA;                    top:188px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Direcci%C3%B3n absoluta fichero"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Extraer nombre proyecto-text" style="&#xA;                    top:220px;&#xA;                    left:271.3333333333333px;                    &#xA;                ">Extraer nombre proyecto</a><a name="Limpiar tablas-icon"></a><div id="Limpiar tablas" class="&#xA;                    step-icon&#xA;                    step-icon-ExecSQL" style="&#xA;                    left:635px;&#xA;                    top:307px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Producto Cartesiano"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Limpiar tablas-text" style="&#xA;                    top:339px;&#xA;                    left:616.3333333333334px;                    &#xA;                ">Limpiar tablas</a><a name="Mapping input specification-icon"></a><div id="Mapping input specification" class="&#xA;                    step-icon&#xA;                    step-icon-MappingInput" style="&#xA;                    left:37px;&#xA;                    top:182px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Extraer nombre forja"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Mapping input specification-text" style="&#xA;                    top:214px;&#xA;                    left:1px;                    &#xA;                ">Mapping input specification</a><a name="Mapping output specification-icon"></a><div id="Mapping output specification" class="&#xA;                    step-icon&#xA;                    step-icon-MappingOutput" style="&#xA;                    left:944px;&#xA;                    top:236px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Mapping output specification-text" style="&#xA;                    top:268px;&#xA;                    left:906.6666666666666px;                    &#xA;                ">Mapping output specification</a><a name="Obtener ID PROJECTS-icon"></a><div id="Obtener ID PROJECTS" class="&#xA;                    step-icon&#xA;                    step-icon-TableInput" style="&#xA;                    left:519px;&#xA;                    top:317px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Limpiar tablas"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Obtener ID PROJECTS-text" style="&#xA;                    top:349px;&#xA;                    left:493.6666666666667px;                    &#xA;                ">Obtener ID PROJECTS</a><a name="Obtener tabla y codigo-icon"></a><div id="Obtener tabla y codigo" class="&#xA;                    step-icon&#xA;                    step-icon-TableInput" style="&#xA;                    left:747px;&#xA;                    top:106px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Producto Cartesiano"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Obtener tabla y codigo-text" style="&#xA;                    top:138px;&#xA;                    left:717.6666666666666px;                    &#xA;                ">Obtener tabla y codigo</a><a name="Obtener uris-icon"></a><div id="Obtener uris" class="&#xA;                    step-icon&#xA;                    step-icon-getXMLData" style="&#xA;                    left:505px;&#xA;                    top:101px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Seleccionar URI"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Obtener uris-text" style="&#xA;                    top:133px;&#xA;                    left:489px;                    &#xA;                ">Obtener uris</a><a name="Producto Cartesiano-icon"></a><div id="Producto Cartesiano" class="&#xA;                    step-icon&#xA;                    step-icon-JoinRows" style="&#xA;                    left:725px;&#xA;                    top:212px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Rellenar tablas"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Producto Cartesiano-text" style="&#xA;                    top:244px;&#xA;                    left:699.6666666666666px;                    &#xA;                ">Producto Cartesiano</a><a name="Rellenar tablas-icon"></a><div id="Rellenar tablas" class="&#xA;                    step-icon&#xA;                    step-icon-ExecSQL" style="&#xA;                    left:833px;&#xA;                    top:197px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Mapping output specification"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Rellenar tablas-text" style="&#xA;                    top:229px;&#xA;                    left:813px;                    &#xA;                ">Rellenar tablas</a><a name="Seleccionar Nombre y Forja-icon"></a><div id="Seleccionar Nombre y Forja" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:405px;&#xA;                    top:297px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Obtener ID PROJECTS"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Seleccionar Nombre y Forja-text" style="&#xA;                    top:329px;&#xA;                    left:370.3333333333333px;                    &#xA;                ">Seleccionar Nombre y Forja</a><a name="Seleccionar URI-icon"></a><div id="Seleccionar URI" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:622px;&#xA;                    top:101px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Obtener tabla y codigo"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Seleccionar URI-text" style="&#xA;                    top:133px;&#xA;                    left:602px;                    &#xA;                ">Seleccionar URI</a>
+         
+      </div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This transformation does not read any variables.</p>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This transformation defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Steps
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td><a href="#AbreforjasLocal">Limpiar tablas</a>, <a href="#AbreforjasLocal">Obtener ID PROJECTS</a>, <a href="#AbreforjasLocal">Obtener tabla y codigo</a>, <a href="#AbreforjasLocal">Rellenar tablas</a></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2>Flat Files</h2>
+      <p>
+         t.b.d.
+         
+      </p>
+      <h2><a name="Steps">Steps</a></h2><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ScriptValueMod"></div>
+      <h3 class="step-heading"><a name="Direcci%C3%B3n absoluta fichero-text" href="#Direcci%C3%B3n absoluta fichero-icon">Dirección absoluta fichero</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h5>Script 1</h5><pre class="brush: js;">//Script here
+var fullName = PATH+ '/' + FILENAME;
+</pre><h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>type</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>replace</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>fullName</td>
+               <td>fullName</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Extraer nombre forja-text" href="#Extraer nombre forja-icon">Extraer nombre forja</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>FILENAME</td>
+               <td>FORGE_1</td>
+               <td>yes</td>
+               <td>-.*</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>FILENAME</td>
+               <td>NAME</td>
+               <td>yes</td>
+               <td>.*-</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Extraer nombre proyecto-text" href="#Extraer nombre proyecto-icon">Extraer nombre proyecto</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>NAME</td>
+               <td>NAME</td>
+               <td>yes</td>
+               <td>.rdf</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ExecSQL"></div>
+      <h3 class="step-heading"><a name="Limpiar tablas-text" href="#Limpiar tablas-icon">Limpiar tablas</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">DELETE FROM project_os WHERE project=?;DELETE FROM project_pl WHERE project=?;DELETE FROM project_licenses WHERE project=?;DELETE FROM project_topics WHERE project=?;DELETE FROM project_languages WHERE project=?;DELETE FROM project_ui WHERE project=?;commit;</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MappingInput"></div>
+      <h3 class="step-heading"><a name="Mapping input specification-text" href="#Mapping input specification-icon">Mapping input specification</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>type</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>FILENAME</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>PATH</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MappingOutput"></div>
+      <h3 class="step-heading"><a name="Mapping output specification-text" href="#Mapping output specification-icon">Mapping output specification</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableInput"></div>
+      <h3 class="step-heading"><a name="Obtener ID PROJECTS-text" href="#Obtener ID PROJECTS-icon">Obtener ID PROJECTS</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">SELECT id
+FROM projects WHERE forge = ? AND NAME = ?
+</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableInput"></div>
+      <h3 class="step-heading"><a name="Obtener tabla y codigo-text" href="#Obtener tabla y codigo-icon">Obtener tabla y codigo</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">SELECT
+ tabla
+, campo
+, cod
+FROM sf_trove WHERE uri = ?
+</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-getXMLData"></div>
+      <h3 class="step-heading"><a name="Obtener uris-text" href="#Obtener uris-icon">Obtener uris</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>xpath</th>
+               <th>element_type</th>
+               <th>result_type</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>length</th>
+               <th>precision</th>
+               <th>trim_type</th>
+               <th>repeat</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>urirecurso</td>
+               <td>@rdf:resource</td>
+               <td>attribut</td>
+               <td>valueof</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>-1</td>
+               <td>-1</td>
+               <td>none</td>
+               <td>N</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-JoinRows"></div>
+      <h3 class="step-heading"><a name="Producto Cartesiano-text" href="#Producto Cartesiano-icon">Producto Cartesiano</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ExecSQL"></div>
+      <h3 class="step-heading"><a name="Rellenar tablas-text" href="#Rellenar tablas-icon">Rellenar tablas</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">INSERT INTO ? (project,?) VALUES(?,'?')</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Seleccionar Nombre y Forja-text" href="#Seleccionar Nombre y Forja-icon">Seleccionar Nombre y Forja</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>FORGE_1</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>NAME_1</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Seleccionar URI-text" href="#Seleccionar URI-icon">Seleccionar URI</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>urirecurso</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>

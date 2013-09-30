@@ -1,0 +1,417 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/InsertMilestones.ktr"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/InsertMilestones.ktr"
+            file: 1
+            document: 1
+            document-element: transformation
+            name: 
+            relative-path: "/Integration Process"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: transformation ""</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/transformation.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Steps">Steps</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Transformation: "InsertMilestones"</h1>
+      <p>
+         This transformation does not have a description.
+         
+      </p>
+      <p>Esta transformación se encarga de insertar los milestones en la base de datos. La tabla de milestones tiene un campo "descartado"
+         que tiene el mismo sentido que el de la tabla tickets, poder descartar aquellos milestones que fueron creados automáticamente
+         por la forja
+      </p>
+      <h2>High Level Data Flow Diagram</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Input (0)</th>
+               <th>Transform</th>
+               <th>Output (1)</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td></td>
+               <td></td>
+               <td>
+                  <div>Insert / Update 3</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 717px;&#xA;            height: 245px;&#xA;        "><a name="Get Create and Update Dates 2-icon"></a><div id="Get Create and Update Dates 2" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:345px;&#xA;                    top:136px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Put descartado to FALSE"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Create and Update Dates 2-text" style="&#xA;                    top:168px;&#xA;                    left:306.3333333333333px;                    &#xA;                ">Get Create and Update Dates 2</a><a name="Insert / Update 3-icon"></a><div id="Insert / Update 3" class="&#xA;                    step-icon&#xA;                    step-icon-InsertUpdate" style="&#xA;                    left:572px;&#xA;                    top:184px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Mapping output specification"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Insert / Update 3-text" style="&#xA;                    top:216px;&#xA;                    left:549.3333333333334px;                    &#xA;                ">Insert / Update 3</a><a name="Mapping field is-completed-icon"></a><div id="Mapping field is-completed" class="&#xA;                    step-icon&#xA;                    step-icon-ValueMapper" style="&#xA;                    left:161px;&#xA;                    top:136px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get Create and Update Dates 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Mapping field is-completed-text" style="&#xA;                    top:168px;&#xA;                    left:126.33333333333334px;                    &#xA;                ">Mapping field is-completed</a><a name="Mapping input specification-icon"></a><div id="Mapping input specification" class="&#xA;                    step-icon&#xA;                    step-icon-MappingInput" style="&#xA;                    left:60px;&#xA;                    top:109px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Mapping field is-completed"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Mapping input specification-text" style="&#xA;                    top:141px;&#xA;                    left:24px;                    &#xA;                ">Mapping input specification</a><a name="Mapping output specification-icon"></a><div id="Mapping output specification" class="&#xA;                    step-icon&#xA;                    step-icon-MappingOutput" style="&#xA;                    left:649px;&#xA;                    top:122px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Mapping output specification-text" style="&#xA;                    top:154px;&#xA;                    left:611.6666666666666px;                    &#xA;                ">Mapping output specification</a><a name="Put descartado to FALSE-icon"></a><div id="Put descartado to FALSE" class="&#xA;                    step-icon&#xA;                    step-icon-Constant" style="&#xA;                    left:465px;&#xA;                    top:67px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Insert / Update 3"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Put descartado to FALSE-text" style="&#xA;                    top:99px;&#xA;                    left:434.3333333333333px;                    &#xA;                ">Put descartado to FALSE</a>
+         
+      </div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This transformation does not read any variables.</p>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This transformation defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Steps
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td><a href="#AbreforjasLocal">Insert / Update 3</a></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2>Flat Files</h2>
+      <p>
+         t.b.d.
+         
+      </p>
+      <h2><a name="Steps">Steps</a></h2><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Get Create and Update Dates 2-text" href="#Get Create and Update Dates 2-icon">Get Create and Update Dates 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>created-at</td>
+               <td>created-date</td>
+               <td>yes</td>
+               <td>T.*</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>updated-at</td>
+               <td>updated-date</td>
+               <td>yes</td>
+               <td>T.*</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-InsertUpdate"></div>
+      <h3 class="step-heading"><a name="Insert / Update 3-text" href="#Insert / Update 3-icon">Insert / Update 3</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ValueMapper"></div>
+      <h3 class="step-heading"><a name="Mapping field is-completed-text" href="#Mapping field is-completed-icon">Mapping field is-completed</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>source_value</th>
+               <th>target_value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>false</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>true</td>
+               <td>1</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MappingInput"></div>
+      <h3 class="step-heading"><a name="Mapping input specification-text" href="#Mapping input specification-icon">Mapping input specification</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      Y
+      <br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MappingOutput"></div>
+      <h3 class="step-heading"><a name="Mapping output specification-text" href="#Mapping output specification-icon">Mapping output specification</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Constant"></div>
+      <h3 class="step-heading"><a name="Put descartado to FALSE-text" href="#Put descartado to FALSE-icon">Put descartado to FALSE</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>nullif</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>descartado</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>N</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+         </tbody>
+      </table><script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>

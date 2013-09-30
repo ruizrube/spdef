@@ -1,0 +1,318 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/Rubrica/Metricas.kjb"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/Rubrica/Metricas.kjb"
+            file: 1
+            document: 1
+            document-element: job
+            name: Metricas
+            relative-path: "/Rubrica"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: job "Metricas"</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/job.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Job Entries">Job Entries</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Job: "Metricas"</h1>
+      <table>
+         <thead>
+            <tr>
+               <th>What?</th>
+               <th>Who?</th>
+               <th>When?</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>Created</th>
+               <td>admin</td>
+               <td>2012/07/17 21:30:11.000</td>
+            </tr>
+            <tr>
+               <th>Modified</th>
+               <td>admin</td>
+               <td>2012/07/13 04:30:48.000</td>
+            </tr>
+         </tbody>
+      </table>
+      <p>
+         This job does not have a description.
+         
+      </p>
+      <h2><a name="parameters">Parameters</a></h2>
+      <p>
+         This job does not define any parameters.
+         
+      </p>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 867px;&#xA;            height: 360px;&#xA;        "><a name="TeamWork Balance-icon"></a><div id="TeamWork Balance" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-TRANS" style="&#xA;                    left:343px;&#xA;                    top:194px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-true" href="#Planificacion"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:226px;&#xA;                    left:321.6666666666667px;&#xA;                " href=".html">TeamWork Balance</a><a name="START-icon"></a><div id="START" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-START" style="&#xA;                    left:25px;&#xA;                    top:156px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-unconditional" href="#Deadline_fulfilment"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:188px;&#xA;                    left:18.333333333333332px;&#xA;                " href="#START-text">START</a><a name="Deadline_fulfilment-icon"></a><div id="Deadline_fulfilment" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-TRANS" style="&#xA;                    left:185px;&#xA;                    top:156px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-true" href="#TeamWork Balance"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:188px;&#xA;                    left:159.66666666666666px;&#xA;                " href=".html">Deadline_fulfilment</a><a name="Gestion de versiones-icon"></a><div id="Gestion de versiones" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-TRANS" style="&#xA;                    left:581px;&#xA;                    top:142px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-true" href="#Resolution Capabilities"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:174px;&#xA;                    left:554.3333333333334px;&#xA;                " href=".html">Gestion de versiones</a><a name="Resolution Capabilities-icon"></a><div id="Resolution Capabilities" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-TRANS" style="&#xA;                    left:764px;&#xA;                    top:138px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-true" href="#Leadership"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:170px;&#xA;                    left:733.3333333333334px;&#xA;                " href=".html">Resolution Capabilities</a><a name="Leadership-icon"></a><div id="Leadership" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-TRANS" style="&#xA;                    left:749px;&#xA;                    top:315px;&#xA;                ">
+            <div class="entry-hops"></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:347px;&#xA;                    left:735.6666666666666px;&#xA;                " href=".html">Leadership</a><a name="Planificacion-icon"></a><div id="Planificacion" class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-icon&#xA;                    entry-icon-SHELL" style="&#xA;                    left:454px;&#xA;                    top:83px;&#xA;                ">
+            <div class="entry-hops"><a class="&#xA;                                entry-hop&#xA;                                entry-hop-true" href="#Gestion de versiones"></a></div>
+         </div><a class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;entry-label&#xA;                    " style="&#xA;                    top:115px;&#xA;                    left:436.6666666666667px;&#xA;                " href="#Planificacion-text">Planificacion</a></div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This job does not read any variables.</p>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This job defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Job Entries
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="Job Entries">Job Entries</a></h2>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-TRANS"></div>
+      <h3 class="entry-heading"><a name="TeamWork Balance-text" href="#TeamWork Balance-icon">TeamWork Balance</a></h3>
+      <p>Esta transformación calcula la desviación típica del número de tickets cerrados por usuario en cada proyecto.</p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-START"></div>
+      <h3 class="entry-heading"><a name="START-text" href="#START-icon">START</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-TRANS"></div>
+      <h3 class="entry-heading"><a name="Deadline_fulfilment-text" href="#Deadline_fulfilment-icon">Deadline_fulfilment</a></h3>
+      <p>Esta transformación calcula la media de retraso del último ticket de cada milestone.</p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-TRANS"></div>
+      <h3 class="entry-heading"><a name="Gestion de versiones-text" href="#Gestion de versiones-icon">Gestion de versiones</a></h3>
+      <p>Esta transformación utiliza los datos de CVSAnaly para calcular la máxima diferencia entre dos commits consecutivos del mismo
+         proyecto (diferencia en tiempo)
+      </p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-TRANS"></div>
+      <h3 class="entry-heading"><a name="Resolution Capabilities-text" href="#Resolution Capabilities-icon">Resolution Capabilities</a></h3>
+      <p>Esta transformación determina cuál ha sido el usuario que más tickets ha cerrado.</p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-TRANS"></div>
+      <h3 class="entry-heading"><a name="Leadership-text" href="#Leadership-icon">Leadership</a></h3>
+      <p>Esta transformación se encarga de determinar cuál ha sido el usuario que ha abierto más tickets.</p>
+      <div class="&#xA;&#x9;&#x9;&#x9;entry-icon&#xA;&#x9;&#x9;&#x9;entry-icon-SHELL"></div>
+      <h3 class="entry-heading"><a name="Planificacion-text" href="#Planificacion-icon">Planificacion</a></h3>
+      <p>Esta transformación llama a un script en python que se encarga de calcular las máximas diferencias entre aperturas consecutivas
+         y cierres consecutivos de tickets del mismo proyecto.
+      </p><script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>

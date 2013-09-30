@@ -1,0 +1,458 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/Rubrica/Gestion de versiones.ktr"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/Rubrica/Gestion de versiones.ktr"
+            file: 1
+            document: 1
+            document-element: transformation
+            name: 
+            relative-path: "/Rubrica"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: transformation ""</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/transformation.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Steps">Steps</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Transformation: "Gestion de versiones"</h1>
+      <p>
+         This transformation does not have a description.
+         
+      </p>
+      <h2>High Level Data Flow Diagram</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Input (3)</th>
+               <th>Transform</th>
+               <th>Output (1)</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>
+                  <div>Get Metric ID</div>
+                  <div>Get Project ID and name</div>
+                  <div>Get commits</div>
+               </td>
+               <td></td>
+               <td>
+                  <div>Insert / Update</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 824px;&#xA;            height: 415px;&#xA;        "><a name="Calculator-icon"></a><div id="Calculator" class="&#xA;                    step-icon&#xA;                    step-icon-Calculator" style="&#xA;                    left:259px;&#xA;                    top:82px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Filter rows"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Calculator-text" style="&#xA;                    top:114px;&#xA;                    left:245.66666666666666px;                    &#xA;                ">Calculator</a><a name="Dummy (do nothing)-icon"></a><div id="Dummy (do nothing)" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:347px;&#xA;                    top:183px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Dummy (do nothing)-text" style="&#xA;                    top:215px;&#xA;                    left:323px;                    &#xA;                ">Dummy (do nothing)</a><a name="Filter rows-icon"></a><div id="Filter rows" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:349px;&#xA;                    top:88px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Dummy (do nothing)"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Max difference between commits"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Filter rows-text" style="&#xA;                    top:120px;&#xA;                    left:334.3333333333333px;                    &#xA;                ">Filter rows</a><a name="Get Metric ID-icon"></a><div id="Get Metric ID" class="&#xA;                    step-icon&#xA;                    step-icon-TableInput" style="&#xA;                    left:591px;&#xA;                    top:367px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Join Rows (cartesian product)"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Metric ID-text" style="&#xA;                    top:399px;&#xA;                    left:573.6666666666666px;                    &#xA;                ">Get Metric ID</a><a name="Get Project ID and name-icon"></a><div id="Get Project ID and name" class="&#xA;                    step-icon&#xA;                    step-icon-TableInput" style="&#xA;                    left:635px;&#xA;                    top:226px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Join Rows (cartesian product)"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Project ID and name-text" style="&#xA;                    top:258px;&#xA;                    left:604.3333333333334px;                    &#xA;                ">Get Project ID and name</a><a name="Get commits-icon"></a><div id="Get commits" class="&#xA;                    step-icon&#xA;                    step-icon-TableInput" style="&#xA;                    left:41px;&#xA;                    top:172px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Row flattener"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get commits-text" style="&#xA;                    top:204px;&#xA;                    left:26.333333333333336px;                    &#xA;                ">Get commits</a><a name="Insert / Update-icon"></a><div id="Insert / Update" class="&#xA;                    step-icon&#xA;                    step-icon-InsertUpdate" style="&#xA;                    left:321px;&#xA;                    top:344px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Insert / Update-text" style="&#xA;                    top:376px;&#xA;                    left:301px;                    &#xA;                ">Insert / Update</a><a name="Join Rows (cartesian product)-icon"></a><div id="Join Rows (cartesian product)" class="&#xA;                    step-icon&#xA;                    step-icon-JoinRows" style="&#xA;                    left:515px;&#xA;                    top:243px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Insert / Update"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Join Rows (cartesian product)-text" style="&#xA;                    top:275px;&#xA;                    left:476.3333333333333px;                    &#xA;                ">Join Rows (cartesian product)</a><a name="Max difference between commits-icon"></a><div id="Max difference between commits" class="&#xA;                    step-icon&#xA;                    step-icon-GroupBy" style="&#xA;                    left:496px;&#xA;                    top:93px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Write to log"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Max difference between commits-text" style="&#xA;                    top:125px;&#xA;                    left:456px;                    &#xA;                ">Max difference between commits</a><a name="Row flattener-icon"></a><div id="Row flattener" class="&#xA;                    step-icon&#xA;                    step-icon-Flattener" style="&#xA;                    left:155px;&#xA;                    top:80px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Calculator"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Row flattener-text" style="&#xA;                    top:112px;&#xA;                    left:137.66666666666666px;                    &#xA;                ">Row flattener</a><a name="Select values-icon"></a><div id="Select values" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:737px;&#xA;                    top:149px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Get Project ID and name"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Select values-text" style="&#xA;                    top:181px;&#xA;                    left:719.6666666666666px;                    &#xA;                ">Select values</a><a name="Write to log-icon"></a><div id="Write to log" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:658px;&#xA;                    top:86px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Join Rows (cartesian product)"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Select values"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log-text" style="&#xA;                    top:118px;&#xA;                    left:642px;                    &#xA;                ">Write to log</a>
+         
+      </div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This transformation does not read any variables.</p>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This transformation defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Steps
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td><a href="#AbreforjasLocal">Get Metric ID</a>, <a href="#AbreforjasLocal">Get Project ID and name</a>, <a href="#AbreforjasLocal">Insert / Update</a></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td><a href="#CVSAnalyLocal">Get commits</a></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2>Flat Files</h2>
+      <p>
+         t.b.d.
+         
+      </p>
+      <h2><a name="Steps">Steps</a></h2><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Calculator"></div>
+      <h3 class="step-heading"><a name="Calculator-text" href="#Calculator-icon">Calculator</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Dummy (do nothing)-text" href="#Dummy (do nothing)-icon">Dummy (do nothing)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Filter rows-text" href="#Filter rows-icon">Filter rows</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableInput"></div>
+      <h3 class="step-heading"><a name="Get Metric ID-text" href="#Get Metric ID-icon">Get Metric ID</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">SELECT id as metric FROM metrics WHERE name='gestion_versiones'</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableInput"></div>
+      <h3 class="step-heading"><a name="Get Project ID and name-text" href="#Get Project ID and name-icon">Get Project ID and name</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">SELECT id,name as nombre FROM projects WHERE name=?</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableInput"></div>
+      <h3 class="step-heading"><a name="Get commits-text" href="#Get commits-icon">Get commits</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>SQL</h4><pre class="brush: sql;">select repository_id,repositories.name, date from scmlog,repositories where repositories.id=scmlog.repository_id order by repository_id asc, date asc;</pre><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-InsertUpdate"></div>
+      <h3 class="step-heading"><a name="Insert / Update-text" href="#Insert / Update-icon">Insert / Update</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-JoinRows"></div>
+      <h3 class="step-heading"><a name="Join Rows (cartesian product)-text" href="#Join Rows (cartesian product)-icon">Join Rows (cartesian product)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-GroupBy"></div>
+      <h3 class="step-heading"><a name="Max difference between commits-text" href="#Max difference between commits-icon">Max difference between commits</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>aggregate</th>
+               <th>subject</th>
+               <th>type</th>
+               <th>valuefield</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>maxdiff</td>
+               <td>diff</td>
+               <td>MAX</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>name</td>
+               <td>name</td>
+               <td>FIRST_INCL_NULL</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Flattener"></div>
+      <h3 class="step-heading"><a name="Row flattener-text" href="#Row flattener-icon">Row flattener</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>T1</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>T2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Select values-text" href="#Select values-icon">Select values</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>rename</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>name</td>
+               <td></td>
+               <td>-2</td>
+               <td>-2</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log-text" href="#Write to log-icon">Write to log</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>repository_id</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>name</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>maxdiff</td>
+            </tr>
+         </tbody>
+      </table><script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>
