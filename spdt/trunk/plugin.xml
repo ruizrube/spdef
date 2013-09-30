@@ -10,7 +10,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated SoftwareWorkProductModel -->
       <package
-            uri="http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0.ecore"
+            uri="http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0"
             class="es.uca.spifm.spdt.deployment.swpm.SwpmPackage"
             genModel="src/main/resources/es/uca/spifm/spdt/deployment/swpm/SoftwareWorkProductModel.genmodel"/>
    </extension>
@@ -26,7 +26,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated VisualModelingtoolModel -->
       <package
-            uri="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0.ecore"
+            uri="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0"
             class="es.uca.spifm.spdt.genericTools.vmm.VmmPackage"
             genModel="src/main/resources/es/uca/spifm/spdt/genericTools/vmm/VisualModelingtoolModel.genmodel"/>
    </extension>
@@ -45,6 +45,30 @@
             uri="http://spi-fm.uca.es/spdef/models/specificTools/mwm/1.0.ecore"
             class="es.uca.spifm.spdt.specificTools.mwm.MwmPackage"
             genModel="src/main/resources/es/uca/spifm/spdt/specificTools/mwm/MediaWikiModel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SoftwareProjectControlModel -->
+      <package
+            uri="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0"
+            class="es.uca.spifm.spdt.deployment.spcm.SpcmPackage"
+            genModel="src/main/resources/es/uca/spifm/spdt/deployment/spcm/SoftwareProjectControlModel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated IssueTrackingtoolModel -->
+      <package
+            uri="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0"
+            class="es.uca.spifm.spdt.genericTools.itm.ItmPackage"
+            genModel="src/main/resources/es/uca/spifm/spdt/genericTools/itm/IssueTrackingtoolModel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated RedmineModel -->
+      <package
+            uri="http://spi-fm.uca.es/spdef/models/specificTools/redm/1.0"
+            class="es.uca.spifm.spdt.specificTools.redm.RedmPackage"
+            genModel="src/main/resources/es/uca/spifm/spdt/specificTools/redm/RedmineModel.genmodel"/>
    </extension>
 
 </plugin>

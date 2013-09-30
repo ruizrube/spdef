@@ -12,6 +12,15 @@ mvn install:install-file -Dfile=E:\workspace\spdt\lib\eaapi-1.0.jar -DgroupId=or
 
 mvn install:install-file -Dfile=E:\workspace\spdt\lib\SSJavaCOM.dll -DgroupId=SSJavaCOM -DartifactId=SSJavaCOM -Dversion=1.0 -Dpackaging=dll -DgeneratePom=true
 
+mvn install:install-file -Dfile=E:\workspace\spdt\lib\org.eclipse.eodm_0.9.1.v200710090302.jar -DgroupId=org.eclipse -DartifactId=eodm -Dversion=0.9.1.v200710090302 -Dpackaging=jar
+
+mvn install:install-file -Dfile=E:\workspace\spdt\lib\org.eclipse.eodm.rdf_0.9.1.v200710090302.jar -DgroupId=org.eclipse.eodm -DartifactId=rdf -Dversion=0.9.1.v200710090302 -Dpackaging=jar
+
+
+
+
+
+
 
 2. Añadir en las propiedades del proyecto, pestaña Libraries, Maven Dependences/Native Library location "spdt/lib"
 
