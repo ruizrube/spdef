@@ -1,0 +1,943 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="kettle-cookbook - see http://code.google.com/p/kettle-cookbook/">
+      <!--
+            Debugging info - please ignore
+            param_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/InsertTickets.ktr"
+            normalized_filename: "/home/abreforjas/Desktop/doc/CUSL/Integration Process/InsertTickets.ktr"
+            file: 1
+            document: 1
+            document-element: transformation
+            name: 
+            relative-path: "/Integration Process"
+            documentation-root: "../.."
+        -->
+      <title>Kettle Documentation: transformation ""</title>
+      <link rel="shortcut icon" type="image/x-icon" href="../../images/spoon.png">
+      <link rel="stylesheet" type="text/css" href="../../css/kettle.css">
+      <link rel="stylesheet" type="text/css" href="../../css/transformation.css">
+      <link rel="stylesheet" type="text/css" href="../../css/shCoreDefault.css">
+   </head>
+   <body class="kettle-file" onload="drawHops()">
+      <div class="quicklinks"><a href="#diagram">Diagram</a>
+         |   <a href="#Steps">Steps</a>
+         |   <a href="#parameters">Parameters</a>
+         |   <a href="#variables">Variables</a>
+         |   <a href="#connections">Database Connections</a>
+         |   <a href="#files">Flat Files</a></div>
+      <h1>Transformation: "InsertTickets"</h1>
+      <p>
+         This transformation does not have a description.
+         
+      </p>
+      <p>Esta transformación genérica recibe información acerca de los tickets de un proyecto y la inserta en la base de datos</p>
+      <h2>High Level Data Flow Diagram</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Input (0)</th>
+               <th>Transform</th>
+               <th>Output (5)</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td></td>
+               <td></td>
+               <td>
+                  <div>Insert / Update Milestone</div>
+                  <div>Insert / Update Milestone 2</div>
+                  <div>Insert Tickets</div>
+                  <div>Update Project 2</div>
+                  <div>Update project</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="diagram">Diagram</a></h2>
+      <div class="diagram" id="diagram" style="&#xA;            width: 1065px;&#xA;            height: 572px;&#xA;        "><a name="Bifurcacion-icon"></a><div id="Bifurcacion" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:304px;&#xA;                    top:426px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Milestone is not NULL 2"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Opened Tickets calculate"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Bifurcacion-text" style="&#xA;                    top:458px;&#xA;                    left:289.3333333333333px;                    &#xA;                ">Bifurcacion</a><a name="Dummy (do nothing)-icon"></a><div id="Dummy (do nothing)" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:298px;&#xA;                    top:361px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Dummy (do nothing)-text" style="&#xA;                    top:393px;&#xA;                    left:274px;                    &#xA;                ">Dummy (do nothing)</a><a name="Dummy (do nothing) 3-icon"></a><div id="Dummy (do nothing) 3" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:357px;&#xA;                    top:218px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Dummy (do nothing) 3-text" style="&#xA;                    top:250px;&#xA;                    left:330.3333333333333px;                    &#xA;                ">Dummy (do nothing) 3</a><a name="Dummy (do nothing) 4-icon"></a><div id="Dummy (do nothing) 4" class="&#xA;                    step-icon&#xA;                    step-icon-Dummy" style="&#xA;                    left:692px;&#xA;                    top:310px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Dummy (do nothing) 4-text" style="&#xA;                    top:342px;&#xA;                    left:665.3333333333334px;                    &#xA;                ">Dummy (do nothing) 4</a><a name="Get Create and Update Dates-icon"></a><div id="Get Create and Update Dates" class="&#xA;                    step-icon&#xA;                    step-icon-ReplaceString" style="&#xA;                    left:166px;&#xA;                    top:65px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Insert Tickets"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Get Create and Update Dates-text" style="&#xA;                    top:97px;&#xA;                    left:130px;                    &#xA;                ">Get Create and Update Dates</a><a name="Insert / Update Milestone-icon"></a><div id="Insert / Update Milestone" class="&#xA;                    step-icon&#xA;                    step-icon-InsertUpdate" style="&#xA;                    left:557px;&#xA;                    top:148px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Mapping output specification"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Insert / Update Milestone-text" style="&#xA;                    top:180px;&#xA;                    left:523.6666666666666px;                    &#xA;                ">Insert / Update Milestone</a><a name="Insert / Update Milestone 2-icon"></a><div id="Insert / Update Milestone 2" class="&#xA;                    step-icon&#xA;                    step-icon-InsertUpdate" style="&#xA;                    left:937px;&#xA;                    top:422px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Mapping output specification"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Insert / Update Milestone 2-text" style="&#xA;                    top:454px;&#xA;                    left:901px;                    &#xA;                ">Insert / Update Milestone 2</a><a name="Insert Tickets-icon"></a><div id="Insert Tickets" class="&#xA;                    step-icon&#xA;                    step-icon-TableOutput" style="&#xA;                    left:436px;&#xA;                    top:64px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Select values"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Insert Tickets-text" style="&#xA;                    top:96px;&#xA;                    left:417.3333333333333px;                    &#xA;                ">Insert Tickets</a><a name="Mapping input specification-icon"></a><div id="Mapping input specification" class="&#xA;                    step-icon&#xA;                    step-icon-MappingInput" style="&#xA;                    left:0px;&#xA;                    top:305px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Get Create and Update Dates"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Total tickets calculate"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Opened tickets selections"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Milestone is not null"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Mapping input specification-text" style="&#xA;                    top:337px;&#xA;                    left:-36px;                    &#xA;                ">Mapping input specification</a><a name="Mapping output specification-icon"></a><div id="Mapping output specification" class="&#xA;                    step-icon&#xA;                    step-icon-MappingOutput" style="&#xA;                    left:888px;&#xA;                    top:222px;&#xA;                ">
+            <div class="step-hops"></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Mapping output specification-text" style="&#xA;                    top:254px;&#xA;                    left:850.6666666666666px;                    &#xA;                ">Mapping output specification</a><a name="Milestone is not NULL 2-icon"></a><div id="Milestone is not NULL 2" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:488px;&#xA;                    top:375px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Dummy (do nothing) 4"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Opened tickets by milestone"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Milestone is not NULL 2-text" style="&#xA;                    top:407px;&#xA;                    left:457.3333333333333px;                    &#xA;                ">Milestone is not NULL 2</a><a name="Milestone is not null-icon"></a><div id="Milestone is not null" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:161px;&#xA;                    top:150px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Dummy (do nothing) 3"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Write to log"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Milestone is not null-text" style="&#xA;                    top:182px;&#xA;                    left:133px;                    &#xA;                ">Milestone is not null</a><a name="Opened Tickets calculate-icon"></a><div id="Opened Tickets calculate" class="&#xA;                    step-icon&#xA;                    step-icon-MemoryGroupBy" style="&#xA;                    left:514px;&#xA;                    top:469px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Update Project 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Opened Tickets calculate-text" style="&#xA;                    top:501px;&#xA;                    left:482px;                    &#xA;                ">Opened Tickets calculate</a><a name="Opened tickets by milestone-icon"></a><div id="Opened tickets by milestone" class="&#xA;                    step-icon&#xA;                    step-icon-MemoryGroupBy" style="&#xA;                    left:706px;&#xA;                    top:414px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Put descartado to FALSE 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Opened tickets by milestone-text" style="&#xA;                    top:446px;&#xA;                    left:670px;                    &#xA;                ">Opened tickets by milestone</a><a name="Opened tickets selections-icon"></a><div id="Opened tickets selections" class="&#xA;                    step-icon&#xA;                    step-icon-FilterRows" style="&#xA;                    left:146px;&#xA;                    top:428px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-false " href="#Dummy (do nothing)"></a><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-true " href="#Bifurcacion"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Opened tickets selections-text" style="&#xA;                    top:460px;&#xA;                    left:112.66666666666666px;                    &#xA;                ">Opened tickets selections</a><a name="Put descartado to FALSE-icon"></a><div id="Put descartado to FALSE" class="&#xA;                    step-icon&#xA;                    step-icon-Constant" style="&#xA;                    left:460px;&#xA;                    top:127px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Insert / Update Milestone"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Put descartado to FALSE-text" style="&#xA;                    top:159px;&#xA;                    left:429.3333333333333px;                    &#xA;                ">Put descartado to FALSE</a><a name="Put descartado to FALSE 2-icon"></a><div id="Put descartado to FALSE 2" class="&#xA;                    step-icon&#xA;                    step-icon-Constant" style="&#xA;                    left:841px;&#xA;                    top:466px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Insert / Update Milestone 2"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Put descartado to FALSE 2-text" style="&#xA;                    top:498px;&#xA;                    left:807.6666666666666px;                    &#xA;                ">Put descartado to FALSE 2</a><a name="Select values-icon"></a><div id="Select values" class="&#xA;                    step-icon&#xA;                    step-icon-SelectValues" style="&#xA;                    left:584px;&#xA;                    top:84px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Mapping output specification"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Select values-text" style="&#xA;                    top:116px;&#xA;                    left:566.6666666666666px;                    &#xA;                ">Select values</a><a name="Total Tickets by Milestone-icon"></a><div id="Total Tickets by Milestone" class="&#xA;                    step-icon&#xA;                    step-icon-MemoryGroupBy" style="&#xA;                    left:356px;&#xA;                    top:147px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Put descartado to FALSE"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Total Tickets by Milestone-text" style="&#xA;                    top:179px;&#xA;                    left:321.3333333333333px;                    &#xA;                ">Total Tickets by Milestone</a><a name="Total tickets calculate-icon"></a><div id="Total tickets calculate" class="&#xA;                    step-icon&#xA;                    step-icon-MemoryGroupBy" style="&#xA;                    left:145px;&#xA;                    top:308px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-copy-data " href="#Update project"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Total tickets calculate-text" style="&#xA;                    top:340px;&#xA;                    left:114.33333333333333px;                    &#xA;                ">Total tickets calculate</a><a name="Update Project 2-icon"></a><div id="Update Project 2" class="&#xA;                    step-icon&#xA;                    step-icon-Update" style="&#xA;                    left:713px;&#xA;                    top:508px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Mapping output specification"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Update Project 2-text" style="&#xA;                    top:540px;&#xA;                    left:691.6666666666666px;                    &#xA;                ">Update Project 2</a><a name="Update project-icon"></a><div id="Update project" class="&#xA;                    step-icon&#xA;                    step-icon-Update" style="&#xA;                    left:482px;&#xA;                    top:305px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Mapping output specification"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Update project-text" style="&#xA;                    top:337px;&#xA;                    left:463.3333333333333px;                    &#xA;                ">Update project</a><a name="Write to log-icon"></a><div id="Write to log" class="&#xA;                    step-icon&#xA;                    step-icon-WriteToLog" style="&#xA;                    left:264px;&#xA;                    top:130px;&#xA;                ">
+            <div class="step-hops"><a class="&#xA;                                step-hop&#xA;                                &#xA;                                    step-hop-enabled&#xA;                                    step-hop-distribute-data " href="#Total Tickets by Milestone"></a></div>
+         </div><a class="&#xA;                    step-label&#xA;                    " href="#Write to log-text" style="&#xA;                    top:162px;&#xA;                    left:248px;                    &#xA;                ">Write to log</a>
+         
+      </div>
+      <h2><a name="variables">Variables</a></h2>
+      <p>This transformation does not read any variables.</p>
+      <h2><a name="connections">Database Connections</a></h2>
+      <p>This transformation defines 3 database connections.</p>
+      <h3>Database Connection Summary</h3>
+      <table>
+         <thead>
+            <tr>
+               <th>
+                  							Name
+                  						
+               </th>
+               <th>
+                  							Type
+                  						
+               </th>
+               <th>
+                  							Access
+                  						
+               </th>
+               <th>
+                  							Host
+                  						
+               </th>
+               <th>
+                  							Port
+                  						
+               </th>
+               <th>
+                  							User
+                  						
+               </th>
+               <th>
+                  							Used in Steps
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th><a href="#connection.AbreforjasLocal">AbreforjasLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td><a href="#AbreforjasLocal">Insert / Update Milestone</a>, <a href="#AbreforjasLocal">Insert / Update Milestone 2</a>, <a href="#AbreforjasLocal">Insert Tickets</a>, <a href="#AbreforjasLocal">Update Project 2</a>, <a href="#AbreforjasLocal">Update project</a></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.CVSAnalyLocal">CVSAnalyLocal</a></th>
+               <td>MYSQL</td>
+               <td>Native</td>
+               <td>localhost</td>
+               <td>3306</td>
+               <td>abreforjas</td>
+               <td></td>
+            </tr>
+            <tr>
+               <th><a href="#connection.OracleSPIWIN">OracleSPIWIN</a></th>
+               <td>ORACLE</td>
+               <td>Native</td>
+               <td>spiwin</td>
+               <td>1521</td>
+               <td>RUIZRUBE</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Database Connection Details</h3>
+      <h4><a name="connection.AbreforjasLocal">AbreforjasLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>AbreforjasLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.CVSAnalyLocal">CVSAnalyLocal</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>CVSAnalyLocal</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>localhost</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>MYSQL</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>cvsanaly</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>3306</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>abreforjas</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7f282b91ca97fd097bbdb</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h4><a name="connection.OracleSPIWIN">OracleSPIWIN</a></h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Property</th>
+               <th>Value</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>name</td>
+               <td>OracleSPIWIN</td>
+            </tr>
+            <tr>
+               <td>server</td>
+               <td>spiwin</td>
+            </tr>
+            <tr>
+               <td>type</td>
+               <td>ORACLE</td>
+            </tr>
+            <tr>
+               <td>access</td>
+               <td>Native</td>
+            </tr>
+            <tr>
+               <td>database</td>
+               <td>orcl</td>
+            </tr>
+            <tr>
+               <td>port</td>
+               <td>1521</td>
+            </tr>
+            <tr>
+               <td>username</td>
+               <td>RUIZRUBE</td>
+            </tr>
+            <tr>
+               <td>password</td>
+               <td>Encrypted 2be98afc86aa7868cae0aa7638cc2fe8b</td>
+            </tr>
+            <tr>
+               <td>attributes</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2>Flat Files</h2>
+      <p>
+         t.b.d.
+         
+      </p>
+      <h2><a name="Steps">Steps</a></h2><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Bifurcacion-text" href="#Bifurcacion-icon">Bifurcacion</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Dummy (do nothing)-text" href="#Dummy (do nothing)-icon">Dummy (do nothing)</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Dummy (do nothing) 3-text" href="#Dummy (do nothing) 3-icon">Dummy (do nothing) 3</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Dummy"></div>
+      <h3 class="step-heading"><a name="Dummy (do nothing) 4-text" href="#Dummy (do nothing) 4-icon">Dummy (do nothing) 4</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-ReplaceString"></div>
+      <h3 class="step-heading"><a name="Get Create and Update Dates-text" href="#Get Create and Update Dates-icon">Get Create and Update Dates</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>in_stream_name</th>
+               <th>out_stream_name</th>
+               <th>use_regex</th>
+               <th>replace_string</th>
+               <th>replace_by_string</th>
+               <th>replace_field_by_string</th>
+               <th>whole_word</th>
+               <th>case_sensitive</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>created-on</td>
+               <td>created-date</td>
+               <td>yes</td>
+               <td>T.*</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>updated-at</td>
+               <td>updated-date</td>
+               <td>yes</td>
+               <td>T.*</td>
+               <td></td>
+               <td></td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-InsertUpdate"></div>
+      <h3 class="step-heading"><a name="Insert / Update Milestone-text" href="#Insert / Update Milestone-icon">Insert / Update Milestone</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-InsertUpdate"></div>
+      <h3 class="step-heading"><a name="Insert / Update Milestone 2-text" href="#Insert / Update Milestone 2-icon">Insert / Update Milestone 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-TableOutput"></div>
+      <h3 class="step-heading"><a name="Insert Tickets-text" href="#Insert Tickets-icon">Insert Tickets</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>column_name</th>
+               <th>stream_name</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>owner</td>
+               <td>assigned-to-id</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>created</td>
+               <td>created-date</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>description</td>
+               <td>description</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>author</td>
+               <td>reporter-id</td>
+            </tr>
+            <tr>
+               <th>5</th>
+               <td>status</td>
+               <td>status</td>
+            </tr>
+            <tr>
+               <th>6</th>
+               <td>updated</td>
+               <td>updated-date</td>
+            </tr>
+            <tr>
+               <th>7</th>
+               <td>project</td>
+               <td>IDSPACE</td>
+            </tr>
+            <tr>
+               <th>8</th>
+               <td>priority</td>
+               <td>priority</td>
+            </tr>
+            <tr>
+               <th>9</th>
+               <td>title</td>
+               <td>summary</td>
+            </tr>
+            <tr>
+               <th>10</th>
+               <td>milestone</td>
+               <td>milestone-id</td>
+            </tr>
+            <tr>
+               <th>11</th>
+               <td>externalID</td>
+               <td>id</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MappingInput"></div>
+      <h3 class="step-heading"><a name="Mapping input specification-text" href="#Mapping input specification-icon">Mapping input specification</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>type</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>IDSPACE</td>
+               <td>Integer</td>
+               <td>9</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>2</th>
+               <td>FORGE_1</td>
+               <td>String</td>
+               <td>100</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>3</th>
+               <td>NAME_1</td>
+               <td>String</td>
+               <td>100</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>4</th>
+               <td>FILENAME</td>
+               <td>String</td>
+               <td>100</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>5</th>
+               <td>file</td>
+               <td>String</td>
+               <td>22</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>6</th>
+               <td>TYPE</td>
+               <td>String</td>
+               <td>100</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>7</th>
+               <td>TYPE1</td>
+               <td>String</td>
+               <td>100</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>8</th>
+               <td>assigned-to-id</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>9</th>
+               <td>completed-date</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>10</th>
+               <td>component-id</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>11</th>
+               <td>created-on</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>12</th>
+               <td>description</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>13</th>
+               <td>from-support</td>
+               <td>Integer</td>
+               <td>-1</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>14</th>
+               <td>id</td>
+               <td>Integer</td>
+               <td>-1</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>15</th>
+               <td>importance</td>
+               <td>Integer</td>
+               <td>-1</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>16</th>
+               <td>importance-float</td>
+               <td>Number</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>17</th>
+               <td>is-story</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>18</th>
+               <td>milestone-id</td>
+               <td>Integer</td>
+               <td>-1</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>19</th>
+               <td>notification-list</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>20</th>
+               <td>number</td>
+               <td>Integer</td>
+               <td>-1</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>21</th>
+               <td>priority</td>
+               <td>Integer</td>
+               <td>-1</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>22</th>
+               <td>reporter-id</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>23</th>
+               <td>space-id</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>24</th>
+               <td>status</td>
+               <td>Integer</td>
+               <td>-1</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>25</th>
+               <td>status-name</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>26</th>
+               <td>story-importance</td>
+               <td>Integer</td>
+               <td>-1</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <th>27</th>
+               <td>summary</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>28</th>
+               <td>updated-at</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>29</th>
+               <td>working-hours</td>
+               <td>Number</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>30</th>
+               <td>working-hour</td>
+               <td>Number</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>31</th>
+               <td>estimate</td>
+               <td>String</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>32</th>
+               <td>total-estimate</td>
+               <td>Number</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+            <tr>
+               <th>33</th>
+               <td>invested-hours</td>
+               <td>Number</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MappingOutput"></div>
+      <h3 class="step-heading"><a name="Mapping output specification-text" href="#Mapping output specification-icon">Mapping output specification</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Milestone is not NULL 2-text" href="#Milestone is not NULL 2-icon">Milestone is not NULL 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Milestone is not null-text" href="#Milestone is not null-icon">Milestone is not null</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MemoryGroupBy"></div>
+      <h3 class="step-heading"><a name="Opened Tickets calculate-text" href="#Opened Tickets calculate-icon">Opened Tickets calculate</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>aggregate</th>
+               <th>subject</th>
+               <th>type</th>
+               <th>valuefield</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>open-count</td>
+               <td>id</td>
+               <td>COUNT_ALL</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MemoryGroupBy"></div>
+      <h3 class="step-heading"><a name="Opened tickets by milestone-text" href="#Opened tickets by milestone-icon">Opened tickets by milestone</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>aggregate</th>
+               <th>subject</th>
+               <th>type</th>
+               <th>valuefield</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>opentickets</td>
+               <td>id</td>
+               <td>COUNT_ALL</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-FilterRows"></div>
+      <h3 class="step-heading"><a name="Opened tickets selections-text" href="#Opened tickets selections-icon">Opened tickets selections</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Constant"></div>
+      <h3 class="step-heading"><a name="Put descartado to FALSE-text" href="#Put descartado to FALSE-icon">Put descartado to FALSE</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>nullif</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>descartado</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>N</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Constant"></div>
+      <h3 class="step-heading"><a name="Put descartado to FALSE 2-text" href="#Put descartado to FALSE 2-icon">Put descartado to FALSE 2</a></h3>
+      <p>El campo "descartado" de la base de datos se utiliza para descartar aquellos tickets que hayan sido generados de manera automática
+         por Assembla
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>name</th>
+               <th>type</th>
+               <th>format</th>
+               <th>currency</th>
+               <th>decimal</th>
+               <th>group</th>
+               <th>nullif</th>
+               <th>length</th>
+               <th>precision</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>descartado</td>
+               <td>String</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>N</td>
+               <td>-1</td>
+               <td>-1</td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-SelectValues"></div>
+      <h3 class="step-heading"><a name="Select values-text" href="#Select values-icon">Select values</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>        N
+              created-date
+                    updated-date
+          <br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MemoryGroupBy"></div>
+      <h3 class="step-heading"><a name="Total Tickets by Milestone-text" href="#Total Tickets by Milestone-icon">Total Tickets by Milestone</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>aggregate</th>
+               <th>subject</th>
+               <th>type</th>
+               <th>valuefield</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>totaltickets</td>
+               <td>id</td>
+               <td>COUNT_ALL</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-MemoryGroupBy"></div>
+      <h3 class="step-heading"><a name="Total tickets calculate-text" href="#Total tickets calculate-icon">Total tickets calculate</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <h4>Fields</h4>
+      <table>
+         <thead>
+            <tr>
+               <th>Position</th>
+               <th>aggregate</th>
+               <th>subject</th>
+               <th>type</th>
+               <th>valuefield</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>1</th>
+               <td>total-count</td>
+               <td>id</td>
+               <td>COUNT_ALL</td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Update"></div>
+      <h3 class="step-heading"><a name="Update Project 2-text" href="#Update Project 2-icon">Update Project 2</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-Update"></div>
+      <h3 class="step-heading"><a name="Update project-text" href="#Update project-icon">Update project</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p><br><div class="&#xA;&#x9;&#x9;&#x9;step-icon&#xA;&#x9;&#x9;&#x9;step-icon-WriteToLog"></div>
+      <h3 class="step-heading"><a name="Write to log-text" href="#Write to log-icon">Write to log</a></h3>
+      <p>
+         This job entry does not have a description.
+         
+      </p>
+      <script type="text/javascript" src="../../js/wz_jsgraphics.js"></script><script src="../../js/kettle.js"></script><script type="text/javascript" src="../../js/shCore.js"></script><script type="text/javascript" src="../../js/shBrushBash.js"></script><script type="text/javascript" src="../../js/shBrushJava.js"></script><script type="text/javascript" src="../../js/shBrushJScript.js"></script><script type="text/javascript" src="../../js/shBrushSql.js"></script><script type="text/javascript" src="../../js/shBrushXml.js"></script><script type="text/javascript">
+            SyntaxHighlighter.all();
+        </script></body>
+</html>
