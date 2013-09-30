@@ -64,23 +64,24 @@
 
 <h2 id="introduction">Software Process Deployment & Evaluation Framework</h1>
 
-	<p>Welcome to this web portal. This pages describes a framework for the deployment and evaluation of software process using supporting tools. Here, we can find the software artifacts developed under this framework and some case studies. 
-
-        <p>To be completed. Below, a figure of the general framework is presented:</p>
+	<p>Welcome to this web portal. This pages describes a framework for the deployment and evaluation of software process using supporting tools. Here, we can find the software artifacts developed under this framework and some case studies. Below, a figure of the general framework is presented:</p>
 
 	</br>
 
-	<div align="center"><img height="60%" width="75%" src="./img/generalApproach.png"></div>
+	<div align="center"><img height="50%" width="50%" src="./img/generalApproach.png"></div>
 	
 <hr/>
 
 <h2 id="resources">Available Resources</h2>
 	
-	<h3 id="method">General Method</h1>
+	<h3 id="models">Method</h3>
+		<p>This framework provides a method for deploying and evaluating software process hosted in supporting-tools. It is based on the application of two well-known approaches in Software Engineering: <i>Model Driven Engineering</i> and <i>Linked Open Data</i></p>
 
-		<p>To be completed</p>
+		<p>A complete, extended description of this method, as well as the rest of the framework can be obtained <a href="">here</a>. Also, a machine-processable version (SPEM+BPMN) of the method is available as an <a href="./method.xml">XMI file</a>.</p>
+		
+		<img height="60%" width="75%" src="./img/method.png">
         
-	<h3 id="models">Models</h1>
+	<h3 id="models">Models</h3>
 
 		<p>Here, you can find a list of models related with this framework available in different formats, such as XMI for generic UML tools, Ecore for Eclipse modeling technologies and RDF for linked data technologies.</p>
 		<ul>
@@ -91,15 +92,21 @@
 		<li><a href="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0">Issue Tracking tool Model (ITM)</a></li>
 		</ul>
 
-	<h3 id="models">Tools</h1>
+	<h3 id="models">Tools</h3>
 
-		<p>Here, you can find a list of useful tools related with this framework</p>
+		<p>List of useful tools related with the deployment of software process using an Model-Driven approach</p>
         	<ul>
-		<li>Software Process Deployment toolkit (SPDT). A complete toolkit for deploying software process in supporting tools
-            	<li>Abreforjas: A tool for extract and publish linked data from software forges</li>
-            	<li>EasyData: A tool for extract and publish linked data from software forges from regular web applications</li>
-		<li>D2R in Enterprise Architect: An instance of D2R server customized for using it in Enterprise Architect tool</li>
+			<li><a href="./tools/spdt/index.html">Software Process Deployment toolkit (SPDT)</a> A complete toolkit for deploying software process in supporting tools
+        	<li><a href="">SPDT Dashboard</a> A visual interface for deploying software process in supporting tools [IN PROGRESS]
         	</ul>
+        	
+        <p>List of useful tools related with the evaluation of software process using an Linked Data approach</p>
+        	<ul>
+			<li><a href="">D2R in Enterprise Architect</a> An instance of D2R server customized for using it in Enterprise Architect tool</li>
+        	<li><a href="http://spilin.uca.es/abreforjas">Abreforjas</a> A tool for extract and publish linked data from software forges</li>
+            <li><a href="http://rubygems.org/gems/easy_data"> EasyData for Ruby on Rails</a>: A tool for extract and publish linked data from RoR web applications</li>
+			<li><a href="">EasyData for Django</a>: A tool for extract and publish linked data from Django web applications</li> [IN PROGRESS]
+			</ul>
 		
 	<hr/>
 
@@ -108,12 +115,41 @@
 <h2 id="casestudies">Case Studies</h2>
 
 
-	<h3 id="cs_openup">Case Study: Deployment of OpenUP methodology on process-supporting tools</h2>
+	<h3 id="cs_openup">Deployment of OpenUP methodology on process-supporting tools</h2>
 
-	<p>To be completed</p>
+	<p>This section will introduce a case study in order to ensure the validity of the proposed method using the Software Process Deployment Toolkit cited above. In this case study, we describe how the OpenUP software development methodology can be deployed on specific support tools, such as Enterprise Architect and MediaWiki.</p>
 
-
-	<h3 id="cs_susteval">Case Study: Sustainable Evaluation of People Skills on Collaborative Projects</h2>
+	<p> Below, you can obtain the models implied in this process.<p>
+	
+	Step 1. Process Models
+    <ul>
+			<li><a href="http://spdef.googlecode.com/svn/spdt/trunk/src/test/resources/examples/openUP104/openup/plugin.xmi">Software Process Model for OpenUP</a></li>
+    </ul>
+    
+    Step 2. Deployment Models
+    <ul>
+			<li><a href="http://spdef.googlecode.com/svn/spdt/trunk/src/test/resources/examples/openUP104/openup/swpm_mejorado.xmi">Software Work Product Model for OpenUP</a></li>
+    </ul>
+    
+    Step 3. Generic Tool Models
+    <ul>
+			<li><a href="http://spdef.googlecode.com/svn/spdt/trunk/src/test/resources/examples/openUP104/openup/vmm.xmi">Visual Modeling tool Model for OpenUP</a></li>
+    		<li><a href="http://spdef.googlecode.com/svn/spdt/trunk/src/test/resources/examples/openUP104/openup/wikim.xmi">Wiki tool Model for OpenUP</a></li> 
+    </ul>
+    
+    Step 4. Specific Tool Models
+    <ul>
+    		<li><a href="http://spdef.googlecode.com/svn/spdt/trunk/src/test/resources/examples/openUP104/openup/eam.xmi">Enterprise Architect Model for OpenUP</a></li>
+			<li><a href="http://spdef.googlecode.com/svn/spdt/trunk/src/test/resources/examples/openUP104/openup/mwm.xmi">MediaWiki Model for OpenUP</a></li>
+    </ul>
+    
+    Step 5.Customized Supporting-tools 
+    <ul>
+			<li><a href="http://spdef.googlecode.com/svn/spdt/trunk/src/test/resources/examples/openUP104/openup/openUP.eap">Enterprise Architect Template Project for OpenUP</a></li>
+   			<li><a href="./cases/openup/mediawiki/">MediaWiki Template for OpenUP</a></li>
+    </ul>
+    
+	<h3 id="cs_susteval">Sustainable Evaluation of People Skills on Collaborative Projects</h2>
 
 	<p>In this section appears the design and the results of the a case study about the sustainable evaluation of collaborative projects in software forges.</em></p>
         
@@ -125,7 +161,7 @@
         
         <p>Finally, the results of this case study are presented in <a href="./cases/peopleSkills/resources/IW_forgeassessment_comparativa.csv">CSV</a> and <a href="./cases/peopleSkills/resources/IW_forgeassessment_comparativa.xlsx">XLSX</a> format</a>.</p>
         
-	<h3 id="cs_quality">Case Study: Automation of Quality Technical Reviews</h2>
+	<h3 id="cs_quality">Automation of Quality Technical Reviews</h2>
 
 	<p>To be completed</p>
 
