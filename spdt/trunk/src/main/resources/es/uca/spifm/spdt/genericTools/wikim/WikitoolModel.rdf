@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF
+         xmlns:rdf="&rdf;"
+         xmlns:rdfs="&rdfs;"
+         xmlns:xsd="&xsd;"
+>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiDatabase">
+	<rdfs:label>The WikiDatabase entity</rdfs:label>
+</rdfs:Class>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#text">
+	<rdfs:label>The text attribute</rdfs:label>
+	<rdfs:label>The text attribute</rdfs:label>
+	<rdfs:label>The text attribute</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section"/>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Paragraph"/>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Item"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Property>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#SectionContent">
+	<rdfs:label>The SectionContent entity</rdfs:label>
+</rdfs:Class>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#alternative">
+	<rdfs:label>The alternative attribute</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Image"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Property>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#items">
+	<rdfs:label>The items reference</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#ItemList"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Item"/>
+</rdf:Property>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#order">
+	<rdfs:label>The order attribute</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#SectionContent"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+</rdf:Property>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#title">
+	<rdfs:label>The title attribute</rdfs:label>
+	<rdfs:label>The title attribute</rdfs:label>
+	<rdfs:label>The title attribute</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent"/>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section"/>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#ItemList"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Property>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#User">
+	<rdfs:subClassOf rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent"/>
+	<rdfs:label>The User entity</rdfs:label>
+</rdfs:Class>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Item">
+	<rdfs:label>The Item entity</rdfs:label>
+</rdfs:Class>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#contents">
+	<rdfs:label>The contents reference</rdfs:label>
+	<rdfs:label>The contents reference</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section"/>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiDatabase"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#SectionContent"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent"/>
+</rdf:Property>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Category">
+	<rdfs:subClassOf rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent"/>
+	<rdfs:label>The Category entity</rdfs:label>
+</rdfs:Class>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#ItemList">
+	<rdfs:subClassOf rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#SectionContent"/>
+	<rdfs:label>The ItemList entity</rdfs:label>
+</rdfs:Class>
+<rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#int">
+</rdfs:Datatype>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#File">
+	<rdfs:subClassOf rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent"/>
+	<rdfs:label>The File entity</rdfs:label>
+</rdfs:Class>
+<rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string">
+</rdfs:Datatype>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent">
+	<rdfs:label>The WikiContent entity</rdfs:label>
+</rdfs:Class>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Paragraph">
+	<rdfs:subClassOf rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#SectionContent"/>
+	<rdfs:label>The Paragraph entity</rdfs:label>
+</rdfs:Class>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#embeddedSections">
+	<rdfs:label>The embeddedSections reference</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section"/>
+</rdf:Property>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#sections">
+	<rdfs:label>The sections reference</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Article"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section"/>
+</rdf:Property>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#uri">
+	<rdfs:label>The uri attribute</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Image"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Property>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Article">
+	<rdfs:subClassOf rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent"/>
+	<rdfs:label>The Article entity</rdfs:label>
+</rdfs:Class>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#parentCategory">
+	<rdfs:label>The parentCategory reference</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Category"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Category"/>
+</rdf:Property>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section">
+	<rdfs:label>The Section entity</rdfs:label>
+</rdfs:Class>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#categories">
+	<rdfs:label>The categories reference</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Article"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Category"/>
+</rdf:Property>
+<rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Image">
+	<rdfs:subClassOf rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#SectionContent"/>
+	<rdfs:label>The Image entity</rdfs:label>
+</rdfs:Class>
+</rdf:RDF>

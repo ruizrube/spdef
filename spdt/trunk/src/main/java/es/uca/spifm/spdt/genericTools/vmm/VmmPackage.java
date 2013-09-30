@@ -40,7 +40,7 @@ public interface VmmPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0.ecore";
+	String eNS_URI = "http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0";
 
 	/**
 	 * The package namespace name.

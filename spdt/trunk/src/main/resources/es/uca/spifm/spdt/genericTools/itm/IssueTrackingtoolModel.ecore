@@ -1,4 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="issuetrackingtoolmodel" nsURI="http://issuetrackingtoolmodel/1.0"
-    nsPrefix="issuetrackingtoolmodel"/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="itm" nsURI="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0"
+    nsPrefix="itm">
+  <eClassifiers xsi:type="ecore:EClass" name="IssueTrackingDatabase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projects" upperBound="-1"
+        eType="#//Project" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trackers" lowerBound="1"
+        upperBound="-1" eType="#//Tracker" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1" upperBound="-1"
+        eType="#//Role" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="users" lowerBound="1" upperBound="-1"
+        eType="#//User" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Project">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versions" lowerBound="1"
+        upperBound="-1" eType="#//Version" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="issueCategories" upperBound="-1"
+        eType="#//IssueCategory" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//Member" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Version">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//VersionStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="effectiveDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="issues" upperBound="-1"
+        eType="#//Issue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Issue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doneRatio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="estimatedHours" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elapsedHours" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tracker" lowerBound="1"
+        eType="#//Tracker"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//IssueStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+        eType="#//IssueDependency" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//IssueCategory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tracker">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IssueStatus">
+    <eLiterals name="OPEN"/>
+    <eLiterals name="CLOSED" value="1"/>
+    <eLiterals name="ASSIGNED" value="2"/>
+    <eLiterals name="RESOLVED" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VersionStatus">
+    <eLiterals name="OPEN"/>
+    <eLiterals name="CLOSED" value="1"/>
+    <eLiterals name="INPROGRESS" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IssueDependency">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DependencyType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependentTask" lowerBound="1"
+        eType="#//Issue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DependencyType">
+    <eLiterals name="START_START"/>
+    <eLiterals name="START_END" value="1"/>
+    <eLiterals name="END_START" value="2"/>
+    <eLiterals name="END_END" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IssueCategory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Member">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" lowerBound="1" eType="#//User"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="#//Role"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="login" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Role">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="permissions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

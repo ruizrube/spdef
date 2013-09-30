@@ -35,6 +35,22 @@
 			<artifactId>eaapi</artifactId>
 			<version>1.0</version>
 		</dependency>
+				
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>eodm</artifactId>
+			<version>0.9.1.v200710090302</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>org.eclipse.eodm</groupId>
+			<artifactId>rdf</artifactId>
+			<version>0.9.1.v200710090302</version>
+		</dependency>
+		
+		
+		
 		<dependency>
 			<groupId>SSJavaCOM</groupId>
 			<artifactId>SSJavaCOM</artifactId>
