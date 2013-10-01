@@ -17,6 +17,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
         eType="#//Task" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//MilestoneStatus"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Role">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -25,7 +26,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Task">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//TaskStatus"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//TaskStatus"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="responsible" eType="#//Role"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//TaskCategory"/>
@@ -52,5 +53,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DependencyType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependentTask" lowerBound="1"
         eType="#//Task"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MilestoneStatus">
+    <eLiterals name="OPEN"/>
+    <eLiterals name="CLOSE" value="1"/>
+    <eLiterals name="INPROGRESS" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TaskPriority">
+    <eLiterals name="HIGHER"/>
+    <eLiterals name="HIGH" value="1"/>
+    <eLiterals name="NORMAL" value="2"/>
+    <eLiterals name="LOW" value="3"/>
+    <eLiterals name="LOWEST" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

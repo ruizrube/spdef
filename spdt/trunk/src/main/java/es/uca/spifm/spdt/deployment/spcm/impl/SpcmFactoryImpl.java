@@ -81,6 +81,10 @@ public class SpcmFactoryImpl extends EFactoryImpl implements SpcmFactory {
 				return createDependencyTypeFromString(eDataType, initialValue);
 			case SpcmPackage.TASK_STATUS:
 				return createTaskStatusFromString(eDataType, initialValue);
+			case SpcmPackage.MILESTONE_STATUS:
+				return createMilestoneStatusFromString(eDataType, initialValue);
+			case SpcmPackage.TASK_PRIORITY:
+				return createTaskPriorityFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -98,6 +102,10 @@ public class SpcmFactoryImpl extends EFactoryImpl implements SpcmFactory {
 				return convertDependencyTypeToString(eDataType, instanceValue);
 			case SpcmPackage.TASK_STATUS:
 				return convertTaskStatusToString(eDataType, instanceValue);
+			case SpcmPackage.MILESTONE_STATUS:
+				return convertMilestoneStatusToString(eDataType, instanceValue);
+			case SpcmPackage.TASK_PRIORITY:
+				return convertTaskPriorityToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -200,6 +208,46 @@ public class SpcmFactoryImpl extends EFactoryImpl implements SpcmFactory {
 	 * @generated
 	 */
 	public String convertTaskStatusToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MilestoneStatus createMilestoneStatusFromString(EDataType eDataType, String initialValue) {
+		MilestoneStatus result = MilestoneStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMilestoneStatusToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TaskPriority createTaskPriorityFromString(EDataType eDataType, String initialValue) {
+		TaskPriority result = TaskPriority.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTaskPriorityToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

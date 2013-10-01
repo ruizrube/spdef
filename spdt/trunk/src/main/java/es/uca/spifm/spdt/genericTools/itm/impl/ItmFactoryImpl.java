@@ -87,6 +87,8 @@ public class ItmFactoryImpl extends EFactoryImpl implements ItmFactory {
 				return createVersionStatusFromString(eDataType, initialValue);
 			case ItmPackage.DEPENDENCY_TYPE:
 				return createDependencyTypeFromString(eDataType, initialValue);
+			case ItmPackage.ISSUE_PRIORITY:
+				return createIssuePriorityFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -106,6 +108,8 @@ public class ItmFactoryImpl extends EFactoryImpl implements ItmFactory {
 				return convertVersionStatusToString(eDataType, instanceValue);
 			case ItmPackage.DEPENDENCY_TYPE:
 				return convertDependencyTypeToString(eDataType, instanceValue);
+			case ItmPackage.ISSUE_PRIORITY:
+				return convertIssuePriorityToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -268,6 +272,26 @@ public class ItmFactoryImpl extends EFactoryImpl implements ItmFactory {
 	 * @generated
 	 */
 	public String convertDependencyTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IssuePriority createIssuePriorityFromString(EDataType eDataType, String initialValue) {
+		IssuePriority result = IssuePriority.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIssuePriorityToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

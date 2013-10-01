@@ -6,12 +6,14 @@ package es.uca.spifm.spdt.genericTools.itm.impl;
 import es.uca.spifm.spdt.genericTools.itm.Issue;
 import es.uca.spifm.spdt.genericTools.itm.IssueCategory;
 import es.uca.spifm.spdt.genericTools.itm.IssueDependency;
+import es.uca.spifm.spdt.genericTools.itm.IssuePriority;
 import es.uca.spifm.spdt.genericTools.itm.IssueStatus;
 import es.uca.spifm.spdt.genericTools.itm.ItmPackage;
 import es.uca.spifm.spdt.genericTools.itm.Tracker;
 
 import java.util.Collection;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -42,6 +44,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getCategory <em>Category</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getPriority <em>Priority</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getCompletedDate <em>Completed Date</em>}</li>
  * </ul>
  * </p>
  *
@@ -197,6 +202,66 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 	 * @ordered
 	 */
 	protected IssueCategory category;
+
+	/**
+	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final IssuePriority PRIORITY_EDEFAULT = IssuePriority.HIGHER;
+
+	/**
+	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
+	protected IssuePriority priority = PRIORITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDueDate() <em>Due Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDueDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date DUE_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDueDate() <em>Due Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDueDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date dueDate = DUE_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCompletedDate() <em>Completed Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCompletedDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date COMPLETED_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCompletedDate() <em>Completed Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCompletedDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date completedDate = COMPLETED_DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -436,6 +501,69 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public IssuePriority getPriority() {
+		return priority;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPriority(IssuePriority newPriority) {
+		IssuePriority oldPriority = priority;
+		priority = newPriority == null ? PRIORITY_EDEFAULT : newPriority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ItmPackage.ISSUE__PRIORITY, oldPriority, priority));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getDueDate() {
+		return dueDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDueDate(Date newDueDate) {
+		Date oldDueDate = dueDate;
+		dueDate = newDueDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ItmPackage.ISSUE__DUE_DATE, oldDueDate, dueDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getCompletedDate() {
+		return completedDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCompletedDate(Date newCompletedDate) {
+		Date oldCompletedDate = completedDate;
+		completedDate = newCompletedDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ItmPackage.ISSUE__COMPLETED_DATE, oldCompletedDate, completedDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -473,6 +601,12 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 			case ItmPackage.ISSUE__CATEGORY:
 				if (resolve) return getCategory();
 				return basicGetCategory();
+			case ItmPackage.ISSUE__PRIORITY:
+				return getPriority();
+			case ItmPackage.ISSUE__DUE_DATE:
+				return getDueDate();
+			case ItmPackage.ISSUE__COMPLETED_DATE:
+				return getCompletedDate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -514,6 +648,15 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 			case ItmPackage.ISSUE__CATEGORY:
 				setCategory((IssueCategory)newValue);
 				return;
+			case ItmPackage.ISSUE__PRIORITY:
+				setPriority((IssuePriority)newValue);
+				return;
+			case ItmPackage.ISSUE__DUE_DATE:
+				setDueDate((Date)newValue);
+				return;
+			case ItmPackage.ISSUE__COMPLETED_DATE:
+				setCompletedDate((Date)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -553,6 +696,15 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 			case ItmPackage.ISSUE__CATEGORY:
 				setCategory((IssueCategory)null);
 				return;
+			case ItmPackage.ISSUE__PRIORITY:
+				setPriority(PRIORITY_EDEFAULT);
+				return;
+			case ItmPackage.ISSUE__DUE_DATE:
+				setDueDate(DUE_DATE_EDEFAULT);
+				return;
+			case ItmPackage.ISSUE__COMPLETED_DATE:
+				setCompletedDate(COMPLETED_DATE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -583,6 +735,12 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 				return dependencies != null && !dependencies.isEmpty();
 			case ItmPackage.ISSUE__CATEGORY:
 				return category != null;
+			case ItmPackage.ISSUE__PRIORITY:
+				return priority != PRIORITY_EDEFAULT;
+			case ItmPackage.ISSUE__DUE_DATE:
+				return DUE_DATE_EDEFAULT == null ? dueDate != null : !DUE_DATE_EDEFAULT.equals(dueDate);
+			case ItmPackage.ISSUE__COMPLETED_DATE:
+				return COMPLETED_DATE_EDEFAULT == null ? completedDate != null : !COMPLETED_DATE_EDEFAULT.equals(completedDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -609,6 +767,12 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 		result.append(elapsedHours);
 		result.append(", status: ");
 		result.append(status);
+		result.append(", priority: ");
+		result.append(priority);
+		result.append(", dueDate: ");
+		result.append(dueDate);
+		result.append(", completedDate: ");
+		result.append(completedDate);
 		result.append(')');
 		return result.toString();
 	}

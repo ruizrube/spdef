@@ -31,6 +31,10 @@
         <element xmi:type="ecore:EAttribute" href="SoftwareProjectControlModel.ecore#//Milestone/description"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_95h7cSg1EeO-Tay76I9jxg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_XF6HgCqrEeOr3Jw_R19_Fw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="SoftwareProjectControlModel.ecore#//Milestone/status"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_XF6HgSqrEeOr3Jw_R19_Fw"/>
+      </children>
       <children xmi:type="notation:Node" xmi:id="_-ex9kCg1EeO-Tay76I9jxg" type="2001">
         <element xmi:type="ecore:EAttribute" href="SoftwareProjectControlModel.ecore#//Milestone/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_-ex9kSg1EeO-Tay76I9jxg"/>
@@ -201,6 +205,60 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_8JYsUShdEeO9nOpXDuCqLg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="SoftwareProjectControlModel.ecore#//TaskDependency"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8JYsUihdEeO9nOpXDuCqLg" x="320" y="275"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_EF3lECqrEeOr3Jw_R19_Fw" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_EGBWECqrEeOr3Jw_R19_Fw" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_EGBWESqrEeOr3Jw_R19_Fw" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_GOzngCqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="SoftwareProjectControlModel.ecore#//MilestoneStatus/OPEN"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GOzngSqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_GwCsUCqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="SoftwareProjectControlModel.ecore#//MilestoneStatus/CLOSE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GwCsUSqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_HEc2ECqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="SoftwareProjectControlModel.ecore#//MilestoneStatus/INPROGRESS"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HEc2ESqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_EGBWEiqrEeOr3Jw_R19_Fw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_EGBWEyqrEeOr3Jw_R19_Fw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_EGBWFCqrEeOr3Jw_R19_Fw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_EF3lESqrEeOr3Jw_R19_Fw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="SoftwareProjectControlModel.ecore#//MilestoneStatus"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EF3lEiqrEeOr3Jw_R19_Fw" x="664" y="82"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_IvcYQCqrEeOr3Jw_R19_Fw" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_IvcYQyqrEeOr3Jw_R19_Fw" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_IvcYRCqrEeOr3Jw_R19_Fw" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_Jb2LQCqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="SoftwareProjectControlModel.ecore#//TaskPriority/HIGHER"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Jb2LQSqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_KFIY0CqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="SoftwareProjectControlModel.ecore#//TaskPriority/HIGH"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_KFIY0SqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_KbBwUCqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="SoftwareProjectControlModel.ecore#//TaskPriority/NORMAL"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_KbBwUSqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_KxPQ4CqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="SoftwareProjectControlModel.ecore#//TaskPriority/LOW"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_KxPQ4SqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_LBU7UCqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="SoftwareProjectControlModel.ecore#//TaskPriority/LOWEST"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LBU7USqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_IvcYRSqrEeOr3Jw_R19_Fw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_IvcYRiqrEeOr3Jw_R19_Fw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_IvcYRyqrEeOr3Jw_R19_Fw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_IvcYQSqrEeOr3Jw_R19_Fw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="SoftwareProjectControlModel.ecore#//TaskPriority"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvcYQiqrEeOr3Jw_R19_Fw" x="665" y="200"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_GorloRw9EeOFmpClq9O4IA"/>
   <element xmi:type="ecore:EPackage" href="SoftwareProjectControlModel.ecore#/"/>

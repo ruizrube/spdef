@@ -4,6 +4,7 @@
 package es.uca.spifm.spdt.deployment.spcm.impl;
 
 import es.uca.spifm.spdt.deployment.spcm.Milestone;
+import es.uca.spifm.spdt.deployment.spcm.MilestoneStatus;
 import es.uca.spifm.spdt.deployment.spcm.SpcmPackage;
 import es.uca.spifm.spdt.deployment.spcm.Task;
 
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.impl.MilestoneImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.impl.MilestoneImpl#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.impl.MilestoneImpl#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.deployment.spcm.impl.MilestoneImpl#getStatus <em>Status</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,6 +90,26 @@ public class MilestoneImpl extends MinimalEObjectImpl.Container implements Miles
 	 * @ordered
 	 */
 	protected EList<Task> tasks;
+
+	/**
+	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final MilestoneStatus STATUS_EDEFAULT = MilestoneStatus.OPEN;
+
+	/**
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected MilestoneStatus status = STATUS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,6 +189,27 @@ public class MilestoneImpl extends MinimalEObjectImpl.Container implements Miles
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MilestoneStatus getStatus() {
+		return status;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStatus(MilestoneStatus newStatus) {
+		MilestoneStatus oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpcmPackage.MILESTONE__STATUS, oldStatus, status));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -190,6 +233,8 @@ public class MilestoneImpl extends MinimalEObjectImpl.Container implements Miles
 				return getName();
 			case SpcmPackage.MILESTONE__TASKS:
 				return getTasks();
+			case SpcmPackage.MILESTONE__STATUS:
+				return getStatus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,6 +258,9 @@ public class MilestoneImpl extends MinimalEObjectImpl.Container implements Miles
 				getTasks().clear();
 				getTasks().addAll((Collection<? extends Task>)newValue);
 				return;
+			case SpcmPackage.MILESTONE__STATUS:
+				setStatus((MilestoneStatus)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -234,6 +282,9 @@ public class MilestoneImpl extends MinimalEObjectImpl.Container implements Miles
 			case SpcmPackage.MILESTONE__TASKS:
 				getTasks().clear();
 				return;
+			case SpcmPackage.MILESTONE__STATUS:
+				setStatus(STATUS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,6 +303,8 @@ public class MilestoneImpl extends MinimalEObjectImpl.Container implements Miles
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SpcmPackage.MILESTONE__TASKS:
 				return tasks != null && !tasks.isEmpty();
+			case SpcmPackage.MILESTONE__STATUS:
+				return status != STATUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,6 +323,8 @@ public class MilestoneImpl extends MinimalEObjectImpl.Container implements Miles
 		result.append(description);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", status: ");
+		result.append(status);
 		result.append(')');
 		return result.toString();
 	}

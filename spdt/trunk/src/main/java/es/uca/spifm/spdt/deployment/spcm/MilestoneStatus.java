@@ -1,7 +1,7 @@
 /**
- * Created by Ivan Ruiz
+ * Designed by Ivan Ruiz
  */
-package es.uca.spifm.spdt.genericTools.itm;
+package es.uca.spifm.spdt.deployment.spcm;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -11,23 +11,15 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Version Status</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Milestone Status</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getVersionStatus()
+ * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getMilestoneStatus()
  * @model
  * @generated
  */
-public enum VersionStatus implements Enumerator {
+public enum MilestoneStatus implements Enumerator {
 	/**
-	 * The '<em><b>CLOSED</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CLOSED_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CLOSED(1, "CLOSED", "CLOSED"), /**
 	 * The '<em><b>OPEN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,6 +30,16 @@ public enum VersionStatus implements Enumerator {
 	OPEN(0, "OPEN", "OPEN"),
 
 	/**
+	 * The '<em><b>CLOSE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CLOSE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CLOSE(1, "CLOSE", "CLOSE"),
+
+	/**
 	 * The '<em><b>INPROGRESS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,21 +48,6 @@ public enum VersionStatus implements Enumerator {
 	 * @ordered
 	 */
 	INPROGRESS(2, "INPROGRESS", "INPROGRESS");
-
-	/**
-	 * The '<em><b>CLOSED</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>CLOSED</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #CLOSED
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CLOSED_VALUE = 1;
 
 	/**
 	 * The '<em><b>OPEN</b></em>' literal value.
@@ -78,6 +65,21 @@ public enum VersionStatus implements Enumerator {
 	public static final int OPEN_VALUE = 0;
 
 	/**
+	 * The '<em><b>CLOSE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>CLOSE</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #CLOSE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CLOSE_VALUE = 1;
+
+	/**
 	 * The '<em><b>INPROGRESS</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -93,35 +95,35 @@ public enum VersionStatus implements Enumerator {
 	public static final int INPROGRESS_VALUE = 2;
 
 	/**
-	 * An array of all the '<em><b>Version Status</b></em>' enumerators.
+	 * An array of all the '<em><b>Milestone Status</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final VersionStatus[] VALUES_ARRAY =
-		new VersionStatus[] {
-			CLOSED,
+	private static final MilestoneStatus[] VALUES_ARRAY =
+		new MilestoneStatus[] {
 			OPEN,
+			CLOSE,
 			INPROGRESS,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Version Status</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Milestone Status</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<VersionStatus> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<MilestoneStatus> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Version Status</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Milestone Status</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static VersionStatus get(String literal) {
+	public static MilestoneStatus get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			VersionStatus result = VALUES_ARRAY[i];
+			MilestoneStatus result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -130,14 +132,14 @@ public enum VersionStatus implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Version Status</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Milestone Status</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static VersionStatus getByName(String name) {
+	public static MilestoneStatus getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			VersionStatus result = VALUES_ARRAY[i];
+			MilestoneStatus result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -146,15 +148,15 @@ public enum VersionStatus implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Version Status</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Milestone Status</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static VersionStatus get(int value) {
+	public static MilestoneStatus get(int value) {
 		switch (value) {
-			case CLOSED_VALUE: return CLOSED;
 			case OPEN_VALUE: return OPEN;
+			case CLOSE_VALUE: return CLOSE;
 			case INPROGRESS_VALUE: return INPROGRESS;
 		}
 		return null;
@@ -187,7 +189,7 @@ public enum VersionStatus implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private VersionStatus(int value, String name, String literal) {
+	private MilestoneStatus(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -231,4 +233,4 @@ public enum VersionStatus implements Enumerator {
 		return literal;
 	}
 	
-} //VersionStatus
+} //MilestoneStatus

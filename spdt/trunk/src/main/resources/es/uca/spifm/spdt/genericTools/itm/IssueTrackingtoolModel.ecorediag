@@ -56,7 +56,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_SVT3wShlEeO9nOpXDuCqLg"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_T2nScChlEeO9nOpXDuCqLg" type="2001">
-        <element xmi:type="ecore:EAttribute" href="IssueTrackingtoolModel.ecore#//Version/effectiveDate"/>
+        <element xmi:type="ecore:EAttribute" href="IssueTrackingtoolModel.ecore#//Version/dueDate"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_T2nScShlEeO9nOpXDuCqLg"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_O8WX5ShlEeO9nOpXDuCqLg"/>
@@ -70,7 +70,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_O8WX4ShlEeO9nOpXDuCqLg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="IssueTrackingtoolModel.ecore#//Version"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O8WX4ihlEeO9nOpXDuCqLg" x="385" y="395"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O8WX4ihlEeO9nOpXDuCqLg" x="390" y="440"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_XmgEkChlEeO9nOpXDuCqLg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_XmgEkyhlEeO9nOpXDuCqLg" type="4001"/>
@@ -98,6 +98,18 @@
       <children xmi:type="notation:Node" xmi:id="_wP-JoCmiEeOMffpm9UQDuw" type="2001">
         <element xmi:type="ecore:EAttribute" href="IssueTrackingtoolModel.ecore#//Issue/status"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_wP-JoSmiEeOMffpm9UQDuw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="__57ToCqrEeOr3Jw_R19_Fw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="IssueTrackingtoolModel.ecore#//Issue/priority"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__57ToSqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_BCzAMCqsEeOr3Jw_R19_Fw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="IssueTrackingtoolModel.ecore#//Issue/dueDate"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_BCzAMSqsEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_Bd618CqsEeOr3Jw_R19_Fw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="IssueTrackingtoolModel.ecore#//Issue/completedDate"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Bd618SqsEeOr3Jw_R19_Fw"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_XmgElShlEeO9nOpXDuCqLg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_XmgElihlEeO9nOpXDuCqLg"/>
@@ -157,18 +169,18 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_qqDC8SmiEeOMffpm9UQDuw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="IssueTrackingtoolModel.ecore#//IssueStatus"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qqDC8imiEeOMffpm9UQDuw" x="205" y="30"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qqDC8imiEeOMffpm9UQDuw" x="35" y="290"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3UFFkCmiEeOMffpm9UQDuw" type="1005">
     <children xmi:type="notation:Node" xmi:id="_3UFFkymiEeOMffpm9UQDuw" type="4010"/>
     <children xmi:type="notation:Node" xmi:id="_3UFFlCmiEeOMffpm9UQDuw" type="5008">
-      <children xmi:type="notation:Node" xmi:id="_5J8bACmiEeOMffpm9UQDuw" type="2006">
-        <element xmi:type="ecore:EEnumLiteral" href="IssueTrackingtoolModel.ecore#//VersionStatus/OPEN"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_5J8bASmiEeOMffpm9UQDuw"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_6bTVMCmiEeOMffpm9UQDuw" type="2006">
         <element xmi:type="ecore:EEnumLiteral" href="IssueTrackingtoolModel.ecore#//VersionStatus/CLOSED"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_6bTVMSmiEeOMffpm9UQDuw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_5J8bACmiEeOMffpm9UQDuw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="IssueTrackingtoolModel.ecore#//VersionStatus/OPEN"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_5J8bASmiEeOMffpm9UQDuw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_85ZvUCmiEeOMffpm9UQDuw" type="2006">
         <element xmi:type="ecore:EEnumLiteral" href="IssueTrackingtoolModel.ecore#//VersionStatus/INPROGRESS"/>
@@ -180,7 +192,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3UFFkSmiEeOMffpm9UQDuw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="IssueTrackingtoolModel.ecore#//VersionStatus"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3UFFkimiEeOMffpm9UQDuw" x="800" y="30"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3UFFkimiEeOMffpm9UQDuw" x="35" y="420"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_M2bzwCmjEeOMffpm9UQDuw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_M2bzwymjEeOMffpm9UQDuw" type="4001"/>
@@ -227,7 +239,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_QW1_cSmjEeOMffpm9UQDuw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="IssueTrackingtoolModel.ecore#//DependencyType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QW1_cimjEeOMffpm9UQDuw" x="990" y="30"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QW1_cimjEeOMffpm9UQDuw" x="35" y="530"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_rETgkCmjEeOMffpm9UQDuw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_rEdRkCmjEeOMffpm9UQDuw" type="4001"/>
@@ -312,6 +324,37 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_dnMmQimkEeOMffpm9UQDuw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="IssueTrackingtoolModel.ecore#//Role"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dnMmQymkEeOMffpm9UQDuw" x="980" y="195"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_uVWCkCqrEeOr3Jw_R19_Fw" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_uVWCkyqrEeOr3Jw_R19_Fw" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_uVWClCqrEeOr3Jw_R19_Fw" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_0cpYACqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="IssueTrackingtoolModel.ecore#//IssuePriority/HIGHER"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0cpYASqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_0-eSsCqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="IssueTrackingtoolModel.ecore#//IssuePriority/HIGH"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0-eSsSqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_1S4ccCqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="IssueTrackingtoolModel.ecore#//IssuePriority/NORMAL"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1S4ccSqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_1oybACqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="IssueTrackingtoolModel.ecore#//IssuePriority/LOW"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1oybASqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_2HfJMCqrEeOr3Jw_R19_Fw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="IssueTrackingtoolModel.ecore#//IssuePriority/LOWER"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_2HfJMSqrEeOr3Jw_R19_Fw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_uVWClSqrEeOr3Jw_R19_Fw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_uVWCliqrEeOr3Jw_R19_Fw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_uVWClyqrEeOr3Jw_R19_Fw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_uVWCkSqrEeOr3Jw_R19_Fw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="IssueTrackingtoolModel.ecore#//IssuePriority"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uVWCkiqrEeOr3Jw_R19_Fw" x="185" y="525"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_i5JuoRxeEeOFmpClq9O4IA"/>
   <element xmi:type="ecore:EPackage" href="IssueTrackingtoolModel.ecore#/"/>

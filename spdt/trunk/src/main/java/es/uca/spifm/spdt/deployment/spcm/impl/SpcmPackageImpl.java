@@ -5,6 +5,7 @@ package es.uca.spifm.spdt.deployment.spcm.impl;
 
 import es.uca.spifm.spdt.deployment.spcm.DependencyType;
 import es.uca.spifm.spdt.deployment.spcm.Milestone;
+import es.uca.spifm.spdt.deployment.spcm.MilestoneStatus;
 import es.uca.spifm.spdt.deployment.spcm.Project;
 import es.uca.spifm.spdt.deployment.spcm.Role;
 import es.uca.spifm.spdt.deployment.spcm.SpcmFactory;
@@ -12,6 +13,7 @@ import es.uca.spifm.spdt.deployment.spcm.SpcmPackage;
 import es.uca.spifm.spdt.deployment.spcm.Task;
 import es.uca.spifm.spdt.deployment.spcm.TaskCategory;
 import es.uca.spifm.spdt.deployment.spcm.TaskDependency;
+import es.uca.spifm.spdt.deployment.spcm.TaskPriority;
 import es.uca.spifm.spdt.deployment.spcm.TaskStatus;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -84,6 +86,20 @@ public class SpcmPackageImpl extends EPackageImpl implements SpcmPackage {
 	 * @generated
 	 */
 	private EEnum taskStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum milestoneStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum taskPriorityEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -234,6 +250,15 @@ public class SpcmPackageImpl extends EPackageImpl implements SpcmPackage {
 	 */
 	public EReference getMilestone_Tasks() {
 		return (EReference)milestoneEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMilestone_Status() {
+		return (EAttribute)milestoneEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -412,6 +437,24 @@ public class SpcmPackageImpl extends EPackageImpl implements SpcmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getMilestoneStatus() {
+		return milestoneStatusEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTaskPriority() {
+		return taskPriorityEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SpcmFactory getSpcmFactory() {
 		return (SpcmFactory)getEFactoryInstance();
 	}
@@ -446,6 +489,7 @@ public class SpcmPackageImpl extends EPackageImpl implements SpcmPackage {
 		createEAttribute(milestoneEClass, MILESTONE__DESCRIPTION);
 		createEAttribute(milestoneEClass, MILESTONE__NAME);
 		createEReference(milestoneEClass, MILESTONE__TASKS);
+		createEAttribute(milestoneEClass, MILESTONE__STATUS);
 
 		roleEClass = createEClass(ROLE);
 		createEAttribute(roleEClass, ROLE__NAME);
@@ -471,6 +515,8 @@ public class SpcmPackageImpl extends EPackageImpl implements SpcmPackage {
 		// Create enums
 		dependencyTypeEEnum = createEEnum(DEPENDENCY_TYPE);
 		taskStatusEEnum = createEEnum(TASK_STATUS);
+		milestoneStatusEEnum = createEEnum(MILESTONE_STATUS);
+		taskPriorityEEnum = createEEnum(TASK_PRIORITY);
 	}
 
 	/**
@@ -514,6 +560,7 @@ public class SpcmPackageImpl extends EPackageImpl implements SpcmPackage {
 		initEAttribute(getMilestone_Description(), ecorePackage.getEString(), "description", null, 0, 1, Milestone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMilestone_Name(), ecorePackage.getEString(), "name", null, 0, 1, Milestone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMilestone_Tasks(), this.getTask(), null, "tasks", null, 0, -1, Milestone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMilestone_Status(), this.getMilestoneStatus(), "status", null, 0, 1, Milestone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -522,7 +569,7 @@ public class SpcmPackageImpl extends EPackageImpl implements SpcmPackage {
 		initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_Description(), ecorePackage.getEString(), "description", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTask_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTask_Priority(), this.getTaskStatus(), "priority", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_Status(), this.getTaskStatus(), "status", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Responsible(), this.getRole(), null, "responsible", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_Category(), this.getTaskCategory(), null, "category", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -548,6 +595,18 @@ public class SpcmPackageImpl extends EPackageImpl implements SpcmPackage {
 		addEEnumLiteral(taskStatusEEnum, TaskStatus.CLOSED);
 		addEEnumLiteral(taskStatusEEnum, TaskStatus.ASSIGNED);
 		addEEnumLiteral(taskStatusEEnum, TaskStatus.RESOLVED);
+
+		initEEnum(milestoneStatusEEnum, MilestoneStatus.class, "MilestoneStatus");
+		addEEnumLiteral(milestoneStatusEEnum, MilestoneStatus.OPEN);
+		addEEnumLiteral(milestoneStatusEEnum, MilestoneStatus.CLOSE);
+		addEEnumLiteral(milestoneStatusEEnum, MilestoneStatus.INPROGRESS);
+
+		initEEnum(taskPriorityEEnum, TaskPriority.class, "TaskPriority");
+		addEEnumLiteral(taskPriorityEEnum, TaskPriority.HIGHER);
+		addEEnumLiteral(taskPriorityEEnum, TaskPriority.HIGH);
+		addEEnumLiteral(taskPriorityEEnum, TaskPriority.NORMAL);
+		addEEnumLiteral(taskPriorityEEnum, TaskPriority.LOW);
+		addEEnumLiteral(taskPriorityEEnum, TaskPriority.LOWEST);
 
 		// Create resource
 		createResource(eNS_URI);

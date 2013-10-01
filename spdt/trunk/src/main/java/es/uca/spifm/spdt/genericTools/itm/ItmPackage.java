@@ -233,13 +233,13 @@ public interface ItmPackage extends EPackage {
 	int VERSION__STATUS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Effective Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Due Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION__EFFECTIVE_DATE = 3;
+	int VERSION__DUE_DATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
@@ -360,13 +360,40 @@ public interface ItmPackage extends EPackage {
 	int ISSUE__CATEGORY = 8;
 
 	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__PRIORITY = 9;
+
+	/**
+	 * The feature id for the '<em><b>Due Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__DUE_DATE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Completed Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__COMPLETED_DATE = 11;
+
+	/**
 	 * The number of structural features of the '<em>Issue</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE_FEATURE_COUNT = 9;
+	int ISSUE_FEATURE_COUNT = 12;
 
 	/**
 	 * The number of operations of the '<em>Issue</em>' class.
@@ -667,6 +694,17 @@ public interface ItmPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link es.uca.spifm.spdt.genericTools.itm.IssuePriority <em>Issue Priority</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see es.uca.spifm.spdt.genericTools.itm.IssuePriority
+	 * @see es.uca.spifm.spdt.genericTools.itm.impl.ItmPackageImpl#getIssuePriority()
+	 * @generated
+	 */
+	int ISSUE_PRIORITY = 13;
+
+
+	/**
 	 * Returns the meta object for class '{@link es.uca.spifm.spdt.genericTools.itm.IssueTrackingDatabase <em>Issue Tracking Database</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -829,15 +867,15 @@ public interface ItmPackage extends EPackage {
 	EAttribute getVersion_Status();
 
 	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.itm.Version#getEffectiveDate <em>Effective Date</em>}'.
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.itm.Version#getDueDate <em>Due Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Effective Date</em>'.
-	 * @see es.uca.spifm.spdt.genericTools.itm.Version#getEffectiveDate()
+	 * @return the meta object for the attribute '<em>Due Date</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.itm.Version#getDueDate()
 	 * @see #getVersion()
 	 * @generated
 	 */
-	EAttribute getVersion_EffectiveDate();
+	EAttribute getVersion_DueDate();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link es.uca.spifm.spdt.genericTools.itm.Version#getIssues <em>Issues</em>}'.
@@ -958,6 +996,39 @@ public interface ItmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIssue_Category();
+
+	/**
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getPriority <em>Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Priority</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.itm.Issue#getPriority()
+	 * @see #getIssue()
+	 * @generated
+	 */
+	EAttribute getIssue_Priority();
+
+	/**
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getDueDate <em>Due Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Due Date</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.itm.Issue#getDueDate()
+	 * @see #getIssue()
+	 * @generated
+	 */
+	EAttribute getIssue_DueDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getCompletedDate <em>Completed Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Completed Date</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.itm.Issue#getCompletedDate()
+	 * @see #getIssue()
+	 * @generated
+	 */
+	EAttribute getIssue_CompletedDate();
 
 	/**
 	 * Returns the meta object for class '{@link es.uca.spifm.spdt.genericTools.itm.Tracker <em>Tracker</em>}'.
@@ -1160,6 +1231,16 @@ public interface ItmPackage extends EPackage {
 	EEnum getDependencyType();
 
 	/**
+	 * Returns the meta object for enum '{@link es.uca.spifm.spdt.genericTools.itm.IssuePriority <em>Issue Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Issue Priority</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.itm.IssuePriority
+	 * @generated
+	 */
+	EEnum getIssuePriority();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1309,12 +1390,12 @@ public interface ItmPackage extends EPackage {
 		EAttribute VERSION__STATUS = eINSTANCE.getVersion_Status();
 
 		/**
-		 * The meta object literal for the '<em><b>Effective Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Due Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VERSION__EFFECTIVE_DATE = eINSTANCE.getVersion_EffectiveDate();
+		EAttribute VERSION__DUE_DATE = eINSTANCE.getVersion_DueDate();
 
 		/**
 		 * The meta object literal for the '<em><b>Issues</b></em>' containment reference list feature.
@@ -1405,6 +1486,30 @@ public interface ItmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ISSUE__CATEGORY = eINSTANCE.getIssue_Category();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ISSUE__PRIORITY = eINSTANCE.getIssue_Priority();
+
+		/**
+		 * The meta object literal for the '<em><b>Due Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ISSUE__DUE_DATE = eINSTANCE.getIssue_DueDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Completed Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ISSUE__COMPLETED_DATE = eINSTANCE.getIssue_CompletedDate();
 
 		/**
 		 * The meta object literal for the '{@link es.uca.spifm.spdt.genericTools.itm.impl.TrackerImpl <em>Tracker</em>}' class.
@@ -1575,6 +1680,16 @@ public interface ItmPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DEPENDENCY_TYPE = eINSTANCE.getDependencyType();
+
+		/**
+		 * The meta object literal for the '{@link es.uca.spifm.spdt.genericTools.itm.IssuePriority <em>Issue Priority</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see es.uca.spifm.spdt.genericTools.itm.IssuePriority
+		 * @see es.uca.spifm.spdt.genericTools.itm.impl.ItmPackageImpl#getIssuePriority()
+		 * @generated
+		 */
+		EEnum ISSUE_PRIORITY = eINSTANCE.getIssuePriority();
 
 	}
 

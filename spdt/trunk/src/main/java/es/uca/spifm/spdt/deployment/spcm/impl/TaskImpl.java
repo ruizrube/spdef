@@ -94,7 +94,7 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int PRIORITY_EDEFAULT = 0;
+	protected static final TaskStatus PRIORITY_EDEFAULT = TaskStatus.OPEN;
 
 	/**
 	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
@@ -104,7 +104,7 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 	 * @generated
 	 * @ordered
 	 */
-	protected int priority = PRIORITY_EDEFAULT;
+	protected TaskStatus priority = PRIORITY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -222,7 +222,7 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getPriority() {
+	public TaskStatus getPriority() {
 		return priority;
 	}
 
@@ -231,9 +231,9 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPriority(int newPriority) {
-		int oldPriority = priority;
-		priority = newPriority;
+	public void setPriority(TaskStatus newPriority) {
+		TaskStatus oldPriority = priority;
+		priority = newPriority == null ? PRIORITY_EDEFAULT : newPriority;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpcmPackage.TASK__PRIORITY, oldPriority, priority));
 	}
@@ -405,7 +405,7 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 				setDescription((String)newValue);
 				return;
 			case SpcmPackage.TASK__PRIORITY:
-				setPriority((Integer)newValue);
+				setPriority((TaskStatus)newValue);
 				return;
 			case SpcmPackage.TASK__STATUS:
 				setStatus((TaskStatus)newValue);

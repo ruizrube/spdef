@@ -84,6 +84,7 @@ public interface Task extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Priority</b></em>' attribute.
+	 * The literals are from the enumeration {@link es.uca.spifm.spdt.deployment.spcm.TaskStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Priority</em>' attribute isn't clear,
@@ -91,22 +92,24 @@ public interface Task extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Priority</em>' attribute.
-	 * @see #setPriority(int)
+	 * @see es.uca.spifm.spdt.deployment.spcm.TaskStatus
+	 * @see #setPriority(TaskStatus)
 	 * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getTask_Priority()
 	 * @model
 	 * @generated
 	 */
-	int getPriority();
+	TaskStatus getPriority();
 
 	/**
 	 * Sets the value of the '{@link es.uca.spifm.spdt.deployment.spcm.Task#getPriority <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Priority</em>' attribute.
+	 * @see es.uca.spifm.spdt.deployment.spcm.TaskStatus
 	 * @see #getPriority()
 	 * @generated
 	 */
-	void setPriority(int value);
+	void setPriority(TaskStatus value);
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' attribute.
