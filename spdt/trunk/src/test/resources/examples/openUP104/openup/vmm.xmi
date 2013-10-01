@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<vmm:ModelRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vmm="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0" xsi:schemaLocation="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0 ../../../../../main/resources/es/uca/spifm/spdt/genericTools/vmm/VisualModelingtoolModel.ecore">
+  <projects name="openup" description="The OpenUP is an iterative software development process that is minimal, complete, and extensible.">
+    <packages name="Architecture" description="This is the list of work products related to architecture domain.">
+      <embeddedPackages name="Default Section" description="Container of models">
+        <diagrams name="Architecture Notebook" type="DEPLOYMENT" description="This artifact describes the context for software development. It contains the decisions, rationale, assumptions, explanations and implications of forming the architecture." containedElements="//@projects.0/@packages.0/@embeddedPackages.0/@elements.0"/>
+        <elements type="NODE" name="Default NODE for Architecture Notebook" description="Example description of the NODE"/>
+      </embeddedPackages>
+    </packages>
+    <packages name="Development" description="This is the list of work products related to development domain.">
+      <embeddedPackages name="Design" description="Container of models">
+        <diagrams name="Design" type="SEQUENCE" description="This artifact describes the realization of required system functionality in terms of components and serves as an abstraction of the source code." containedElements="//@projects.0/@packages.1/@embeddedPackages.0/@elements.0"/>
+        <elements name="Default CLASS for Design" description="Example description of the CLASS"/>
+      </embeddedPackages>
+      <embeddedPackages name="Build">
+        <diagrams name="Build" type="COMPONENT" description="An operational version of a system or part of a system that demonstrates a subset of the capabilities to be provided in the final product." containedElements="//@projects.0/@packages.1/@embeddedPackages.1/@elements.0"/>
+        <elements type="COMPONENT" name="Default COMPONENT for Build" description="Example description of the COMPONENT"/>
+      </embeddedPackages>
+    </packages>
+    <packages name="Project Management" description="This is the list of work products related to project management domain.">
+      <embeddedPackages name="Project Plan" description="Container of models">
+        <embeddedPackages name="Iteration #1 Plan" description="Iteration Plan">
+          <elements type="ARTIFACT" name="Iteration Plan"/>
+        </embeddedPackages>
+        <embeddedPackages name="Iteration #2 Plan" description="Iteration Plan">
+          <elements type="ARTIFACT" name="Iteration Plan"/>
+        </embeddedPackages>
+        <elements type="ARTIFACT" name="Project Plan" description="This artifact gathers all information required to manage the project. Its main part consists of a coarse-grained plan, containing project phases and milestones."/>
+      </embeddedPackages>
+      <embeddedPackages name="Work Items List">
+        <elements type="REQUIREMENT" name="Work Items List Default Item " description="This artifact contains a list of all scheduled work to be done within the project, as well as proposed work that may affect the product in this or future projects. Each work item may contain references to information relevant to carry out the work described within the work item."/>
+      </embeddedPackages>
+      <embeddedPackages name="Risk List">
+        <elements type="REQUIREMENT" name="Risk List Default Item " description="This artifact is a list of known and open risks to the project, sorted in order of importance and associated with specific mitigation or contingency actions."/>
+      </embeddedPackages>
+    </packages>
+    <packages name="Requirements" description="This is the list of work products related to requirements domain.">
+      <embeddedPackages name="Functional Requirements" description="Container of functional requirements">
+        <diagrams name="Use Cases" description="This artifact captures the sequence of actions a system performs that yields an observable result of value to those interacting with the system." containedElements="//@projects.0/@packages.3/@embeddedPackages.0/@elements.0"/>
+        <elements type="USECASE" name="Default USECASE for Use Cases" description="Example description of the USECASE"/>
+      </embeddedPackages>
+      <embeddedPackages name="Vision and Glossary" description="Container of specifications">
+        <elements type="ARTIFACT" name="Vision" description="This artifact contains the definition of the stakeholders' view of the product to be developed, specified in terms of the stakeholders' key needs and features. It contains an outline of the envisioned core requirements for the system."/>
+        <elements type="REQUIREMENT" name="Glossary Default Item " description="This artifact defines important terms used by the project. These terms are the basis for effective collaboration with the stakeholders and other team members."/>
+      </embeddedPackages>
+      <embeddedPackages name="Non Functional Requirements" description="Container of non-functional requirements">
+        <elements type="REQUIREMENT" name="Supporting Requirements Specification Default Item " description="This artifact captures system-wide requirements not captured in scenarios or use cases, including requirements on quality attributes and global functional requirements."/>
+      </embeddedPackages>
+      <embeddedPackages name="Information Requirements" description="Container of information requirements">
+        <diagrams name="Conceptual" type="CLASS" description="Conceptual model of the system" containedElements="//@projects.0/@packages.3/@embeddedPackages.3/@elements.0"/>
+        <elements name="Default CLASS for Conceptual" description="Example description of the CLASS"/>
+      </embeddedPackages>
+    </packages>
+    <packages name="Test" description="This is the list of work products related to test domain.">
+      <embeddedPackages name="Default Section" description="Container of models">
+        <diagrams name="Test Case" description="This artifact is the specification of a set of test inputs, execution conditions, and expected results, identified for the purpose of making an evaluation of some particular aspect of a scenario." containedElements="//@projects.0/@packages.4/@embeddedPackages.0/@elements.0"/>
+        <diagrams name="Test Log" description="This artifact collects raw output captured during a unique execution of one or more tests for a single test cycle run." containedElements="//@projects.0/@packages.4/@embeddedPackages.0/@elements.1"/>
+        <diagrams name="Test Script" description="This artifact contains the step-by-step instructions that realize a test, enabling its execution. These may take the form of either documented textual instructions that are executed manually or computer readable instructions that enable automated test execution." containedElements="//@projects.0/@packages.4/@embeddedPackages.0/@elements.2"/>
+        <elements type="USECASE" name="Default USECASE for Test Case" description="Example description of the USECASE"/>
+        <elements type="USECASE" name="Default USECASE for Test Log" description="Example description of the USECASE"/>
+        <elements type="USECASE" name="Default USECASE for Test Script" description="Example description of the USECASE"/>
+      </embeddedPackages>
+    </packages>
+  </projects>
+</vmm:ModelRepository>
