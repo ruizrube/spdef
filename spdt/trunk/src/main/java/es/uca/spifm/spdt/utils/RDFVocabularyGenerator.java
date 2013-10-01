@@ -27,7 +27,7 @@ import org.eclipse.eodm.rdf.transformer.Ecore2RDFS;
 import org.eclipse.eodm.util.Triple;
 
 /**
- * @author Iván
+ * @author Ivan
  * 
  */
 public class RDFVocabularyGenerator {

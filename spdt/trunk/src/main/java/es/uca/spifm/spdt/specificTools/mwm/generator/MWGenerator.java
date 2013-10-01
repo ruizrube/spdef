@@ -110,7 +110,7 @@ public class MWGenerator {
 		Double tiempoEstimado = new Double(2 * pages.size());
 
 		System.out.println("CREANDO " + pages.size()
-				+ " PÃ?GINAS  EN WIKI.");
+				+ " PAGINAS  EN WIKI.");
 		System.out.println("Tiempo aproximado: " + tiempoEstimado.toString()
 				+ " segundos");
 

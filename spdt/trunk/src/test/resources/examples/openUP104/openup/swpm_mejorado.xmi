@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<swpm:Project
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:swpm="http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0.ecore"
-    name="openup"
-    description="The OpenUP is an iterative software development process that is minimal, complete, and extensible.">
+<swpm:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:swpm="http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0" xsi:schemaLocation="http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0 ../../../main/resources/es/uca/spifm/spdt/deployment/swpm/SoftwareWorkProductModel.ecore" name="openup" description="The OpenUP is an iterative software development process that is minimal, complete, and extensible.">
   <workproducts
       xsi:type="swpm:DocumentaryWorkProduct"
       title="Architecture"

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<swpm:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:swpm="http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0" xsi:schemaLocation="http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0 ../../../main/resources/es/uca/spifm/spdt/deployment/swpm/SoftwareWorkProductModel.ecore">
+  <workproducts xsi:type="swpm:DocumentaryWorkProduct" title="OpenUP Work Products" description="This is the list of domains in OpenUp providing organization of work products.">
+    <sections title="Default Section" description="Container of models"/>
+  </workproducts>
+  <workproducts xsi:type="swpm:DocumentaryWorkProduct" title="Architecture" description="This is the list of work products related to architecture domain.">
+    <sections title="Default Section" description="Container of models">
+      <models name="Architecture Notebook" description="This artifact describes the context for software development. It contains the decisions, rationale, assumptions, explanations and implications of forming the architecture."/>
+    </sections>
+  </workproducts>
+  <workproducts xsi:type="swpm:DocumentaryWorkProduct" title="Change Management" description="This is the list of work products related to change management domain.">
+    <sections title="Default Section" description="Container of models"/>
+  </workproducts>
+  <workproducts xsi:type="swpm:DocumentaryWorkProduct" title="Development" description="This is the list of work products related to development domain.">
+    <sections title="Default Section" description="Container of models">
+      <models name="Build" description="An operational version of a system or part of a system that demonstrates a subset of the capabilities to be provided in the final product."/>
+      <models name="Design" description="This artifact describes the realization of required system functionality in terms of components and serves as an abstraction of the source code."/>
+      <models name="Developer Test" description="The instructions that validate individual software components perform as specified."/>
+      <models name="Implementation" description="Software code files, data files, and supporting files such as online help files that represent the raw parts of a system that can be built."/>
+    </sections>
+  </workproducts>
+  <workproducts xsi:type="swpm:DocumentaryWorkProduct" title="Project Management" description="This is the list of work products related to project management domain.">
+    <sections title="Default Section" description="Container of models">
+      <models name="Iteration Plan" description="A fine-grained plan describing the objectives, work assignments, and evaluation criteria for the iteration."/>
+      <models name="Project Plan" description="This artifact gathers all information required to manage the project. Its main part consists of a coarse-grained plan, containing project phases and milestones."/>
+      <models name="Work Items List" description="This artifact contains a list of all scheduled work to be done within the project, as well as proposed work that may affect the product in this or future projects. Each work item may contain references to information relevant to carry out the work described within the work item."/>
+      <models name="Risk List" description="This artifact is a list of known and open risks to the project, sorted in order of importance and associated with specific mitigation or contingency actions."/>
+    </sections>
+  </workproducts>
+  <workproducts xsi:type="swpm:DocumentaryWorkProduct" title="Requirements" description="This is the list of work products related to requirements domain.">
+    <sections title="Default Section" description="Container of models">
+      <models name="Supporting Requirements Specification" description="This artifact captures system-wide requirements not captured in scenarios or use cases, including requirements on quality attributes and global functional requirements."/>
+      <models name="Vision" description="This artifact contains the definition of the stakeholders' view of the product to be developed, specified in terms of the stakeholders' key needs and features. It contains an outline of the envisioned core requirements for the system."/>
+      <models name="Use Case" description="This artifact captures the sequence of actions a system performs that yields an observable result of value to those interacting with the system."/>
+      <models name="Glossary" description="This artifact defines important terms used by the project. These terms are the basis for effective collaboration with the stakeholders and other team members."/>
+      <models name="Use-Case Model" description=""/>
+    </sections>
+  </workproducts>
+  <workproducts xsi:type="swpm:DocumentaryWorkProduct" title="Test" description="This is the list of work products related to test domain.">
+    <sections title="Default Section" description="Container of models">
+      <models name="Test Case" description="This artifact is the specification of a set of test inputs, execution conditions, and expected results, identified for the purpose of making an evaluation of some particular aspect of a scenario."/>
+      <models name="Test Log" description="This artifact collects raw output captured during a unique execution of one or more tests for a single test cycle run."/>
+      <models name="Test Script" description="This artifact contains the step-by-step instructions that realize a test, enabling its execution. These may take the form of either documented textual instructions that are executed manually or computer readable instructions that enable automated test execution."/>
+    </sections>
+  </workproducts>
+</swpm:Project>

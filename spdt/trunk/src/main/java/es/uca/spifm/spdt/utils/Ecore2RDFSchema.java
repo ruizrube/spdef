@@ -14,7 +14,7 @@
  * </copyright> 
  * 
  * $Id: Ecore2RDFSchema.java,v 1.3 2007/04/03 10:21:20 lzhang Exp $
- * Modificación por IRR para incluir el NS del vocabulario
+ * Modificacion por IRR para incluir el NS del vocabulario
  */
 
 package es.uca.spifm.spdt.utils;
@@ -186,6 +186,8 @@ public class Ecore2RDFSchema {
                             	xsdName = XSD_INTEGER;
                             else if (eatt.getEType() == EcorePackage.eINSTANCE.getEString())
                             	xsdName = XSD_STRING;
+                            else if (eatt.getEType() == EcorePackage.eINSTANCE.getEDate())
+                            	xsdName = XSD_DATE;
 
                             if (xsdName != null) {
                             	// is XSD type
@@ -354,6 +356,7 @@ public class Ecore2RDFSchema {
 	
 	
 	
+	private static String XSD_DATE = "http://www.w3.org/2001/XMLSchema#date";
     private static String XSD_BOOLEAN = "http://www.w3.org/2001/XMLSchema#boolean";
     private static String XSD_FLOAT = "http://www.w3.org/2001/XMLSchema#float";
     private static String XSD_BYTE = "http://www.w3.org/2001/XMLSchema#byte";
