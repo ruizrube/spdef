@@ -7,6 +7,7 @@ import es.uca.spifm.spdt.genericTools.itm.DependencyType;
 import es.uca.spifm.spdt.genericTools.itm.Issue;
 import es.uca.spifm.spdt.genericTools.itm.IssueCategory;
 import es.uca.spifm.spdt.genericTools.itm.IssueDependency;
+import es.uca.spifm.spdt.genericTools.itm.IssuePriority;
 import es.uca.spifm.spdt.genericTools.itm.IssueStatus;
 import es.uca.spifm.spdt.genericTools.itm.IssueTrackingDatabase;
 import es.uca.spifm.spdt.genericTools.itm.ItmFactory;
@@ -124,6 +125,13 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 	 * @generated
 	 */
 	private EEnum dependencyTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum issuePriorityEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -326,7 +334,7 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVersion_EffectiveDate() {
+	public EAttribute getVersion_DueDate() {
 		return (EAttribute)versionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -427,6 +435,33 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 	 */
 	public EReference getIssue_Category() {
 		return (EReference)issueEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIssue_Priority() {
+		return (EAttribute)issueEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIssue_DueDate() {
+		return (EAttribute)issueEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIssue_CompletedDate() {
+		return (EAttribute)issueEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -605,6 +640,15 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getIssuePriority() {
+		return issuePriorityEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ItmFactory getItmFactory() {
 		return (ItmFactory)getEFactoryInstance();
 	}
@@ -645,7 +689,7 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		createEAttribute(versionEClass, VERSION__DESCRIPTION);
 		createEAttribute(versionEClass, VERSION__NAME);
 		createEAttribute(versionEClass, VERSION__STATUS);
-		createEAttribute(versionEClass, VERSION__EFFECTIVE_DATE);
+		createEAttribute(versionEClass, VERSION__DUE_DATE);
 		createEReference(versionEClass, VERSION__ISSUES);
 
 		issueEClass = createEClass(ISSUE);
@@ -658,6 +702,9 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		createEAttribute(issueEClass, ISSUE__STATUS);
 		createEReference(issueEClass, ISSUE__DEPENDENCIES);
 		createEReference(issueEClass, ISSUE__CATEGORY);
+		createEAttribute(issueEClass, ISSUE__PRIORITY);
+		createEAttribute(issueEClass, ISSUE__DUE_DATE);
+		createEAttribute(issueEClass, ISSUE__COMPLETED_DATE);
 
 		trackerEClass = createEClass(TRACKER);
 		createEAttribute(trackerEClass, TRACKER__NAME);
@@ -685,6 +732,7 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		issueStatusEEnum = createEEnum(ISSUE_STATUS);
 		versionStatusEEnum = createEEnum(VERSION_STATUS);
 		dependencyTypeEEnum = createEEnum(DEPENDENCY_TYPE);
+		issuePriorityEEnum = createEEnum(ISSUE_PRIORITY);
 	}
 
 	/**
@@ -734,7 +782,7 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		initEAttribute(getVersion_Description(), ecorePackage.getEString(), "description", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVersion_Name(), ecorePackage.getEString(), "name", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVersion_Status(), this.getVersionStatus(), "status", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVersion_EffectiveDate(), ecorePackage.getEDate(), "effectiveDate", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVersion_DueDate(), ecorePackage.getEDate(), "dueDate", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVersion_Issues(), this.getIssue(), null, "issues", null, 0, -1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(issueEClass, Issue.class, "Issue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -747,6 +795,9 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		initEAttribute(getIssue_Status(), this.getIssueStatus(), "status", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIssue_Dependencies(), this.getIssueDependency(), null, "dependencies", null, 0, -1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIssue_Category(), this.getIssueCategory(), null, "category", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIssue_Priority(), this.getIssuePriority(), "priority", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIssue_DueDate(), ecorePackage.getEDate(), "dueDate", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIssue_CompletedDate(), ecorePackage.getEDate(), "completedDate", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trackerEClass, Tracker.class, "Tracker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTracker_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tracker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -778,8 +829,8 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		addEEnumLiteral(issueStatusEEnum, IssueStatus.RESOLVED);
 
 		initEEnum(versionStatusEEnum, VersionStatus.class, "VersionStatus");
-		addEEnumLiteral(versionStatusEEnum, VersionStatus.OPEN);
 		addEEnumLiteral(versionStatusEEnum, VersionStatus.CLOSED);
+		addEEnumLiteral(versionStatusEEnum, VersionStatus.OPEN);
 		addEEnumLiteral(versionStatusEEnum, VersionStatus.INPROGRESS);
 
 		initEEnum(dependencyTypeEEnum, DependencyType.class, "DependencyType");
@@ -787,6 +838,13 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		addEEnumLiteral(dependencyTypeEEnum, DependencyType.START_END);
 		addEEnumLiteral(dependencyTypeEEnum, DependencyType.END_START);
 		addEEnumLiteral(dependencyTypeEEnum, DependencyType.END_END);
+
+		initEEnum(issuePriorityEEnum, IssuePriority.class, "IssuePriority");
+		addEEnumLiteral(issuePriorityEEnum, IssuePriority.HIGHER);
+		addEEnumLiteral(issuePriorityEEnum, IssuePriority.HIGH);
+		addEEnumLiteral(issuePriorityEEnum, IssuePriority.NORMAL);
+		addEEnumLiteral(issuePriorityEEnum, IssuePriority.LOW);
+		addEEnumLiteral(issuePriorityEEnum, IssuePriority.LOWER);
 
 		// Create resource
 		createResource(eNS_URI);

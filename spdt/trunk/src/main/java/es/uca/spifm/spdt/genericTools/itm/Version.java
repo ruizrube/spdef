@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getDescription <em>Description</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getStatus <em>Status</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getEffectiveDate <em>Effective Date</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getIssues <em>Issues</em>}</li>
  * </ul>
  * </p>
@@ -112,30 +112,30 @@ public interface Version extends EObject {
 	void setStatus(VersionStatus value);
 
 	/**
-	 * Returns the value of the '<em><b>Effective Date</b></em>' attribute.
+	 * Returns the value of the '<em><b>Due Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Effective Date</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Due Date</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Effective Date</em>' attribute.
-	 * @see #setEffectiveDate(Date)
-	 * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getVersion_EffectiveDate()
+	 * @return the value of the '<em>Due Date</em>' attribute.
+	 * @see #setDueDate(Date)
+	 * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getVersion_DueDate()
 	 * @model
 	 * @generated
 	 */
-	Date getEffectiveDate();
+	Date getDueDate();
 
 	/**
-	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.itm.Version#getEffectiveDate <em>Effective Date</em>}' attribute.
+	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.itm.Version#getDueDate <em>Due Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Effective Date</em>' attribute.
-	 * @see #getEffectiveDate()
+	 * @param value the new value of the '<em>Due Date</em>' attribute.
+	 * @see #getDueDate()
 	 * @generated
 	 */
-	void setEffectiveDate(Date value);
+	void setDueDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Issues</b></em>' containment reference list.

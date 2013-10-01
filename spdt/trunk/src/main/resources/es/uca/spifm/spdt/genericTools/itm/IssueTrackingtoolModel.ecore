@@ -26,7 +26,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//VersionStatus"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="effectiveDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dueDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="issues" upperBound="-1"
         eType="#//Issue" containment="true"/>
   </eClassifiers>
@@ -42,6 +42,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="#//IssueDependency" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//IssueCategory"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="#//IssuePriority"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dueDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="completedDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tracker">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -53,8 +56,8 @@
     <eLiterals name="RESOLVED" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="VersionStatus">
-    <eLiterals name="OPEN"/>
     <eLiterals name="CLOSED" value="1"/>
+    <eLiterals name="OPEN"/>
     <eLiterals name="INPROGRESS" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IssueDependency">
@@ -82,5 +85,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Role">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="permissions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IssuePriority">
+    <eLiterals name="HIGHER"/>
+    <eLiterals name="HIGH" value="1"/>
+    <eLiterals name="NORMAL" value="2"/>
+    <eLiterals name="LOW" value="3"/>
+    <eLiterals name="LOWER" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -14,8 +14,8 @@
       <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//IssueStatus/RESOLVED"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="IssueTrackingtoolModel.ecore#//VersionStatus">
-      <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//VersionStatus/OPEN"/>
       <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//VersionStatus/CLOSED"/>
+      <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//VersionStatus/OPEN"/>
       <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//VersionStatus/INPROGRESS"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="IssueTrackingtoolModel.ecore#//DependencyType">
@@ -23,6 +23,13 @@
       <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//DependencyType/START_END"/>
       <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//DependencyType/END_START"/>
       <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//DependencyType/END_END"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="IssueTrackingtoolModel.ecore#//IssuePriority">
+      <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//IssuePriority/HIGHER"/>
+      <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//IssuePriority/HIGH"/>
+      <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//IssuePriority/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//IssuePriority/LOW"/>
+      <genEnumLiterals ecoreEnumLiteral="IssueTrackingtoolModel.ecore#//IssuePriority/LOWER"/>
     </genEnums>
     <genClasses ecoreClass="IssueTrackingtoolModel.ecore#//IssueTrackingDatabase">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IssueTrackingtoolModel.ecore#//IssueTrackingDatabase/projects"/>
@@ -41,7 +48,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/status"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/effectiveDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/dueDate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IssueTrackingtoolModel.ecore#//Version/issues"/>
     </genClasses>
     <genClasses ecoreClass="IssueTrackingtoolModel.ecore#//Issue">
@@ -54,6 +61,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Issue/status"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IssueTrackingtoolModel.ecore#//Issue/dependencies"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference IssueTrackingtoolModel.ecore#//Issue/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Issue/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Issue/dueDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Issue/completedDate"/>
     </genClasses>
     <genClasses ecoreClass="IssueTrackingtoolModel.ecore#//Tracker">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Tracker/name"/>

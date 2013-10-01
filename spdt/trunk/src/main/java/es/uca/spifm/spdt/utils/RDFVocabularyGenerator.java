@@ -54,17 +54,14 @@ public class RDFVocabularyGenerator {
 		
 		try {
 			for (String modelFileName : modelsList) {
-				System.out.println("Generando RDFS para..." + path + modelFileName + ".ecore");
-
-				// Ecore2RDFS.ecore2RDF(path + modelFileName + ".ecore", path +
-				// modelFileName + ".rdf", null);
-
+				
 				RDFGraph rdf = Ecore2RDFSchema.ecore2RDF(path + modelFileName + ".ecore", null);
 
 				Document document = RDFFactory.eINSTANCE.createDocument("");
 				document.setComplementalGraph(rdf);
 
 				RDFXMLSaver.saveToFile(document, path + modelFileName + ".rdf", "UTF-8");
+				System.out.println("Vocabulario RDFS generado para..." + path + modelFileName + ".ecore");
 
 			}
 

@@ -3,6 +3,7 @@
  */
 package es.uca.spifm.spdt.genericTools.itm;
 
+import java.util.Date;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -24,6 +25,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getStatus <em>Status</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getCategory <em>Category</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getPriority <em>Priority</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getCompletedDate <em>Completed Date</em>}</li>
  * </ul>
  * </p>
  *
@@ -258,5 +262,86 @@ public interface Issue extends EObject {
 	 * @generated
 	 */
 	void setCategory(IssueCategory value);
+
+	/**
+	 * Returns the value of the '<em><b>Priority</b></em>' attribute.
+	 * The literals are from the enumeration {@link es.uca.spifm.spdt.genericTools.itm.IssuePriority}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Priority</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Priority</em>' attribute.
+	 * @see es.uca.spifm.spdt.genericTools.itm.IssuePriority
+	 * @see #setPriority(IssuePriority)
+	 * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssue_Priority()
+	 * @model
+	 * @generated
+	 */
+	IssuePriority getPriority();
+
+	/**
+	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getPriority <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Priority</em>' attribute.
+	 * @see es.uca.spifm.spdt.genericTools.itm.IssuePriority
+	 * @see #getPriority()
+	 * @generated
+	 */
+	void setPriority(IssuePriority value);
+
+	/**
+	 * Returns the value of the '<em><b>Due Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Due Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Due Date</em>' attribute.
+	 * @see #setDueDate(Date)
+	 * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssue_DueDate()
+	 * @model
+	 * @generated
+	 */
+	Date getDueDate();
+
+	/**
+	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getDueDate <em>Due Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Due Date</em>' attribute.
+	 * @see #getDueDate()
+	 * @generated
+	 */
+	void setDueDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Completed Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Completed Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Completed Date</em>' attribute.
+	 * @see #setCompletedDate(Date)
+	 * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssue_CompletedDate()
+	 * @model
+	 * @generated
+	 */
+	Date getCompletedDate();
+
+	/**
+	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getCompletedDate <em>Completed Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Completed Date</em>' attribute.
+	 * @see #getCompletedDate()
+	 * @generated
+	 */
+	void setCompletedDate(Date value);
 
 } // Issue
