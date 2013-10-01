@@ -18,7 +18,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated WikiModel -->
       <package
-            uri="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0.ecore"
+            uri="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0"
             class="es.uca.spifm.spdt.genericTools.wikim.WikimPackage"
             genModel="src/main/resources/es/uca/spifm/spdt/genericTools/wikim/WikitoolModel.genmodel"/>
    </extension>
@@ -34,7 +34,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated EnterpriseArchitectModel -->
       <package
-            uri="http://spi-fm.uca.es/spdef/models/specificTools/eam/1.0.ecore"
+            uri="http://spi-fm.uca.es/spdef/models/specificTools/eam/1.0"
             class="es.uca.spifm.spdt.specificTools.eam.EamPackage"
             genModel="src/main/resources/es/uca/spifm/spdt/specificTools/eam/EnterpriseArchitectModel.genmodel"/>
    </extension>
@@ -42,7 +42,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MediaWikiModel -->
       <package
-            uri="http://spi-fm.uca.es/spdef/models/specificTools/mwm/1.0.ecore"
+            uri="http://spi-fm.uca.es/spdef/models/specificTools/mwm/1.0"
             class="es.uca.spifm.spdt.specificTools.mwm.MwmPackage"
             genModel="src/main/resources/es/uca/spifm/spdt/specificTools/mwm/MediaWikiModel.genmodel"/>
    </extension>

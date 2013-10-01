@@ -5,7 +5,7 @@
 	<artifactId>spdt</artifactId>
 	<version>1.0</version>
 	<name>Software Process Deployment Toolkit</name>
-	<description>Toolkit for deployment of software process on supporting tools</description>
+	<description>Software Process Deployment toolkit (SPDT) is a Java complete toolkit for deployment of software process on supporting tools, such as, MediaWiki or Enterprise Architect. This software includes: Ecore Models for SPDEF models, Java code for SPDEF models and Transformation Rules in ATL format.</description>
 	<url>http://spi-fm.uca.es/spdef/tools/spdet</url>
 
 	<dependencies>
@@ -170,4 +170,10 @@
 	</reporting>
 
 
+	<scm>
+		<url>http://spdef.googlecode.com/svn/trunk/</url>
+	</scm>
+	<issueManagement>
+		<url>http://code.google.com/p/spdef/</url>
+	</issueManagement>
 </project>

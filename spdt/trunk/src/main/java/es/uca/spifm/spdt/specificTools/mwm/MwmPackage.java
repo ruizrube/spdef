@@ -39,7 +39,7 @@ public interface MwmPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://spi-fm.uca.es/spdef/models/specificTools/mwm/1.0.ecore";
+	String eNS_URI = "http://spi-fm.uca.es/spdef/models/specificTools/mwm/1.0";
 
 	/**
 	 * The package namespace name.

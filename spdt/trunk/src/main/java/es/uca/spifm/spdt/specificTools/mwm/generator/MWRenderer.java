@@ -17,7 +17,7 @@ import es.uca.spifm.spdt.genericTools.wikim.impl.ItemListImpl;
 import es.uca.spifm.spdt.genericTools.wikim.impl.ParagraphImpl;
 
 /**
- * @author Iván
+ * @author Ivan
  * 
  */
 public class MWRenderer {

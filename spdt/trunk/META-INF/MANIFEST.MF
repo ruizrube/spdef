@@ -24,7 +24,17 @@ Export-Package: es.uca.spifm.spdt.deployment.swpm,
  es.uca.spifm.spdt.specificTools.wikim.util,
  es.uca.spifm.spdt.specificTools.mwm,
  es.uca.spifm.spdt.specificTools.mwm.impl,
- es.uca.spifm.spdt.specificTools.mwm.util
+ es.uca.spifm.spdt.specificTools.mwm.util,
+ es.uca.spifm.spdt.deployment.spcm,
+ es.uca.spifm.spdt.deployment.spcm.impl,
+ es.uca.spifm.spdt.deployment.spcm.util,
+ es.uca.spifm.spdt.genericTools.itm,
+ es.uca.spifm.spdt.genericTools.itm.impl,
+ es.uca.spifm.spdt.genericTools.itm.util,
+ es.uca.spifm.spdt.specificTools.redm,
+ es.uca.spifm.spdt.specificTools.redm.impl,
+ es.uca.spifm.spdt.specificTools.redm.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ spdt;visibility:=reexport
 Bundle-ActivationPolicy: lazy
