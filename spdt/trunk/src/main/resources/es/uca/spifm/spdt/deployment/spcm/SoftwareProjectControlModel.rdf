@@ -9,6 +9,15 @@
          xmlns:rdfs="&rdfs;"
          xmlns:xsd="&xsd;"
 >
+<rdf:Description rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#MilestoneStatus">
+	<rdfs:label>The MilestoneStatus enumeration</rdfs:label>
+	<rdfs:isDefinedBy rdf:resource="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#MilestoneStatus"/>
+	<rdfs:member>The OPEN enum literal</rdfs:member>
+	<rdfs:member>The CLOSE enum literal</rdfs:member>
+	<rdfs:member>The INPROGRESS enum literal</rdfs:member>
+	<rdf:type rdf:resource="&rdf;Bag"/>
+	<rdf:type rdf:resource="&rdfs;Datatype"/>
+</rdf:Description>
 <rdf:Description rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#DependencyType">
 	<rdfs:label>The DependencyType enumeration</rdfs:label>
 	<rdfs:isDefinedBy rdf:resource="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#DependencyType"/>
@@ -52,7 +61,10 @@
 </rdfs:Class>
 <rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#status">
 	<rdfs:label>The status attribute</rdfs:label>
+	<rdfs:label>The status attribute</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Milestone"/>
 	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Task"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#MilestoneStatus"/>
 	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#TaskStatus"/>
 </rdf:Property>
 <rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#description">
@@ -67,7 +79,7 @@
 <rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#priority">
 	<rdfs:label>The priority attribute</rdfs:label>
 	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Task"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#TaskStatus"/>
 </rdf:Property>
 <rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#dependentTask">
 	<rdfs:label>The dependentTask reference</rdfs:label>
@@ -77,8 +89,6 @@
 <rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Role">
 	<rdfs:label>The Role entity</rdfs:label>
 </rdfs:Class>
-<rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#int">
-</rdfs:Datatype>
 <rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Milestone">
 	<rdfs:label>The Milestone entity</rdfs:label>
 </rdfs:Class>
@@ -104,6 +114,14 @@
 </rdf:Property>
 <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#boolean">
 </rdfs:Datatype>
+<rdf:Bag rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#TaskPriority">
+	<rdfs:label>The TaskPriority enumeration</rdfs:label>
+	<rdfs:member>The HIGHER enum literal</rdfs:member>
+	<rdfs:member>The HIGH enum literal</rdfs:member>
+	<rdfs:member>The NORMAL enum literal</rdfs:member>
+	<rdfs:member>The LOW enum literal</rdfs:member>
+	<rdfs:member>The LOWEST enum literal</rdfs:member>
+</rdf:Bag>
 <rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#TaskDependency">
 	<rdfs:label>The TaskDependency entity</rdfs:label>
 </rdfs:Class>

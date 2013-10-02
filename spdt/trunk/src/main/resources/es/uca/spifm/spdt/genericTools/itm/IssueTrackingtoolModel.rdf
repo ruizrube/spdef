@@ -108,10 +108,22 @@
 <rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueDependency">
 	<rdfs:label>The IssueDependency entity</rdfs:label>
 </rdfs:Class>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#priority">
+	<rdfs:label>The priority attribute</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue"/>
+	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssuePriority"/>
+</rdf:Property>
 <rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#versions">
 	<rdfs:label>The versions reference</rdfs:label>
 	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project"/>
 	<rdfs:range rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version"/>
+</rdf:Property>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#dueDate">
+	<rdfs:label>The dueDate attribute</rdfs:label>
+	<rdfs:label>The dueDate attribute</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version"/>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
 </rdf:Property>
 <rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Tracker">
 	<rdfs:label>The Tracker entity</rdfs:label>
@@ -141,6 +153,17 @@
 	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </rdf:Property>
+<rdf:Description rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssuePriority">
+	<rdfs:label>The IssuePriority enumeration</rdfs:label>
+	<rdfs:isDefinedBy rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssuePriority"/>
+	<rdfs:member>The HIGHER enum literal</rdfs:member>
+	<rdfs:member>The HIGH enum literal</rdfs:member>
+	<rdfs:member>The NORMAL enum literal</rdfs:member>
+	<rdfs:member>The LOW enum literal</rdfs:member>
+	<rdfs:member>The LOWER enum literal</rdfs:member>
+	<rdf:type rdf:resource="&rdf;Bag"/>
+	<rdf:type rdf:resource="&rdfs;Datatype"/>
+</rdf:Description>
 <rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#elapsedHours">
 	<rdfs:label>The elapsedHours attribute</rdfs:label>
 	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue"/>
@@ -157,11 +180,6 @@
 <rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueCategory">
 	<rdfs:label>The IssueCategory entity</rdfs:label>
 </rdfs:Class>
-<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#effectiveDate">
-	<rdfs:label>The effectiveDate attribute</rdfs:label>
-	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-</rdf:Property>
 <rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#permissions">
 	<rdfs:label>The permissions attribute</rdfs:label>
 	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Role"/>
@@ -194,12 +212,17 @@
 <rdf:Description rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#VersionStatus">
 	<rdfs:label>The VersionStatus enumeration</rdfs:label>
 	<rdfs:isDefinedBy rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#VersionStatus"/>
-	<rdfs:member>The OPEN enum literal</rdfs:member>
 	<rdfs:member>The CLOSED enum literal</rdfs:member>
+	<rdfs:member>The OPEN enum literal</rdfs:member>
 	<rdfs:member>The INPROGRESS enum literal</rdfs:member>
 	<rdf:type rdf:resource="&rdf;Bag"/>
 	<rdf:type rdf:resource="&rdfs;Datatype"/>
 </rdf:Description>
+<rdf:Property rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#completedDate">
+	<rdfs:label>The completedDate attribute</rdfs:label>
+	<rdfs:domain rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</rdf:Property>
 <rdfs:Class rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version">
 	<rdfs:label>The Version entity</rdfs:label>
 </rdfs:Class>
