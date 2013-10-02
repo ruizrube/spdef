@@ -23,11 +23,10 @@
      d2r:pageTimeout 5;
 
      meta:datasetTitle "D2R4EA" ;
-     meta:datasetDescription "Dataset fpr Enterprise Architect projects" ;
+     meta:datasetDescription "Dataset for Enterprise Architect projects" ;
      meta:datasetSource "Enterprise Architect Database" ;
   
-     meta:operatorName "John Doe" ;
-     meta:operatorHomepage  ;
+     meta:operatorName "Ivan Ruiz" ;
     .
 
   
