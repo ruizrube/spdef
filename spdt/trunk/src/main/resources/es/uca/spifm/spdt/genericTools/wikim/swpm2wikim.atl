@@ -125,20 +125,20 @@ helper def : id : Integer = 1;
 helper def: obtainElementType(diagram: String): TupleType(img: String, name:String) =
 	Map{
 				(#CLASS,
-				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Logical.png',name='Class'}),
+				Tuple{img='http://spi-fm.uca.es/spdef/img/Logical.png',name='Class'}),
 				(#USECASE,
-				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/UseCase.png',name='Use Case'}),
+				Tuple{img='http://spi-fm.uca.es/spdef/img/UseCase.png',name='Use Case'}),
 				(#COMPONENT,
-				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Component.png',name='Component'}),
+				Tuple{img='http://spi-fm.uca.es/spdef/img/Component.png',name='Component'}),
 				(#DEPLOYMENT,
-				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Deployment.png',name='Node'}),
+				Tuple{img='http://spi-fm.uca.es/spdef/img/Deployment.png',name='Node'}),
 				(#SEQUENCE,
-				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Sequence.png',name='Class'}),
+				Tuple{img='http://spi-fm.uca.es/spdef/img/Sequence.png',name='Class'}),
 				(#STATECHART,
-				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Statechart.png',name='State'}),
+				Tuple{img='http://spi-fm.uca.es/spdef/img/Statechart.png',name='State'}),
 				(#COLLABORATION,
-				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Collaboration.png',name='Class'}),
+				Tuple{img='http://spi-fm.uca.es/spdef/img/Collaboration.png',name='Class'}),
 				(#ACTIVITY,
-				Tuple{img='http://localhost/mediawiki-1.15.5/images/spde/Activity.png',name='Activity'})
+				Tuple{img='http://spi-fm.uca.es/spdef/img/Activity.png',name='Activity'})
 				}.get(diagram);
 
