@@ -19,8 +19,18 @@
      rdfs:label "Linked Data from EA Repository.";
      d2r:baseURI <http://spi-fm.uca.es/d2r4ea/>;
      d2r:port 80;
+     d2r:sparqlTimeout 300;
+     d2r:pageTimeout 5;
+
+     meta:datasetTitle "D2R4EA" ;
+     meta:datasetDescription "Dataset fpr Enterprise Architect projects" ;
+     meta:datasetSource "Enterprise Architect Database" ;
+  
+     meta:operatorName "John Doe" ;
+     meta:operatorHomepage  ;
     .
 
+  
 ###############
 # DATABASE 
 ###############
@@ -260,48 +270,5 @@ map:connectors_Target a d2rq:PropertyBridge;
 	d2rq:property vmm:target;
 	d2rq:refersToClassMap map:elements;
     	d2rq:join "t_connector.End_Object_ID => t_object.Object_ID";
-	.
-
-
-#################
-
-
-# Table t_objecttypes
-map:t_objecttypes a d2rq:ClassMap;
-	d2rq:dataStorage map:database;
-	d2rq:uriPattern "t_objecttypes/@@t_objecttypes.Object_Type|urlify@@";
-	d2rq:class vocab:t_objecttypes;
-	d2rq:classDefinitionLabel "t_objecttypes";
-	.
-map:t_objecttypes__label a d2rq:PropertyBridge;
-	d2rq:belongsToClassMap map:t_objecttypes;
-	d2rq:property rdfs:label;
-	d2rq:pattern "t_objecttypes #@@t_objecttypes.Object_Type@@";
-	.
-map:t_objecttypes_Object_Type a d2rq:PropertyBridge;
-	d2rq:belongsToClassMap map:t_objecttypes;
-	d2rq:property vocab:t_objecttypes_Object_Type;
-	d2rq:propertyDefinitionLabel "t_objecttypes Object_Type";
-	d2rq:column "t_objecttypes.Object_Type";
-	.
-map:t_objecttypes_Description a d2rq:PropertyBridge;
-	d2rq:belongsToClassMap map:t_objecttypes;
-	d2rq:property vocab:t_objecttypes_Description;
-	d2rq:propertyDefinitionLabel "t_objecttypes Description";
-	d2rq:column "t_objecttypes.Description";
-	.
-map:t_objecttypes_DesignObject a d2rq:PropertyBridge;
-	d2rq:belongsToClassMap map:t_objecttypes;
-	d2rq:property vocab:t_objecttypes_DesignObject;
-	d2rq:propertyDefinitionLabel "t_objecttypes DesignObject";
-	d2rq:column "t_objecttypes.DesignObject";
-	d2rq:datatype xsd:integer;
-	.
-map:t_objecttypes_ImageID a d2rq:PropertyBridge;
-	d2rq:belongsToClassMap map:t_objecttypes;
-	d2rq:property vocab:t_objecttypes_ImageID;
-	d2rq:propertyDefinitionLabel "t_objecttypes ImageID";
-	d2rq:column "t_objecttypes.ImageID";
-	d2rq:datatype xsd:integer;
 	.
 
