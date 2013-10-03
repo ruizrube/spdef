@@ -35,7 +35,7 @@
   </servlet>
   
   <servlet>
-    <servlet-name>PageServlet</servlet-name>
+    <servlet-name>PageServletD2R4AF</servlet-name>
     <servlet-class>de.fuberlin.wiwiss.d2rq.server.PageServlet</servlet-class>
     <init-param>
       <param-name>org.apache.velocity.properties</param-name>
@@ -56,7 +56,7 @@
   
   
   <servlet>
-    <servlet-name>DirectoryServlet</servlet-name>
+    <servlet-name>DirectoryServletD2R4AF</servlet-name>
     <servlet-class>de.fuberlin.wiwiss.d2rq.server.DirectoryServlet</servlet-class>
     <init-param>
       <param-name>org.apache.velocity.properties</param-name>
@@ -65,7 +65,7 @@
   </servlet>
   
   <servlet>
-    <servlet-name>RootServlet</servlet-name>
+    <servlet-name>RootServletD2R4AF</servlet-name>
     <servlet-class>de.fuberlin.wiwiss.d2rq.server.RootServlet</servlet-class>
     <init-param>
       <param-name>org.apache.velocity.properties</param-name>
@@ -116,12 +116,12 @@
   </servlet-mapping>
   
   <servlet-mapping>
-    <servlet-name>PageServlet</servlet-name>
+    <servlet-name>PageServletD2R4AF</servlet-name>
     <url-pattern>/page/*</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>
-    <servlet-name>PageServlet</servlet-name>
+    <servlet-name>PageServletD2R4AF</servlet-name>
     <url-pattern>/vocab/page/*</url-pattern>
   </servlet-mapping>
 
@@ -136,12 +136,12 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>DirectoryServlet</servlet-name>
+    <servlet-name>DirectoryServletD2R4AF</servlet-name>
     <url-pattern>/directory/*</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>RootServlet</servlet-name>
+    <servlet-name>RootServletD2R4AF</servlet-name>
     <url-pattern>/index.html</url-pattern>
   </servlet-mapping>
 
