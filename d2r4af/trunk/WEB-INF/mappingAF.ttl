@@ -1,0 +1,479 @@
+@prefix map: <#> .
+@prefix db: <> .
+@prefix vocab:<vocab/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix d2r:  <http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf#> .
+@prefix meta: <http://www4.wiwiss.fu-berlin.de/bizer/d2r-server/metadata#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+@prefix itm: <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#> .
+
+#################
+# SERVER        #
+#################
+
+<> a d2r:Server;
+     rdfs:label "Linked Data from EA Repository.";
+     d2r:baseURI <http://spi-fm.uca.es/d2r4af/>;
+     d2r:port 80;
+     d2r:sparqlTimeout 300;
+     d2r:pageTimeout 5;
+
+     meta:datasetTitle "D2R4AF" ;
+     meta:datasetDescription "Dataset for AbreForjas tool" ;
+     meta:datasetSource "AbreForjas Database" ;
+  
+     meta:operatorName "Ivan Ruiz" ;
+    .
+
+  
+###############
+# DATABASE 
+###############
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql://spilin.uca.es/abreforjas";
+	d2rq:username "abreforjas";
+	d2rq:password "fregoneta";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+        jdbc:keepAlive "3600"; # value in seconds
+        jdbc:keepAliveQuery "SELECT 1"; # (optionally to override default noop query)
+	.
+
+map:Configuration a d2rq:Configuration;
+    d2rq:useAllOptimizations true.
+
+
+
+################
+# Table projects
+################
+
+
+map:projects a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "projects/@@projects.id@@";
+	d2rq:class itm:Project;
+	.
+
+map:projects_label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:projects;
+	d2rq:property rdfs:label;
+	d2rq:pattern "@@projects.name@@";
+	.
+
+map:projects_name a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:projects;
+	d2rq:property itm:name;
+	d2rq:column "projects.title";
+	.
+
+map:projects_description a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:projects;
+	d2rq:property itm:description;
+	d2rq:column "projects.description";
+	.
+
+map:projects__versions a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:projects;
+	d2rq:property itm:versions;
+	d2rq:refersToClassMap map:versions;
+	d2rq:join "milestones.project => projects.id";
+	.
+
+map:projects_seeAlso a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:projects;
+	d2rq:property rdfs:seeAlso;
+	d2rq:column "datasets.url";
+	d2rq:join "projects.dataset_id => datasets.id";
+	.
+
+map:projects__projects a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:projects;
+	d2rq:property itm:members;
+	d2rq:refersToClassMap map:members;
+	d2rq:join "project_users.project => projects.id";
+	.
+
+
+#map:projects__issues a d2rq:PropertyBridge;
+#	d2rq:belongsToClassMap map:projects;
+#	d2rq:property itm:issues;	
+#	d2rq:refersToClassMap map:issues;
+#	d2rq:join "tickets.project => projects.id";
+#	d2rq:join "tickets.milestone_id
+#	.
+
+#d2rq:column "projects.totaltickets";
+#d2rq:column "projects.opentickets";
+
+#d2rq:column "projects.external_id";
+#d2rq:column "projects.homepage";doap:homepage;
+#d2rq:column "projects.status";
+#d2rq:column "projects.created";
+
+#d2rq:column "projects.downloaddate";dcterms:created, 
+#d2rq:column "projects.processdate";dcterms:modified
+#doap:name;
+
+
+################
+# Table milestones
+################
+
+map:versions a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "versions/@@milestones.id@@";
+	d2rq:class itm:Version;
+	.
+
+map:versions_label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:versions;
+	d2rq:property rdfs:label;
+	d2rq:pattern "@@milestones.title@@";
+	.
+
+map:versions_title a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:versions;
+	d2rq:property itm:name;
+	d2rq:column "milestones.title";
+	.
+
+map:versions_description a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:versions;
+	d2rq:property itm:description;
+	d2rq:column "milestones.description";
+	.
+
+map:versions_due_on a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:versions;
+	d2rq:property itm:dueDate;
+	d2rq:column "milestones.due_on";
+	.
+
+map:versions_state a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:versions;
+	d2rq:property itm:status;
+	d2rq:column "milestones.state";
+	.
+
+map:versions__issues a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:issues;	
+	d2rq:refersToClassMap map:versions;
+	d2rq:join "tickets.milestone_id => milestones.id";
+	.
+
+#d2rq:column "milestones.externalID";
+#d2rq:column "milestones.created";
+#d2rq:column "milestones.totaltickets";
+#d2rq:column "milestones.opentickets";
+#d2rq:column "milestones.completed-date";d2rq:property dc:date;
+#d2rq:join "milestones.user_id => users.id";
+#d2rq:property dcterms:description;
+
+
+################
+# Table tickets
+################
+#d2rq:column "tickets.externalID";
+#d2rq:column "tickets.created";
+#itm:elapsedHours
+#d2rq:join "tickets.author_id => users.id";
+#d2rq:column "tickets.totalComments";
+
+
+
+map:issues a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "issues/@@tickets.id@@";
+	d2rq:class itm:Issue;
+	.
+
+map:issues_label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property rdfs:label;
+	d2rq:pattern "@@tickets.title@@";
+	.
+
+map:issues_title a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:name;
+	d2rq:column "tickets.title";
+	.
+
+map:issues_description a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:description;
+	d2rq:column "tickets.description";
+	.
+
+map:issues_updated a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:completedDate;
+	d2rq:column "tickets.updated";
+	d2rq:datatype xsd:date;
+	.
+
+map:issues_completed a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:dueDate;
+	d2rq:column "tickets.completed";
+	d2rq:datatype xsd:date;
+	.
+
+map:issues_priority a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:priority;
+	d2rq:column "ticket_priorities.description";
+	d2rq:join "tickets.priority => ticket_priorities.code";
+	.
+
+map:issues_status a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:status;
+	d2rq:column "ticket_status.description";
+	d2rq:join "tickets.status => ticket_status.code";
+	.
+
+map:issues_type a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:category;
+	d2rq:column "ticket_types.description";
+	d2rq:join "tickets.type => ticket_types.code";
+	.
+
+
+map:issues__owner a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:owner;
+	d2rq:refersToClassMap map:members;
+	d2rq:join "tickets.owner_id => project_users.id";
+	d2rq:condition "project_users.project=tickets.project";
+	.
+	
+
+################
+# Table roles
+################
+map:roles a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "roles/@@roles.code|urlify@@";
+	d2rq:class itm:Role;
+	.
+
+map:roles_label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:roles;
+	d2rq:property rdfs:label;
+	d2rq:pattern "@@roles.description@@";
+	.
+
+map:roles_description a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:roles;
+	d2rq:property itm:name;
+	d2rq:column "roles.description";
+	.
+
+
+################
+# Table users
+################
+
+#d2rq:column "users.external_id";
+#doap, foaf, foaf:accountName;
+map:users a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "users/@@users.id@@";
+	d2rq:class itm:User;
+	.
+
+map:users_label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:users;
+	d2rq:property rdfs:label;
+	d2rq:pattern "@@users.name@@ - @@users.email@@";
+	.
+
+map:users_username a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:users;
+	d2rq:property itm:login;
+	d2rq:column "users.username";
+	.
+
+
+################
+# Table project_users
+################
+
+map:members a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "projects/@@project_users.project@@/members/@@project_users.id@@";
+	d2rq:class itm:Member;
+	.
+
+map:members_label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:members;
+	d2rq:property rdfs:label;
+	d2rq:pattern "User #@@users.name@@ of the Project #@@projects.name@@ with Role #@@roles.description@@";
+	d2rq:join "project_users.id => users.id";
+	d2rq:join "project_users.rol => roles.code";
+	d2rq:join "project_users.project => projects.id";
+	.
+
+map:members__role a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:members;
+	d2rq:property itm:role;
+	d2rq:refersToClassMap map:roles;
+	d2rq:join "project_users.rol => roles.code";
+	.
+
+map:members__user a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:members;
+	d2rq:property itm:user;
+	d2rq:refersToClassMap map:users;
+	d2rq:join "project_users.id => users.id";
+	.
+
+
+
+
+################
+# Table MAESTRAS
+################
+
+# Table categories
+map:categories a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "categories/@@categories.code|urlify@@";
+	d2rq:class vocab:categories;
+	d2rq:classDefinitionLabel "categories";
+	.
+map:categories__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:categories;
+	d2rq:property rdfs:label;
+	d2rq:pattern "categories #@@categories.code@@";
+	.
+map:categories_code a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:categories;
+	d2rq:property vocab:categories_code;
+	d2rq:propertyDefinitionLabel "categories code";
+	d2rq:column "categories.code";
+	.
+map:categories_description a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:categories;
+	d2rq:property vocab:categories_description;
+	d2rq:propertyDefinitionLabel "categories description";
+	d2rq:column "categories.description";
+	.
+
+# Table ticket_categories
+map:ticket_categories a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "ticket_categories/@@ticket_categories.id@@";
+	d2rq:class vocab:ticket_categories;
+	d2rq:classDefinitionLabel "ticket_categories";
+	.
+map:ticket_categories__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_categories;
+	d2rq:property rdfs:label;
+	d2rq:pattern "ticket_categories #@@ticket_categories.id@@";
+	.
+map:ticket_categories_id a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_categories;
+	d2rq:property vocab:ticket_categories_id;
+	d2rq:propertyDefinitionLabel "ticket_categories id";
+	d2rq:column "ticket_categories.id";
+	d2rq:datatype xsd:integer;
+	.
+map:ticket_categories_ticket__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_categories;
+	d2rq:property vocab:ticket_categories_ticket;
+	d2rq:refersToClassMap map:issues;
+	d2rq:join "ticket_categories.ticket => tickets.id";
+	.
+map:ticket_categories_category__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_categories;
+	d2rq:property vocab:ticket_categories_category;
+	d2rq:refersToClassMap map:categories;
+	d2rq:join "ticket_categories.category => categories.code";
+	.
+
+# Table ticket_priorities
+map:ticket_priorities a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "ticket_priorities/@@ticket_priorities.code@@";
+	d2rq:class vocab:ticket_priorities;
+	d2rq:classDefinitionLabel "ticket_priorities";
+	.
+map:ticket_priorities__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_priorities;
+	d2rq:property rdfs:label;
+	d2rq:pattern "ticket_priorities #@@ticket_priorities.code@@";
+	.
+map:ticket_priorities_code a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_priorities;
+	d2rq:property vocab:ticket_priorities_code;
+	d2rq:propertyDefinitionLabel "ticket_priorities code";
+	d2rq:column "ticket_priorities.code";
+	d2rq:datatype xsd:integer;
+	.
+map:ticket_priorities_description a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_priorities;
+	d2rq:property vocab:ticket_priorities_description;
+	d2rq:propertyDefinitionLabel "ticket_priorities description";
+	d2rq:column "ticket_priorities.description";
+	.
+
+# Table ticket_status
+map:ticket_status a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "ticket_status/@@ticket_status.code|urlify@@";
+	d2rq:class vocab:ticket_status;
+	d2rq:classDefinitionLabel "ticket_status";
+	.
+map:ticket_status__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_status;
+	d2rq:property rdfs:label;
+	d2rq:pattern "ticket_status #@@ticket_status.code@@";
+	.
+map:ticket_status_code a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_status;
+	d2rq:property vocab:ticket_status_code;
+	d2rq:propertyDefinitionLabel "ticket_status code";
+	d2rq:column "ticket_status.code";
+	.
+map:ticket_status_description a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_status;
+	d2rq:property vocab:ticket_status_description;
+	d2rq:propertyDefinitionLabel "ticket_status description";
+	d2rq:column "ticket_status.description";
+	.
+
+# Table ticket_types
+map:ticket_types a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "ticket_types/@@ticket_types.code|urlify@@";
+	d2rq:class vocab:ticket_types;
+	d2rq:classDefinitionLabel "ticket_types";
+	.
+map:ticket_types__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_types;
+	d2rq:property rdfs:label;
+	d2rq:pattern "ticket_types #@@ticket_types.code@@";
+	.
+map:ticket_types_code a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_types;
+	d2rq:property vocab:ticket_types_code;
+	d2rq:propertyDefinitionLabel "ticket_types code";
+	d2rq:column "ticket_types.code";
+	.
+map:ticket_types_description a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:ticket_types;
+	d2rq:property vocab:ticket_types_description;
+	d2rq:propertyDefinitionLabel "ticket_types description";
+	d2rq:column "ticket_types.description";
+	.
+
