@@ -15,7 +15,7 @@
 #################
 
 <> a d2r:Server;
-     rdfs:label "Linked Data from EA Repository.";
+     rdfs:label "Linked Data from Abreforjas Repository.";
      d2r:baseURI <http://spi-fm.uca.es/d2r4af/>;
      d2r:port 80;
      d2r:sparqlTimeout 300;
