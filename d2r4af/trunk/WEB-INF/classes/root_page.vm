@@ -33,9 +33,9 @@
     </div>
 
     <div class="section">
-      <p>This is a <strong>Enterprise Architect</strong> repository published with <strong>D2R Server</strong>. Metadata in this dataset is exposed according to <a href="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0">Visual Modeling tool Model (VMM) Vocabulary</a></p>
+      <p>This is a <strong>Abreforjas </strong> repository published with <strong>D2R Server</strong>. Metadata in this dataset is exposed according to <a href="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0">Issue Tracking tool Model (ITM) Vocabulary</a></p>
 <div align="center">
-	<img src="http://www.sparxsystems.com/images/EA-logo-type-col.gif" height="80"/>
+	<img src="http://abreforjas.files.wordpress.com/2012/01/abreforjas23.png" height="80"/>
 	<img src="http://spi-fm.uca.es/spdef/img/logo.png" height="80"/>
 </div>
       <p>The repository can be accessed using:</p>
