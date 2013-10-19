@@ -252,10 +252,17 @@ map:issues__owner a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:issues;
 	d2rq:property itm:owner;
 	d2rq:refersToClassMap map:members;
-	d2rq:join "tickets.owner_id => project_users.id";
+	d2rq:join "tickets.author_id => project_users.id";
 	d2rq:condition "project_users.project=tickets.project";
 	.
-	
+
+map:issues__responsible a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:responsible;
+	d2rq:refersToClassMap map:members;
+	d2rq:join "tickets.owner_id => project_users.id";
+	d2rq:condition "project_users.project=tickets.project";
+	.	
 
 ################
 # Table roles
