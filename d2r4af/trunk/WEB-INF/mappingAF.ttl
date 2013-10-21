@@ -162,9 +162,9 @@ map:versions_state a d2rq:PropertyBridge;
 	.
 
 map:versions__issues a d2rq:PropertyBridge;
-	d2rq:belongsToClassMap map:issues;
+	d2rq:belongsToClassMap map:versions;
 	d2rq:property itm:issues;	
-	d2rq:refersToClassMap map:versions;
+	d2rq:refersToClassMap map:issues;
 	d2rq:join "tickets.milestone_id => milestones.id";
 	.
 
