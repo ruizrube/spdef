@@ -28,6 +28,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getPriority <em>Priority</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getCompletedDate <em>Completed Date</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getOwner <em>Owner</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Issue#getResponsible <em>Responsible</em>}</li>
  * </ul>
  * </p>
  *
@@ -343,5 +345,57 @@ public interface Issue extends EObject {
 	 * @generated
 	 */
 	void setCompletedDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Owner</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Owner</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Owner</em>' reference.
+	 * @see #setOwner(Member)
+	 * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssue_Owner()
+	 * @model required="true"
+	 * @generated
+	 */
+	Member getOwner();
+
+	/**
+	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getOwner <em>Owner</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Owner</em>' reference.
+	 * @see #getOwner()
+	 * @generated
+	 */
+	void setOwner(Member value);
+
+	/**
+	 * Returns the value of the '<em><b>Responsible</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Responsible</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Responsible</em>' reference.
+	 * @see #setResponsible(Member)
+	 * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssue_Responsible()
+	 * @model required="true"
+	 * @generated
+	 */
+	Member getResponsible();
+
+	/**
+	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getResponsible <em>Responsible</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Responsible</em>' reference.
+	 * @see #getResponsible()
+	 * @generated
+	 */
+	void setResponsible(Member value);
 
 } // Issue
