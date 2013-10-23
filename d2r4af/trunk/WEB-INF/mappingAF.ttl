@@ -274,7 +274,7 @@ map:issues_categories_ a d2rq:PropertyBridge;
 	d2rq:property itm:category;
 	d2rq:refersToClassMap map:categories;
 	d2rq:join "ticket_categories.ticket => tickets.id";
-	d2rq:join "ticket_categories.category => category.code";
+	d2rq:join "ticket_categories.category => categories.code";
 	.
 	
 map:issues_created a d2rq:PropertyBridge;
