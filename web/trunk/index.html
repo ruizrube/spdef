@@ -69,6 +69,7 @@
                     <a href="#resources" class="btn">Available Resources</a>
                     <a href="#casestudies" class="btn">Case Studies</a>
                     <a href="#about" class="btn">About</a>
+                    <a href="#sms" class="btn">Literature Review</a>
                 </div>
 
             </div>
@@ -83,6 +84,7 @@
 	</br>
 
 	<div align="center"><img height="50%" width="50%" src="./img/generalApproach.png"></div>
+	
 	
 <hr/>
 
@@ -178,21 +180,33 @@
         
 	<h3 id="cs_quality">Automation of Quality Technical Reviews</h2>
 
-	<p>In this case study, we will see how to automatize quality reviews in software project. Below, a set of 
-	review example criteria are presented and its corresponding SPARQL query.</p>
-	
+	<p>In this case study, we will see how to automatize quality reviews in software projects. First, some exemplary simple queries are presented: </p>
     <ul>
-			<li><a href="http://spi-fm.uca.es/d2r4ea/snorql/?query=SELECT+DISTINCT+%3Finstance+%3Fproject+%28count%28distinct+%3Fpackage%29+as+%3FnumPackages%29%0D%0AWHERE+%7B+%0D%0A%3Finstance+a+vmm%3AProject+.%0D%0A%3Finstance+vmm%3Aname+%3Fproject+.%0D%0A%3Finstance+vmm%3Apackages+%3Fpackage+%0D%0A%7D%0D%0AGROUP+BY+%3Finstance+%3Fproject+">Lista de proyectos registrados en el repositorio de modelos</a></li>
-   	        <li> To be completed...</li>
+			<li><a href="http://spi-fm.uca.es/d2r4ea/snorql/?query=SELECT+DISTINCT+%3Finstance+%3Fproject+%28count%28distinct+%3Fpackage%29+as+%3FnumPackages%29%0D%0AWHERE+%7B+%0D%0A%3Finstance+a+vmm%3AProject+.%0D%0A%3Finstance+vmm%3Aname+%3Fproject+.%0D%0A%3Finstance+vmm%3Apackages+%3Fpackage+%0D%0A%7D%0D%0AGROUP+BY+%3Finstance+%3Fproject+">List of projects hosted in the model repository (including number of uml packages) </a></li>
+   	        <li><a href="http://spi-fm.uca.es/d2r4af/snorql/?query=SELECT+DISTINCT+%3Finstance+%3Fproject+%28count%28distinct+%3Fversion%29+as+%3FnumVersions%29%0D%0AWHERE+%7B+%0D%0A%3Finstance+a+itm%3AProject+.%0D%0A%3Finstance+itm%3Aname+%3Fproject+.%0D%0A%3Finstance+itm%3Aversions+%3Fversion%0D%0A%7D%0D%0AGROUP+BY+%3Finstance+%3Fproject+">List of projects hosted in software forges (including number of defined versions) </li>
    	</ul>
 
-
+	<p>Below, a set of review example criteria are presented and its corresponding SPARQL query.</p>
+	<ul>
+		<li>To be completed...</li>
+	</ul>
+	
 	<hr/>
+
+<h2 id="sms">Literature Review</h2>
+
+ <p>It has been carried out a systematic mapping study on uses and applications of SPEM process models</p>
+ <ul>
+			<li><a href="http://spi-fm.uca.es/sites/SMS_Results_SPEM/">Detailed Results</a></li>
+   	        <li><a href="http://spi-fm.uca.es/sites/SMS_Process/">Literature Systematic Mapping Process</a> (modeled with SPEM)</li>
+   	</ul>
+
+<hr/>
 
 
 <h2 id="about">About</h2>
 
-This website is part of the Phd dissemination "Un framework para el despliegue y evaluacion de procesos software" by Iván Ruiz Rube at University of Cádiz, Spain. More info at ivan (dot) ruiz (arroba) uca (dot) es
+This website is part of the Phd dissemination "Un framework para el despliegue y evaluación de procesos software" by Iván Ruiz Rube at University of Cádiz, Spain. More info at ivan (dot) ruiz (arroba) uca (dot) es
 
 <hr/>
 
