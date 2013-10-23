@@ -469,6 +469,24 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getIssue_Owner() {
+		return (EReference)issueEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIssue_Responsible() {
+		return (EReference)issueEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTracker() {
 		return trackerEClass;
 	}
@@ -705,6 +723,8 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		createEAttribute(issueEClass, ISSUE__PRIORITY);
 		createEAttribute(issueEClass, ISSUE__DUE_DATE);
 		createEAttribute(issueEClass, ISSUE__COMPLETED_DATE);
+		createEReference(issueEClass, ISSUE__OWNER);
+		createEReference(issueEClass, ISSUE__RESPONSIBLE);
 
 		trackerEClass = createEClass(TRACKER);
 		createEAttribute(trackerEClass, TRACKER__NAME);
@@ -798,6 +818,8 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		initEAttribute(getIssue_Priority(), this.getIssuePriority(), "priority", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIssue_DueDate(), ecorePackage.getEDate(), "dueDate", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIssue_CompletedDate(), ecorePackage.getEDate(), "completedDate", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIssue_Owner(), this.getMember(), null, "owner", null, 1, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIssue_Responsible(), this.getMember(), null, "responsible", null, 1, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trackerEClass, Tracker.class, "Tracker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTracker_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tracker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

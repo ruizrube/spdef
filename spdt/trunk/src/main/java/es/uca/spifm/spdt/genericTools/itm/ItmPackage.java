@@ -387,13 +387,31 @@ public interface ItmPackage extends EPackage {
 	int ISSUE__COMPLETED_DATE = 11;
 
 	/**
+	 * The feature id for the '<em><b>Owner</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__OWNER = 12;
+
+	/**
+	 * The feature id for the '<em><b>Responsible</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__RESPONSIBLE = 13;
+
+	/**
 	 * The number of structural features of the '<em>Issue</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE_FEATURE_COUNT = 12;
+	int ISSUE_FEATURE_COUNT = 14;
 
 	/**
 	 * The number of operations of the '<em>Issue</em>' class.
@@ -1031,6 +1049,28 @@ public interface ItmPackage extends EPackage {
 	EAttribute getIssue_CompletedDate();
 
 	/**
+	 * Returns the meta object for the reference '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getOwner <em>Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Owner</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.itm.Issue#getOwner()
+	 * @see #getIssue()
+	 * @generated
+	 */
+	EReference getIssue_Owner();
+
+	/**
+	 * Returns the meta object for the reference '{@link es.uca.spifm.spdt.genericTools.itm.Issue#getResponsible <em>Responsible</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Responsible</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.itm.Issue#getResponsible()
+	 * @see #getIssue()
+	 * @generated
+	 */
+	EReference getIssue_Responsible();
+
+	/**
 	 * Returns the meta object for class '{@link es.uca.spifm.spdt.genericTools.itm.Tracker <em>Tracker</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1510,6 +1550,22 @@ public interface ItmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ISSUE__COMPLETED_DATE = eINSTANCE.getIssue_CompletedDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Owner</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ISSUE__OWNER = eINSTANCE.getIssue_Owner();
+
+		/**
+		 * The meta object literal for the '<em><b>Responsible</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ISSUE__RESPONSIBLE = eINSTANCE.getIssue_Responsible();
 
 		/**
 		 * The meta object literal for the '{@link es.uca.spifm.spdt.genericTools.itm.impl.TrackerImpl <em>Tracker</em>}' class.

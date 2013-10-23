@@ -9,6 +9,7 @@ import es.uca.spifm.spdt.genericTools.itm.IssueDependency;
 import es.uca.spifm.spdt.genericTools.itm.IssuePriority;
 import es.uca.spifm.spdt.genericTools.itm.IssueStatus;
 import es.uca.spifm.spdt.genericTools.itm.ItmPackage;
+import es.uca.spifm.spdt.genericTools.itm.Member;
 import es.uca.spifm.spdt.genericTools.itm.Tracker;
 
 import java.util.Collection;
@@ -47,6 +48,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getCompletedDate <em>Completed Date</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.IssueImpl#getResponsible <em>Responsible</em>}</li>
  * </ul>
  * </p>
  *
@@ -262,6 +265,26 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 	 * @ordered
 	 */
 	protected Date completedDate = COMPLETED_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOwner() <em>Owner</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwner()
+	 * @generated
+	 * @ordered
+	 */
+	protected Member owner;
+
+	/**
+	 * The cached value of the '{@link #getResponsible() <em>Responsible</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponsible()
+	 * @generated
+	 * @ordered
+	 */
+	protected Member responsible;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -564,6 +587,82 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Member getOwner() {
+		if (owner != null && owner.eIsProxy()) {
+			InternalEObject oldOwner = (InternalEObject)owner;
+			owner = (Member)eResolveProxy(oldOwner);
+			if (owner != oldOwner) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ItmPackage.ISSUE__OWNER, oldOwner, owner));
+			}
+		}
+		return owner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Member basicGetOwner() {
+		return owner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOwner(Member newOwner) {
+		Member oldOwner = owner;
+		owner = newOwner;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ItmPackage.ISSUE__OWNER, oldOwner, owner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Member getResponsible() {
+		if (responsible != null && responsible.eIsProxy()) {
+			InternalEObject oldResponsible = (InternalEObject)responsible;
+			responsible = (Member)eResolveProxy(oldResponsible);
+			if (responsible != oldResponsible) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ItmPackage.ISSUE__RESPONSIBLE, oldResponsible, responsible));
+			}
+		}
+		return responsible;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Member basicGetResponsible() {
+		return responsible;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResponsible(Member newResponsible) {
+		Member oldResponsible = responsible;
+		responsible = newResponsible;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ItmPackage.ISSUE__RESPONSIBLE, oldResponsible, responsible));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -607,6 +706,12 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 				return getDueDate();
 			case ItmPackage.ISSUE__COMPLETED_DATE:
 				return getCompletedDate();
+			case ItmPackage.ISSUE__OWNER:
+				if (resolve) return getOwner();
+				return basicGetOwner();
+			case ItmPackage.ISSUE__RESPONSIBLE:
+				if (resolve) return getResponsible();
+				return basicGetResponsible();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -657,6 +762,12 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 			case ItmPackage.ISSUE__COMPLETED_DATE:
 				setCompletedDate((Date)newValue);
 				return;
+			case ItmPackage.ISSUE__OWNER:
+				setOwner((Member)newValue);
+				return;
+			case ItmPackage.ISSUE__RESPONSIBLE:
+				setResponsible((Member)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -705,6 +816,12 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 			case ItmPackage.ISSUE__COMPLETED_DATE:
 				setCompletedDate(COMPLETED_DATE_EDEFAULT);
 				return;
+			case ItmPackage.ISSUE__OWNER:
+				setOwner((Member)null);
+				return;
+			case ItmPackage.ISSUE__RESPONSIBLE:
+				setResponsible((Member)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -741,6 +858,10 @@ public class IssueImpl extends MinimalEObjectImpl.Container implements Issue {
 				return DUE_DATE_EDEFAULT == null ? dueDate != null : !DUE_DATE_EDEFAULT.equals(dueDate);
 			case ItmPackage.ISSUE__COMPLETED_DATE:
 				return COMPLETED_DATE_EDEFAULT == null ? completedDate != null : !COMPLETED_DATE_EDEFAULT.equals(completedDate);
+			case ItmPackage.ISSUE__OWNER:
+				return owner != null;
+			case ItmPackage.ISSUE__RESPONSIBLE:
+				return responsible != null;
 		}
 		return super.eIsSet(featureID);
 	}
