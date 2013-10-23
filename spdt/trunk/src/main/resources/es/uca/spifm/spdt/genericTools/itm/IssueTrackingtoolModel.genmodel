@@ -64,6 +64,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Issue/priority"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Issue/dueDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Issue/completedDate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference IssueTrackingtoolModel.ecore#//Issue/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference IssueTrackingtoolModel.ecore#//Issue/responsible"/>
     </genClasses>
     <genClasses ecoreClass="IssueTrackingtoolModel.ecore#//Tracker">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Tracker/name"/>
