@@ -162,6 +162,7 @@ map:versions_due_on a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:versions;
 	d2rq:property itm:dueDate;
 	d2rq:column "milestones.due_on";
+	d2rq:datatype xsd:date;
 	.
 
 map:versions_state a d2rq:PropertyBridge;
@@ -187,6 +188,7 @@ map:versions_dateAccepted a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:versions;
 	d2rq:property dcterms:dateAccepted;
 	d2rq:column "milestones.completed-date";
+	d2rq:datatype xsd:date;
 	.
 
 
