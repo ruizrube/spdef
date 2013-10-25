@@ -158,13 +158,7 @@ map:versions_description a d2rq:PropertyBridge;
 	d2rq:column "milestones.description";
 	.
 
-map:versions_due_on a d2rq:PropertyBridge;
-	d2rq:belongsToClassMap map:versions;
-	d2rq:property itm:dueDate;
-	d2rq:column "milestones.due_on";
-	d2rq:datatype xsd:date;
-	.
-
+	
 map:versions_state a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:versions;
 	d2rq:property itm:status;
@@ -182,14 +176,24 @@ map:versions_created a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:versions;
 	d2rq:property dcterms:created;
 	d2rq:column "milestones.created";
+	d2rq:datatype xsd:date;
 	.
 	
-map:versions_dateAccepted a d2rq:PropertyBridge;
+map:versions_due_on a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:versions;
-	d2rq:property dcterms:dateAccepted;
+	d2rq:property itm:dueDate;
+	d2rq:column "milestones.due_on";
+	d2rq:datatype xsd:date;
+	.
+
+map:versions_completed a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:versions;
+	d2rq:property itm:completedDate;
 	d2rq:column "milestones.completed-date";
 	d2rq:datatype xsd:date;
 	.
+
+
 
 
 ################
@@ -220,20 +224,6 @@ map:issues_description a d2rq:PropertyBridge;
 	d2rq:column "tickets.description";
 	.
 
-map:issues_updated a d2rq:PropertyBridge;
-	d2rq:belongsToClassMap map:issues;
-	d2rq:property itm:completedDate;
-	d2rq:column "tickets.updated";
-	d2rq:datatype xsd:date;
-	.
-
-map:issues_completed a d2rq:PropertyBridge;
-	d2rq:belongsToClassMap map:issues;
-	d2rq:property itm:dueDate;
-	d2rq:column "tickets.completed";
-	d2rq:datatype xsd:date;
-	.
-
 map:issues_priority a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:issues;
 	d2rq:property itm:priority;
@@ -248,12 +238,14 @@ map:issues_status a d2rq:PropertyBridge;
 	d2rq:join "tickets.status => ticket_status.code";
 	.
 
+
 map:issues_type a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:issues;
 	d2rq:property itm:category;
 	d2rq:column "ticket_types.description";
 	d2rq:join "tickets.type => ticket_types.code";
 	.
+
 
 map:issues__owner a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:issues;
@@ -283,10 +275,26 @@ map:issues_created a d2rq:PropertyBridge;
 	d2rq:belongsToClassMap map:issues;
 	d2rq:property dcterms:created;
 	d2rq:column "tickets.created";
+	d2rq:datatype xsd:date;
 	.
 		
+map:issues_updated a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property dcterms:modified;
+	d2rq:column "tickets.updated";
+	d2rq:datatype xsd:date;
+	.
+	
+map:issues_completed a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:issues;
+	d2rq:property itm:completedDate;
+	d2rq:column "tickets.completed";
+	d2rq:datatype xsd:date;
+	.
 
 	
+
+
 	
 	
 ################
