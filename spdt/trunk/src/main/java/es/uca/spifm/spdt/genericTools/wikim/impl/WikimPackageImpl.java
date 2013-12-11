@@ -210,7 +210,7 @@ public class WikimPackageImpl extends EPackageImpl implements WikimPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWikiContent_Title() {
+	public EAttribute getWikiContent_Name() {
 		return (EAttribute)wikiContentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -246,7 +246,7 @@ public class WikimPackageImpl extends EPackageImpl implements WikimPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSection_Title() {
+	public EAttribute getSection_Name() {
 		return (EAttribute)sectionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -399,7 +399,7 @@ public class WikimPackageImpl extends EPackageImpl implements WikimPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getItemList_Title() {
+	public EAttribute getItemList_Name() {
 		return (EAttribute)itemListEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -471,12 +471,12 @@ public class WikimPackageImpl extends EPackageImpl implements WikimPackage {
 		createEReference(categoryEClass, CATEGORY__PARENT_CATEGORY);
 
 		wikiContentEClass = createEClass(WIKI_CONTENT);
-		createEAttribute(wikiContentEClass, WIKI_CONTENT__TITLE);
+		createEAttribute(wikiContentEClass, WIKI_CONTENT__NAME);
 		createEOperation(wikiContentEClass, WIKI_CONTENT___RENDER);
 
 		sectionEClass = createEClass(SECTION);
 		createEReference(sectionEClass, SECTION__EMBEDDED_SECTIONS);
-		createEAttribute(sectionEClass, SECTION__TITLE);
+		createEAttribute(sectionEClass, SECTION__NAME);
 		createEAttribute(sectionEClass, SECTION__TEXT);
 		createEReference(sectionEClass, SECTION__CONTENTS);
 
@@ -499,7 +499,7 @@ public class WikimPackageImpl extends EPackageImpl implements WikimPackage {
 
 		itemListEClass = createEClass(ITEM_LIST);
 		createEReference(itemListEClass, ITEM_LIST__ITEMS);
-		createEAttribute(itemListEClass, ITEM_LIST__TITLE);
+		createEAttribute(itemListEClass, ITEM_LIST__NAME);
 
 		itemEClass = createEClass(ITEM);
 		createEAttribute(itemEClass, ITEM__TEXT);
@@ -550,13 +550,13 @@ public class WikimPackageImpl extends EPackageImpl implements WikimPackage {
 		initEReference(getCategory_ParentCategory(), this.getCategory(), null, "parentCategory", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(wikiContentEClass, WikiContent.class, "WikiContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWikiContent_Title(), ecorePackage.getEString(), "title", null, 0, 1, WikiContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWikiContent_Name(), ecorePackage.getEString(), "name", null, 0, 1, WikiContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getWikiContent__Render(), ecorePackage.getEString(), "render", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSection_EmbeddedSections(), this.getSection(), null, "embeddedSections", null, 0, -1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSection_Title(), ecorePackage.getEString(), "title", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSection_Name(), ecorePackage.getEString(), "name", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSection_Text(), ecorePackage.getEString(), "text", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSection_Contents(), this.getSectionContent(), null, "contents", null, 0, -1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -579,7 +579,7 @@ public class WikimPackageImpl extends EPackageImpl implements WikimPackage {
 
 		initEClass(itemListEClass, ItemList.class, "ItemList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getItemList_Items(), this.getItem(), null, "items", null, 0, -1, ItemList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getItemList_Title(), ecorePackage.getEString(), "title", null, 0, 1, ItemList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getItemList_Name(), ecorePackage.getEString(), "name", null, 0, 1, ItemList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getItem_Text(), ecorePackage.getEString(), "text", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -590,6 +590,92 @@ public class WikimPackageImpl extends EPackageImpl implements WikimPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// comment
+		createCommentAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>comment</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createCommentAnnotations() {
+		String source = "comment";		
+		addAnnotation
+		  (categoryEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa a una categor\u00eda dentro una instancia de la wiki."
+		   });		
+		addAnnotation
+		  (wikiContentEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase abstracta que representa a un tipo de contenido concreto que puede almacenar una wiki."
+		   });		
+		addAnnotation
+		  (sectionEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que permite declarar una secci\u00f3n dentro de un art\u00edculo de la wiki."
+		   });		
+		addAnnotation
+		  (wikiDatabaseEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase contenedora de todos los contenidos existentes en la wiki."
+		   });		
+		addAnnotation
+		  (articleEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa a un art\u00edculo dentro de la wiki."
+		   });		
+		addAnnotation
+		  (imageEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa la inclusi\u00f3n de una imagen dentro de un art\u00edculo wiki."
+		   });		
+		addAnnotation
+		  (sectionContentEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase abstracta que se especializa en cada tipo de contenido que puede incluirse dentro de una secci\u00f3n de un art\u00edculo."
+		   });		
+		addAnnotation
+		  (paragraphEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa un p\u00e1rrafo de texto."
+		   });		
+		addAnnotation
+		  (itemListEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa un lista de items."
+		   });		
+		addAnnotation
+		  (itemEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa el item de una lista."
+		   });		
+		addAnnotation
+		  (fileEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa a un determinado archivo binario almacenado en la wiki."
+		   });		
+		addAnnotation
+		  (userEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa al usuario y la p\u00e1gina del mismo dentro de la wiki."
+		   });
 	}
 
 } //WikimPackageImpl

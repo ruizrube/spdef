@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getTaskDependency()
- * @model
+ * @model annotation="comment comment='Clase de asociaci\363n que permite representar la dependencia entre dos tareas concretas.'"
  * @generated
  */
 public interface TaskDependency extends EObject {

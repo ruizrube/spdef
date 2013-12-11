@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getProject()
- * @model
+ * @model annotation="comment comment='Clase contenedora de todos los productos de trabajo de un proyecto.'"
  * @generated
  */
 public interface Project extends EObject {

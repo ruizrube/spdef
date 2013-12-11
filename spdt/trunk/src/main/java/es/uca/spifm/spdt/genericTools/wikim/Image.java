@@ -18,7 +18,7 @@ package es.uca.spifm.spdt.genericTools.wikim;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getImage()
- * @model
+ * @model annotation="comment comment='Clase que representa la inclusi\363n de una imagen dentro de un art\355culo wiki.'"
  * @generated
  */
 public interface Image extends SectionContent {

@@ -4,3 +4,25 @@
 
 module uma2spcm;
 create output: SPCM from input: UMA;
+
+--- Matching MethodPlugin with Project
+rule MethodPlugin2Project {
+ from
+  mp: UMA!MethodPlugin
+ to
+  proj: SPCM!Project (
+   name <- mp.name,
+   description <- mp.briefDescription 
+  )
+}
+
+
+rule MethodPlugin2ProjectZZ {
+ from
+  umile: UMA!Milestone
+ to
+  mile: SPCM!Milestone (
+   name <- umile.name,
+   description <- umile.briefDescription 
+  )
+}

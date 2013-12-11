@@ -4,6 +4,7 @@
 package es.uca.spifm.spdt.genericTools.itm;
 
 import java.util.Date;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -34,7 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssue()
- * @model
+ * @model annotation="comment comment='Clase para describir una tarea o unidad concreta de trabajo, necesaria para evolucionar un sistema inform\341tico, como a\361adir una nueva caracter\355stica, arreglo de un fallo, etc.'"
  * @generated
  */
 public interface Issue extends EObject {

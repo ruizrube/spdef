@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getItem()
- * @model
+ * @model annotation="comment comment='Clase que representa el item de una lista.'"
  * @generated
  */
 public interface Item extends EObject {

@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getDeliverableType()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los posibles tipos de entregables de un proyecto. Pueden ser ficheros empaquetados, instaladores o documentos, entre otros tipos.'"
  * @generated
  */
 public enum DeliverableType implements Enumerator {

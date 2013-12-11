@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getDocumentaryWorkProduct()
- * @model
+ * @model annotation="comment comment='Clase que representa un documento t\351cnico de trabajo.'"
  * @generated
  */
 public interface DocumentaryWorkProduct extends InternalProduct {

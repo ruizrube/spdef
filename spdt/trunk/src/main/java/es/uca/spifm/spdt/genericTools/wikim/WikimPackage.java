@@ -69,13 +69,13 @@ public interface WikimPackage extends EPackage {
 	int WIKI_CONTENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIKI_CONTENT__TITLE = 0;
+	int WIKI_CONTENT__NAME = 0;
 
 	/**
 	 * The number of structural features of the '<em>Wiki Content</em>' class.
@@ -115,13 +115,13 @@ public interface WikimPackage extends EPackage {
 	int CATEGORY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATEGORY__TITLE = WIKI_CONTENT__TITLE;
+	int CATEGORY__NAME = WIKI_CONTENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parent Category</b></em>' reference.
@@ -179,13 +179,13 @@ public interface WikimPackage extends EPackage {
 	int SECTION__EMBEDDED_SECTIONS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__TITLE = 1;
+	int SECTION__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -271,13 +271,13 @@ public interface WikimPackage extends EPackage {
 	int ARTICLE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTICLE__TITLE = WIKI_CONTENT__TITLE;
+	int ARTICLE__NAME = WIKI_CONTENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Sections</b></em>' containment reference list.
@@ -491,13 +491,13 @@ public interface WikimPackage extends EPackage {
 	int ITEM_LIST__ITEMS = SECTION_CONTENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_LIST__TITLE = SECTION_CONTENT_FEATURE_COUNT + 1;
+	int ITEM_LIST__NAME = SECTION_CONTENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Item List</em>' class.
@@ -565,13 +565,13 @@ public interface WikimPackage extends EPackage {
 	int FILE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE__TITLE = WIKI_CONTENT__TITLE;
+	int FILE__NAME = WIKI_CONTENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>File</em>' class.
@@ -611,13 +611,13 @@ public interface WikimPackage extends EPackage {
 	int USER = 11;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USER__TITLE = WIKI_CONTENT__TITLE;
+	int USER__NAME = WIKI_CONTENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>User</em>' class.
@@ -679,15 +679,15 @@ public interface WikimPackage extends EPackage {
 	EClass getWikiContent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.wikim.WikiContent#getTitle <em>Title</em>}'.
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.wikim.WikiContent#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see es.uca.spifm.spdt.genericTools.wikim.WikiContent#getTitle()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.wikim.WikiContent#getName()
 	 * @see #getWikiContent()
 	 * @generated
 	 */
-	EAttribute getWikiContent_Title();
+	EAttribute getWikiContent_Name();
 
 	/**
 	 * Returns the meta object for the '{@link es.uca.spifm.spdt.genericTools.wikim.WikiContent#render() <em>Render</em>}' operation.
@@ -721,15 +721,15 @@ public interface WikimPackage extends EPackage {
 	EReference getSection_EmbeddedSections();
 
 	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.wikim.Section#getTitle <em>Title</em>}'.
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.wikim.Section#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see es.uca.spifm.spdt.genericTools.wikim.Section#getTitle()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.wikim.Section#getName()
 	 * @see #getSection()
 	 * @generated
 	 */
-	EAttribute getSection_Title();
+	EAttribute getSection_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.wikim.Section#getText <em>Text</em>}'.
@@ -902,15 +902,15 @@ public interface WikimPackage extends EPackage {
 	EReference getItemList_Items();
 
 	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.wikim.ItemList#getTitle <em>Title</em>}'.
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.wikim.ItemList#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see es.uca.spifm.spdt.genericTools.wikim.ItemList#getTitle()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.wikim.ItemList#getName()
 	 * @see #getItemList()
 	 * @generated
 	 */
-	EAttribute getItemList_Title();
+	EAttribute getItemList_Name();
 
 	/**
 	 * Returns the meta object for class '{@link es.uca.spifm.spdt.genericTools.wikim.Item <em>Item</em>}'.
@@ -1005,12 +1005,12 @@ public interface WikimPackage extends EPackage {
 		EClass WIKI_CONTENT = eINSTANCE.getWikiContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WIKI_CONTENT__TITLE = eINSTANCE.getWikiContent_Title();
+		EAttribute WIKI_CONTENT__NAME = eINSTANCE.getWikiContent_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Render</b></em>' operation.
@@ -1039,12 +1039,12 @@ public interface WikimPackage extends EPackage {
 		EReference SECTION__EMBEDDED_SECTIONS = eINSTANCE.getSection_EmbeddedSections();
 
 		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SECTION__TITLE = eINSTANCE.getSection_Title();
+		EAttribute SECTION__NAME = eINSTANCE.getSection_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
@@ -1187,12 +1187,12 @@ public interface WikimPackage extends EPackage {
 		EReference ITEM_LIST__ITEMS = eINSTANCE.getItemList_Items();
 
 		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ITEM_LIST__TITLE = eINSTANCE.getItemList_Title();
+		EAttribute ITEM_LIST__NAME = eINSTANCE.getItemList_Name();
 
 		/**
 		 * The meta object literal for the '{@link es.uca.spifm.spdt.genericTools.wikim.impl.ItemImpl <em>Item</em>}' class.

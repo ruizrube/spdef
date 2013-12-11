@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getProject()
- * @model
+ * @model annotation="comment comment='Clase contenedora de todos las tareas y milestones establecidos para la planificaci\363n y monitorizaci\363n de un proyecto software.'"
  * @generated
  */
 public interface Project extends EObject {

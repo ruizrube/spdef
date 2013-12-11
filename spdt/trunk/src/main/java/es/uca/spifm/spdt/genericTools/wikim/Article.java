@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getArticle()
- * @model
+ * @model annotation="comment comment='Clase que representa a un art\355culo dentro de la wiki.'"
  * @generated
  */
 public interface Article extends WikiContent {

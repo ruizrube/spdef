@@ -14,13 +14,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link es.uca.spifm.spdt.deployment.swpm.Specification#getName <em>Name</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.deployment.swpm.Specification#getDetails <em>Details</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.deployment.swpm.Specification#getDescription <em>Description</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.swpm.Specification#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getSpecification()
- * @model
+ * @model annotation="comment comment='Clase que representa una especificaci\363n textual de alg\372n aspecto del proyecto software.'"
  * @generated
  */
 public interface Specification extends EObject {
@@ -51,30 +51,30 @@ public interface Specification extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Details</b></em>' attribute.
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Details</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Details</em>' attribute.
-	 * @see #setDetails(String)
-	 * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getSpecification_Details()
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getSpecification_Description()
 	 * @model
 	 * @generated
 	 */
-	String getDetails();
+	String getDescription();
 
 	/**
-	 * Sets the value of the '{@link es.uca.spifm.spdt.deployment.swpm.Specification#getDetails <em>Details</em>}' attribute.
+	 * Sets the value of the '{@link es.uca.spifm.spdt.deployment.swpm.Specification#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Details</em>' attribute.
-	 * @see #getDetails()
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
 	 * @generated
 	 */
-	void setDetails(String value);
+	void setDescription(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.

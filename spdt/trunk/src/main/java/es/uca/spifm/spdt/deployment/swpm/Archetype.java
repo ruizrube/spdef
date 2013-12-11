@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getArchetype()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los posibles tipos de paquetes de c\363digo fuente. Engloba a aquellas plantillas predefinidas de c\363digo, siguiendo los arquetipos disponibles en sistemas de gesti\363n de la construcci\363n como Maven u otros.'"
  * @generated
  */
 public enum Archetype implements Enumerator {

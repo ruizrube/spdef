@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getSectionContent()
  * @model abstract="true"
+ *        annotation="comment comment='Clase abstracta que se especializa en cada tipo de contenido que puede incluirse dentro de una secci\363n de un art\355culo.'"
  * @generated
  */
 public interface SectionContent extends EObject {

@@ -11,12 +11,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WikitoolModel.ecore#//Category/parentCategory"/>
     </genClasses>
     <genClasses ecoreClass="WikitoolModel.ecore#//WikiContent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WikitoolModel.ecore#//WikiContent/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WikitoolModel.ecore#//WikiContent/name"/>
       <genOperations ecoreOperation="WikitoolModel.ecore#//WikiContent/render"/>
     </genClasses>
     <genClasses ecoreClass="WikitoolModel.ecore#//Section">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WikitoolModel.ecore#//Section/embeddedSections"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WikitoolModel.ecore#//Section/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WikitoolModel.ecore#//Section/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WikitoolModel.ecore#//Section/text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WikitoolModel.ecore#//Section/contents"/>
     </genClasses>
@@ -39,7 +39,7 @@
     </genClasses>
     <genClasses ecoreClass="WikitoolModel.ecore#//ItemList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WikitoolModel.ecore#//ItemList/items"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WikitoolModel.ecore#//ItemList/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WikitoolModel.ecore#//ItemList/name"/>
     </genClasses>
     <genClasses ecoreClass="WikitoolModel.ecore#//Item">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WikitoolModel.ecore#//Item/text"/>

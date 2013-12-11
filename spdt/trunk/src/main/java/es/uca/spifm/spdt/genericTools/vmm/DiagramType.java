@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.genericTools.vmm.VmmPackage#getDiagramType()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los posibles tipos de diagramas reconocidos por la herramienta de modelado, como por ejemplo los diagramas de clases y de estados de UML.'"
  * @generated
  */
 public enum DiagramType implements Enumerator {

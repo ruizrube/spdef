@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.vmm.VmmPackage#getProject()
- * @model
+ * @model annotation="comment comment='Clase contenedora de todos los modelos generados para un determinado proyecto.'"
  * @generated
  */
 public interface Project extends EObject {

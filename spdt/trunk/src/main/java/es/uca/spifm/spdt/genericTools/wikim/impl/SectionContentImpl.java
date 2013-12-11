@@ -5,8 +5,11 @@ package es.uca.spifm.spdt.genericTools.wikim.impl;
 
 import es.uca.spifm.spdt.genericTools.wikim.SectionContent;
 import es.uca.spifm.spdt.genericTools.wikim.WikimPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 

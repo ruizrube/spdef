@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getDeliverableProduct()
- * @model
+ * @model annotation="comment comment='Clase abstracta que representa un producto de trabajo desarrollado durante el transcurso de un proyecto software y con valor para terceros.'"
  * @generated
  */
 public interface DeliverableProduct extends WorkProduct {

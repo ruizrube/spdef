@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.vmm.VmmPackage#getPackage()
- * @model
+ * @model annotation="comment comment='Clase que representa a un paquete de modelos, con el cual organizar los diferentes modelos.'"
  * @generated
  */
 public interface Package extends EObject {

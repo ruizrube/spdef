@@ -48,7 +48,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/status"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/dueDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IssueTrackingtoolModel.ecore#//Version/completedDate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IssueTrackingtoolModel.ecore#//Version/issues"/>
     </genClasses>
     <genClasses ecoreClass="IssueTrackingtoolModel.ecore#//Issue">

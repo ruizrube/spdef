@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.vmm.VmmPackage#getElement()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los posibles tipos de elementos que pueden participar en un diagrama. Casos de uso, clases o componentes son ejemplos de tipos de elementos en modelos UML.'"
  * @generated
  */
 public interface Element extends EObject {

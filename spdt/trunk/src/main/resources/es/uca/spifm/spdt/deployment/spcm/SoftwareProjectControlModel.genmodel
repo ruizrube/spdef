@@ -13,24 +13,6 @@
       <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//DependencyType/END_START"/>
       <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//DependencyType/END_END"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SoftwareProjectControlModel.ecore#//TaskStatus">
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//TaskStatus/OPEN"/>
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//TaskStatus/CLOSED"/>
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//TaskStatus/ASSIGNED"/>
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//TaskStatus/RESOLVED"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SoftwareProjectControlModel.ecore#//MilestoneStatus">
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//MilestoneStatus/OPEN"/>
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//MilestoneStatus/CLOSE"/>
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//MilestoneStatus/INPROGRESS"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SoftwareProjectControlModel.ecore#//TaskPriority">
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//TaskPriority/HIGHER"/>
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//TaskPriority/HIGH"/>
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//TaskPriority/NORMAL"/>
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//TaskPriority/LOW"/>
-      <genEnumLiterals ecoreEnumLiteral="SoftwareProjectControlModel.ecore#//TaskPriority/LOWEST"/>
-    </genEnums>
     <genClasses ecoreClass="SoftwareProjectControlModel.ecore#//Project">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Project/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Project/name"/>
@@ -42,7 +24,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Milestone/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Milestone/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareProjectControlModel.ecore#//Milestone/tasks"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Milestone/status"/>
     </genClasses>
     <genClasses ecoreClass="SoftwareProjectControlModel.ecore#//Role">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Role/name"/>
@@ -51,8 +32,6 @@
     <genClasses ecoreClass="SoftwareProjectControlModel.ecore#//Task">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Task/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Task/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Task/priority"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SoftwareProjectControlModel.ecore#//Task/status"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareProjectControlModel.ecore#//Task/responsible"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SoftwareProjectControlModel.ecore#//Task/category"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SoftwareProjectControlModel.ecore#//Task/dependencies"/>

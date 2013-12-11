@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getSpecificationType()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los posibles tipos de especificaciones no basadas en modelos. Pueden consistir en una descripci\363n textual, una lista de elementos o contenido binario gestionado por alguna herramienta externa.'"
  * @generated
  */
 public enum SpecificationType implements Enumerator {

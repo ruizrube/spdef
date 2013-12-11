@@ -17,7 +17,7 @@ package es.uca.spifm.spdt.genericTools.wikim;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getParagraph()
- * @model
+ * @model annotation="comment comment='Clase que representa un p\341rrafo de texto.'"
  * @generated
  */
 public interface Paragraph extends SectionContent {

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getUser()
- * @model
+ * @model annotation="comment comment='Clase que representa a un usuario registrado en la herramienta.'"
  * @generated
  */
 public interface User extends EObject {

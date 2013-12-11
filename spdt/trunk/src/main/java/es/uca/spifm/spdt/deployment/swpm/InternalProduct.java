@@ -11,7 +11,7 @@ package es.uca.spifm.spdt.deployment.swpm;
  *
  *
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getInternalProduct()
- * @model
+ * @model annotation="comment comment='Clase abstracta que representa un producto interno al desarrollo o mantenimiento de software. Puede ser de tipo documental o de c\363digo.'"
  * @generated
  */
 public interface InternalProduct extends WorkProduct {

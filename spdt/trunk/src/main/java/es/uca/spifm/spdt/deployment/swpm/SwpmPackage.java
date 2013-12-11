@@ -124,13 +124,13 @@ public interface SwpmPackage extends EPackage {
 	int WORK_PRODUCT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT__TITLE = 0;
+	int WORK_PRODUCT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -170,13 +170,13 @@ public interface SwpmPackage extends EPackage {
 	int SECTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__TITLE = 0;
+	int SECTION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -316,13 +316,13 @@ public interface SwpmPackage extends EPackage {
 	int SPECIFICATION__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Details</b></em>' attribute.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFICATION__DETAILS = 1;
+	int SPECIFICATION__DESCRIPTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -362,13 +362,13 @@ public interface SwpmPackage extends EPackage {
 	int INTERNAL_PRODUCT = 8;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_PRODUCT__TITLE = WORK_PRODUCT__TITLE;
+	int INTERNAL_PRODUCT__NAME = WORK_PRODUCT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -408,13 +408,13 @@ public interface SwpmPackage extends EPackage {
 	int CODE_WORK_PRODUCT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_WORK_PRODUCT__TITLE = INTERNAL_PRODUCT__TITLE;
+	int CODE_WORK_PRODUCT__NAME = INTERNAL_PRODUCT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -463,13 +463,13 @@ public interface SwpmPackage extends EPackage {
 	int DOCUMENTARY_WORK_PRODUCT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTARY_WORK_PRODUCT__TITLE = INTERNAL_PRODUCT__TITLE;
+	int DOCUMENTARY_WORK_PRODUCT__NAME = INTERNAL_PRODUCT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -518,13 +518,13 @@ public interface SwpmPackage extends EPackage {
 	int DELIVERABLE_PRODUCT = 7;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELIVERABLE_PRODUCT__TITLE = WORK_PRODUCT__TITLE;
+	int DELIVERABLE_PRODUCT__NAME = WORK_PRODUCT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -721,15 +721,15 @@ public interface SwpmPackage extends EPackage {
 	EClass getWorkProduct();
 
 	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.swpm.WorkProduct#getTitle <em>Title</em>}'.
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.swpm.WorkProduct#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see es.uca.spifm.spdt.deployment.swpm.WorkProduct#getTitle()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see es.uca.spifm.spdt.deployment.swpm.WorkProduct#getName()
 	 * @see #getWorkProduct()
 	 * @generated
 	 */
-	EAttribute getWorkProduct_Title();
+	EAttribute getWorkProduct_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.swpm.WorkProduct#getDescription <em>Description</em>}'.
@@ -753,15 +753,15 @@ public interface SwpmPackage extends EPackage {
 	EClass getSection();
 
 	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.swpm.Section#getTitle <em>Title</em>}'.
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.swpm.Section#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see es.uca.spifm.spdt.deployment.swpm.Section#getTitle()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see es.uca.spifm.spdt.deployment.swpm.Section#getName()
 	 * @see #getSection()
 	 * @generated
 	 */
-	EAttribute getSection_Title();
+	EAttribute getSection_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.swpm.Section#getDescription <em>Description</em>}'.
@@ -883,15 +883,15 @@ public interface SwpmPackage extends EPackage {
 	EAttribute getSpecification_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.swpm.Specification#getDetails <em>Details</em>}'.
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.swpm.Specification#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Details</em>'.
-	 * @see es.uca.spifm.spdt.deployment.swpm.Specification#getDetails()
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see es.uca.spifm.spdt.deployment.swpm.Specification#getDescription()
 	 * @see #getSpecification()
 	 * @generated
 	 */
-	EAttribute getSpecification_Details();
+	EAttribute getSpecification_Description();
 
 	/**
 	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.swpm.Specification#getType <em>Type</em>}'.
@@ -1139,12 +1139,12 @@ public interface SwpmPackage extends EPackage {
 		EClass WORK_PRODUCT = eINSTANCE.getWorkProduct();
 
 		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WORK_PRODUCT__TITLE = eINSTANCE.getWorkProduct_Title();
+		EAttribute WORK_PRODUCT__NAME = eINSTANCE.getWorkProduct_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -1165,12 +1165,12 @@ public interface SwpmPackage extends EPackage {
 		EClass SECTION = eINSTANCE.getSection();
 
 		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SECTION__TITLE = eINSTANCE.getSection_Title();
+		EAttribute SECTION__NAME = eINSTANCE.getSection_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -1265,12 +1265,12 @@ public interface SwpmPackage extends EPackage {
 		EAttribute SPECIFICATION__NAME = eINSTANCE.getSpecification_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Details</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SPECIFICATION__DETAILS = eINSTANCE.getSpecification_Details();
+		EAttribute SPECIFICATION__DESCRIPTION = eINSTANCE.getSpecification_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.

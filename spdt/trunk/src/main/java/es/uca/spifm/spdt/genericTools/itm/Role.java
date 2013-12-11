@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getRole()
- * @model
+ * @model annotation="comment comment='Clase que representa el rol que juega un usuario en los proyectos.'"
  * @generated
  */
 public interface Role extends EObject {

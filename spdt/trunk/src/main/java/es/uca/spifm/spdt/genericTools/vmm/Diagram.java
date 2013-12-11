@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.vmm.VmmPackage#getDiagram()
- * @model
+ * @model annotation="comment comment='Clase que representa a un determinado diagrama modelado con alg\372n lenguaje visual.'"
  * @generated
  */
 public interface Diagram extends EObject {

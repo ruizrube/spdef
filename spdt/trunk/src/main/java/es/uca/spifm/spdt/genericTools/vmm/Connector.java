@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.vmm.VmmPackage#getConnector()
- * @model
+ * @model annotation="comment comment='Clase que representa a una determinada relaci\363n entre dos elementos de modelado.'"
  * @generated
  */
 public interface Connector extends EObject {

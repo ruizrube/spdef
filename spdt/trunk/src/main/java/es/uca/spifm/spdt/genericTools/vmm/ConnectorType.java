@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.genericTools.vmm.VmmPackage#getConnectorType()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los posibles tipos de conectores que pueden vincular dos elementos, como por ejemplo las asociaciones, generalizaciones y relaciones de inclusi\363n o extensi\363n en UML.'"
  * @generated
  */
 public enum ConnectorType implements Enumerator {

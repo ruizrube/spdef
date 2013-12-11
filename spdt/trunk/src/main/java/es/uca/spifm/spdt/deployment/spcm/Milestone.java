@@ -18,12 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Milestone#getDescription <em>Description</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Milestone#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Milestone#getTasks <em>Tasks</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Milestone#getStatus <em>Status</em>}</li>
  * </ul>
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getMilestone()
- * @model
+ * @model annotation="comment comment='Clase que representa los hitos del desarrollo o versiones del software durante el transcurso de los proyectos.'"
  * @generated
  */
 public interface Milestone extends EObject {
@@ -94,34 +93,5 @@ public interface Milestone extends EObject {
 	 * @generated
 	 */
 	EList<Task> getTasks();
-
-	/**
-	 * Returns the value of the '<em><b>Status</b></em>' attribute.
-	 * The literals are from the enumeration {@link es.uca.spifm.spdt.deployment.spcm.MilestoneStatus}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Status</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status</em>' attribute.
-	 * @see es.uca.spifm.spdt.deployment.spcm.MilestoneStatus
-	 * @see #setStatus(MilestoneStatus)
-	 * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getMilestone_Status()
-	 * @model
-	 * @generated
-	 */
-	MilestoneStatus getStatus();
-
-	/**
-	 * Sets the value of the '{@link es.uca.spifm.spdt.deployment.spcm.Milestone#getStatus <em>Status</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status</em>' attribute.
-	 * @see es.uca.spifm.spdt.deployment.spcm.MilestoneStatus
-	 * @see #getStatus()
-	 * @generated
-	 */
-	void setStatus(MilestoneStatus value);
 
 } // Milestone

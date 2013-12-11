@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.vmm.VmmPackage#getModelRepository()
- * @model
+ * @model annotation="comment comment='Clase contenedora de todos los proyectos gestionados con la herramienta de modelado.'"
  * @generated
  */
 public interface ModelRepository extends EObject {

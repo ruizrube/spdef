@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.SpecificationImpl#getName <em>Name</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.SpecificationImpl#getDetails <em>Details</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.SpecificationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.SpecificationImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
@@ -51,24 +51,24 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDetails() <em>Details</em>}' attribute.
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDetails()
+	 * @see #getDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DETAILS_EDEFAULT = null;
+	protected static final String DESCRIPTION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDetails() <em>Details</em>}' attribute.
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDetails()
+	 * @see #getDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected String details = DETAILS_EDEFAULT;
+	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -135,8 +135,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDetails() {
-		return details;
+	public String getDescription() {
+		return description;
 	}
 
 	/**
@@ -144,11 +144,11 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDetails(String newDetails) {
-		String oldDetails = details;
-		details = newDetails;
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SwpmPackage.SPECIFICATION__DETAILS, oldDetails, details));
+			eNotify(new ENotificationImpl(this, Notification.SET, SwpmPackage.SPECIFICATION__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -182,8 +182,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 		switch (featureID) {
 			case SwpmPackage.SPECIFICATION__NAME:
 				return getName();
-			case SwpmPackage.SPECIFICATION__DETAILS:
-				return getDetails();
+			case SwpmPackage.SPECIFICATION__DESCRIPTION:
+				return getDescription();
 			case SwpmPackage.SPECIFICATION__TYPE:
 				return getType();
 		}
@@ -201,8 +201,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 			case SwpmPackage.SPECIFICATION__NAME:
 				setName((String)newValue);
 				return;
-			case SwpmPackage.SPECIFICATION__DETAILS:
-				setDetails((String)newValue);
+			case SwpmPackage.SPECIFICATION__DESCRIPTION:
+				setDescription((String)newValue);
 				return;
 			case SwpmPackage.SPECIFICATION__TYPE:
 				setType((SpecificationType)newValue);
@@ -222,8 +222,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 			case SwpmPackage.SPECIFICATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case SwpmPackage.SPECIFICATION__DETAILS:
-				setDetails(DETAILS_EDEFAULT);
+			case SwpmPackage.SPECIFICATION__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case SwpmPackage.SPECIFICATION__TYPE:
 				setType(TYPE_EDEFAULT);
@@ -242,8 +242,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 		switch (featureID) {
 			case SwpmPackage.SPECIFICATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SwpmPackage.SPECIFICATION__DETAILS:
-				return DETAILS_EDEFAULT == null ? details != null : !DETAILS_EDEFAULT.equals(details);
+			case SwpmPackage.SPECIFICATION__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SwpmPackage.SPECIFICATION__TYPE:
 				return type != TYPE_EDEFAULT;
 		}
@@ -262,8 +262,8 @@ public class SpecificationImpl extends MinimalEObjectImpl.Container implements S
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", details: ");
-		result.append(details);
+		result.append(", description: ");
+		result.append(description);
 		result.append(", type: ");
 		result.append(type);
 		result.append(')');

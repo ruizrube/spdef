@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getCodeWorkProduct()
- * @model
+ * @model annotation="comment comment='Clase que representa la base de c\363digo de un proyecto software.'"
  * @generated
  */
 public interface CodeWorkProduct extends InternalProduct {

@@ -31,7 +31,7 @@ public class MWRenderer {
 		}
 
 		for (Category cat : article.getCategories()) {
-			result.append("\n[[Category:").append(cat.getTitle())
+			result.append("\n[[Category:").append(cat.getName())
 					.append("]]\n");
 		}
 
@@ -43,7 +43,7 @@ public class MWRenderer {
 		// Ensure that you remove @generated or mark it @generated NOT
 		StringBuffer result = new StringBuffer();
 		result.append("\n\n ''Associated Documentation for '' '''")
-				.append(category.getTitle()).append("'''");
+				.append(category.getName()).append("'''");
 		result.append("\n\n[[Category:").append("Technical Documentation")
 				.append("]]\n");
 		return result.toString();
@@ -63,7 +63,7 @@ public class MWRenderer {
 	public String render(ItemList list) {
 
 		StringBuffer result = new StringBuffer();
-		result.append("\n\n''").append(list.getTitle()).append("''\n");
+		result.append("\n\n''").append(list.getName()).append("''\n");
 		for (Item item : list.getItems()) {
 			result.append("\n* ").append(item.getText());
 		}
@@ -84,7 +84,7 @@ public class MWRenderer {
 			heading.append("=");
 
 		result.append("\n\n").append(heading).append(" ")
-				.append(section.getTitle()).append(" ").append(heading)
+				.append(section.getName()).append(" ").append(heading)
 				.append("\n");
 
 		if (section.getText() != null) {
