@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.SectionImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.SectionImpl#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.SectionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.SectionImpl#getOrder <em>Order</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.SectionImpl#getEmbeddedSections <em>Embedded Sections</em>}</li>
@@ -44,24 +44,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SectionImpl extends MinimalEObjectImpl.Container implements Section {
 	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TITLE_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String title = TITLE_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -157,8 +157,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -166,11 +166,11 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitle(String newTitle) {
-		String oldTitle = title;
-		title = newTitle;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SwpmPackage.SECTION__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, SwpmPackage.SECTION__NAME, oldName, name));
 	}
 
 	/**
@@ -277,8 +277,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SwpmPackage.SECTION__TITLE:
-				return getTitle();
+			case SwpmPackage.SECTION__NAME:
+				return getName();
 			case SwpmPackage.SECTION__DESCRIPTION:
 				return getDescription();
 			case SwpmPackage.SECTION__ORDER:
@@ -302,8 +302,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SwpmPackage.SECTION__TITLE:
-				setTitle((String)newValue);
+			case SwpmPackage.SECTION__NAME:
+				setName((String)newValue);
 				return;
 			case SwpmPackage.SECTION__DESCRIPTION:
 				setDescription((String)newValue);
@@ -335,8 +335,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SwpmPackage.SECTION__TITLE:
-				setTitle(TITLE_EDEFAULT);
+			case SwpmPackage.SECTION__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case SwpmPackage.SECTION__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -365,8 +365,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SwpmPackage.SECTION__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case SwpmPackage.SECTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SwpmPackage.SECTION__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SwpmPackage.SECTION__ORDER:
@@ -391,8 +391,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
-		result.append(title);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", order: ");

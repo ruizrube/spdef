@@ -233,13 +233,13 @@ public interface ItmPackage extends EPackage {
 	int VERSION__STATUS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Due Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Completed Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION__DUE_DATE = 3;
+	int VERSION__COMPLETED_DATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
@@ -710,7 +710,6 @@ public interface ItmPackage extends EPackage {
 	 */
 	int DEPENDENCY_TYPE = 12;
 
-
 	/**
 	 * The meta object id for the '{@link es.uca.spifm.spdt.genericTools.itm.IssuePriority <em>Issue Priority</em>}' enum.
 	 * <!-- begin-user-doc -->
@@ -885,15 +884,15 @@ public interface ItmPackage extends EPackage {
 	EAttribute getVersion_Status();
 
 	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.itm.Version#getDueDate <em>Due Date</em>}'.
+	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.genericTools.itm.Version#getCompletedDate <em>Completed Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Due Date</em>'.
-	 * @see es.uca.spifm.spdt.genericTools.itm.Version#getDueDate()
+	 * @return the meta object for the attribute '<em>Completed Date</em>'.
+	 * @see es.uca.spifm.spdt.genericTools.itm.Version#getCompletedDate()
 	 * @see #getVersion()
 	 * @generated
 	 */
-	EAttribute getVersion_DueDate();
+	EAttribute getVersion_CompletedDate();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link es.uca.spifm.spdt.genericTools.itm.Version#getIssues <em>Issues</em>}'.
@@ -1430,12 +1429,12 @@ public interface ItmPackage extends EPackage {
 		EAttribute VERSION__STATUS = eINSTANCE.getVersion_Status();
 
 		/**
-		 * The meta object literal for the '<em><b>Due Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Completed Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VERSION__DUE_DATE = eINSTANCE.getVersion_DueDate();
+		EAttribute VERSION__COMPLETED_DATE = eINSTANCE.getVersion_CompletedDate();
 
 		/**
 		 * The meta object literal for the '<em><b>Issues</b></em>' containment reference list feature.

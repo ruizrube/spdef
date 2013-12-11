@@ -169,22 +169,13 @@ public interface SpcmPackage extends EPackage {
 	int MILESTONE__TASKS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MILESTONE__STATUS = 3;
-
-	/**
 	 * The number of structural features of the '<em>Milestone</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MILESTONE_FEATURE_COUNT = 4;
+	int MILESTONE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Milestone</em>' class.
@@ -270,31 +261,13 @@ public interface SpcmPackage extends EPackage {
 	int TASK__DESCRIPTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK__PRIORITY = 2;
-
-	/**
-	 * The feature id for the '<em><b>Status</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK__STATUS = 3;
-
-	/**
 	 * The feature id for the '<em><b>Responsible</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__RESPONSIBLE = 4;
+	int TASK__RESPONSIBLE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Category</b></em>' reference.
@@ -303,7 +276,7 @@ public interface SpcmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__CATEGORY = 5;
+	int TASK__CATEGORY = 3;
 
 	/**
 	 * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -312,7 +285,7 @@ public interface SpcmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__DEPENDENCIES = 6;
+	int TASK__DEPENDENCIES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -321,7 +294,7 @@ public interface SpcmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_FEATURE_COUNT = 7;
+	int TASK_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Task</em>' class.
@@ -434,37 +407,6 @@ public interface SpcmPackage extends EPackage {
 	 */
 	int DEPENDENCY_TYPE = 6;
 
-	/**
-	 * The meta object id for the '{@link es.uca.spifm.spdt.deployment.spcm.TaskStatus <em>Task Status</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see es.uca.spifm.spdt.deployment.spcm.TaskStatus
-	 * @see es.uca.spifm.spdt.deployment.spcm.impl.SpcmPackageImpl#getTaskStatus()
-	 * @generated
-	 */
-	int TASK_STATUS = 7;
-
-
-	/**
-	 * The meta object id for the '{@link es.uca.spifm.spdt.deployment.spcm.MilestoneStatus <em>Milestone Status</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see es.uca.spifm.spdt.deployment.spcm.MilestoneStatus
-	 * @see es.uca.spifm.spdt.deployment.spcm.impl.SpcmPackageImpl#getMilestoneStatus()
-	 * @generated
-	 */
-	int MILESTONE_STATUS = 8;
-
-	/**
-	 * The meta object id for the '{@link es.uca.spifm.spdt.deployment.spcm.TaskPriority <em>Task Priority</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see es.uca.spifm.spdt.deployment.spcm.TaskPriority
-	 * @see es.uca.spifm.spdt.deployment.spcm.impl.SpcmPackageImpl#getTaskPriority()
-	 * @generated
-	 */
-	int TASK_PRIORITY = 9;
-
 
 	/**
 	 * Returns the meta object for class '{@link es.uca.spifm.spdt.deployment.spcm.Project <em>Project</em>}'.
@@ -575,17 +517,6 @@ public interface SpcmPackage extends EPackage {
 	EReference getMilestone_Tasks();
 
 	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.spcm.Milestone#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status</em>'.
-	 * @see es.uca.spifm.spdt.deployment.spcm.Milestone#getStatus()
-	 * @see #getMilestone()
-	 * @generated
-	 */
-	EAttribute getMilestone_Status();
-
-	/**
 	 * Returns the meta object for class '{@link es.uca.spifm.spdt.deployment.spcm.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -648,28 +579,6 @@ public interface SpcmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTask_Description();
-
-	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.spcm.Task#getPriority <em>Priority</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Priority</em>'.
-	 * @see es.uca.spifm.spdt.deployment.spcm.Task#getPriority()
-	 * @see #getTask()
-	 * @generated
-	 */
-	EAttribute getTask_Priority();
-
-	/**
-	 * Returns the meta object for the attribute '{@link es.uca.spifm.spdt.deployment.spcm.Task#getStatus <em>Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Status</em>'.
-	 * @see es.uca.spifm.spdt.deployment.spcm.Task#getStatus()
-	 * @see #getTask()
-	 * @generated
-	 */
-	EAttribute getTask_Status();
 
 	/**
 	 * Returns the meta object for the reference '{@link es.uca.spifm.spdt.deployment.spcm.Task#getResponsible <em>Responsible</em>}'.
@@ -779,36 +688,6 @@ public interface SpcmPackage extends EPackage {
 	EEnum getDependencyType();
 
 	/**
-	 * Returns the meta object for enum '{@link es.uca.spifm.spdt.deployment.spcm.TaskStatus <em>Task Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Task Status</em>'.
-	 * @see es.uca.spifm.spdt.deployment.spcm.TaskStatus
-	 * @generated
-	 */
-	EEnum getTaskStatus();
-
-	/**
-	 * Returns the meta object for enum '{@link es.uca.spifm.spdt.deployment.spcm.MilestoneStatus <em>Milestone Status</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Milestone Status</em>'.
-	 * @see es.uca.spifm.spdt.deployment.spcm.MilestoneStatus
-	 * @generated
-	 */
-	EEnum getMilestoneStatus();
-
-	/**
-	 * Returns the meta object for enum '{@link es.uca.spifm.spdt.deployment.spcm.TaskPriority <em>Task Priority</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Task Priority</em>'.
-	 * @see es.uca.spifm.spdt.deployment.spcm.TaskPriority
-	 * @generated
-	 */
-	EEnum getTaskPriority();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -916,14 +795,6 @@ public interface SpcmPackage extends EPackage {
 		EReference MILESTONE__TASKS = eINSTANCE.getMilestone_Tasks();
 
 		/**
-		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MILESTONE__STATUS = eINSTANCE.getMilestone_Status();
-
-		/**
 		 * The meta object literal for the '{@link es.uca.spifm.spdt.deployment.spcm.impl.RoleImpl <em>Role</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -974,22 +845,6 @@ public interface SpcmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TASK__DESCRIPTION = eINSTANCE.getTask_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TASK__PRIORITY = eINSTANCE.getTask_Priority();
-
-		/**
-		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TASK__STATUS = eINSTANCE.getTask_Status();
 
 		/**
 		 * The meta object literal for the '<em><b>Responsible</b></em>' reference feature.
@@ -1076,36 +931,6 @@ public interface SpcmPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DEPENDENCY_TYPE = eINSTANCE.getDependencyType();
-
-		/**
-		 * The meta object literal for the '{@link es.uca.spifm.spdt.deployment.spcm.TaskStatus <em>Task Status</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see es.uca.spifm.spdt.deployment.spcm.TaskStatus
-		 * @see es.uca.spifm.spdt.deployment.spcm.impl.SpcmPackageImpl#getTaskStatus()
-		 * @generated
-		 */
-		EEnum TASK_STATUS = eINSTANCE.getTaskStatus();
-
-		/**
-		 * The meta object literal for the '{@link es.uca.spifm.spdt.deployment.spcm.MilestoneStatus <em>Milestone Status</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see es.uca.spifm.spdt.deployment.spcm.MilestoneStatus
-		 * @see es.uca.spifm.spdt.deployment.spcm.impl.SpcmPackageImpl#getMilestoneStatus()
-		 * @generated
-		 */
-		EEnum MILESTONE_STATUS = eINSTANCE.getMilestoneStatus();
-
-		/**
-		 * The meta object literal for the '{@link es.uca.spifm.spdt.deployment.spcm.TaskPriority <em>Task Priority</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see es.uca.spifm.spdt.deployment.spcm.TaskPriority
-		 * @see es.uca.spifm.spdt.deployment.spcm.impl.SpcmPackageImpl#getTaskPriority()
-		 * @generated
-		 */
-		EEnum TASK_PRIORITY = eINSTANCE.getTaskPriority();
 
 	}
 

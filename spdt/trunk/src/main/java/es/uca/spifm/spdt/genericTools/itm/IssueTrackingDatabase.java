@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssueTrackingDatabase()
- * @model
+ * @model annotation="comment comment='Clase contenedora de todos los proyectos software gestionados en la herramienta.'"
  * @generated
  */
 public interface IssueTrackingDatabase extends EObject {

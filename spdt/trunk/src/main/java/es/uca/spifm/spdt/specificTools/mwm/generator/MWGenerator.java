@@ -125,9 +125,9 @@ public class MWGenerator {
 		SimpleArticle article = null;
 		article = new SimpleArticle();
 
-		article.setTitle(page.getTitle());
+		article.setTitle(page.getName());
 		if (page instanceof CategoryImpl) {
-			article.setTitle("Category:" + page.getTitle());
+			article.setTitle("Category:" + page.getName());
 			article.addText(mwRender.render((Category) page));
 		} else if (page instanceof ArticleImpl) {
 			article.addText(mwRender.render((Article) page));

@@ -11,7 +11,7 @@ package es.uca.spifm.spdt.genericTools.wikim;
  *
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getUser()
- * @model
+ * @model annotation="comment comment='Clase que representa al usuario y la p\341gina del mismo dentro de la wiki.'"
  * @generated
  */
 public interface User extends WikiContent {

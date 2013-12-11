@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getWikiDatabase()
- * @model
+ * @model annotation="comment comment='Clase contenedora de todos los contenidos existentes en la wiki.'"
  * @generated
  */
 public interface WikiDatabase extends EObject {

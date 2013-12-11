@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getMember()
- * @model
+ * @model annotation="comment comment='Clase utilizada para asociar un determinado usuario a un proyecto, haciendo uso de un rol determinado.'"
  * @generated
  */
 public interface Member extends EObject {

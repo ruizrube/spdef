@@ -50,6 +50,7 @@ public class EnterpriseArchitectDatabaseImpl extends MinimalEObjectImpl.Containe
 	 * @ordered
 	 */
 	protected static final String FILE_NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getFileName() <em>File Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

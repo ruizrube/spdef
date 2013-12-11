@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getModel()
- * @model
+ * @model annotation="comment comment='Clase que representa un modelo dise\361ado haciendo uso un lenguaje de modelado.'"
  * @generated
  */
 public interface Model extends EObject {

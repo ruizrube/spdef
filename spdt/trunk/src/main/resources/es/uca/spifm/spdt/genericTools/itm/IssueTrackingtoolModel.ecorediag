@@ -56,7 +56,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_SVT3wShlEeO9nOpXDuCqLg"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_T2nScChlEeO9nOpXDuCqLg" type="2001">
-        <element xmi:type="ecore:EAttribute" href="IssueTrackingtoolModel.ecore#//Version/dueDate"/>
+        <element xmi:type="ecore:EAttribute" href="IssueTrackingtoolModel.ecore#//Version/completedDate"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_T2nScShlEeO9nOpXDuCqLg"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_O8WX5ShlEeO9nOpXDuCqLg"/>

@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssuePriority()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los diferentes niveles de prioridad que puede tomar un issue.'"
  * @generated
  */
 public enum IssuePriority implements Enumerator {

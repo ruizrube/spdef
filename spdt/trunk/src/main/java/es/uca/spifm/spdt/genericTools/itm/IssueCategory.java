@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssueCategory()
- * @model
+ * @model annotation="comment comment='Clase que permite realizar una clasificaci\363n espec\355fica de los issues de un determinado proyecto.'"
  * @generated
  */
 public interface IssueCategory extends EObject {

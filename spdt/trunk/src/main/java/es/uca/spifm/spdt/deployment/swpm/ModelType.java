@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getModelType()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los posibles tipos de modelos. Comprende los tipos propuestos con el lenguaje UML, aunque podr\355a englobar otros tipos de modelos visuales o textuales desarrollados con otros lenguajes, ya sean gen\351ricos o de prop\363sitos espec\355ficos (DSL).'"
  * @generated
  */
 public enum ModelType implements Enumerator {
@@ -37,7 +37,9 @@ public enum ModelType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CLASS(1, "CLASS", "CLASS"), /**
+	CLASS(1, "CLASS", "CLASS"),
+
+	/**
 	 * The '<em><b>ACTIVITY</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,7 +97,9 @@ public enum ModelType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COLLABORATION(7, "COLLABORATION", "COLLABORATION"), /**
+	COLLABORATION(7, "COLLABORATION", "COLLABORATION"),
+
+	/**
 	 * The '<em><b>OTHER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

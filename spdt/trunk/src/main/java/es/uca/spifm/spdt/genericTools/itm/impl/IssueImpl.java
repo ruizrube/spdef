@@ -13,8 +13,8 @@ import es.uca.spifm.spdt.genericTools.itm.Member;
 import es.uca.spifm.spdt.genericTools.itm.Tracker;
 
 import java.util.Collection;
-
 import java.util.Date;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 

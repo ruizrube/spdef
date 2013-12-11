@@ -16,14 +16,14 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.Section#getEmbeddedSections <em>Embedded Sections</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.Section#getTitle <em>Title</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.Section#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.Section#getText <em>Text</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.Section#getContents <em>Contents</em>}</li>
  * </ul>
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getSection()
- * @model
+ * @model annotation="comment comment='Clase que permite declarar una secci\363n dentro de un art\355culo de la wiki.'"
  * @generated
  */
 public interface Section extends EObject {
@@ -44,30 +44,30 @@ public interface Section extends EObject {
 	EList<Section> getEmbeddedSections();
 
 	/**
-	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Title</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Title</em>' attribute.
-	 * @see #setTitle(String)
-	 * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getSection_Title()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getSection_Name()
 	 * @model
 	 * @generated
 	 */
-	String getTitle();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.wikim.Section#getTitle <em>Title</em>}' attribute.
+	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.wikim.Section#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title</em>' attribute.
-	 * @see #getTitle()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setTitle(String value);
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.

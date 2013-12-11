@@ -586,6 +586,74 @@ public class VmmPackageImpl extends EPackageImpl implements VmmPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// comment
+		createCommentAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>comment</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createCommentAnnotations() {
+		String source = "comment";		
+		addAnnotation
+		  (modelRepositoryEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase contenedora de todos los proyectos gestionados con la herramienta de modelado."
+		   });		
+		addAnnotation
+		  (packageEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa a un paquete de modelos, con el cual organizar los diferentes modelos."
+		   });		
+		addAnnotation
+		  (diagramEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa a un determinado diagrama modelado con alg\u00fan lenguaje visual."
+		   });		
+		addAnnotation
+		  (elementEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los posibles tipos de elementos que pueden participar en un diagrama. Casos de uso, clases o componentes son ejemplos de tipos de elementos en modelos UML."
+		   });		
+		addAnnotation
+		  (connectorEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa a una determinada relaci\u00f3n entre dos elementos de modelado."
+		   });		
+		addAnnotation
+		  (projectEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase contenedora de todos los modelos generados para un determinado proyecto."
+		   });		
+		addAnnotation
+		  (elementTypeEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los posibles tipos de diagramas reconocidos por la herramienta de modelado, como por ejemplo los diagramas de clases y de estados de UML."
+		   });		
+		addAnnotation
+		  (connectorTypeEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los posibles tipos de conectores que pueden vincular dos elementos, como por ejemplo las asociaciones, generalizaciones y relaciones de inclusi\u00f3n o extensi\u00f3n en UML."
+		   });		
+		addAnnotation
+		  (diagramTypeEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los posibles tipos de diagramas reconocidos por la herramienta de modelado, como por ejemplo los diagramas de clases y de estados de UML."
+		   });
 	}
 
 } //VmmPackageImpl

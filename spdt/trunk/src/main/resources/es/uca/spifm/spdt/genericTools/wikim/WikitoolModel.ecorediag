@@ -20,7 +20,7 @@
     <children xmi:type="notation:Node" xmi:id="_ORJcyeWnEeKt2YJ9dtriFQ" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_ORJcyuWnEeKt2YJ9dtriFQ" type="5001">
       <children xmi:type="notation:Node" xmi:id="_ORJc0uWnEeKt2YJ9dtriFQ" type="2001">
-        <element xmi:type="ecore:EAttribute" href="WikitoolModel.ecore#//WikiContent/title"/>
+        <element xmi:type="ecore:EAttribute" href="WikitoolModel.ecore#//WikiContent/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ORJc0-WnEeKt2YJ9dtriFQ"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_ORJcy-WnEeKt2YJ9dtriFQ"/>
@@ -44,7 +44,7 @@
     <children xmi:type="notation:Node" xmi:id="_ORJc6-WnEeKt2YJ9dtriFQ" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_ORJc7OWnEeKt2YJ9dtriFQ" type="5001">
       <children xmi:type="notation:Node" xmi:id="_ORJc9OWnEeKt2YJ9dtriFQ" type="2001">
-        <element xmi:type="ecore:EAttribute" href="WikitoolModel.ecore#//Section/title"/>
+        <element xmi:type="ecore:EAttribute" href="WikitoolModel.ecore#//Section/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ORJc9eWnEeKt2YJ9dtriFQ"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_ORJc9uWnEeKt2YJ9dtriFQ" type="2001">
@@ -164,7 +164,7 @@
     <children xmi:type="notation:Node" xmi:id="_ORTNteWnEeKt2YJ9dtriFQ" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_ORTNtuWnEeKt2YJ9dtriFQ" type="5001">
       <children xmi:type="notation:Node" xmi:id="_ORTNvuWnEeKt2YJ9dtriFQ" type="2001">
-        <element xmi:type="ecore:EAttribute" href="WikitoolModel.ecore#//ItemList/title"/>
+        <element xmi:type="ecore:EAttribute" href="WikitoolModel.ecore#//ItemList/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ORTNv-WnEeKt2YJ9dtriFQ"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_ORTNt-WnEeKt2YJ9dtriFQ"/>

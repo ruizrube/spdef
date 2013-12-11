@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.WikiContentImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.WikiContentImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,24 +32,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class WikiContentImpl extends MinimalEObjectImpl.Container implements WikiContent {
 	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TITLE_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String title = TITLE_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,8 +75,8 @@ public class WikiContentImpl extends MinimalEObjectImpl.Container implements Wik
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -84,11 +84,11 @@ public class WikiContentImpl extends MinimalEObjectImpl.Container implements Wik
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitle(String newTitle) {
-		String oldTitle = title;
-		title = newTitle;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WikimPackage.WIKI_CONTENT__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, WikimPackage.WIKI_CONTENT__NAME, oldName, name));
 	}
 
 	/**
@@ -110,8 +110,8 @@ public class WikiContentImpl extends MinimalEObjectImpl.Container implements Wik
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WikimPackage.WIKI_CONTENT__TITLE:
-				return getTitle();
+			case WikimPackage.WIKI_CONTENT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -124,8 +124,8 @@ public class WikiContentImpl extends MinimalEObjectImpl.Container implements Wik
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WikimPackage.WIKI_CONTENT__TITLE:
-				setTitle((String)newValue);
+			case WikimPackage.WIKI_CONTENT__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class WikiContentImpl extends MinimalEObjectImpl.Container implements Wik
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WikimPackage.WIKI_CONTENT__TITLE:
-				setTitle(TITLE_EDEFAULT);
+			case WikimPackage.WIKI_CONTENT__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class WikiContentImpl extends MinimalEObjectImpl.Container implements Wik
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WikimPackage.WIKI_CONTENT__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case WikimPackage.WIKI_CONTENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -184,8 +184,8 @@ public class WikiContentImpl extends MinimalEObjectImpl.Container implements Wik
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
-		result.append(title);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

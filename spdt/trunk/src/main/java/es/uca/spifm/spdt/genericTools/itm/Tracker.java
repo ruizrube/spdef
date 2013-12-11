@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getTracker()
- * @model
+ * @model annotation="comment comment='Clase utilizada para identificar el listado de issues o tareas de un determinado tipo, t\355picamente bugs, features, o patchs.'"
  * @generated
  */
 public interface Tracker extends EObject {

@@ -28,7 +28,7 @@
     <children xmi:type="notation:Node" xmi:id="_srkOM-JmEeKZD4jPOGyNUw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_srkONOJmEeKZD4jPOGyNUw" type="5001">
       <children xmi:type="notation:Node" xmi:id="_6YDMUOJmEeKZD4jPOGyNUw" type="2001">
-        <element xmi:type="ecore:EAttribute" href="SoftwareWorkProductModel.ecore#//WorkProduct/title"/>
+        <element xmi:type="ecore:EAttribute" href="SoftwareWorkProductModel.ecore#//WorkProduct/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_6YDMUeJmEeKZD4jPOGyNUw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_8YfaEOJmEeKZD4jPOGyNUw" type="2001">
@@ -52,7 +52,7 @@
     <children xmi:type="notation:Node" xmi:id="_ulBDI-JmEeKZD4jPOGyNUw" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_ulBDJOJmEeKZD4jPOGyNUw" type="5001">
       <children xmi:type="notation:Node" xmi:id="_-__AwOJmEeKZD4jPOGyNUw" type="2001">
-        <element xmi:type="ecore:EAttribute" href="SoftwareWorkProductModel.ecore#//Section/title"/>
+        <element xmi:type="ecore:EAttribute" href="SoftwareWorkProductModel.ecore#//Section/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_-__AweJmEeKZD4jPOGyNUw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_Bs-ygOJnEeKZD4jPOGyNUw" type="2001">
@@ -163,7 +163,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_6DGaUezKEeKMD_clyzYqyw"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_VTccsOWREeKt2YJ9dtriFQ" type="2001">
-        <element xmi:type="ecore:EAttribute" href="SoftwareWorkProductModel.ecore#//Specification/details"/>
+        <element xmi:type="ecore:EAttribute" href="SoftwareWorkProductModel.ecore#//Specification/description"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_VTccseWREeKt2YJ9dtriFQ"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_Rh5dteWREeKt2YJ9dtriFQ"/>

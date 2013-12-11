@@ -6,14 +6,20 @@ package es.uca.spifm.spdt.genericTools.wikim.impl;
 import es.uca.spifm.spdt.genericTools.wikim.Section;
 import es.uca.spifm.spdt.genericTools.wikim.SectionContent;
 import es.uca.spifm.spdt.genericTools.wikim.WikimPackage;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -25,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.SectionImpl#getEmbeddedSections <em>Embedded Sections</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.SectionImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.SectionImpl#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.SectionImpl#getText <em>Text</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.SectionImpl#getContents <em>Contents</em>}</li>
  * </ul>
@@ -45,24 +51,24 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	protected EList<Section> embeddedSections;
 
 	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TITLE_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String title = TITLE_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -130,8 +136,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -139,11 +145,11 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitle(String newTitle) {
-		String oldTitle = title;
-		title = newTitle;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WikimPackage.SECTION__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, WikimPackage.SECTION__NAME, oldName, name));
 	}
 
 	/**
@@ -205,8 +211,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 		switch (featureID) {
 			case WikimPackage.SECTION__EMBEDDED_SECTIONS:
 				return getEmbeddedSections();
-			case WikimPackage.SECTION__TITLE:
-				return getTitle();
+			case WikimPackage.SECTION__NAME:
+				return getName();
 			case WikimPackage.SECTION__TEXT:
 				return getText();
 			case WikimPackage.SECTION__CONTENTS:
@@ -228,8 +234,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 				getEmbeddedSections().clear();
 				getEmbeddedSections().addAll((Collection<? extends Section>)newValue);
 				return;
-			case WikimPackage.SECTION__TITLE:
-				setTitle((String)newValue);
+			case WikimPackage.SECTION__NAME:
+				setName((String)newValue);
 				return;
 			case WikimPackage.SECTION__TEXT:
 				setText((String)newValue);
@@ -253,8 +259,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 			case WikimPackage.SECTION__EMBEDDED_SECTIONS:
 				getEmbeddedSections().clear();
 				return;
-			case WikimPackage.SECTION__TITLE:
-				setTitle(TITLE_EDEFAULT);
+			case WikimPackage.SECTION__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case WikimPackage.SECTION__TEXT:
 				setText(TEXT_EDEFAULT);
@@ -276,8 +282,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 		switch (featureID) {
 			case WikimPackage.SECTION__EMBEDDED_SECTIONS:
 				return embeddedSections != null && !embeddedSections.isEmpty();
-			case WikimPackage.SECTION__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case WikimPackage.SECTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case WikimPackage.SECTION__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case WikimPackage.SECTION__CONTENTS:
@@ -296,8 +302,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
-		result.append(title);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", text: ");
 		result.append(text);
 		result.append(')');

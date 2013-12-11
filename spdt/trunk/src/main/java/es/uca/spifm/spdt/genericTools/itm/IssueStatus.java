@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getIssueStatus()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los diferentes estados por lo que puede pasar una determinada tarea.'"
  * @generated
  */
 public enum IssueStatus implements Enumerator {

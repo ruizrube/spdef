@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.ItemListImpl#getItems <em>Items</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.ItemListImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.wikim.impl.ItemListImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,24 +48,24 @@ public class ItemListImpl extends SectionContentImpl implements ItemList {
 	protected EList<Item> items;
 
 	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TITLE_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String title = TITLE_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,8 +103,8 @@ public class ItemListImpl extends SectionContentImpl implements ItemList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -112,11 +112,11 @@ public class ItemListImpl extends SectionContentImpl implements ItemList {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitle(String newTitle) {
-		String oldTitle = title;
-		title = newTitle;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WikimPackage.ITEM_LIST__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, WikimPackage.ITEM_LIST__NAME, oldName, name));
 	}
 
 	/**
@@ -143,8 +143,8 @@ public class ItemListImpl extends SectionContentImpl implements ItemList {
 		switch (featureID) {
 			case WikimPackage.ITEM_LIST__ITEMS:
 				return getItems();
-			case WikimPackage.ITEM_LIST__TITLE:
-				return getTitle();
+			case WikimPackage.ITEM_LIST__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,8 +162,8 @@ public class ItemListImpl extends SectionContentImpl implements ItemList {
 				getItems().clear();
 				getItems().addAll((Collection<? extends Item>)newValue);
 				return;
-			case WikimPackage.ITEM_LIST__TITLE:
-				setTitle((String)newValue);
+			case WikimPackage.ITEM_LIST__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,8 +180,8 @@ public class ItemListImpl extends SectionContentImpl implements ItemList {
 			case WikimPackage.ITEM_LIST__ITEMS:
 				getItems().clear();
 				return;
-			case WikimPackage.ITEM_LIST__TITLE:
-				setTitle(TITLE_EDEFAULT);
+			case WikimPackage.ITEM_LIST__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -197,8 +197,8 @@ public class ItemListImpl extends SectionContentImpl implements ItemList {
 		switch (featureID) {
 			case WikimPackage.ITEM_LIST__ITEMS:
 				return items != null && !items.isEmpty();
-			case WikimPackage.ITEM_LIST__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case WikimPackage.ITEM_LIST__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,8 +213,8 @@ public class ItemListImpl extends SectionContentImpl implements ItemList {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
-		result.append(title);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

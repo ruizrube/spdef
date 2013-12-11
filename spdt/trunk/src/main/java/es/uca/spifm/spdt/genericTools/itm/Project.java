@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getProject()
- * @model
+ * @model annotation="comment comment='Clase que representa a un proyecto software controlado desde la herramienta.'"
  * @generated
  */
 public interface Project extends EObject {

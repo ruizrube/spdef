@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.genericTools.vmm.VmmPackage#getElementType()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los posibles tipos de diagramas reconocidos por la herramienta de modelado, como por ejemplo los diagramas de clases y de estados de UML.'"
  * @generated
  */
 public enum ElementType implements Enumerator {
@@ -87,7 +87,9 @@ public enum ElementType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ACTIVITY(6, "ACTIVITY", "ACTIVITY"), /**
+	ACTIVITY(6, "ACTIVITY", "ACTIVITY"),
+
+	/**
 	 * The '<em><b>ARTIFACT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,7 +97,9 @@ public enum ElementType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ARTIFACT(7, "ARTIFACT", "ARTIFACT"), /**
+	ARTIFACT(7, "ARTIFACT", "ARTIFACT"),
+
+	/**
 	 * The '<em><b>REQUIREMENT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

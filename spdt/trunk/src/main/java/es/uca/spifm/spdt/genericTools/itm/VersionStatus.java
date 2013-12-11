@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getVersionStatus()
- * @model
+ * @model annotation="comment comment='Enumeraci\363n con los diferentes estados por lo que puede pasar una determinada versi\363n.'"
  * @generated
  */
 public enum VersionStatus implements Enumerator {
@@ -27,7 +27,9 @@ public enum VersionStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CLOSED(1, "CLOSED", "CLOSED"), /**
+	CLOSED(1, "CLOSED", "CLOSED"),
+
+	/**
 	 * The '<em><b>OPEN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

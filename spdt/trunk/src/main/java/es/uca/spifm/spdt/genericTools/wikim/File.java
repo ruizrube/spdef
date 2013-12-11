@@ -11,7 +11,7 @@ package es.uca.spifm.spdt.genericTools.wikim;
  *
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getFile()
- * @model
+ * @model annotation="comment comment='Clase que representa a un determinado archivo binario almacenado en la wiki.'"
  * @generated
  */
 public interface File extends WikiContent {

@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getDescription <em>Description</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getStatus <em>Status</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getCompletedDate <em>Completed Date</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.Version#getIssues <em>Issues</em>}</li>
  * </ul>
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getVersion()
- * @model
+ * @model annotation="comment comment='Clase que describe cada una de las versiones del software objeto del proyecto gestionado en la herramienta.'"
  * @generated
  */
 public interface Version extends EObject {
@@ -112,30 +112,30 @@ public interface Version extends EObject {
 	void setStatus(VersionStatus value);
 
 	/**
-	 * Returns the value of the '<em><b>Due Date</b></em>' attribute.
+	 * Returns the value of the '<em><b>Completed Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Due Date</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Completed Date</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Due Date</em>' attribute.
-	 * @see #setDueDate(Date)
-	 * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getVersion_DueDate()
+	 * @return the value of the '<em>Completed Date</em>' attribute.
+	 * @see #setCompletedDate(Date)
+	 * @see es.uca.spifm.spdt.genericTools.itm.ItmPackage#getVersion_CompletedDate()
 	 * @model
 	 * @generated
 	 */
-	Date getDueDate();
+	Date getCompletedDate();
 
 	/**
-	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.itm.Version#getDueDate <em>Due Date</em>}' attribute.
+	 * Sets the value of the '{@link es.uca.spifm.spdt.genericTools.itm.Version#getCompletedDate <em>Completed Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Due Date</em>' attribute.
-	 * @see #getDueDate()
+	 * @param value the new value of the '<em>Completed Date</em>' attribute.
+	 * @see #getCompletedDate()
 	 * @generated
 	 */
-	void setDueDate(Date value);
+	void setCompletedDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Issues</b></em>' containment reference list.

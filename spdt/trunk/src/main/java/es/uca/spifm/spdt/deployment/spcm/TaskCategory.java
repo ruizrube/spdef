@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getTaskCategory()
- * @model
+ * @model annotation="comment comment='Clase que permite categorizar una tarea seg\372n su \341mbito de aplicaci\363n.'"
  * @generated
  */
 public interface TaskCategory extends EObject {

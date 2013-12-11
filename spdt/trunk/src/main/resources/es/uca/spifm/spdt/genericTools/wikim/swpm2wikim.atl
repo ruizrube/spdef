@@ -7,138 +7,133 @@ create output: WIKIM from input: SWPM;
 
 --- Matching Project with WikiDatabase and Category
 rule Project2WikiDatabase {
-	from
-		proj: SWPM!Project
-	to
-		db: WIKIM!WikiDatabase (
-			contents <- proj.workproducts,
-			contents <- thisModule.obtainCategory(proj)
-		)
+ from
+  proj: SWPM!Project
+ to
+  db: WIKIM!WikiDatabase (
+   contents <- proj.workproducts,
+   contents <- thisModule.obtainCategory(proj)
+  )
 }
 
 unique lazy rule obtainCategory {
-	from
-		project: SWPM!Project
-	to
-		cat: WIKIM!Category (
-			title <- project.name
-		)
+ from
+  project: SWPM!Project
+ to
+  cat: WIKIM!Category (
+   name <- project.name
+  )
 }
 
 --- Matching DocumentaryWorkProduct with Article
 rule DocumentaryWorkProduct2Article {
-	from
-		doc: SWPM!DocumentaryWorkProduct
-	to
-		article: WIKIM!Article (
-			title <- doc.title,
-			sections <- doc.sections,
-			categories <- thisModule.obtainCategory(doc.refImmediateComposite())
-		)
+ from
+  doc: SWPM!DocumentaryWorkProduct
+ to
+  article: WIKIM!Article (
+   name <- doc.name,
+   sections <- doc.sections,
+   categories <- thisModule.obtainCategory(doc.refImmediateComposite())
+  )
 }
 
 --- Matching Section with Section
 rule Section2Section {
-	from
-		sourceSection: SWPM!Section
-	to
-		targetSection: WIKIM!Section (
-			title <- sourceSection.title,
-			text <- sourceSection.description,
-			embeddedSections <- sourceSection.embeddedSections,
-			embeddedSections <- sourceSection.models -> collect(model | thisModule.resolveTemp(model, 'sec')).
-					append(sourceSection.specifications -> collect(spec | thisModule.resolveTemp(spec, 'sec')))
-		)
+ from
+  sourceSection: SWPM!Section
+ to
+  targetSection: WIKIM!Section (
+   name <- sourceSection.name,
+   text <- sourceSection.description,
+   embeddedSections <- sourceSection.embeddedSections,
+   embeddedSections <- sourceSection.models -> collect(model | thisModule.resolveTemp(model, 'sec')).
+     append(sourceSection.specifications -> collect(spec | thisModule.resolveTemp(spec, 'sec')))
+  )
 }
 
-
---- To do:matching deliverables
+--- Matching Model with Image
 rule Model2Image {
-	from
-		model: SWPM!Model 
-	to
-		img: WIKIM!Image (
-			uri <- thisModule.obtainElementType(model.type).img,
-			alternative <- 'Model: '.concat(model.name),
-			order <- thisModule.id
-		),
-		item: WIKIM!Item (
-			text <- 'Default '.concat(thisModule.obtainElementType(model.type).name).concat(' for ').concat(model.name)
-		),
-		items: WIKIM!ItemList (
-			items <- item,
-			title <- model.description,
-			order <- img.order+2
-		), 
-		sec: WIKIM!Section (
-			title <-model.name,
-			contents <- img,
-			contents <- items
-		)
-		do{
-			thisModule.id<-thisModule.id+10;
-		}
-		
+ from
+  model: SWPM!Model 
+ to
+  img: WIKIM!Image (
+   uri <- thisModule.obtainElementType(model.type).img,
+   alternative <- 'Model: '.concat(model.name),
+   order <- thisModule.id
+  ),
+  item: WIKIM!Item (
+   text <- 'Default '.concat(thisModule.obtainElementType(model.type).name).concat(' for ').concat(model.name)
+  ),
+  items: WIKIM!ItemList (
+   items <- item,
+   name <- model.description,
+   order <- img.order+2
+  ), 
+  sec: WIKIM!Section (
+   name <-model.name,
+   contents <- img,
+   contents <- items
+  )
+  do{
+   thisModule.id<-thisModule.id+10;
+  }
+  
 }
 
-
---- Matching ItemList with ItemList
+--- Matching Specification (item list) with Item List
 rule ItemListSpecification2ItemList{
-	from
-		spec: SWPM!Specification(spec.type=#ITEMLIST)
-	to
-		item: WIKIM!Item (
-			text <- spec.name.concat(' Default Item ')
-		),
-		items: WIKIM!ItemList (
-			items <- item,
-			title <- spec.details
-		),
-		sec: WIKIM!Section (
-			title <-spec.name,
-			contents <- items
-		)
+ from
+  spec: SWPM!Specification(spec.type=#ITEMLIST)
+ to
+  item: WIKIM!Item (
+   text <- spec.name.concat(' Default Item ')
+  ),
+  items: WIKIM!ItemList (
+   items <- item,
+   name <- spec.name
+  ),
+  sec: WIKIM!Section (
+   name <-spec.name,
+   contents <- items
+  )
 }
 
-
---- Matching ItemList with Paragraph
+--- Matching Specification (textual) with Paragraph
 rule TextualSpecification2Artifact{
-	from
-		spec: SWPM!Specification(spec.type=#TEXTUAL)
-	to
-		par: WIKIM!Paragraph (
-			text <- spec.details
-		),
-		sec: WIKIM!Section (
-			title <-spec.name,
-			contents <- par
-		)
-		
-		
+ from
+  spec: SWPM!Specification(spec.type=#TEXTUAL)
+ to
+  par: WIKIM!Paragraph (
+   text <- spec.description
+  ),
+  sec: WIKIM!Section (
+   name <-spec.name,
+   contents <- par
+  )
+  
+  
 }
 
-
+--- Counter
 helper def : id : Integer = 1;
-
 
 --- Auxiliary function
 helper def: obtainElementType(diagram: String): TupleType(img: String, name:String) =
-	Map{
-				(#CLASS,
-				Tuple{img='http://spi-fm.uca.es/spdef/img/Logical.png',name='Class'}),
-				(#USECASE,
-				Tuple{img='http://spi-fm.uca.es/spdef/img/UseCase.png',name='Use Case'}),
-				(#COMPONENT,
-				Tuple{img='http://spi-fm.uca.es/spdef/img/Component.png',name='Component'}),
-				(#DEPLOYMENT,
-				Tuple{img='http://spi-fm.uca.es/spdef/img/Deployment.png',name='Node'}),
-				(#SEQUENCE,
-				Tuple{img='http://spi-fm.uca.es/spdef/img/Sequence.png',name='Class'}),
-				(#STATECHART,
-				Tuple{img='http://spi-fm.uca.es/spdef/img/Statechart.png',name='State'}),
-				(#COLLABORATION,
-				Tuple{img='http://spi-fm.uca.es/spdef/img/Collaboration.png',name='Class'}),
-				(#ACTIVITY,
-				Tuple{img='http://spi-fm.uca.es/spdef/img/Activity.png',name='Activity'})
-				}.get(diagram);
-
+ Map{
+    (#CLASS,
+    Tuple{img='http://spi-fm.uca.es/spdef/img/Logical.png',name='Class'}),
+    (#USECASE,
+    Tuple{img='http://spi-fm.uca.es/spdef/img/UseCase.png',name='Use Case'}),
+    (#COMPONENT,
+    Tuple{img='http://spi-fm.uca.es/spdef/img/Component.png',name='Component'}),
+    (#DEPLOYMENT,
+    Tuple{img='http://spi-fm.uca.es/spdef/img/Deployment.png',name='Node'}),
+    (#SEQUENCE,
+    Tuple{img='http://spi-fm.uca.es/spdef/img/Sequence.png',name='Class'}),
+    (#STATECHART,
+    Tuple{img='http://spi-fm.uca.es/spdef/img/Statechart.png',name='State'}),
+    (#COLLABORATION,
+    Tuple{img='http://spi-fm.uca.es/spdef/img/Collaboration.png',name='Class'}),
+    (#ACTIVITY,
+    Tuple{img='http://spi-fm.uca.es/spdef/img/Activity.png',name='Activity'})
+    }.get(diagram);

@@ -52,6 +52,7 @@ public class MediaWikiDatabaseImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected static final String URL_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -61,6 +62,7 @@ public class MediaWikiDatabaseImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected String url = URL_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLogin() <em>Login</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,6 +72,7 @@ public class MediaWikiDatabaseImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected static final String LOGIN_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLogin() <em>Login</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,6 +82,7 @@ public class MediaWikiDatabaseImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected String login = LOGIN_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,6 +92,7 @@ public class MediaWikiDatabaseImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected static final String PASSWORD_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getPassword() <em>Password</em>}' attribute.
 	 * <!-- begin-user-doc -->

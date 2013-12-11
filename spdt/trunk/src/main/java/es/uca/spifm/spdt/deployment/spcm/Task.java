@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Task#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Task#getDescription <em>Description</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Task#getPriority <em>Priority</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Task#getStatus <em>Status</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Task#getResponsible <em>Responsible</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Task#getCategory <em>Category</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.spcm.Task#getDependencies <em>Dependencies</em>}</li>
@@ -26,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getTask()
- * @model
+ * @model annotation="comment comment='Clase que define la acci\363n de realizar una labor necesaria para conseguir los objetivos del proyecto.'"
  * @generated
  */
 public interface Task extends EObject {
@@ -81,64 +79,6 @@ public interface Task extends EObject {
 	 * @generated
 	 */
 	void setDescription(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Priority</b></em>' attribute.
-	 * The literals are from the enumeration {@link es.uca.spifm.spdt.deployment.spcm.TaskStatus}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Priority</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Priority</em>' attribute.
-	 * @see es.uca.spifm.spdt.deployment.spcm.TaskStatus
-	 * @see #setPriority(TaskStatus)
-	 * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getTask_Priority()
-	 * @model
-	 * @generated
-	 */
-	TaskStatus getPriority();
-
-	/**
-	 * Sets the value of the '{@link es.uca.spifm.spdt.deployment.spcm.Task#getPriority <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Priority</em>' attribute.
-	 * @see es.uca.spifm.spdt.deployment.spcm.TaskStatus
-	 * @see #getPriority()
-	 * @generated
-	 */
-	void setPriority(TaskStatus value);
-
-	/**
-	 * Returns the value of the '<em><b>Status</b></em>' attribute.
-	 * The literals are from the enumeration {@link es.uca.spifm.spdt.deployment.spcm.TaskStatus}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Status</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Status</em>' attribute.
-	 * @see es.uca.spifm.spdt.deployment.spcm.TaskStatus
-	 * @see #setStatus(TaskStatus)
-	 * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getTask_Status()
-	 * @model
-	 * @generated
-	 */
-	TaskStatus getStatus();
-
-	/**
-	 * Sets the value of the '{@link es.uca.spifm.spdt.deployment.spcm.Task#getStatus <em>Status</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Status</em>' attribute.
-	 * @see es.uca.spifm.spdt.deployment.spcm.TaskStatus
-	 * @see #getStatus()
-	 * @generated
-	 */
-	void setStatus(TaskStatus value);
 
 	/**
 	 * Returns the value of the '<em><b>Responsible</b></em>' reference.

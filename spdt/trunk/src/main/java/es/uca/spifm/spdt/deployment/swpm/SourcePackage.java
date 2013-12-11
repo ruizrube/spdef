@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.swpm.SwpmPackage#getSourcePackage()
- * @model
+ * @model annotation="comment comment='Clase que representa un determinado paquete de c\363digo fuente basado en alg\372n lenguaje de programaci\363n.'"
  * @generated
  */
 public interface SourcePackage extends EObject {

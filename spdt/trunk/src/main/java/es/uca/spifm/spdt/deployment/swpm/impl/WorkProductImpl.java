@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.WorkProductImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.WorkProductImpl#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.deployment.swpm.impl.WorkProductImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
@@ -29,24 +29,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class WorkProductImpl extends MinimalEObjectImpl.Container implements WorkProduct {
 	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TITLE_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String title = TITLE_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -92,8 +92,8 @@ public abstract class WorkProductImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -101,11 +101,11 @@ public abstract class WorkProductImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitle(String newTitle) {
-		String oldTitle = title;
-		title = newTitle;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SwpmPackage.WORK_PRODUCT__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, SwpmPackage.WORK_PRODUCT__NAME, oldName, name));
 	}
 
 	/**
@@ -137,8 +137,8 @@ public abstract class WorkProductImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SwpmPackage.WORK_PRODUCT__TITLE:
-				return getTitle();
+			case SwpmPackage.WORK_PRODUCT__NAME:
+				return getName();
 			case SwpmPackage.WORK_PRODUCT__DESCRIPTION:
 				return getDescription();
 		}
@@ -153,8 +153,8 @@ public abstract class WorkProductImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SwpmPackage.WORK_PRODUCT__TITLE:
-				setTitle((String)newValue);
+			case SwpmPackage.WORK_PRODUCT__NAME:
+				setName((String)newValue);
 				return;
 			case SwpmPackage.WORK_PRODUCT__DESCRIPTION:
 				setDescription((String)newValue);
@@ -171,8 +171,8 @@ public abstract class WorkProductImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SwpmPackage.WORK_PRODUCT__TITLE:
-				setTitle(TITLE_EDEFAULT);
+			case SwpmPackage.WORK_PRODUCT__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case SwpmPackage.WORK_PRODUCT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -189,8 +189,8 @@ public abstract class WorkProductImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SwpmPackage.WORK_PRODUCT__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case SwpmPackage.WORK_PRODUCT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SwpmPackage.WORK_PRODUCT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
@@ -207,8 +207,8 @@ public abstract class WorkProductImpl extends MinimalEObjectImpl.Container imple
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
-		result.append(title);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

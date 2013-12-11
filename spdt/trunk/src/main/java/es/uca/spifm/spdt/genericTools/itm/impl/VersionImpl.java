@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.VersionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.VersionImpl#getName <em>Name</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.VersionImpl#getStatus <em>Status</em>}</li>
- *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.VersionImpl#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.VersionImpl#getCompletedDate <em>Completed Date</em>}</li>
  *   <li>{@link es.uca.spifm.spdt.genericTools.itm.impl.VersionImpl#getIssues <em>Issues</em>}</li>
  * </ul>
  * </p>
@@ -104,24 +104,24 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	protected VersionStatus status = STATUS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDueDate() <em>Due Date</em>}' attribute.
+	 * The default value of the '{@link #getCompletedDate() <em>Completed Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDueDate()
+	 * @see #getCompletedDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date DUE_DATE_EDEFAULT = null;
+	protected static final Date COMPLETED_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDueDate() <em>Due Date</em>}' attribute.
+	 * The cached value of the '{@link #getCompletedDate() <em>Completed Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDueDate()
+	 * @see #getCompletedDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected Date dueDate = DUE_DATE_EDEFAULT;
+	protected Date completedDate = COMPLETED_DATE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getIssues() <em>Issues</em>}' containment reference list.
@@ -220,8 +220,8 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getDueDate() {
-		return dueDate;
+	public Date getCompletedDate() {
+		return completedDate;
 	}
 
 	/**
@@ -229,11 +229,11 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDueDate(Date newDueDate) {
-		Date oldDueDate = dueDate;
-		dueDate = newDueDate;
+	public void setCompletedDate(Date newCompletedDate) {
+		Date oldCompletedDate = completedDate;
+		completedDate = newCompletedDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ItmPackage.VERSION__DUE_DATE, oldDueDate, dueDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, ItmPackage.VERSION__COMPLETED_DATE, oldCompletedDate, completedDate));
 	}
 
 	/**
@@ -276,8 +276,8 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 				return getName();
 			case ItmPackage.VERSION__STATUS:
 				return getStatus();
-			case ItmPackage.VERSION__DUE_DATE:
-				return getDueDate();
+			case ItmPackage.VERSION__COMPLETED_DATE:
+				return getCompletedDate();
 			case ItmPackage.VERSION__ISSUES:
 				return getIssues();
 		}
@@ -302,8 +302,8 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 			case ItmPackage.VERSION__STATUS:
 				setStatus((VersionStatus)newValue);
 				return;
-			case ItmPackage.VERSION__DUE_DATE:
-				setDueDate((Date)newValue);
+			case ItmPackage.VERSION__COMPLETED_DATE:
+				setCompletedDate((Date)newValue);
 				return;
 			case ItmPackage.VERSION__ISSUES:
 				getIssues().clear();
@@ -330,8 +330,8 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 			case ItmPackage.VERSION__STATUS:
 				setStatus(STATUS_EDEFAULT);
 				return;
-			case ItmPackage.VERSION__DUE_DATE:
-				setDueDate(DUE_DATE_EDEFAULT);
+			case ItmPackage.VERSION__COMPLETED_DATE:
+				setCompletedDate(COMPLETED_DATE_EDEFAULT);
 				return;
 			case ItmPackage.VERSION__ISSUES:
 				getIssues().clear();
@@ -354,8 +354,8 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ItmPackage.VERSION__STATUS:
 				return status != STATUS_EDEFAULT;
-			case ItmPackage.VERSION__DUE_DATE:
-				return DUE_DATE_EDEFAULT == null ? dueDate != null : !DUE_DATE_EDEFAULT.equals(dueDate);
+			case ItmPackage.VERSION__COMPLETED_DATE:
+				return COMPLETED_DATE_EDEFAULT == null ? completedDate != null : !COMPLETED_DATE_EDEFAULT.equals(completedDate);
 			case ItmPackage.VERSION__ISSUES:
 				return issues != null && !issues.isEmpty();
 		}
@@ -378,8 +378,8 @@ public class VersionImpl extends MinimalEObjectImpl.Container implements Version
 		result.append(name);
 		result.append(", status: ");
 		result.append(status);
-		result.append(", dueDate: ");
-		result.append(dueDate);
+		result.append(", completedDate: ");
+		result.append(completedDate);
 		result.append(')');
 		return result.toString();
 	}

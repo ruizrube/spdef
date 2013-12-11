@@ -334,7 +334,7 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVersion_DueDate() {
+	public EAttribute getVersion_CompletedDate() {
 		return (EAttribute)versionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -707,7 +707,7 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		createEAttribute(versionEClass, VERSION__DESCRIPTION);
 		createEAttribute(versionEClass, VERSION__NAME);
 		createEAttribute(versionEClass, VERSION__STATUS);
-		createEAttribute(versionEClass, VERSION__DUE_DATE);
+		createEAttribute(versionEClass, VERSION__COMPLETED_DATE);
 		createEReference(versionEClass, VERSION__ISSUES);
 
 		issueEClass = createEClass(ISSUE);
@@ -802,7 +802,7 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 		initEAttribute(getVersion_Description(), ecorePackage.getEString(), "description", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVersion_Name(), ecorePackage.getEString(), "name", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVersion_Status(), this.getVersionStatus(), "status", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVersion_DueDate(), ecorePackage.getEDate(), "dueDate", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVersion_CompletedDate(), ecorePackage.getEDate(), "completedDate", null, 0, 1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVersion_Issues(), this.getIssue(), null, "issues", null, 0, -1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(issueEClass, Issue.class, "Issue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -870,6 +870,98 @@ public class ItmPackageImpl extends EPackageImpl implements ItmPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// comment
+		createCommentAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>comment</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createCommentAnnotations() {
+		String source = "comment";		
+		addAnnotation
+		  (issueTrackingDatabaseEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase contenedora de todos los proyectos software gestionados en la herramienta."
+		   });		
+		addAnnotation
+		  (projectEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa a un proyecto software controlado desde la herramienta."
+		   });		
+		addAnnotation
+		  (versionEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que describe cada una de las versiones del software objeto del proyecto gestionado en la herramienta."
+		   });		
+		addAnnotation
+		  (issueEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase para describir una tarea o unidad concreta de trabajo, necesaria para evolucionar un sistema inform\u00e1tico, como a\u00f1adir una nueva caracter\u00edstica, arreglo de un fallo, etc."
+		   });		
+		addAnnotation
+		  (trackerEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase utilizada para identificar el listado de issues o tareas de un determinado tipo, t\u00edpicamente bugs, features, o patchs."
+		   });		
+		addAnnotation
+		  (issueStatusEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los diferentes estados por lo que puede pasar una determinada tarea."
+		   });		
+		addAnnotation
+		  (versionStatusEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los diferentes estados por lo que puede pasar una determinada versi\u00f3n."
+		   });		
+		addAnnotation
+		  (dependencyTypeEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los diferentes tipos de dependencia entre issues."
+		   });		
+		addAnnotation
+		  (issueCategoryEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que permite realizar una clasificaci\u00f3n espec\u00edfica de los issues de un determinado proyecto."
+		   });		
+		addAnnotation
+		  (memberEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase utilizada para asociar un determinado usuario a un proyecto, haciendo uso de un rol determinado."
+		   });		
+		addAnnotation
+		  (userEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa a un usuario registrado en la herramienta."
+		   });		
+		addAnnotation
+		  (roleEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa el rol que juega un usuario en los proyectos."
+		   });		
+		addAnnotation
+		  (issuePriorityEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los diferentes niveles de prioridad que puede tomar un issue."
+		   });
 	}
 
 } //ItmPackageImpl

@@ -244,7 +244,7 @@ public class SwpmPackageImpl extends EPackageImpl implements SwpmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWorkProduct_Title() {
+	public EAttribute getWorkProduct_Name() {
 		return (EAttribute)workProductEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -271,7 +271,7 @@ public class SwpmPackageImpl extends EPackageImpl implements SwpmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSection_Title() {
+	public EAttribute getSection_Name() {
 		return (EAttribute)sectionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -379,7 +379,7 @@ public class SwpmPackageImpl extends EPackageImpl implements SwpmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecification_Details() {
+	public EAttribute getSpecification_Description() {
 		return (EAttribute)specificationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -570,11 +570,11 @@ public class SwpmPackageImpl extends EPackageImpl implements SwpmPackage {
 		createEAttribute(projectEClass, PROJECT__DESCRIPTION);
 
 		workProductEClass = createEClass(WORK_PRODUCT);
-		createEAttribute(workProductEClass, WORK_PRODUCT__TITLE);
+		createEAttribute(workProductEClass, WORK_PRODUCT__NAME);
 		createEAttribute(workProductEClass, WORK_PRODUCT__DESCRIPTION);
 
 		sectionEClass = createEClass(SECTION);
-		createEAttribute(sectionEClass, SECTION__TITLE);
+		createEAttribute(sectionEClass, SECTION__NAME);
 		createEAttribute(sectionEClass, SECTION__DESCRIPTION);
 		createEAttribute(sectionEClass, SECTION__ORDER);
 		createEReference(sectionEClass, SECTION__EMBEDDED_SECTIONS);
@@ -588,7 +588,7 @@ public class SwpmPackageImpl extends EPackageImpl implements SwpmPackage {
 
 		specificationEClass = createEClass(SPECIFICATION);
 		createEAttribute(specificationEClass, SPECIFICATION__NAME);
-		createEAttribute(specificationEClass, SPECIFICATION__DETAILS);
+		createEAttribute(specificationEClass, SPECIFICATION__DESCRIPTION);
 		createEAttribute(specificationEClass, SPECIFICATION__TYPE);
 
 		codeWorkProductEClass = createEClass(CODE_WORK_PRODUCT);
@@ -655,11 +655,11 @@ public class SwpmPackageImpl extends EPackageImpl implements SwpmPackage {
 		initEAttribute(getProject_Description(), ecorePackage.getEString(), "description", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workProductEClass, WorkProduct.class, "WorkProduct", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWorkProduct_Title(), ecorePackage.getEString(), "title", null, 0, 1, WorkProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWorkProduct_Name(), ecorePackage.getEString(), "name", null, 0, 1, WorkProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWorkProduct_Description(), ecorePackage.getEString(), "description", null, 0, 1, WorkProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSection_Title(), ecorePackage.getEString(), "title", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSection_Name(), ecorePackage.getEString(), "name", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSection_Description(), ecorePackage.getEString(), "description", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSection_Order(), ecorePackage.getEInt(), "order", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSection_EmbeddedSections(), this.getSection(), null, "embeddedSections", null, 0, -1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -673,7 +673,7 @@ public class SwpmPackageImpl extends EPackageImpl implements SwpmPackage {
 
 		initEClass(specificationEClass, Specification.class, "Specification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSpecification_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSpecification_Details(), ecorePackage.getEString(), "details", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpecification_Description(), ecorePackage.getEString(), "description", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecification_Type(), this.getSpecificationType(), "type", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(codeWorkProductEClass, CodeWorkProduct.class, "CodeWorkProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -726,6 +726,104 @@ public class SwpmPackageImpl extends EPackageImpl implements SwpmPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// comment
+		createCommentAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>comment</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createCommentAnnotations() {
+		String source = "comment";		
+		addAnnotation
+		  (projectEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase contenedora de todos los productos de trabajo de un proyecto."
+		   });		
+		addAnnotation
+		  (workProductEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase abstracta y similar al concepto de WorkProduct en \\gls{SPEM} que representa un determinado producto generado o mantenido durante el proceso software. Se distinguen entre productos entregables o internos."
+		   });		
+		addAnnotation
+		  (sectionEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa una secci\u00f3n dentro de un determinado documento generado durante el proyecto."
+		   });		
+		addAnnotation
+		  (modelEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa un modelo dise\u00f1ado haciendo uso un lenguaje de modelado."
+		   });		
+		addAnnotation
+		  (modelTypeEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los posibles tipos de modelos. Comprende los tipos propuestos con el lenguaje UML, aunque podr\u00eda englobar otros tipos de modelos visuales o textuales desarrollados con otros lenguajes, ya sean gen\u00e9ricos o de prop\u00f3sitos espec\u00edficos (DSL)."
+		   });		
+		addAnnotation
+		  (specificationEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa una especificaci\u00f3n textual de alg\u00fan aspecto del proyecto software."
+		   });		
+		addAnnotation
+		  (codeWorkProductEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa la base de c\u00f3digo de un proyecto software."
+		   });		
+		addAnnotation
+		  (documentaryWorkProductEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa un documento t\u00e9cnico de trabajo."
+		   });		
+		addAnnotation
+		  (deliverableProductEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase abstracta que representa un producto de trabajo desarrollado durante el transcurso de un proyecto software y con valor para terceros."
+		   });		
+		addAnnotation
+		  (internalProductEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase abstracta que representa un producto interno al desarrollo o mantenimiento de software. Puede ser de tipo documental o de c\u00f3digo."
+		   });		
+		addAnnotation
+		  (deliverableTypeEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los posibles tipos de entregables de un proyecto. Pueden ser ficheros empaquetados, instaladores o documentos, entre otros tipos."
+		   });		
+		addAnnotation
+		  (sourcePackageEClass, 
+		   source, 
+		   new String[] {
+			 "comment", "Clase que representa un determinado paquete de c\u00f3digo fuente basado en alg\u00fan lenguaje de programaci\u00f3n."
+		   });		
+		addAnnotation
+		  (archetypeEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los posibles tipos de paquetes de c\u00f3digo fuente. Engloba a aquellas plantillas predefinidas de c\u00f3digo, siguiendo los arquetipos disponibles en sistemas de gesti\u00f3n de la construcci\u00f3n como Maven u otros."
+		   });		
+		addAnnotation
+		  (specificationTypeEEnum, 
+		   source, 
+		   new String[] {
+			 "comment", "Enumeraci\u00f3n con los posibles tipos de especificaciones no basadas en modelos. Pueden consistir en una descripci\u00f3n textual, una lista de elementos o contenido binario gestionado por alguna herramienta externa."
+		   });
 	}
 
 } //SwpmPackageImpl

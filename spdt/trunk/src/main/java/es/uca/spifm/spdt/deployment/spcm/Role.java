@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see es.uca.spifm.spdt.deployment.spcm.SpcmPackage#getRole()
- * @model
+ * @model annotation="comment comment='Clase que representa el papel que juega un determinado miembro de un proyecto de desarrollo o mantenimiento de software.'"
  * @generated
  */
 public interface Role extends EObject {

@@ -17,7 +17,7 @@ package es.uca.spifm.spdt.genericTools.wikim;
  * </p>
  *
  * @see es.uca.spifm.spdt.genericTools.wikim.WikimPackage#getCategory()
- * @model
+ * @model annotation="comment comment='Clase que representa a una categor\355a dentro una instancia de la wiki.'"
  * @generated
  */
 public interface Category extends WikiContent {
