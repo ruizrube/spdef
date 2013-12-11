@@ -3,10 +3,10 @@
     xmlns:swpm="http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0" xsi:schemaLocation="http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0 ../../../main/resources/es/uca/spifm/spdt/deployment/swpm/SoftwareWorkProductModel.ecore" name="openup" description="The OpenUP is an iterative software development process that is minimal, complete, and extensible.">
   <workproducts
       xsi:type="swpm:DocumentaryWorkProduct"
-      title="Architecture"
+      name="Architecture"
       description="This is the list of work products related to architecture domain.">
     <sections
-        title="Default Section"
+        name="Default Section"
         description="Container of models">
       <models
           type="DEPLOYMENT"
@@ -16,10 +16,10 @@
   </workproducts>
   <workproducts
       xsi:type="swpm:DocumentaryWorkProduct"
-      title="Development"
+      name="Development"
       description="This is the list of work products related to development domain.">
     <sections
-        title="Design"
+        name="Design"
         description="Container of models">
       <models
           type="SEQUENCE"
@@ -27,7 +27,7 @@
           description="This artifact describes the realization of required system functionality in terms of components and serves as an abstraction of the source code."/>
     </sections>
     <sections
-        title="Build">
+        name="Build">
       <models
           type="COMPONENT"
           name="Build"
@@ -36,74 +36,74 @@
   </workproducts>
   <workproducts
       xsi:type="swpm:DocumentaryWorkProduct"
-      title="Project Management"
+      name="Project Management"
       description="This is the list of work products related to project management domain.">
     <sections
-        title="Project Plan"
+        name="Project Plan"
         description="Container of models">
       <embeddedSections
-          title="Iteration #1 Plan"
+          name="Iteration #1 Plan"
           description="Iteration Plan">
         <specifications
             name="Iteration Plan"/>
       </embeddedSections>
       <embeddedSections
-          title="Iteration #2 Plan"
+          name="Iteration #2 Plan"
           description="Iteration Plan">
         <specifications
             name="Iteration Plan"/>
       </embeddedSections>
       <specifications
           name="Project Plan"
-          details="This artifact gathers all information required to manage the project. Its main part consists of a coarse-grained plan, containing project phases and milestones."/>
+          description="This artifact gathers all information required to manage the project. Its main part consists of a coarse-grained plan, containing project phases and milestones."/>
     </sections>
     <sections
-        title="Work Items List">
+        name="Work Items List">
       <specifications
           name="Work Items List"
-          details="This artifact contains a list of all scheduled work to be done within the project, as well as proposed work that may affect the product in this or future projects. Each work item may contain references to information relevant to carry out the work described within the work item."
+          description="This artifact contains a list of all scheduled work to be done within the project, as well as proposed work that may affect the product in this or future projects. Each work item may contain references to information relevant to carry out the work described within the work item."
           type="ITEMLIST"/>
     </sections>
     <sections
-        title="Risk List">
+        name="Risk List">
       <specifications
           name="Risk List"
-          details="This artifact is a list of known and open risks to the project, sorted in order of importance and associated with specific mitigation or contingency actions."
+          description="This artifact is a list of known and open risks to the project, sorted in order of importance and associated with specific mitigation or contingency actions."
           type="ITEMLIST"/>
     </sections>
   </workproducts>
   <workproducts
       xsi:type="swpm:DocumentaryWorkProduct"
-      title="Requirements"
+      name="Requirements"
       description="This is the list of work products related to requirements domain.">
     <sections
-        title="Functional Requirements"
+        name="Functional Requirements"
         description="Container of functional requirements">
       <models
           name="Use Cases"
           description="This artifact captures the sequence of actions a system performs that yields an observable result of value to those interacting with the system."/>
     </sections>
     <sections
-        title="Vision and Glossary"
+        name="Vision and Glossary"
         description="Container of specifications">
       <specifications
           name="Vision"
-          details="This artifact contains the definition of the stakeholders' view of the product to be developed, specified in terms of the stakeholders' key needs and features. It contains an outline of the envisioned core requirements for the system."/>
+          description="This artifact contains the definition of the stakeholders' view of the product to be developed, specified in terms of the stakeholders' key needs and features. It contains an outline of the envisioned core requirements for the system."/>
       <specifications
           name="Glossary"
-          details="This artifact defines important terms used by the project. These terms are the basis for effective collaboration with the stakeholders and other team members."
+          description="This artifact defines important terms used by the project. These terms are the basis for effective collaboration with the stakeholders and other team members."
           type="ITEMLIST"/>
     </sections>
     <sections
-        title="Non Functional Requirements"
+        name="Non Functional Requirements"
         description="Container of non-functional requirements">
       <specifications
           name="Supporting Requirements Specification"
-          details="This artifact captures system-wide requirements not captured in scenarios or use cases, including requirements on quality attributes and global functional requirements."
+          description="This artifact captures system-wide requirements not captured in scenarios or use cases, including requirements on quality attributes and global functional requirements."
           type="ITEMLIST"/>
     </sections>
     <sections
-        title="Information Requirements"
+        name="Information Requirements"
         description="Container of information requirements">
       <models
           type="CLASS"
@@ -113,10 +113,10 @@
   </workproducts>
   <workproducts
       xsi:type="swpm:DocumentaryWorkProduct"
-      title="Test"
+      name="Test"
       description="This is the list of work products related to test domain.">
     <sections
-        title="Default Section"
+        name="Default Section"
         description="Container of models">
       <models
           name="Test Case"
@@ -131,7 +131,7 @@
   </workproducts>
   <workproducts
       xsi:type="swpm:CodeWorkProduct"
-      title="OpenUP Project Base Code">
+      name="OpenUP Project Base Code">
     <packages
         description="The instructions that validate individual software components perform as specified."
         name="Developer Test"/>
