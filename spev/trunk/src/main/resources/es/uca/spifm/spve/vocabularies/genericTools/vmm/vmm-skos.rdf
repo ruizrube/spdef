@@ -1,0 +1,89 @@
+<http://spi-fm.uca.es/spdef/kos/ElementType>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:label "ELEMENTTYPE";
+ rdfs:comment "Enumeración con los posibles tipos de diagramas
+   reconocidos por la herramienta de modelado, como por ejemplo los
+   diagramas de clases y de estados de UML." .
+ 
+<http://spi-fm.uca.es/spdef/kos/ElementType#Class> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "CLASS";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ElementType> .
+
+ <http://spi-fm.uca.es/spdef/kos/ElementType#UseCase> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "USECASE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ElementType> .
+ 
+<http://spi-fm.uca.es/spdef/kos/ElementType#Component> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "COMPONENT";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ElementType> .
+
+<http://spi-fm.uca.es/spdef/kos/ElementType#Node> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "NODE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ElementType> .
+
+<http://spi-fm.uca.es/spdef/kos/ElementType#Object> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "OBJECT";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ElementType> .
+
+<http://spi-fm.uca.es/spdef/kos/ElementType#State> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "STATE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ElementType> .
+
+<http://spi-fm.uca.es/spdef/kos/ElementType#Activity> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "ACTIVITY";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ElementType> .
+
+<http://spi-fm.uca.es/spdef/kos/ElementType#Artifact> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "ARTIFACT";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ElementType> .
+
+<http://spi-fm.uca.es/spdef/kos/ElementType#Requirement> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "REQUIREMENT";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ElementType> .
+
+<http://spi-fm.uca.es/spdef/kos/ConnectorType>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:label "CONNECTORTYPE";
+ rdfs:comment "Enumeración con los posibles tipos de conectores que
+   pueden vincular dos elementos, como por ejemplo las asociaciones,
+   generalizaciones y relaciones de inclusión o extensión en UML." .
+ 
+ <http://spi-fm.uca.es/spdef/kos/ConnectorType#Association> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "ASSOCIATION";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ConnectorType> .
+
+ <http://spi-fm.uca.es/spdef/kos/ConnectorType#Aggregation> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "AGGREGATION";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ConnectorType> .
+
+ <http://spi-fm.uca.es/spdef/kos/ConnectorType#Composition> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "COMPOSITION";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ConnectorType> .
+
+ <http://spi-fm.uca.es/spdef/kos/ConnectorType#Dependency> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "DEPENDENCY";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ConnectorType> .
+
+ <http://spi-fm.uca.es/spdef/kos/ConnectorType#Include> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "INCLUDE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ConnectorType> .
+
+ <http://spi-fm.uca.es/spdef/kos/ConnectorType#Extend> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "EXTEND";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ConnectorType> .
+

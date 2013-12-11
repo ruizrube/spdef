@@ -1,0 +1,2 @@
+($1 <http://www.w3.org/2002/07/owl#sameAs> $2), ($1 $p $o) -> ($2 $p $o)
+($1 <http://www.w3.org/2002/07/owl#sameAs> $2), ($2 $p $o) -> ($1 $p $o)

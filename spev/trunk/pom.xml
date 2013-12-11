@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>es.uca.spi-fm</groupId>
+	<artifactId>spev</artifactId>
+	<version>1.0</version>
+	<name>Software Process Evaluation Vocabularies</name>
+	<description>Software Process Evaluation Vocabularies (SPEV) is a project containing the RDF vocabularies of the SPDEF framework.</description>
+	<url>http://spi-fm.uca.es/spdef/tools/spdet</url>
+
+	<dependencies>
+<dependency>
+			<groupId>org.eclipse.eodm</groupId>
+			<artifactId>rdf</artifactId>
+			<version>0.9.1.v200710090302</version>
+		</dependency>
+		
+	<dependency>
+		<groupId>es.uca.spi-fm</groupId>
+		<artifactId>spdt</artifactId>
+		<version>1.0</version>
+	</dependency>
+	</dependencies>
+	<developers>
+		<developer>
+			<id>ivan.ruiz</id>
+			<name>Ivan Ruiz</name>
+			<email>ivan.ruiz@uca.es</email>
+			<roles>
+				<role>Desarrollador</role>
+			</roles>
+		</developer>
+	</developers>
+	<organization>
+		<name>Universidad de Cádiz</name>
+		<url>http://www.uca.es</url>
+	</organization>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<target>1.6</target>
+					<source>1.6</source>
+					<verbose>true</verbose>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.16</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+
+
+			</plugin>
+		</plugins>
+	</build>
+	<reporting>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<docencoding>UTF-8</docencoding>
+					<encoding>UTF-8</encoding>
+					<charset>UTF-8</charset>
+					<links>
+						<link>http://java.sun.com/j2se/1.6.0/docs/api/</link>
+					</links>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</reporting>
+
+
+	<scm>
+		<url>http://spdef.googlecode.com/svn/trunk/</url>
+	</scm>
+	<issueManagement>
+		<url>http://code.google.com/p/spdef/</url>
+	</issueManagement>
+</project>

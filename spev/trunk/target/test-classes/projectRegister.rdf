@@ -1,0 +1,21 @@
+@prefix rdf: 
+  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix doap: 
+  <http://usefulinc.com/ns/doap#> .
+@prefix dc: 
+  <http://purl.org/dc/elements/1.1/> .
+@prefix owl: 
+  <http://www.w3.org/2002/07/owl#> .
+
+<http://localhost:8080/LMF/resource/projects/foobar> 
+  rdf:type doap:Project ;
+  dc:name "JAVA Web App" ;
+  owl:sameAs <http://spi-fm.uca.es/d2r4ea/resource/projects/1121> ;
+  owl:sameAs <http://spi-fm.uca.es/d2r4af/resource/projects/91> .
+
+
+<http://localhost:8080/LMF/resource/projects/template> 
+  rdf:type doap:Project ;
+  dc:name "Template Project for Organizational Methodology" ;
+  owl:sameAs <http://spi-fm.uca.es/d2r4ea/resource/projects/876> ;
+  owl:sameAs <http://spi-fm.uca.es/d2r4af/resource/projects/105> .

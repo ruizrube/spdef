@@ -1,0 +1,24 @@
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#DependencyType>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:comment ">Enumeración con los diferentes tipos de dependencia
+   entre tareas." .
+ 
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Start_Start> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ skos:inScheme <http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#DependencyType> .
+ 
+
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Start_End> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ skos:inScheme <http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#DependencyType> .
+ 
+
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#End_Start> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ skos:inScheme <http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#DependencyType> .
+ 
+
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#End_End> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ skos:inScheme <http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#DependencyType> .
+ 

@@ -1,0 +1,7 @@
+  ($1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Project>), 
+  ($1 <http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#packages> $2) ->
+  ($2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0#DocumentaryWorkProduct>)
+  
+  ($1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Project>), 
+  ($1 <http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#packages> $2) -> 
+  ($1 <http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0#workproducts> $2)

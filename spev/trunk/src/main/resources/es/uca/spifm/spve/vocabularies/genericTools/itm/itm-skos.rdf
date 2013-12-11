@@ -1,0 +1,80 @@
+<http://spi-fm.uca.es/spdef/kos/IssuePriority>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:label "ISSUEPRIORITY";
+ rdfs:comment "Enumeración con los diferentes niveles de prioridad que
+   puede tomar un issue." .
+ 
+<http://spi-fm.uca.es/spdef/kos/IssuePriority#Higher> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "HIGHER";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/IssuePriority> .
+
+<http://spi-fm.uca.es/spdef/kos/IssuePriority#High> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "HIGH";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/IssuePriority> .
+
+<http://spi-fm.uca.es/spdef/kos/IssuePriority#Normal> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "NORMAL";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/IssuePriority> .
+
+<http://spi-fm.uca.es/spdef/kos/IssuePriority#Low> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "LOW";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/IssuePriority> .
+
+<http://spi-fm.uca.es/spdef/kos/IssuePriority#Lower> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "LOWER";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/IssuePriority> .
+ 
+ 
+ <http://spi-fm.uca.es/spdef/kos/IssueStatus>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:label "ISSUESTATUS";
+ rdfs:comment "Enumeración con los diferentes estados por lo que puede
+   pasar una determinada tarea." .
+ 
+ <http://spi-fm.uca.es/spdef/kos/IssueStatus#Open> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "OPEN";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/IssueStatus> .
+ 
+ <http://spi-fm.uca.es/spdef/kos/IssueStatus#Closed> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "CLOSED";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/IssueStatus> .
+ 
+ <http://spi-fm.uca.es/spdef/kos/IssueStatus#Assigned> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "ASSIGNED";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/IssueStatus> .
+ 
+ <http://spi-fm.uca.es/spdef/kos/IssueStatus#Resolved> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "RESOLVED";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/IssueStatus> .
+ 
+ 
+ <http://spi-fm.uca.es/spdef/kos/VersionStatus>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:label "VERSIONSTATUS";
+ rdfs:comment "Enumeración con los diferentes estados por lo que puede
+   pasar una determinada versión." .
+   
+ <http://spi-fm.uca.es/spdef/kos/VersionStatus#Closed> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "CLOSED";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/VersionStatus> .
+ 
+ <http://spi-fm.uca.es/spdef/kos/VersionStatus#Open> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "OPEN";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/VersionStatus> .
+ 
+ <http://spi-fm.uca.es/spdef/kos/VersionStatus#InProgress> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "INPROGRESS";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/VersionStatus> .
+ 

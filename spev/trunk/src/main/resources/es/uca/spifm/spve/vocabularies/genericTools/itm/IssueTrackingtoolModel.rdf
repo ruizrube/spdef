@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:xsd="&xsd;">
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#doneRatio">
+  <rdfs:label>The doneRatio attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#responsible">
+  <rdfs:label>The responsible reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Member" />
+ </rdf:Property>
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project">
+  <rdfs:label>The Project entity</rdfs:label>
+  <rdfs:comment>Clase que representa a un proyecto software controlado
+   desde la herramienta.</rdfs:comment>
+ </rdfs:Class>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#dependentTask">
+  <rdfs:label>The dependentTask reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueDependency" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#owner">
+  <rdfs:label>The owner reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Member" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#members">
+  <rdfs:label>The members reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Member" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#category">
+  <rdfs:label>The category reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueCategory" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#role">
+  <rdfs:label>The role reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Member" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Role" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#type">
+  <rdfs:label>The type attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueDependency" />
+   <rdfs:range
+   rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+  </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#versions">
+  <rdfs:label>The versions reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#projects">
+  <rdfs:label>The projects reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#description">
+  <rdfs:label>The description attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version" />
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+ </rdf:Property>
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase">
+  <rdfs:label>The IssueTrackingDatabase entity</rdfs:label>
+  <rdfs:comment>Clase contenedora de todos los proyectos software
+   gestionados en la herramienta.</rdfs:comment>
+ </rdfs:Class>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#elapsedHours">
+  <rdfs:label>The elapsedHours attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
+ </rdf:Property>
+
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueCategory">
+  <rdfs:label>The IssueCategory entity</rdfs:label>
+  <rdfs:comment>Clase que permite realizar una clasificación específica
+   de los issues de un determinado proyecto.</rdfs:comment>
+ </rdfs:Class>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#trackers">
+  <rdfs:label>The trackers reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Tracker" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#permissions">
+  <rdfs:label>The permissions attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Role" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#users">
+  <rdfs:label>The users reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User" />
+ </rdf:Property>
+ <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date">
+ </rdfs:Datatype>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#completedDate">
+  <rdfs:label>The completedDate attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version" />
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+ </rdf:Property>
+ <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#float">
+ </rdfs:Datatype>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#issueCategories">
+  <rdfs:label>The issueCategories reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueCategory" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#user">
+  <rdfs:label>The user reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Member" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#roles">
+  <rdfs:label>The roles reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Role" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#name">
+  <rdfs:label>The name attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version" />
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Tracker" />
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueCategory" />
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Role" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+ </rdf:Property>
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue">
+  <rdfs:label>The Issue entity</rdfs:label>
+  <rdfs:comment>Clase para describir una tarea o unidad concreta de
+   trabajo, necesaria para evolucionar un sistema informático, como
+   añadir una nueva característica, arreglo de un fallo, etc.
+  </rdfs:comment>
+ </rdfs:Class>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#estimatedHours">
+  <rdfs:label>The estimatedHours attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#status">
+  <rdfs:label>The status attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version" />
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range
+   rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" /> 
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#dependencies">
+  <rdfs:label>The dependencies reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueDependency" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#priority">
+  <rdfs:label>The priority attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range
+   rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+ </rdf:Property>
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueDependency">
+  <rdfs:label>The IssueDependency entity</rdfs:label>
+ </rdfs:Class>
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Tracker">
+  <rdfs:label>The Tracker entity</rdfs:label>
+  <rdfs:comment>Clase utilizada para identificar el listado de issues o
+   tareas de un determinado tipo, típicamente bugs, features, o patchs.
+  </rdfs:comment>
+ </rdfs:Class>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#dueDate">
+  <rdfs:label>The dueDate attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+ </rdf:Property>
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Member">
+  <rdfs:label>The Member entity</rdfs:label>
+  <rdfs:comment>Clase utilizada para asociar un determinado usuario a un
+   proyecto, haciendo uso de un rol determinado.</rdfs:comment>
+ </rdfs:Class>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#tracker">
+  <rdfs:label>The tracker reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Tracker" />
+ </rdf:Property>
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User">
+  <rdfs:label>The User entity</rdfs:label>
+  <rdfs:comment>Clase que representa a un usuario registrado en la
+   herramienta.</rdfs:comment>
+ </rdfs:Class>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#login">
+  <rdfs:label>The login attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+ </rdf:Property>
+ <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string">
+ </rdfs:Datatype>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#language">
+  <rdfs:label>The language attribute</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User" />
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+ </rdf:Property>
+ <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#issues">
+  <rdfs:label>The issues reference</rdfs:label>
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
+ </rdf:Property>
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version">
+  <rdfs:label>The Version entity</rdfs:label>
+  <rdfs:comment>Clase que describe cada una de las versiones del
+   software objeto del proyecto gestionado en la herramienta.
+  </rdfs:comment>
+ </rdfs:Class>
+ <rdfs:Class
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Role">
+  <rdfs:label>The Role entity</rdfs:label>
+  <rdfs:comment>Clase que representa el rol que juega un usuario en los
+   proyectos.</rdfs:comment>
+ </rdfs:Class>
+</rdf:RDF>
