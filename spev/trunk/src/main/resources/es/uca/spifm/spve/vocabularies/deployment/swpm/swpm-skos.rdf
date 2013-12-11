@@ -1,0 +1,141 @@
+<http://spi-fm.uca.es/spdef/kos/Archetype>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:label "ARCHETYPE";
+ rdfs:comment "Enumeración con los posibles tipos de paquetes de código
+   fuente. Engloba a aquellas plantillas predefinidas de código,
+   siguiendo los arquetipos disponibles en sistemas de gestión de la
+   construcción como Maven u otros." .
+ 
+<http://spi-fm.uca.es/spdef/kos/Archetype#J2EE> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "J2EE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/Archetype> .
+ 
+<http://spi-fm.uca.es/spdef/kos/Archetype#Struts2> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "STRUTS2";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/Archetype> .
+
+<http://spi-fm.uca.es/spdef/kos/Archetype#Spring_OSGI> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "SPRING_OSGI";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/Archetype> .
+
+<http://spi-fm.uca.es/spdef/kos/Archetype#JSF> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "JSF";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/Archetype> .
+
+<http://spi-fm.uca.es/spdef/kos/ModelType>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:label "MODELTYPE";
+ rdfs:comment "Enumeración con los posibles tipos de modelos. Comprende
+   los tipos propuestos con el lenguaje UML, aunque podría englobar
+   otros tipos de modelos visuales o textuales desarrollados con otros
+   lenguajes, ya sean genéricos o de propósitos específicos (DSL)" .
+ 
+<http://spi-fm.uca.es/spdef/kos/ModelType#UseCase> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "USECASE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ModelType> .
+ 
+<http://spi-fm.uca.es/spdef/kos/ModelType#Class> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "CLASS";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ModelType> .
+
+<http://spi-fm.uca.es/spdef/kos/ModelType#Activity> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "ACTIVITY";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ModelType> .
+
+<http://spi-fm.uca.es/spdef/kos/ModelType#Component> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "COMPONENT";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ModelType> .
+
+<http://spi-fm.uca.es/spdef/kos/ModelType#Deployment> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "DEPLOYMENT";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ModelType> .
+
+<http://spi-fm.uca.es/spdef/kos/ModelType#Sequence> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "SEQUENCE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ModelType> .
+
+<http://spi-fm.uca.es/spdef/kos/ModelType#StateChart> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "STATECHART";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ModelType> .
+ 
+<http://spi-fm.uca.es/spdef/kos/ModelType#Collaboration> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "COLLABORATION";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ModelType> .
+
+<http://spi-fm.uca.es/spdef/kos/ModelType#Other> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "OTHER";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/ModelType> .
+ 
+<http://spi-fm.uca.es/spdef/kos/SpecificationType>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:label "SPECIFICATIONTYPE";
+ rdfs:comment "Enumeración con los posibles tipos de especificaciones
+   no basadas en modelos. Pueden consistir en una descripción textual,
+   una lista de elementos o contenido binario gestionado por alguna
+   herramienta externa." .
+   
+<http://spi-fm.uca.es/spdef/kos/SpecificationType#Textual> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "TEXTUAL";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/SpecificationType> .
+ 
+<http://spi-fm.uca.es/spdef/kos/SpecificationType#ExternalContent> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "EXTERNALCONTENT";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/SpecificationType> .
+
+<http://spi-fm.uca.es/spdef/kos/SpecificationType#ItemList> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "ITEMLIST";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/SpecificationType> .
+ 
+<http://spi-fm.uca.es/spdef/kos/DeliverableType>
+ rdf:type  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+ rdfs:label "DELIVERABLETYPE";
+ rdfs:comment "Enumeración con los posibles tipos de entregables de un
+   proyecto. Pueden ser ficheros empaquetados, instaladores o
+   documentos, entre otros tipos" .
+   
+<http://spi-fm.uca.es/spdef/kos/DeliverableType#Doc> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "DOC";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/DeliverableType> .
+
+<http://spi-fm.uca.es/spdef/kos/DeliverableType#Source> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "SOURCE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/DeliverableType> .
+ 
+<http://spi-fm.uca.es/spdef/kos/DeliverableType#Archive> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "ARCHIVE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/DeliverableType> .
+ 
+<http://spi-fm.uca.es/spdef/kos/DeliverableType#Installer> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "INSTALLER";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/DeliverableType> .
+ 
+<http://spi-fm.uca.es/spdef/kos/DeliverableType#Package> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "PACKAGE";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/DeliverableType> .
+  
+<http://spi-fm.uca.es/spdef/kos/DeliverableType#Other> 
+ rdf:type  <http://www.w3.org/2004/02/skos/core#Concept> ;
+ rdfs:label "OTHER";
+ skos:inScheme <http://spi-fm.uca.es/spdef/kos/DeliverableType> .
+ 

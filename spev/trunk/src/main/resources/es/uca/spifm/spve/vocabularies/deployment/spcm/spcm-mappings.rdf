@@ -1,0 +1,14 @@
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Project> 
+ rdfs:subClassOf <http://usefulinc.com/ns/doap#Project> .
+ 
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Milestone> 
+ rdfs:subClassOf <http://usefulinc.com/ns/doap#Version> .
+ 
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#name> 
+ rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> .
+ 
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#description> 
+ rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description>  .
+ 
+<http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#type> 
+ rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/subject>  .

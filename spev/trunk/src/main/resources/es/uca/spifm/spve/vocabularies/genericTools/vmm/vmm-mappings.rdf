@@ -1,0 +1,19 @@
+<http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Project> 
+ rdfs:subClassOf <http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0#Project> .
+ 
+<http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Diagram> 
+ rdfs:subClassOf <http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0#Model> .
+ 
+<http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#name> 
+ rdfs:subPropertyOf <http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0#name>  .
+ 
+<http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#description> 
+ rdfs:subPropertyOf <http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0#description>  . 
+
+<http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#type> 
+ rdfs:subClassOf <http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0#type> .
+ 
+<http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#diagrams> 
+ rdfs:subClassOf <http://spi-fm.uca.es/spdef/models/deployment/swpm/1.0#models> .
+ 
+ 
