@@ -5,9 +5,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:mwm="http://spi-fm.uca.es/spdef/models/specificTools/mwm/1.0"
     xsi:schemaLocation="http://spi-fm.uca.es/spdef/models/specificTools/mwm/1.0 ../../../../../main/resources/es/uca/spifm/spdt/specificTools/mwm/MediaWikiModel.ecore"
-    url="http://spi-fm.uca.es/spdef/tools/mw4sp/index.php"
-    login="spdef"
-    password="digitalspdef">
-  <wikiDatabase
-      href="wikim.xmi#/"/>
-</mwm:MediaWikiDatabase>
+    url="uri"
+    login="login"
+    password="password"/>

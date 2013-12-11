@@ -1,120 +1,120 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<wikim:WikiDatabase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wikim="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0" xsi:schemaLocation="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0 ../../../../../main/resources/es/uca/spifm/spdt/genericTools/wikim/WikitoolModel.ecore">
-  <contents xsi:type="wikim:Article" title="Architecture" categories="//@contents.5">
-    <sections title="Default Section" text="Container of models">
-      <embeddedSections title="Architecture Notebook">
-        <contents xsi:type="wikim:Image" order="1" uri="http://localhost/mediawiki-1.15.5/images/spde/Deployment.png" alternative="Model: Architecture Notebook"/>
-        <contents xsi:type="wikim:ItemList" order="3" title="This artifact describes the context for software development. It contains the decisions, rationale, assumptions, explanations and implications of forming the architecture.">
+<wikim:WikiDatabase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wikim="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0" xsi:schemaLocation="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0 ../../../main/resources/es/uca/spifm/spdt/genericTools/wikim/WikitoolModel.ecore">
+  <contents xsi:type="wikim:Article" name="Architecture" categories="//@contents.5">
+    <sections name="Default Section" text="Container of models">
+      <embeddedSections name="Architecture Notebook">
+        <contents xsi:type="wikim:Image" order="1" uri="http://spi-fm.uca.es/spdef/img/Deployment.png" alternative="Model: Architecture Notebook"/>
+        <contents xsi:type="wikim:ItemList" order="3" name="This artifact describes the context for software development. It contains the decisions, rationale, assumptions, explanations and implications of forming the architecture.">
           <items text="Default Node for Architecture Notebook"/>
         </contents>
       </embeddedSections>
     </sections>
   </contents>
-  <contents xsi:type="wikim:Article" title="Development" categories="//@contents.5">
-    <sections title="Design" text="Container of models">
-      <embeddedSections title="Design">
-        <contents xsi:type="wikim:Image" order="11" uri="http://localhost/mediawiki-1.15.5/images/spde/Sequence.png" alternative="Model: Design"/>
-        <contents xsi:type="wikim:ItemList" order="13" title="This artifact describes the realization of required system functionality in terms of components and serves as an abstraction of the source code.">
+  <contents xsi:type="wikim:Article" name="Development" categories="//@contents.5">
+    <sections name="Design" text="Container of models">
+      <embeddedSections name="Design">
+        <contents xsi:type="wikim:Image" order="11" uri="http://spi-fm.uca.es/spdef/img/Sequence.png" alternative="Model: Design"/>
+        <contents xsi:type="wikim:ItemList" order="13" name="This artifact describes the realization of required system functionality in terms of components and serves as an abstraction of the source code.">
           <items text="Default Class for Design"/>
         </contents>
       </embeddedSections>
     </sections>
-    <sections title="Build">
-      <embeddedSections title="Build">
-        <contents xsi:type="wikim:Image" order="21" uri="http://localhost/mediawiki-1.15.5/images/spde/Component.png" alternative="Model: Build"/>
-        <contents xsi:type="wikim:ItemList" order="23" title="An operational version of a system or part of a system that demonstrates a subset of the capabilities to be provided in the final product.">
+    <sections name="Build">
+      <embeddedSections name="Build">
+        <contents xsi:type="wikim:Image" order="21" uri="http://spi-fm.uca.es/spdef/img/Component.png" alternative="Model: Build"/>
+        <contents xsi:type="wikim:ItemList" order="23" name="An operational version of a system or part of a system that demonstrates a subset of the capabilities to be provided in the final product.">
           <items text="Default Component for Build"/>
         </contents>
       </embeddedSections>
     </sections>
   </contents>
-  <contents xsi:type="wikim:Article" title="Project Management" categories="//@contents.5">
-    <sections title="Project Plan" text="Container of models">
-      <embeddedSections title="Iteration #1 Plan" text="Iteration Plan">
-        <embeddedSections title="Iteration Plan">
+  <contents xsi:type="wikim:Article" name="Project Management" categories="//@contents.5">
+    <sections name="Project Plan" text="Container of models">
+      <embeddedSections name="Iteration #1 Plan" text="Iteration Plan">
+        <embeddedSections name="Iteration Plan">
           <contents xsi:type="wikim:Paragraph"/>
         </embeddedSections>
       </embeddedSections>
-      <embeddedSections title="Iteration #2 Plan" text="Iteration Plan">
-        <embeddedSections title="Iteration Plan">
+      <embeddedSections name="Iteration #2 Plan" text="Iteration Plan">
+        <embeddedSections name="Iteration Plan">
           <contents xsi:type="wikim:Paragraph"/>
         </embeddedSections>
       </embeddedSections>
-      <embeddedSections title="Project Plan">
+      <embeddedSections name="Project Plan">
         <contents xsi:type="wikim:Paragraph" text="This artifact gathers all information required to manage the project. Its main part consists of a coarse-grained plan, containing project phases and milestones."/>
       </embeddedSections>
     </sections>
-    <sections title="Work Items List">
-      <embeddedSections title="Work Items List">
-        <contents xsi:type="wikim:ItemList" title="This artifact contains a list of all scheduled work to be done within the project, as well as proposed work that may affect the product in this or future projects. Each work item may contain references to information relevant to carry out the work described within the work item.">
+    <sections name="Work Items List">
+      <embeddedSections name="Work Items List">
+        <contents xsi:type="wikim:ItemList" name="Work Items List">
           <items text="Work Items List Default Item "/>
         </contents>
       </embeddedSections>
     </sections>
-    <sections title="Risk List">
-      <embeddedSections title="Risk List">
-        <contents xsi:type="wikim:ItemList" title="This artifact is a list of known and open risks to the project, sorted in order of importance and associated with specific mitigation or contingency actions.">
+    <sections name="Risk List">
+      <embeddedSections name="Risk List">
+        <contents xsi:type="wikim:ItemList" name="Risk List">
           <items text="Risk List Default Item "/>
         </contents>
       </embeddedSections>
     </sections>
   </contents>
-  <contents xsi:type="wikim:Article" title="Requirements" categories="//@contents.5">
-    <sections title="Functional Requirements" text="Container of functional requirements">
-      <embeddedSections title="Use Cases">
-        <contents xsi:type="wikim:Image" order="31" uri="http://localhost/mediawiki-1.15.5/images/spde/UseCase.png" alternative="Model: Use Cases"/>
-        <contents xsi:type="wikim:ItemList" order="33" title="This artifact captures the sequence of actions a system performs that yields an observable result of value to those interacting with the system.">
+  <contents xsi:type="wikim:Article" name="Requirements" categories="//@contents.5">
+    <sections name="Functional Requirements" text="Container of functional requirements">
+      <embeddedSections name="Use Cases">
+        <contents xsi:type="wikim:Image" order="31" uri="http://spi-fm.uca.es/spdef/img/UseCase.png" alternative="Model: Use Cases"/>
+        <contents xsi:type="wikim:ItemList" order="33" name="This artifact captures the sequence of actions a system performs that yields an observable result of value to those interacting with the system.">
           <items text="Default Use Case for Use Cases"/>
         </contents>
       </embeddedSections>
     </sections>
-    <sections title="Vision and Glossary" text="Container of specifications">
-      <embeddedSections title="Vision">
+    <sections name="Vision and Glossary" text="Container of specifications">
+      <embeddedSections name="Vision">
         <contents xsi:type="wikim:Paragraph" text="This artifact contains the definition of the stakeholders' view of the product to be developed, specified in terms of the stakeholders' key needs and features. It contains an outline of the envisioned core requirements for the system."/>
       </embeddedSections>
-      <embeddedSections title="Glossary">
-        <contents xsi:type="wikim:ItemList" title="This artifact defines important terms used by the project. These terms are the basis for effective collaboration with the stakeholders and other team members.">
+      <embeddedSections name="Glossary">
+        <contents xsi:type="wikim:ItemList" name="Glossary">
           <items text="Glossary Default Item "/>
         </contents>
       </embeddedSections>
     </sections>
-    <sections title="Non Functional Requirements" text="Container of non-functional requirements">
-      <embeddedSections title="Supporting Requirements Specification">
-        <contents xsi:type="wikim:ItemList" title="This artifact captures system-wide requirements not captured in scenarios or use cases, including requirements on quality attributes and global functional requirements.">
+    <sections name="Non Functional Requirements" text="Container of non-functional requirements">
+      <embeddedSections name="Supporting Requirements Specification">
+        <contents xsi:type="wikim:ItemList" name="Supporting Requirements Specification">
           <items text="Supporting Requirements Specification Default Item "/>
         </contents>
       </embeddedSections>
     </sections>
-    <sections title="Information Requirements" text="Container of information requirements">
-      <embeddedSections title="Conceptual">
-        <contents xsi:type="wikim:Image" order="41" uri="http://localhost/mediawiki-1.15.5/images/spde/Logical.png" alternative="Model: Conceptual"/>
-        <contents xsi:type="wikim:ItemList" order="43" title="Conceptual model of the system">
+    <sections name="Information Requirements" text="Container of information requirements">
+      <embeddedSections name="Conceptual">
+        <contents xsi:type="wikim:Image" order="41" uri="http://spi-fm.uca.es/spdef/img/Logical.png" alternative="Model: Conceptual"/>
+        <contents xsi:type="wikim:ItemList" order="43" name="Conceptual model of the system">
           <items text="Default Class for Conceptual"/>
         </contents>
       </embeddedSections>
     </sections>
   </contents>
-  <contents xsi:type="wikim:Article" title="Test" categories="//@contents.5">
-    <sections title="Default Section" text="Container of models">
-      <embeddedSections title="Test Case">
-        <contents xsi:type="wikim:Image" order="51" uri="http://localhost/mediawiki-1.15.5/images/spde/UseCase.png" alternative="Model: Test Case"/>
-        <contents xsi:type="wikim:ItemList" order="53" title="This artifact is the specification of a set of test inputs, execution conditions, and expected results, identified for the purpose of making an evaluation of some particular aspect of a scenario.">
+  <contents xsi:type="wikim:Article" name="Test" categories="//@contents.5">
+    <sections name="Default Section" text="Container of models">
+      <embeddedSections name="Test Case">
+        <contents xsi:type="wikim:Image" order="51" uri="http://spi-fm.uca.es/spdef/img/UseCase.png" alternative="Model: Test Case"/>
+        <contents xsi:type="wikim:ItemList" order="53" name="This artifact is the specification of a set of test inputs, execution conditions, and expected results, identified for the purpose of making an evaluation of some particular aspect of a scenario.">
           <items text="Default Use Case for Test Case"/>
         </contents>
       </embeddedSections>
-      <embeddedSections title="Test Log">
-        <contents xsi:type="wikim:Image" order="61" uri="http://localhost/mediawiki-1.15.5/images/spde/UseCase.png" alternative="Model: Test Log"/>
-        <contents xsi:type="wikim:ItemList" order="63" title="This artifact collects raw output captured during a unique execution of one or more tests for a single test cycle run.">
+      <embeddedSections name="Test Log">
+        <contents xsi:type="wikim:Image" order="61" uri="http://spi-fm.uca.es/spdef/img/UseCase.png" alternative="Model: Test Log"/>
+        <contents xsi:type="wikim:ItemList" order="63" name="This artifact collects raw output captured during a unique execution of one or more tests for a single test cycle run.">
           <items text="Default Use Case for Test Log"/>
         </contents>
       </embeddedSections>
-      <embeddedSections title="Test Script">
-        <contents xsi:type="wikim:Image" order="71" uri="http://localhost/mediawiki-1.15.5/images/spde/UseCase.png" alternative="Model: Test Script"/>
-        <contents xsi:type="wikim:ItemList" order="73" title="This artifact contains the step-by-step instructions that realize a test, enabling its execution. These may take the form of either documented textual instructions that are executed manually or computer readable instructions that enable automated test execution.">
+      <embeddedSections name="Test Script">
+        <contents xsi:type="wikim:Image" order="71" uri="http://spi-fm.uca.es/spdef/img/UseCase.png" alternative="Model: Test Script"/>
+        <contents xsi:type="wikim:ItemList" order="73" name="This artifact contains the step-by-step instructions that realize a test, enabling its execution. These may take the form of either documented textual instructions that are executed manually or computer readable instructions that enable automated test execution.">
           <items text="Default Use Case for Test Script"/>
         </contents>
       </embeddedSections>
     </sections>
   </contents>
-  <contents xsi:type="wikim:Category" title="openup"/>
+  <contents xsi:type="wikim:Category" name="openup"/>
 </wikim:WikiDatabase>
