@@ -43,11 +43,6 @@
 		</dependency>
 		
 		
-		<dependency>
-			<groupId>org.eclipse.eodm</groupId>
-			<artifactId>rdf</artifactId>
-			<version>0.9.1.v200710090302</version>
-		</dependency>
 		
 		
 		
