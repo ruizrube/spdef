@@ -33,3 +33,11 @@ mvn install:install-file -Dfile=E:\workspace\spdt\lib\org.eclipse.eodm.rdf_0.9.1
 - base package
 - model directory 
 
+
+NOTAS:
+
+Para hacer la transformación hay que previamente registrar metamodelo. Para ello hay que abrir la perspectiva ATL y sobre el ecore: Register Metamodel
+En los modelos generados no se escribe el schemaLocation. Problema: si intentas abrir un modelo generado son previamente registrar el metamodelo, Eclipse se queda bloqueado. De todas formas, Eclipse no gestiona bien la relación entre el modelo y el metamodelo.
+solución: serializar el schemaLocation.
+
+
