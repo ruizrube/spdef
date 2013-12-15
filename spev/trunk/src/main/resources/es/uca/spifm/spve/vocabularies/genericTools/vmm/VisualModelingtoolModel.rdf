@@ -8,6 +8,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#packages">
   <rdfs:label>The packages reference</rdfs:label>
+  <rdfs:comment>Paquetes de modelos de un determinado proyecto</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Project" />
   <rdfs:range
@@ -16,6 +17,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#containedElements">
   <rdfs:label>The containedElements reference</rdfs:label>
+  <rdfs:comment>Elementos de modelado contenidos en un determinado diagrama</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Diagram" />
   <rdfs:range
@@ -30,6 +32,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#target">
   <rdfs:label>The target reference</rdfs:label>
+  <rdfs:comment>Elemento destino de un conector entre dos elementos de modelado</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Connector" />
   <rdfs:range
@@ -38,6 +41,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#type">
   <rdfs:label>The type attribute</rdfs:label>
+  <rdfs:comment>Tipo de un diagrama, elemento o conector entre elementos de modelado</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Diagram" />
   <rdfs:domain
@@ -50,6 +54,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#name">
   <rdfs:label>The name attribute</rdfs:label>
+  <rdfs:comment>Nombre de un paquete, diagrama, elemento, conector o proyecto</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Package" />
   <rdfs:domain
@@ -71,6 +76,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#embeddedPackages">
   <rdfs:label>The embeddedPackages reference</rdfs:label>
+  <rdfs:comment>Paquetes incluidos dentro de un paquete de modelos</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Package" />
   <rdfs:range
@@ -79,6 +85,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#connectors">
   <rdfs:label>The connectors reference</rdfs:label>
+  <rdfs:comment>Conectores de un determinado elemento de modelado</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Element" />
   <rdfs:range
@@ -87,13 +94,12 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#elements">
   <rdfs:label>The elements reference</rdfs:label>
+  <rdfs:comment>Elementos de modelado incluidos en un paquete</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Package" />
   <rdfs:range
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Element" />
  </rdf:Property>
- <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string">
- </rdfs:Datatype>
  <rdfs:Class
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Diagram">
   <rdfs:label>The Diagram entity</rdfs:label>
@@ -103,6 +109,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#description">
   <rdfs:label>The description attribute</rdfs:label>
+  <rdfs:comment>Descripción de un paquete, diagrama, elemento, conector o proyecto</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Package" />
   <rdfs:domain
@@ -118,6 +125,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#projects">
   <rdfs:label>The projects reference</rdfs:label>
+  <rdfs:comment>Proyectos registrados en la herramienta de modelado visual</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#ModelRepository" />
   <rdfs:range
@@ -132,6 +140,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#diagrams">
   <rdfs:label>The diagrams reference</rdfs:label>
+  <rdfs:comment>Diagramas (modelos) includos en un paquete</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/vmm/1.0#Package" />
   <rdfs:range
