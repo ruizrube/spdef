@@ -1,9 +1,22 @@
 <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User> 
  rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+<http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project>  
+ rdfs:subClassOf <http://usefulinc.com/ns/doap#Project> .
+ 
+<http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version>
+ rdfs:subClassOf <http://usefulinc.com/ns/doap#Version> .
+
+<http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#name> 
+ rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> .
+
+<http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#description> 
+ rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description>  .
+
  
 <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project> 
  rdfs:subClassOf <http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Project> .
- 
+  
 <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version> 
  rdfs:subClassOf <http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#Milestone> .
  
@@ -18,7 +31,7 @@
  
 <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#name> 
  rdfs:subPropertyOf <http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#name> .
- 
+   
 <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#description> 
  rdfs:subPropertyOf <http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#description>   .
   
@@ -31,4 +44,3 @@
 <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#issueCategories> 
  rdfs:subClassOf <http://spi-fm.uca.es/spdef/models/deployment/spcm/1.0#taskCategories> .
 
- 

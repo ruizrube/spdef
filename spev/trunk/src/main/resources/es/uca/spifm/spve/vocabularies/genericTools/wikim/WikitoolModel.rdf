@@ -14,6 +14,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#text">
   <rdfs:label>The text attribute</rdfs:label>
+  <rdfs:comment>Texto que aparece dentro de una sección, párrafo o item de un artículo de la wiki</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section" />
   <rdfs:domain
@@ -32,6 +33,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#alternative">
   <rdfs:label>The alternative attribute</rdfs:label>
+  <rdfs:comment>Texto alternativo que disponen las imágenes</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Image" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
@@ -39,6 +41,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#items">
   <rdfs:label>The items reference</rdfs:label>
+  <rdfs:comment>Items que forman parte de una lista de items de un artículo wiki</rdfs:comment>  
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#ItemList" />
   <rdfs:range
@@ -47,6 +50,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#order">
   <rdfs:label>The order attribute</rdfs:label>
+  <rdfs:comment>Orden de un contenido dentro de una sección de un artículo wiki</rdfs:comment>    
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#SectionContent" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int" />
@@ -66,16 +70,22 @@
   </rdfs:comment>
  </rdfs:Class>
  <rdf:Property
-  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#contents">
-  <rdfs:label>The contents reference</rdfs:label>
-  <rdfs:domain
-   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section" />
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#wikiContents">
+  <rdfs:label>The wikiContents reference</rdfs:label>
+  <rdfs:comment>Contenidos existentes en el sistema wiki</rdfs:comment>    
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiDatabase" />
   <rdfs:range
-   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#SectionContent" />
-  <rdfs:range
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent" />
+ </rdf:Property>
+  <rdf:Property
+  rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#sectionContents">
+  <rdfs:label>The contents reference</rdfs:label>
+  <rdfs:comment>Contenidos incluidos dentro de una sección de un artículo wiki</rdfs:comment>    
+  <rdfs:domain
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section" />
+  <rdfs:range
+   rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#SectionContent" />
  </rdf:Property>
  <rdfs:Class
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Category">
@@ -92,8 +102,6 @@
   <rdfs:label>The ItemList entity</rdfs:label>
   <rdfs:comment>Clase que representa un lista de items.</rdfs:comment>
  </rdfs:Class>
- <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#int">
- </rdfs:Datatype>
  <rdfs:Class
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#File">
   <rdfs:subClassOf
@@ -102,8 +110,6 @@
   <rdfs:comment>Clase que representa a un determinado archivo binario
    almacenado en la wiki.</rdfs:comment>
  </rdfs:Class>
- <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string">
- </rdfs:Datatype>
  <rdfs:Class
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent">
   <rdfs:label>The WikiContent entity</rdfs:label>
@@ -120,6 +126,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#embeddedSections">
   <rdfs:label>The embeddedSections reference</rdfs:label>
+  <rdfs:comment>Secciones incluidas dentro de otra sección de un artículo wiki</rdfs:comment>    
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Section" />
   <rdfs:range
@@ -128,6 +135,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#sections">
   <rdfs:label>The sections reference</rdfs:label>
+  <rdfs:comment>Secciones incluidas dentro de un artículo wiki</rdfs:comment>      
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Article" />
   <rdfs:range
@@ -136,6 +144,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#name">
   <rdfs:label>The name attribute</rdfs:label>
+  <rdfs:comment>Nombre de un contenido, sección o lista de elementos dentro de un artículo wiki</rdfs:comment>      
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#WikiContent" />
   <rdfs:domain
@@ -147,6 +156,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#uri">
   <rdfs:label>The uri attribute</rdfs:label>
+  <rdfs:comment>Dirección web de una imagen</rdfs:comment>      
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Image" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
@@ -162,6 +172,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#parentCategory">
   <rdfs:label>The parentCategory reference</rdfs:label>
+  <rdfs:comment>Categorías padre de una dada</rdfs:comment>    
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Category" />
   <rdfs:range
@@ -176,6 +187,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#categories">
   <rdfs:label>The categories reference</rdfs:label>
+  <rdfs:comment>Categorías de un artículo wiki</rdfs:comment>      
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/wikim/1.0#Article" />
   <rdfs:range

@@ -8,6 +8,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#doneRatio">
   <rdfs:label>The doneRatio attribute</rdfs:label>
+  <rdfs:comment>Porcentaje completado de la tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
@@ -15,6 +16,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#responsible">
   <rdfs:label>The responsible reference</rdfs:label>
+  <rdfs:comment>Miembro responsable de la tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range
@@ -29,6 +31,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#dependentTask">
   <rdfs:label>The dependentTask reference</rdfs:label>
+  <rdfs:comment>Tarea dependiente de una tarea dada</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueDependency" />
   <rdfs:range
@@ -37,6 +40,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#owner">
   <rdfs:label>The owner reference</rdfs:label>
+  <rdfs:comment>Propietario de la tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range
@@ -45,6 +49,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#members">
   <rdfs:label>The members reference</rdfs:label>
+  <rdfs:comment>Miembros del proyecto</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
   <rdfs:range
@@ -53,6 +58,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#category">
   <rdfs:label>The category reference</rdfs:label>
+  <rdfs:comment>Categoría de la tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range
@@ -61,6 +67,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#role">
   <rdfs:label>The role reference</rdfs:label>
+  <rdfs:comment>Rol que desempeña un miembro del proyecto</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Member" />
   <rdfs:range
@@ -68,6 +75,7 @@
  </rdf:Property>
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#type">
+  <rdfs:comment>Tipo de dependencia entre tareas</rdfs:comment>
   <rdfs:label>The type attribute</rdfs:label>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueDependency" />
@@ -77,6 +85,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#versions">
   <rdfs:label>The versions reference</rdfs:label>
+  <rdfs:comment>Versiones definidas para un proyecto software</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
   <rdfs:range
@@ -85,6 +94,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#projects">
   <rdfs:label>The projects reference</rdfs:label>
+  <rdfs:comment>Conjunto de proyectos registrados en el sistema de gestión de proyectos</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase" />
   <rdfs:range
@@ -93,6 +103,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#description">
   <rdfs:label>The description attribute</rdfs:label>
+  <rdfs:comment>Descripción de un proyecto, versión o tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
   <rdfs:domain
@@ -110,6 +121,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#elapsedHours">
   <rdfs:label>The elapsedHours attribute</rdfs:label>
+  <rdfs:comment>Horas trabajadas en una tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
@@ -124,6 +136,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#trackers">
   <rdfs:label>The trackers reference</rdfs:label>
+  <rdfs:comment>Conjunto de trackers registrados en el sistema de gestión de proyectos</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase" />
   <rdfs:range
@@ -132,6 +145,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#permissions">
   <rdfs:label>The permissions attribute</rdfs:label>
+  <rdfs:comment>Permisos que dispone de un determinado rol</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Role" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
@@ -139,27 +153,26 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#users">
   <rdfs:label>The users reference</rdfs:label>
+  <rdfs:comment>Usuarios registrados en el sistema de gestión de proyectos</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase" />
   <rdfs:range
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User" />
  </rdf:Property>
- <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date">
- </rdfs:Datatype>
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#completedDate">
   <rdfs:label>The completedDate attribute</rdfs:label>
+  <rdfs:comment>Fecha de compleción de una tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version" />
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
  </rdf:Property>
- <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#float">
- </rdfs:Datatype>
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#issueCategories">
   <rdfs:label>The issueCategories reference</rdfs:label>
+  <rdfs:comment>Categorías de las tareas registradas para un proyecto determinado</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
   <rdfs:range
@@ -168,6 +181,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#user">
   <rdfs:label>The user reference</rdfs:label>
+  <rdfs:comment>Usuario que es miembro de un proyecto</rdfs:comment>  
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Member" />
   <rdfs:range
@@ -176,6 +190,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#roles">
   <rdfs:label>The roles reference</rdfs:label>
+  <rdfs:comment>Roles registrados en el sistema de gestión de proyectos</rdfs:comment>  
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase" />
   <rdfs:range
@@ -184,6 +199,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#name">
   <rdfs:label>The name attribute</rdfs:label>
+  <rdfs:comment>Nombre del proyecto, versión, tarea, tracker, categoría de tarea o rol</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project" />
   <rdfs:domain
@@ -209,6 +225,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#estimatedHours">
   <rdfs:label>The estimatedHours attribute</rdfs:label>
+  <rdfs:comment>Número de horas estimadas para una tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float" />
@@ -216,6 +233,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#status">
   <rdfs:label>The status attribute</rdfs:label>
+  <rdfs:comment>Estado de una versión o tarea de un proyecto</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version" />
   <rdfs:domain
@@ -226,6 +244,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#dependencies">
   <rdfs:label>The dependencies reference</rdfs:label>
+  <rdfs:comment>Dependencias de una tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range
@@ -234,6 +253,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#priority">
   <rdfs:label>The priority attribute</rdfs:label>
+  <rdfs:comment>Prioridad en la realización de una tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range
@@ -253,6 +273,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#dueDate">
   <rdfs:label>The dueDate attribute</rdfs:label>
+  <rdfs:comment>Fecha estimada de finalización de una tarea</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
@@ -266,6 +287,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#tracker">
   <rdfs:label>The tracker reference</rdfs:label>
+  <rdfs:comment>Tracker al que está asociado una tarea determinada</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue" />
   <rdfs:range
@@ -280,15 +302,15 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#login">
   <rdfs:label>The login attribute</rdfs:label>
+  <rdfs:comment>Login de un usuario</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
  </rdf:Property>
- <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string">
- </rdfs:Datatype>
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#language">
   <rdfs:label>The language attribute</rdfs:label>
+  <rdfs:comment>Lenguaje de un usuario</rdfs:comment>
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User" />
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
@@ -296,6 +318,7 @@
  <rdf:Property
   rdf:about="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#issues">
   <rdfs:label>The issues reference</rdfs:label>
+  <rdfs:comment>Tareas asociadas a una versión de software</rdfs:comment>  
   <rdfs:domain
    rdf:resource="http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version" />
   <rdfs:range
