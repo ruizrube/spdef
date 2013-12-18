@@ -169,7 +169,7 @@
 
 
 	<scm>
-		<url>http://spdef.googlecode.com/svn/trunk/</url>
+		<url>http://spdef.googlecode.com/svn/spdt/trunk/</url>
 	</scm>
 	<issueManagement>
 		<url>http://code.google.com/p/spdef/</url>
